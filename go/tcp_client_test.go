@@ -1,7 +1,15 @@
 package _go
 
-import "testing"
+import (
+	"net"
+	"testing"
+)
 
 func TestTcpClient(t *testing.T) {
-	t.Log(`1111`)
+	conn, err := net.Dial("tcp", "10.10.3.30:14000")
+	if err != nil {
+		t.Fatalf(`dial报错,err:%s`, err.Error())
+	}
+	PrintJson(conn)
+
 }
