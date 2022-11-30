@@ -1,0 +1,1344 @@
+{
+  "atype": 16,
+  "id": 189,
+  "begin_time": 1665417600,
+  "end_time": 1673884800,
+  "priority": 1,
+  "name": "新春狂欢",
+  "description": "新春狂欢",
+  "completeShow": true,
+  "sjb_crazy_data": {
+    "task": {
+      "name": "每日任务",
+      "id": 1,
+      "tasks": [
+        {
+          "id": 101,
+          "atype": 9,
+          "name": "累计消费300元宝",
+          "group_id": 101,
+          "count": 300,
+          "item_id": [
+            2004
+          ],
+          "rewards": [
+            {
+              "item_id": 50013,
+              "item_count": 2
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "atype": 8,
+          "name": "捕鱼累计获得5000000金币",
+          "group_id": 102,
+          "count": 500000,
+          "rewards": [
+            {
+              "item_id": 50013,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 103,
+          "atype": 8,
+          "name": "捕鱼累计获得10000000金币",
+          "group_id": 103,
+          "count": 1000000,
+          "rewards": [
+            {
+              "item_id": 50013,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 104,
+          "atype": 8,
+          "name": "捕鱼累计获得20000000金币",
+          "group_id": 104,
+          "count": 2000000,
+          "rewards": [
+            {
+              "item_id": 50013,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 105,
+          "atype": 8,
+          "name": "捕鱼累计获得50000000金币",
+          "group_id": 105,
+          "count": 5000000,
+          "rewards": [
+            {
+              "item_id": 50013,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 106,
+          "atype": 32,
+          "name": "当日夺宝10次",
+          "group_id": 106,
+          "count": 10,
+          "rewards": [
+            {
+              "virtual_id": 33,
+              "item_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    "huizhang": {
+      "name": "收集达人",
+      "id": 2,
+      "teams": [
+        {
+          "id": 1,
+          "name": "卡塔尔徽章",
+          "groupid": 1,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "荷兰徽章",
+          "groupid": 1,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "塞内加尔徽章",
+          "groupid": 1,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "厄瓜多尔徽章",
+          "groupid": 1,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "英格兰徽章",
+          "groupid": 2,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "name": "美国徽章",
+          "groupid": 2,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "伊朗徽章",
+          "groupid": 2,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "name": "威尔士徽章",
+          "groupid": 2,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "name": "阿根廷徽章",
+          "groupid": 3,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 10,
+          "name": "墨西哥徽章",
+          "groupid": 3,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 11,
+          "name": "波兰徽章",
+          "groupid": 3,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 12,
+          "name": "沙特徽章",
+          "groupid": 3,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 13,
+          "name": "法国徽章",
+          "groupid": 4,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 14,
+          "name": "丹麦徽章",
+          "groupid": 4,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 15,
+          "name": "突尼斯徽章",
+          "groupid": 4,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "name": "澳大利亚徽章",
+          "groupid": 4,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 17,
+          "name": "西班牙徽章",
+          "groupid": 5,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 18,
+          "name": "德国徽章",
+          "groupid": 5,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 19,
+          "name": "日本徽章",
+          "groupid": 5,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 20,
+          "name": "哥斯达黎加徽章",
+          "groupid": 5,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 21,
+          "name": "比利时徽章",
+          "groupid": 6,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "name": "克罗地亚徽章",
+          "groupid": 6,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "name": "摩洛哥徽章",
+          "groupid": 6,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "name": "加拿大徽章",
+          "groupid": 6,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "name": "巴西徽章",
+          "groupid": 7,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "name": "瑞士徽章",
+          "groupid": 7,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "name": "塞尔维亚徽章",
+          "groupid": 7,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 28,
+          "name": "喀麦隆徽章",
+          "groupid": 7,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 29,
+          "name": "葡萄牙徽章",
+          "groupid": 8,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "name": "乌拉圭徽章",
+          "groupid": 8,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1003,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 31,
+          "name": "韩国徽章",
+          "groupid": 8,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "name": "加纳徽章",
+          "groupid": 8,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            },
+            {
+              "item_id": 1002,
+              "item_count": 5
+            }
+          ]
+        }
+      ],
+      "group": [
+        {
+          "groupid": 1,
+          "teamsId": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 20000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ],
+          "limit": 10
+        },
+        {
+          "groupid": 2,
+          "teamsId": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 20000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "groupid": 3,
+          "teamsId": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 20000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "groupid": 4,
+          "teamsId": [
+            13,
+            14,
+            15,
+            16
+          ],
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 20000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "groupid": 5,
+          "teamsId": [
+            17,
+            18,
+            19,
+            20
+          ],
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 20000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "groupid": 6,
+          "teamsId": [
+            21,
+            22,
+            23,
+            24
+          ],
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 20000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "groupid": 7,
+          "teamsId": [
+            25,
+            26,
+            27,
+            28
+          ],
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 20000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "groupid": 8,
+          "teamsId": [
+            29,
+            30,
+            31,
+            32
+          ],
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 20000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        }
+      ],
+      "all": [
+        {
+          "week": 1,
+          "rewards": [
+            {
+              "item_id": 4041,
+              "item_count": 1
+            },
+            {
+              "item_id": 14029,
+              "item_count": 1
+            },
+            {
+              "item_id": 7004,
+              "item_count": 2
+            },
+            {
+              "item_id": 1002,
+              "item_count": 20
+            }
+          ]
+        },
+        {
+          "week": 2,
+          "rewards": [
+            {
+              "item_id": 4041,
+              "item_count": 1
+            },
+            {
+              "item_id": 14029,
+              "item_count": 1
+            },
+            {
+              "item_id": 7004,
+              "item_count": 2
+            },
+            {
+              "item_id": 1002,
+              "item_count": 20
+            }
+          ]
+        },
+        {
+          "week": 3,
+          "rewards": [
+            {
+              "item_id": 4042,
+              "item_count": 1
+            },
+            {
+              "item_id": 14030,
+              "item_count": 1
+            },
+            {
+              "item_id": 7004,
+              "item_count": 2
+            },
+            {
+              "item_id": 1002,
+              "item_count": 20
+            }
+          ]
+        },
+        {
+          "week": 4,
+          "rewards": [
+            {
+              "item_id": 4042,
+              "item_count": 1
+            },
+            {
+              "item_id": 14030,
+              "item_count": 1
+            },
+            {
+              "item_id": 7004,
+              "item_count": 2
+            },
+            {
+              "item_id": 1002,
+              "item_count": 20
+            }
+          ]
+        }
+      ]
+    },
+    "shop": {
+      "name": "新年福袋",
+      "id": 3,
+      "shops": [
+        {
+          "name": "积分福袋",
+          "id": 1,
+          "limit_count": 99,
+          "per": 500,
+          "need_yuanbao": 1280,
+          "items": [
+            {
+              "item_id": 7004,
+              "item_count": 1
+            },
+            {
+              "item_id": 1001,
+              "item_count": 10
+            },
+            {
+              "item_count": 10,
+              "virtual_id": 33
+            }
+          ]
+        },
+        {
+          "name": "徽章福袋",
+          "id": 2,
+          "limit_count": 3,
+          "need_yuanbao": 780,
+          "items": [
+            {
+              "item_id": 50014,
+              "item_count": 1
+            },
+            {
+              "item_id": 7002,
+              "item_count": 5
+            },
+            {
+              "item_id": 1001,
+              "item_count": 10
+            },
+            {
+              "item_id": 1002,
+              "item_count": 15
+            }
+          ]
+        },
+        {
+          "name": "窗花福袋",
+          "id": 3,
+          "limit_count": 3,
+          "need_yuanbao": 1280,
+          "items": [
+            {
+              "item_id": 50014,
+              "item_count": 2
+            },
+            {
+              "item_id": 7003,
+              "item_count": 2
+            },
+            {
+              "item_id": 1003,
+              "item_count": 15
+            },
+            {
+              "item_id": 1002,
+              "item_count": 20
+            }
+          ]
+        },
+        {
+          "name": "玉佩福袋",
+          "id": 4,
+          "limit_count": 3,
+          "need_yuanbao": 3280,
+          "items": [
+            {
+              "item_id": 50014,
+              "item_count": 4
+            },
+            {
+              "item_id": 7004,
+              "item_count": 3
+            },
+            {
+              "item_id": 1001,
+              "item_count": 20
+            },
+            {
+              "item_id": 1003,
+              "item_count": 30
+            }
+          ]
+        }
+      ]
+    },
+    "duobao": {
+      "name": "祈愿广场",
+      "id": 4,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 120
+        }
+      ],
+      "draw_items": [
+        {
+          "items": [
+            {
+              "item_id": 5,
+              "item_count": 30000
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "item_id": 15029,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "item_id": 5,
+              "item_count": 10000
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "item_id": 4007,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "weight": 150,
+          "items": [
+            {
+              "item_id": 50014,
+              "item_count": 2
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "item_id": 50013,
+              "item_count": 2
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "item_id": 1001,
+              "item_count": 10
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "item_id": 7002,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "item_id": 1002,
+              "item_count": 10
+            }
+          ]
+        }
+      ],
+      "rewards": [
+        {
+          "index": 1,
+          "need_score": 10,
+          "items": [
+            {
+              "item_id": 5,
+              "item_count": 40000
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "need_score": 35,
+          "items": [
+            {
+              "item_id": 7002,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "need_score": 80,
+          "items": [
+            {
+              "item_id": 7003,
+              "item_count": 2
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "need_score": 150,
+          "items": [
+            {
+              "item_id": 7003,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "need_score": 200,
+          "items": [
+            {
+              "item_id": 7004,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "need_score": 300,
+          "items": [
+            {
+              "item_id": 7004,
+              "item_count": 3
+            }
+          ]
+        }
+      ],
+      "lucky_scores": [
+        1000,
+        1001
+      ],
+      "huizhang_scores": [
+        8,
+        12
+      ]
+    },
+    "rank": {
+      "name": "心愿排行",
+      "id": 5,
+      "xinyun_rank": {
+        "rewards": [
+          {
+            "begin": 1,
+            "rewards": [
+              {
+                "item_id": 7004,
+                "item_count": 2
+              }
+            ]
+          },
+          {
+            "begin": 2,
+            "rewards": [
+              {
+                "item_id": 7004,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 3,
+            "rewards": [
+              {
+                "item_id": 7003,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 4,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 3
+              }
+            ]
+          },
+          {
+            "begin": 5,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 2
+              }
+            ]
+          },
+          {
+            "begin": 6,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 2
+              }
+            ]
+          },
+          {
+            "begin": 7,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 8,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 9,
+            "rewards": [
+              {
+                "item_id": 7001,
+                "item_count": 2
+              }
+            ]
+          },
+          {
+            "begin": 10,
+            "rewards": [
+              {
+                "item_id": 7001,
+                "item_count": 1
+              }
+            ]
+          }
+        ]
+      },
+      "leiji_rank": {
+        "rewards": [
+          {
+            "begin": 1,
+            "rewards": [
+              {
+                "item_id": 7004,
+                "item_count": 10
+              }
+            ]
+          },
+          {
+            "begin": 2,
+            "rewards": [
+              {
+                "item_id": 7004,
+                "item_count": 8
+              }
+            ]
+          },
+          {
+            "begin": 3,
+            "rewards": [
+              {
+                "item_id": 7004,
+                "item_count": 6
+              }
+            ]
+          },
+          {
+            "begin": 4,
+            "rewards": [
+              {
+                "item_id": 7004,
+                "item_count": 3
+              }
+            ]
+          },
+          {
+            "begin": 5,
+            "rewards": [
+              {
+                "item_id": 7003,
+                "item_count": 3
+              }
+            ]
+          },
+          {
+            "begin": 6,
+            "end": 8,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 4
+              }
+            ]
+          },
+          {
+            "begin": 9,
+            "end": 10,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 2
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "box": {
+      "box": [
+        {
+          "id": 50014,
+          "items": [
+            {
+              "items": [
+                {
+                  "item_id": 1001,
+                  "item_count": 100
+                }
+              ]
+            },
+            {
+              "items": [
+                {
+                  "item_id": 1002,
+                  "item_count": 100
+                }
+              ]
+            },
+            {
+              "items": [
+                {
+                  "item_id": 5,
+                  "item_count": 10000
+                }
+              ]
+            },
+            {
+              "weight": 1,
+              "items": [
+                {
+                  "item_id": 5,
+                  "item_count": 18000
+                }
+              ]
+            },
+            {
+              "weight": 3000,
+              "items": [
+                {
+                  "item_count": 1,
+                  "virtual_id": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 50013,
+          "items": [
+            {
+              "weight": 30,
+              "items": [
+                {
+                  "item_count": 1,
+                  "virtual_id": 2
+                }
+              ]
+            },
+            {
+              "weight": 30,
+              "items": [
+                {
+                  "item_id": 1002,
+                  "item_count": 100
+                }
+              ]
+            },
+            {
+              "items": [
+                {
+                  "item_id": 5,
+                  "item_count": 10000
+                }
+              ]
+            },
+            {
+              "items": [
+                {
+                  "item_id": 5,
+                  "item_count": 18000
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "fish": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}

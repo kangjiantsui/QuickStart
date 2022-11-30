@@ -1,0 +1,233 @@
+{
+  "task": {
+    "task_unix": 1669806827,
+    "task_items": [
+      {
+        "group_id": 201,
+        "count": 14350000,
+        "reward_ids": [
+          201,
+          202,
+          203
+        ]
+      },
+      {
+        "group_id": 301,
+        "count": 71
+      },
+      {
+        "group_id": 101,
+        "group_reward_count": 1,
+        "group_complete_count": 1
+      },
+      {
+        "group_id": 501,
+        "group_reward_count": 1,
+        "group_complete_count": 1
+      }
+    ]
+  },
+  "huizhang": {
+    "huizhang_unix": 1669654329,
+    "team": [
+      {
+        "id": 3,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 30,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 18,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 14,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 31,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 16,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 17,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 19,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 13,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 15,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 12,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 2,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 10,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 27,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 9,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 8,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 22,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 11,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 26,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 21,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 7,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 5,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 24,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 1,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 25,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 28,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 29,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 4,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 32,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 20,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 23,
+        "num": 1,
+        "rewarded": true
+      },
+      {
+        "id": 6,
+        "num": 1,
+        "rewarded": true
+      }
+    ],
+    "group": [
+      {
+        "id": 2,
+        "rewarded": true
+      },
+      {
+        "id": 3,
+        "rewarded": true
+      },
+      {
+        "id": 4,
+        "rewarded": true
+      },
+      {
+        "id": 1,
+        "rewarded": true
+      }
+    ]
+  },
+  "duobao": {
+    "duobao_unix": 1669737899,
+    "huizhang_score": 1205,
+    "box_count": {
+      "50015": 64,
+      "50016": 60,
+      "50017": 47,
+      "50018": 26,
+      "50019": 1,
+      "50020": 1,
+      "50021": 1,
+      "50022": 1
+    }
+  },
+  "rank": {
+    "lucky": {
+      "value": 9988,
+      "update_time": 1669737899
+    }
+  }
+}

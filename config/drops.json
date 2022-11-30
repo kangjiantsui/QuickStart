@@ -1,0 +1,481 @@
+{
+  "fish_drops": [
+    {
+      "fish_ids": [
+        110,
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        301,
+        302,
+        303,
+        304
+      ],
+      "drops": [
+        {
+          "item_id": 1001,
+          "per": 200,
+          "add_per": 1000,
+          "weight": 200,
+          "min_bag_count": 10,
+          "min_count": 1,
+          "max_count": 3
+        },
+        {
+          "item_id": 1002,
+          "per": 200,
+          "add_per": 500,
+          "weight": 100,
+          "min_bag_count": 3,
+          "min_count": 1,
+          "max_count": 2
+        },
+        {
+          "item_id": 1003,
+          "per": 200,
+          "add_per": 500,
+          "weight": 100,
+          "min_bag_count": 2,
+          "min_count": 1,
+          "max_count": 2
+        }
+      ]
+    }
+  ],
+  "activity_drops": [
+    {
+      "begin_time": 1626192000,
+      "end_time": 1629043200,
+      "fish_ids": [
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        301,
+        302,
+        303,
+        304,
+        901,
+        902,
+        903
+      ],
+      "item_id": 5003,
+      "per": 500,
+      "base_score": 10000,
+      "xxsc_drops": {
+        "begin_time": 1626192000,
+        "end_time": 1660579200,
+        "drop_limit_info": [
+          {
+            "seven_charge": 0,
+            "rate": 500,
+            "per_max_num": 10,
+            "today_max_limit": 150
+          },
+          {
+            "seven_charge": 5000,
+            "rate": 1000,
+            "per_max_num": 40,
+            "today_max_limit": 692
+          },
+          {
+            "seven_charge": 35000,
+            "rate": 1500,
+            "per_max_num": 80,
+            "today_max_limit": 892
+          },
+          {
+            "seven_charge": 50000,
+            "rate": 2000,
+            "per_max_num": 100,
+            "today_max_limit": 1412
+          },
+          {
+            "seven_charge": 210000,
+            "rate": 2500,
+            "per_max_num": 120,
+            "today_max_limit": 1712
+          },
+          {
+            "seven_charge": 350000,
+            "rate": 2800,
+            "per_max_num": 120,
+            "today_max_limit": 1712
+          },
+          {
+            "seven_charge": 99999999000,
+            "rate": 3000,
+            "per_max_num": 120,
+            "today_max_limit": 1712
+          }
+        ],
+        "seven_kill_info": {
+          "seven_gold": 1000000000,
+          "bei_shu": 2,
+          "start_id": 2
+        },
+        "today_drop_items": [
+          {
+            "id": 1,
+            "kill_gold": 680000,
+            "max_drop_limit": 4
+          },
+          {
+            "id": 2,
+            "kill_gold": 2050000,
+            "max_drop_limit": 12
+          },
+          {
+            "id": 3,
+            "kill_gold": 3400000,
+            "max_drop_limit": 20
+          },
+          {
+            "id": 4,
+            "kill_gold": 4050000,
+            "max_drop_limit": 24
+          },
+          {
+            "id": 5,
+            "kill_gold": 12500000,
+            "max_drop_limit": 74
+          },
+          {
+            "id": 6,
+            "kill_gold": 13200000,
+            "max_drop_limit": 82
+          },
+          {
+            "id": 7,
+            "kill_gold": 16500000,
+            "max_drop_limit": 94
+          },
+          {
+            "id": 8,
+            "kill_gold": 19200000,
+            "max_drop_limit": 110
+          },
+          {
+            "id": 9,
+            "kill_gold": 26000000,
+            "max_drop_limit": 150
+          },
+          {
+            "id": 10,
+            "kill_gold": 43000000,
+            "max_drop_limit": 250
+          },
+          {
+            "id": 11,
+            "kill_gold": 49500000,
+            "max_drop_limit": 290
+          },
+          {
+            "id": 12,
+            "kill_gold": 55000000,
+            "max_drop_limit": 320
+          },
+          {
+            "id": 13,
+            "kill_gold": 57000000,
+            "max_drop_limit": 332
+          },
+          {
+            "id": 14,
+            "kill_gold": 70050000,
+            "max_drop_limit": 412
+          },
+          {
+            "id": 15,
+            "kill_gold": 104000000,
+            "max_drop_limit": 611
+          },
+          {
+            "id": 16,
+            "kill_gold": 118000000,
+            "max_drop_limit": 692
+          },
+          {
+            "id": 17,
+            "kill_gold": 151000000,
+            "max_drop_limit": 892
+          },
+          {
+            "id": 18,
+            "kill_gold": 172000000,
+            "max_drop_limit": 1012
+          },
+          {
+            "id": 19,
+            "kill_gold": 239000000,
+            "max_drop_limit": 1412
+          },
+          {
+            "id": 20,
+            "kill_gold": 288880000,
+            "max_drop_limit": 1712
+          }
+        ],
+        "fish_ids": [
+          301,
+          302,
+          303,
+          304,
+          305,
+          901,
+          904,
+          907,
+          902,
+          905,
+          903,
+          910,
+          911,
+          912,
+          913,
+          914,
+          915,
+          916,
+          917,
+          918,
+          919,
+          920,
+          921,
+          922,
+          923,
+          924,
+          925,
+          926,
+          927,
+          928,
+          929,
+          930,
+          931,
+          932,
+          933,
+          934,
+          935,
+          936,
+          937,
+          938,
+          939,
+          940,
+          941,
+          942,
+          943,
+          944,
+          945,
+          946,
+          947,
+          948,
+          949,
+          950,
+          951,
+          952,
+          953,
+          954,
+          955,
+          956,
+          957,
+          958,
+          960,
+          961,
+          962,
+          963,
+          964,
+          965,
+          966,
+          967,
+          968
+        ],
+        "item_id": [
+          10001,
+          10002,
+          10003
+        ],
+        "item_choushui": 5000,
+        "per": 10000,
+        "paos": [
+          {
+            "min_pao": 300,
+            "max_pao": 1000,
+            "base_score": 30000,
+            "drops": [
+              {
+                "drop_num": -2,
+                "weight": 30
+              },
+              {
+                "drop_num": -1,
+                "weight": 40
+              },
+              {
+                "drop_num": 0,
+                "weight": 30
+              }
+            ]
+          },
+          {
+            "min_pao": 1000,
+            "max_pao": 10000,
+            "base_score": 30000,
+            "drops": [
+              {
+                "drop_num": -2,
+                "weight": 10
+              },
+              {
+                "drop_num": -1,
+                "weight": 20
+              },
+              {
+                "drop_num": 0,
+                "weight": 30
+              },
+              {
+                "drop_num": 1,
+                "weight": 20
+              },
+              {
+                "drop_num": 2,
+                "weight": 10
+              },
+              {
+                "drop_num": 3,
+                "weight": 7
+              },
+              {
+                "drop_num": 4,
+                "weight": 3
+              }
+            ]
+          },
+          {
+            "min_pao": 10000,
+            "max_pao": 50000,
+            "base_score": 60000,
+            "drops": [
+              {
+                "drop_num": -4,
+                "weight": 2
+              },
+              {
+                "drop_num": -3,
+                "weight": 3
+              },
+              {
+                "drop_num": -2,
+                "weight": 5
+              },
+              {
+                "drop_num": -1,
+                "weight": 15
+              },
+              {
+                "drop_num": 0,
+                "weight": 5
+              },
+              {
+                "drop_num": 1,
+                "weight": 15
+              },
+              {
+                "drop_num": 2,
+                "weight": 20
+              },
+              {
+                "drop_num": 3,
+                "weight": 15
+              },
+              {
+                "drop_num": 4,
+                "weight": 8
+              },
+              {
+                "drop_num": 5,
+                "weight": 4
+              },
+              {
+                "drop_num": 6,
+                "weight": 3
+              },
+              {
+                "drop_num": 7,
+                "weight": 3
+              },
+              {
+                "drop_num": 8,
+                "weight": 2
+              }
+            ]
+          },
+          {
+            "min_pao": 50000,
+            "max_pao": 100001,
+            "base_score": 100000,
+            "drops": [
+              {
+                "drop_num": -4,
+                "weight": 2
+              },
+              {
+                "drop_num": -3,
+                "weight": 3
+              },
+              {
+                "drop_num": -2,
+                "weight": 5
+              },
+              {
+                "drop_num": -1,
+                "weight": 15
+              },
+              {
+                "drop_num": 0,
+                "weight": 5
+              },
+              {
+                "drop_num": 1,
+                "weight": 15
+              },
+              {
+                "drop_num": 2,
+                "weight": 20
+              },
+              {
+                "drop_num": 3,
+                "weight": 15
+              },
+              {
+                "drop_num": 4,
+                "weight": 8
+              },
+              {
+                "drop_num": 5,
+                "weight": 4
+              },
+              {
+                "drop_num": 6,
+                "weight": 3
+              },
+              {
+                "drop_num": 7,
+                "weight": 3
+              },
+              {
+                "drop_num": 8,
+                "weight": 2
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

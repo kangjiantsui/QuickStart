@@ -1,0 +1,425 @@
+{
+  "activity_id": 189,
+  "id": 2,
+  "rewards": {
+    "reward_items": [
+      {
+        "item_id": 50015,
+        "item_count": "8",
+        "expire_time": 0,
+        "virtual_id": 0
+      },
+      {
+        "item_count": "40",
+        "virtual_id": 33,
+        "item_id": 0,
+        "expire_time": 0
+      },
+      {
+        "item_id": 7003,
+        "item_count": "1",
+        "expire_time": 0,
+        "virtual_id": 0
+      },
+      {
+        "item_id": 1001,
+        "item_count": "20",
+        "expire_time": 0,
+        "virtual_id": 0
+      }
+    ],
+    "reward_box_items": [
+      {
+        "item_id": 1001,
+        "item_count": "10",
+        "expire_time": 0,
+        "virtual_id": 0
+      },
+      {
+        "item_count": "1",
+        "virtual_id": 4,
+        "item_id": 0,
+        "expire_time": 0
+      },
+      {
+        "item_count": "1",
+        "virtual_id": 5,
+        "item_id": 0,
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "item_id": 5,
+        "item_count": "100000",
+        "expire_time": 0,
+        "virtual_id": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "item_id": 5,
+        "item_count": "100000",
+        "expire_time": 0,
+        "virtual_id": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      },
+      {
+        "virtual_id": 33,
+        "item_id": 0,
+        "item_count": "0",
+        "expire_time": 0
+      }
+    ],
+    "lucky_scores": []
+  }
+}
