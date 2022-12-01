@@ -1,8 +1,8 @@
 package codec
 
 import (
-	"QuickStart/go/common"
-	"QuickStart/go/net/tcp"
+	"QuickStart/go/tcpclient/common"
+	"QuickStart/go/tcpclient/net/tcp"
 	"bytes"
 	"encoding/binary"
 	"errors"
