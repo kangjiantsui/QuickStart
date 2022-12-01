@@ -1,6 +1,16 @@
 {
 	"@Tool": "github.com/davyxu/tabtoy",
 	"@Version": "3.1.4",
+	"ActivityConfig": [
+		{
+			"AType": 16,
+			"ActivityID": 189,
+			"BeginTime": 1665417600,
+			"CompleteShow": true,
+			"EndTime": 1673884800,
+			"Name": "新春狂欢"
+		}
+	],
 	"MyData": [
 		{
 			"ID": 1,

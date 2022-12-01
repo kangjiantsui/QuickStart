@@ -37,11 +37,9 @@ func loadAllTable() {
 }
 
 func TestShowTableData(t *testing.T) {
-	utils.PrintJson(Tab.MyData)
+	utils.PrintJson(Tab.ActivityConfig)
 }
 
-func TestAType(t *testing.T) {
-	utils.PrintJson(data.ATypeEnumValues)
-	utils.PrintJson(data.AType_NewYearCrazy)
-	t.Log(data.AType(16))
+func TestEnum(t *testing.T) {
+
 }

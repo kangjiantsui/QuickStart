@@ -10,25 +10,32 @@ type TableEnumValue struct {
 	Index int32
 }
 
-type AType int32
+type Atype int32
 
 const (
-	AType_SJBCrazy     = 15 // 世界杯狂欢
-	AType_NewYearCrazy = 16 // 新春狂欢
+	Atype_NewYearCrazy = 16 // 新春狂欢
 )
 
 var (
-	ATypeEnumValues = []TableEnumValue{
-		{Name: "SJBCrazy", Index: 15},     // 世界杯狂欢
+	AtypeEnumValues = []TableEnumValue{
 		{Name: "NewYearCrazy", Index: 16}, // 新春狂欢
 	}
-	ATypeMapperValueByName = map[string]int32{}
-	ATypeMapperNameByValue = map[int32]string{}
+	AtypeMapperValueByName = map[string]int32{}
+	AtypeMapperNameByValue = map[int32]string{}
 )
 
-func (self AType) String() string {
-	name, _ := ATypeMapperNameByValue[int32(self)]
+func (self Atype) String() string {
+	name, _ := AtypeMapperNameByValue[int32(self)]
 	return name
+}
+
+type ActivityConfig struct {
+	ActivityID   int32  `tb_name:"活动ID"`
+	AType        Atype  `tb_name:"活动类型"`
+	BeginTime    int32  `tb_name:"开始时间"`
+	EndTime      int32  `tb_name:"结束时间"`
+	Name         string `tb_name:"名称"`
+	CompleteShow bool   `tb_name:"完成后显示"`
 }
 
 type MyData struct {
@@ -38,9 +45,11 @@ type MyData struct {
 
 // Combine struct
 type Table struct {
-	MyData []*MyData // table: MyData
+	ActivityConfig []*ActivityConfig // table: ActivityConfig
+	MyData         []*MyData         // table: MyData
 
 	// Indices
+	ActivityConfigByActivityID map[int32]*ActivityConfig `json:"-"` // table: ActivityConfig
 
 	// Handlers
 	postHandlers []func(*Table) error `json:"-"`
@@ -159,10 +168,22 @@ func NewTable() *Table {
 		resetHandler: make(map[string]func()),
 	}
 
+	self.indexHandler["ActivityConfig"] = func() {
+
+		for _, v := range self.ActivityConfig {
+			self.ActivityConfigByActivityID[v.ActivityID] = v
+		}
+	}
+
 	self.indexHandler["MyData"] = func() {
 
 	}
 
+	self.resetHandler["ActivityConfig"] = func() {
+		self.ActivityConfig = nil
+
+		self.ActivityConfigByActivityID = map[int32]*ActivityConfig{}
+	}
 	self.resetHandler["MyData"] = func() {
 		self.MyData = nil
 
@@ -175,9 +196,9 @@ func NewTable() *Table {
 
 func init() {
 
-	for _, v := range ATypeEnumValues {
-		ATypeMapperValueByName[v.Name] = v.Index
-		ATypeMapperNameByValue[v.Index] = v.Name
+	for _, v := range AtypeEnumValues {
+		AtypeMapperValueByName[v.Name] = v.Index
+		AtypeMapperNameByValue[v.Index] = v.Name
 	}
 
 }
