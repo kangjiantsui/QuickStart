@@ -1,14 +1,15 @@
 package table
 
 import (
-	_go "QuickStart/go"
+	"QuickStart/go/utils"
+	"QuickStart/tabtoy/data"
 	"fmt"
 	tabtoy "github.com/davyxu/tabtoy/v3/api/golang"
 	"os"
 	"testing"
 )
 
-var Tab *Table
+var Tab *data.Table
 
 func init() {
 	loadAllTable()
@@ -16,18 +17,18 @@ func init() {
 
 // 一次性加载所有表
 func loadAllTable() {
-	Tab = NewTable()
+	Tab = data.NewTable()
 	// 表加载前清除之前的手动索引和表关联数据
-	Tab.RegisterPreEntry(func(tab *Table) error {
+	Tab.RegisterPreEntry(func(tab *data.Table) error {
 		fmt.Println("tab pre load clear")
 		return nil
 	})
 	// 表加载和构建索引后，需要手动处理数据的回调
-	Tab.RegisterPostEntry(func(tab *Table) error {
+	Tab.RegisterPostEntry(func(tab *data.Table) error {
 		fmt.Println("tab post load done")
 		return nil
 	})
-	err := tabtoy.LoadFromFile(Tab, "table_gen.json")
+	err := tabtoy.LoadFromFile(Tab, "./data/table_gen.json")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -36,5 +37,11 @@ func loadAllTable() {
 }
 
 func TestShowTableData(t *testing.T) {
-	_go.PrintJson(Tab.MyData)
+	utils.PrintJson(Tab.MyData)
+}
+
+func TestAType(t *testing.T) {
+	utils.PrintJson(data.ATypeEnumValues)
+	utils.PrintJson(data.AType_NewYearCrazy)
+	t.Log(data.AType(16))
 }

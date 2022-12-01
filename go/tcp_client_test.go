@@ -4,6 +4,7 @@ import (
 	"QuickStart/go/common"
 	"QuickStart/go/net/codec"
 	"QuickStart/go/net/tcp"
+	"QuickStart/go/utils"
 	"encoding/binary"
 	"net"
 	"testing"
@@ -15,7 +16,7 @@ func TestTcpClient(t *testing.T) {
 		t.Fatalf(`dial报错,err:%s`, err.Error())
 	}
 	session := tcp.NewSession(conn, tcp.Session_type_tcp, tcp.NewMsgParser(), &codec.ProtoClientProtocol{Endian_: binary.BigEndian}, 100)
-	PrintJson(session)
+	utils.PrintJson(session)
 	err = session.Send(&common.ProtocolClientHead{
 		Uid_:    100,
 		Seq_:    100,
