@@ -43,10 +43,15 @@ type MyData struct {
 	Name string `tb_name:"名称"`
 }
 
+type BaseConfig struct {
+	ServerIP string `tb_name:"服务器IP"`
+}
+
 // Combine struct
 type Table struct {
 	ActivityConfig []*ActivityConfig // table: ActivityConfig
 	MyData         []*MyData         // table: MyData
+	BaseConfig     []*BaseConfig     // table: BaseConfig
 
 	// Indices
 	ActivityConfigByActivityID map[int32]*ActivityConfig `json:"-"` // table: ActivityConfig
@@ -57,6 +62,11 @@ type Table struct {
 
 	indexHandler map[string]func() `json:"-"`
 	resetHandler map[string]func() `json:"-"`
+}
+
+// table: BaseConfig
+func (self *Table) GetKeyValue_BaseConfig() *BaseConfig {
+	return self.BaseConfig[0]
 }
 
 // 注册加载后回调(用于构建数据)
@@ -179,6 +189,10 @@ func NewTable() *Table {
 
 	}
 
+	self.indexHandler["BaseConfig"] = func() {
+
+	}
+
 	self.resetHandler["ActivityConfig"] = func() {
 		self.ActivityConfig = nil
 
@@ -186,6 +200,10 @@ func NewTable() *Table {
 	}
 	self.resetHandler["MyData"] = func() {
 		self.MyData = nil
+
+	}
+	self.resetHandler["BaseConfig"] = func() {
+		self.BaseConfig = nil
 
 	}
 

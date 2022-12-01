@@ -41,5 +41,9 @@ func TestShowTableData(t *testing.T) {
 }
 
 func TestEnum(t *testing.T) {
+	utils.PrintJson(data.AtypeMapperNameByValue)
+}
 
+func TestKVConfig(t *testing.T) {
+	utils.PrintJson(Tab.BaseConfig)
 }

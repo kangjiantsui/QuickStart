@@ -11,6 +11,11 @@
 			"Name": "新春狂欢"
 		}
 	],
+	"BaseConfig": [
+		{
+			"ServerIP": "127.0.0.1"
+		}
+	],
 	"MyData": [
 		{
 			"ID": 1,
