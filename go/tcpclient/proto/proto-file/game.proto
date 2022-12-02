@@ -1,0 +1,1601 @@
+syntax = "proto3";
+import "base.proto";
+import "login.proto";
+import "user_data.proto";
+import "activity.proto";
+
+package ProtoMsg;
+
+//SVR_MSG_GAME_LOGIN
+message PbSvrGameLoginReqMsg {
+  PbCsPlayerLoginReqMsg login_req = 1;
+  bool online = 2;
+  string ip = 3;
+};
+
+//CS_MSG_GAME_ENTER_ROOM
+message PbCsGameEnterRoomReqMsg {
+  int32 room_type = 1;
+  bool enter = 2; //进入还是退出
+  bool ready = 3;//获取数据
+  uint64 match_room_id = 4; //如果是比赛场加入，这里是比赛场id就行了
+};
+
+message PbCsGameEnterRoomResMsg {
+  Ret ret = 1;
+  bool enter = 2;
+  int32 room_type = 3;
+  bool    ready = 4;
+  int32 cur_scene_id = 5;
+  int32 time_offset = 6;
+  repeated PBRoomFishInfo fish_ids = 7;
+  repeated PBRoomPlayerBaseInfo room_players = 8; //房间内玩家
+  repeated PBRoomUseItemInfo use_items = 11; //当前场景里使用的道具
+  int32 last_scene_id = 12;
+  int64 enter_need_gold = 13; //金币不够时，返回进入房间的金币限制数量
+  int32 today_score_room_time = 14; //本日积分场时间（秒）
+  repeated PBPlayerCollectRoomDrawItem draw_info = 15; //炮数抽奖信息
+  repeated PBDrawConfigInfo   draw_config_info = 16; //炮数抽奖的配置
+  PBPlayerXjdbRoomItem xjdb_room = 17; //如果是星际夺宝，会存在此字段
+  int64 total_fire_gold = 18; //总使用金币
+  repeated PBUnlockPaoBeiItem unlock_paobei_cfg = 19; //解锁炮倍的配置
+
+  PBRedBlueRoomInfo redblue_room_info = 20; //红蓝争霸的房间信息
+  PBRedBluePlayerInfo redblue_self_info = 21; //红蓝争霸自己的信息
+
+  repeated PBGetItem extern_reward_items = 22; //房间期间额外获取道具
+
+  uint64 match_room_id = 23; //比赛场房间id
+  int64  last_scene_sum_time = 24;   //  上一个剧本总时间
+  PBRoomDeskInfo desk_info = 25;    //桌子信息 （目前只有boss觉醒）  xlh
+
+  //世界boss相关
+  PBPlayerWorldBossClientInfo   world_boss_info = 26;
+
+  PBRoomFishInfo      last_call_boss = 28;
+  PBWorldMatchRoomInfo  match_room_info = 29;
+  int32 enter_need_vip = 30; //vip不够时，返回进入房间的vip等级
+  repeated PBGetItem enter_need_items = 31; //道具不够，返回进入房间的道具
+};
+
+//CS_MSG_GAME_BAG_BUY_ITEM
+message PbCsGameBagBuyItemReqMsg {
+  int32 item_id = 1;
+  int64 count = 2;
+};
+
+message PbCsGameBagBuyItemResMsg {
+  Ret ret = 1;
+  repeated PBPlayerItem items = 2; //最新的金币，钻石以及购买后的物品数量
+};
+
+//CS_MSG_GAME_BAG_ZENGSONG
+message PbCsGameBagZengSongReqMsg {
+  int32 item_id = 1;
+  int64 count = 2;
+  uint64 zs_uid = 3;
+};
+
+message PbCsGameBagZengSongResMsg {
+  Ret ret = 1;
+  int32 item_id = 2;
+  int64 count = 3;
+  uint64 zs_uid = 4;
+  PBPlayerItem items = 5;
+};
+
+//CS_MSG_GAME_BROAD_ITEM
+message PbCsPlayerItemsBroadMsg {
+  emBroadType broad_type = 1;
+  repeated PBPlayerItem items = 2;
+  int32 exp_lv = 3;
+};
+
+//CS_MSG_GAME_UPDATE_GUIDE_STEP step++操作 除了前端类的页面操作，后端都会校验
+message PbCsGameUpdateGuideStepReqMsg {
+};
+
+message PbCsGameUpdateGuideStepResMsg {
+  Ret ret = 1;
+  int32 cur_step = 2;
+};
+
+//SVR_MSG_GAME_NEW_MAIL
+message PBSvrGameNewMailReqMsg {
+  repeated PBMailItem mails = 2;
+}
+
+//SVR_MSG_GAME_NEW_SYS_MAIL
+message PBSvrGameNewSysMailMsg {
+  PBSysMailItem sys_mail = 1;
+}
+
+//CS_MSG_GAME_PLAYER_LOGIN_MAIL 邮件下发
+message PbCsGamePlayerMailMsg {
+  bool login = 1;
+  repeated PBMailItem mails = 2;
+}
+
+//CS_MSG_GAME_PLAYER_READ_MAIL //读邮件
+message PbCsGamePlayerReadMailReqMsg {
+  uint64 mail_id = 1;
+};
+
+message PbCsGamePlayerReadMailResMsg {
+  Ret ret = 1;
+};
+
+//CS_MSG_GAME_PLAYER_ATTACH_MAIL  //领取邮件
+message PbCsGamePlayerAttachMailReqMsg {
+  uint64 mail_id = 1; //如果mail_id 传0，则表示全部领取
+};
+
+message PbCsGamePlayerAttachMailResMsg {
+  Ret ret = 1;
+  uint64 mail_id = 2; //如果是批量领取，返回0
+  PBGetItemInfo attachs = 3; //所有附件
+};
+
+//CS_MSG_GAME_PLAYER_DEL_MAIL //删除邮件
+message PbCsGamePlayerDelMailReqMsg {
+  uint64 mail_id = 1; //如果mail_id 传0，则表示全部删除（有附件未领取的不删除）
+};
+
+message PbCsGamePlayerDelMailResMsg {
+  Ret ret = 1;
+};
+
+//CS_MSG_GAME_EQUIP_PAO_ITEM
+message PbCsGameEquipPaoItemReqMsg {
+  int32 pao_item = 1;
+  emEquipType equip_type = 2;
+};
+
+message PbCsGameEquipPaoItemResMsg {
+  Ret ret = 1;
+  int32 pao_item = 2;
+  emEquipType equip_type = 3;
+};
+
+//CS_MSG_GAME_GET_PLAYER_INFO
+message PbCsGameGetPlayerInfoReqMsg {
+  uint64 uid = 1;
+};
+
+message PbCsGameGetPlayerInfoResMsg {
+  Ret ret = 1;
+  PBPlayerShowInfo info = 2; //玩家信息
+};
+
+
+//SVR_MSG_GAME_PLAYER_PROP_SYNC 玩家属性或者是道具数量变化的同步
+message PBSvrGamePlayerPropSyncReqMsg {
+  uint32   send_req = 1;
+  repeated PBSvrPlayerPropItem items = 2;  //属性
+  PBPlayerTaskInfo do_tasks = 3;          //任务
+  repeated PBPlayerAchievementItem do_achievements = 4; //成就
+
+  int32 season_manual_id = 5; //赛季手册id,防止更新了
+  int32 season_manual_viplv = 6;
+  int32 season_manual_active_buy_count = 7;
+  repeated PBPlayerSeasonManualTaskItem season_manual_tasks = 8; //赛季手册任务
+  repeated PBGamePlayerActivitySyncItem activity_items = 9;  //活动同步数据
+
+  repeated PBPlayerAchievementNofityItem achievements_notify_items = 10; //成就通知项
+};
+
+message PBSvrGamePlayerPropSyncResMsg {
+  uint32   send_req = 1;
+};
+
+//SVR_MSG_GAME_ADD_PROP_ITEM
+message PBSvrGamePlayerAddPropItemReqMsg {
+  uint32   send_req = 1;
+  repeated PBSvrPlayerPropItem items = 2;  //属性
+  bool offline_write_db = 3; //如果不在线是否写入db
+};
+
+message PBSvrGamePlayerAddPropItemResMsg {
+  uint32   send_req = 1;
+};
+
+//CS_MSG_GAME_SEND_PLAYER_ROUND_PLATE_INFO
+message PbCsSendPlayerRoundPlateInfo{
+  Ret                     ret = 1;
+  uint32 total_login_days = 2;
+  uint32 rest_round_plate_times = 3;
+}
+
+
+//CS_MSG_GAME_ON_RECHARGE
+message PbCsSendPlayerOnRechargeMsg{
+  Ret                     ret = 1;
+  PBPlayerOrderInfo rInfo = 2;
+}
+
+message PbCsRoundPlateReqMsg{
+}
+
+message PbCsRoundPlateResMsg{
+  Ret ret = 1;
+  int32   awardIndex = 2;
+}
+
+//CS_MSG_GAME_GET_ZHENG_DIAN_REWARD_LIST
+message PbCsGameGetZhengDianRewardListReqMsg {
+};
+
+message PbCsGameGetZhengDianRewardListResMsg {
+  Ret ret = 1;
+  repeated PBRewardZhengDianInfo info = 2; //列表信息
+};
+
+//CS_MSG_GAME_TAKE_ZHENG_DIAN_REWARD
+message PbCsGameTakeZhengDianRewardReqMsg {
+  int32 list_id = 1;
+};
+
+message PbCsGameTakeZhengDianRewardResMsg {
+  Ret ret = 1;
+  int32 list_id = 2;//列表id
+  int32 item_id = 3;//增量类型
+  int32 item_count = 4;//增量数目
+};
+
+//CS_MSG_GAME_DOLE_LEFT_COUNT
+message PbCsGameDoleLeftCountReqMsg {
+};
+
+message PbCsGameDoleLeftCountResMsg {
+  Ret ret = 1;
+  int32 left_count = 2;//剩余次数
+};
+
+//CS_MSG_GAME_TAKE_DOLE
+message PbCsGameTakeDoleReqMsg {
+};
+
+message PbCsGameTakeDoleResMsg {
+  Ret ret = 1;
+  int32 item_id = 2;//救济金类型
+  int32 item_count = 3;//救济金增量
+  int32 left_count = 4;//剩余次数
+};
+
+//CS_MSG_GAME_YESTERDAY_KILLED_GOLD
+message PbCsGameYesterdayKilledGoldReqMsg {
+};
+
+message PbCsGameYesterdayKilledGoldResMsg {
+  Ret ret = 1;
+  uint64 gold_count = 2;//击落的金币
+  int32 lottery_count = 3;//返的奖券
+  bool hastake = 4;//true:已领取，false:未领取
+  string date = 5;//日期
+  uint64 today_gold_count = 6; //今日击落的金币
+};
+
+//CS_MSG_GAME_YESTERDAY_KILLED_LOTTERY
+message PbCsGameYesterdayKilledLotteryReqMsg {
+};
+
+message PbCsGameYesterdayKilledLotteryResMsg {
+  Ret ret = 1;
+  int32 left_lottery = 2;//现在身上的奖券
+};
+
+//SVR_MSG_GAME_BAG_ZENGSONG
+message PBSvrGameBagZengSongReqMsg {
+  PbCsGameBagZengSongReqMsg cli_req = 1;
+  PBUserInfo zengsong_recver = 2;
+}
+
+message PBSvrGameBagZengSongResMsg {
+  PbCsGameBagZengSongResMsg cli_res = 1;
+  PBUserInfo zengsong_recver = 2;
+}
+
+//CS_MSG_GAME_EXCHANGE_BY_LOTTERY
+message PbCsGameExchangeByLotteryReqMsg {
+  int32 exchange_id = 1;//兑换ID
+  int32 quantity = 2;//兑换数量
+  PBExchangeAddress address = 3;
+  int32 from = 4; // 0、兑换商城 1、话费券活动
+};
+message PbCsGameExchangeByLotteryResMsg {
+  Ret ret = 1;
+  int32 exchange_id = 2;//剩余奖券
+  int32 quantity = 3;//兑换数量
+  repeated PBGetItem update_items = 4; //兑换后商品的数量
+};
+
+//CS_MSG_GAME_EXCHANGE_RECORD
+message PbCsGameExchangeRecordReqMsg {
+};
+message PbCsGameExchangeRecordResMsg {
+  Ret ret = 1;
+  repeated PBExchangeRecord record = 2;
+};
+
+//CS_MSG_GAME_EXCHANGE_ADD_INFO
+message PbCsGameExchangeAddInfoReqMsg {
+  // string name = 1;//姓名
+  // string phone = 2;//手机号
+  // string address = 3;//地址
+  // int32 sex = 4;//性别
+  PBExchangeAddress address = 1;
+};
+message PbCsGameExchangeAddInfoResMsg {
+  Ret ret = 1;
+};
+
+//CS_MSG_GAME_EXCHANGE_GET_INFO
+message PbCsGameExchangeGetInfoReqMsg {
+};
+message PbCsGameExchangeGetInfoResMsg {
+  Ret ret = 1;
+  // string name = 2;//姓名
+  // string phone = 3;//手机号
+  // string address = 4;//地址
+  // int32 sex = 5;//性别
+  PBExchangeAddress address = 2;
+};
+
+//SVR_MSG_GAME_PLAYER_RECHARGE
+message PBSvrGamePlayerRechargeMsg{
+  PBPlayerOrderInfo rinfo = 1;
+  bytes  extern_info = 2;
+}
+
+
+//CS_MSG_GAME_SHOP_PURCHASE
+message PbCsGamePlayerShopPurchaseMsg {
+  Ret ret = 1;
+  PBPlayerOrderInfo order_info = 3;
+  PBPlayerBuyItem   buy_item_info = 4;
+
+  int32  pay_pao2 = 5; //新积分房炮倍
+  int32 dtfishFirstBuyStatus = 6; //大厅捕鱼购买的首次购买信息
+  bytes dtfish_vipinfo = 48; //大厅捕鱼vip信息
+}
+
+//CS_MSG_GAME_FIRST_RECHARGE_PACKET
+message PbCsGamePlayerFirstRechargePacketMsg {
+  Ret ret = 1;
+  int32 flag = 2;
+}
+//CS_MSG_GAME_DANTOU_RANKING_LIST
+message PbCsGameDanTouRankingListReqMsg {
+  int32 type_id = 1;//14:白金弹头 13:黄金弹头 12:白银弹头 11:青铜弹头
+};
+message PbCsGameDanTouRankingListResMsg {
+  Ret ret = 1;
+  repeated PBDanTouRank list = 2;//排行榜
+  string self_name = 3;//自己的姓名
+  string self_count = 4;//自己的弹头数量
+  string self_ranking = 5;//自己的排名
+};
+
+//CS_MSG_GAME_UPDATE_CONFIG_BROAD
+message PBCsGameUpdateConfigBroadMsg {
+
+}
+
+//CS_MSG_GAME_NEW_ANNOUNCEMENT
+message PBCsGameNewAnnouncementBroadMsg {
+  PBSysAnnouncementItem item = 1;
+}
+
+//CS_MSG_GAME_SHOP_DAILY_PACKET
+message PbCsGamePlayerShopDailyPacketReqMsg {
+  int32 item_id = 1;
+}
+
+message PbCsGamePlayerShopDailyPacketResMsg {
+  Ret ret = 1;
+  PBPlayerBuyItem buy_item_info = 2;
+  repeated PBGetItem items = 3;
+}
+
+//CS_MSG_GAME_ONCE_YAOYIYAO
+message PbCsGamePlayerOnceYaoyiyaoReqMsg {
+  int32 item_id = 1;
+}
+
+message PbCsGamePlayerOnceYaoyiyaoResMsg {
+  Ret ret = 1;
+  PBPlayerBuyItem buy_info = 2;
+}
+
+//CS_MSG_GAME_ADD_YAOYIYAO
+message PbCsGamePlayerAddYaoyiyaoReqMsg {
+  int32 item_id = 1;
+}
+
+message PbCsGamePlayerAddYaoyiyaoResMsg {
+  Ret ret = 1;
+  PBPlayerBuyItem buy_item_info = 2;
+}
+
+// CS_MSG_GAME_BROAD_MARQUEE
+message PBCsGameMarqueeBroadMsg {
+  int32 level = 1; // 级别
+  string contents = 2; // 内容
+  int32 play_second = 3;// 播放x秒
+}
+
+//SVR_MSG_GAME_UPLOAD_ROOM_INFO
+message PBRoomNumInfo {
+  int32 room_type = 1;
+  int32 player_count = 2;
+}
+
+message PBSvrGameUploadRoomInfoMsg{
+  int32    room_svr_id = 1;
+  repeated PBRoomNumInfo room_num_info = 2;
+}
+
+//CS_MSG_GAME_SEND_SHARE_INFO
+message PbCsGamePlayerSendShareInfoMsg {
+  repeated uint64 uid_arr = 1;  //兼容老版本，弃用
+  repeated int32  award_arr = 2; //兼容老版本，弃用
+  repeated PBShareInfoItem share_item_arr = 3;
+}
+
+//CS_MSG_GAME_SEND_SHARE_NOTIFY
+message PbCsGamePlayerSendShareNotifyMsg {
+  uint64 invited_uid = 1; //兼容老版本，弃用
+  PBShareInfoItem share_item = 2;
+}
+
+//CS_MSG_GAME_GET_SHARE_AWARDS
+message PbCsGamePlayerGetShareAwardsReqMsg {
+  int32 award_id = 1; //兼容老版本，弃用
+  uint64  reward_uid = 2; //领取奖励的uid，0则表示一键领取
+}
+
+message PbCsGamePlayerGetShareAwardsResMsg {
+  Ret ret = 1;
+  repeated PBGetItem items = 2;
+  int32 award_id = 3;
+  uint64  reward_uid = 4; //领取奖励的uid，0则表示一键领取
+}
+
+//CS_MSG_GAME_DEBRIS_COMPOSE_LIST
+message PbCsGameDebrisComposeListMsg {
+  repeated DebrisComposeItem list = 1;
+}
+
+//CS_MSG_GAME_DEBRIS_COMPOSE
+message PbCsGameDebrisComposeReqMsg {
+  int32 dst_item_id = 1;
+  int64 dst_item_count = 2;
+}
+
+message PbCsGameDebrisComposeResMsg {
+  Ret ret = 1;
+  DebrisComposeItem item = 2;
+}
+
+//CS_MSG_GAME_GUIDE_UPLOAD
+message PBCsGameGuideUploadReqMsg {
+  emGuideType guide_type = 1;
+}
+
+message PBCsGameGuideUploadResMsg {
+  Ret ret = 1;
+  emGuideType guide_type = 2;
+  repeated PBGetItem reward = 3; //奖励
+}
+
+// CS_MSG_GAME_ACTIVITY_START_BROAD
+message PBCsGameActivityStartBroadMsg {
+  repeated PBClientActivityInfo activities = 1;
+}
+
+// CS_MSG_GAME_ACTIVITY_END_BROAD
+message PBCsGameActivityEndBroadMsg {
+  int32 activity_id = 1;
+}
+
+// CS_MSG_GAME_ACTIVITY_PHONE_BILL_GET
+message PBCsGameActivityPhoneBillGetReqMsg {
+  int32 activity_id = 1;
+}
+
+message PBCsGameActivityPhoneBillGetResMsg {
+  Ret ret = 1;
+}
+
+// CS_MSG_GAME_ACTIVITY_PUBLIC_NUMBER_GET
+message PBCsGameActivityPublicNumberGetReqMsg {
+  int32 activity_id = 1;
+}
+
+message PBCsGameActivityPublicNumberGetResMsg {
+  Ret ret = 1;
+}
+
+// CS_MSG_GAME_ACTIVITY_PUBLIC_NUMBER_REWARD
+message PBCsGameActivityPublicNumberRewardReqMsg {
+  int32 activity_id = 1;
+}
+
+message PBCsGameActivityPublicNumberRewardResMsg {
+  Ret ret = 1;
+  repeated PBGetItem reward_items = 2;
+}
+
+//CS_MSG_GAME_ITEM_BAG_FULL_BROAD
+message PBCsGameItemBagFullBroadMsg {
+  int32 item_id = 1;
+  int64 limit_count = 2;
+}
+
+//CS_MSG_GAME_ACTIVITY_VIP_AUTHEN
+message PBCsGameActivityVipAuthenReqMsg {
+  int32 activity_id = 1;
+  PBVipAuthenInfo vip_authen_info = 2;
+}
+
+message PBCsGameActivityVipAuthenResMsg {
+  Ret ret = 1;
+}
+
+//CS_MSG_GAME_ACTIVITY_VIP_AUTHEN_REWARD
+message PBCsGameActivityVipAuthenRewardReqMsg {
+  int32 activity_id = 1;
+}
+
+message PBCsGameActivityVipAuthenRewardResMsg {
+  Ret ret = 1;
+  repeated PBGetItem reward_items = 2;
+}
+
+//CS_MSG_GAME_ACTIVITY_UPDATE_BROAD
+message PBCsGameActivityUpdateBroadMsg {
+  PBActivityInfo    config_info = 1;
+}
+
+//CS_MSG_GAME_HAIWANGZHENGBA_GET_RANK
+message PBCsGameHaiWangZhengBaGetRankReqMsg {
+  emHaiWangZhengBaRankType rtype = 1;
+  uint32 count = 2;
+  repeated uint32 other_rank_arr = 3; //其他名次的信息
+}
+
+message PBCsGameHaiWangZhengBaGetRankResMsg {
+  Ret ret = 1;
+  repeated PBHaiWangZhengBaRankInfo rank_arr = 2;
+  repeated PBHaiWangZhengBaRankTypeRewardInfo reward_cfg = 3;
+}
+
+//CS_MSG_GAME_PAY_GET_ORDER 支付下单
+message PBCsGamePayGetOrderReqMsg {
+  int32         product_id = 1;   //商品id
+  emPayType     pay_type = 2;     //支付方式
+  emPayReason   pay_reason = 3;   //支付原由，用于区分统计
+  int32         pay_seq = 4;      //客户端支付透传sequence，用来解决弱网重复下单支付问题
+  bytes        dtfish_order_id = 5; //大厅下单的ID
+}
+
+message PBCsGamePayGetOrderResMsg {
+  Ret                     ret = 1;
+  int32                   pay_seq = 2;
+  PBPlayerOrderInfo    order_info = 3; //订单信息
+  int32                   wait_second = 4; //如果需要等待，这里会有个剩余秒数
+  string                  pre_order_info = 5; //如果存在预下单，则为第三方平台预下单信息
+  PBPlayerThirdRechargeParam third_param = 6; // 其他参数
+}
+
+//CS_MSG_GAME_NOTICE_ENTER_MAIN_SCENE
+message PBCsGameNoticeEnterMainSceneReqMsg {
+}
+
+//CS_MSG_GAME_PUSH_SHOP_GIFT_INFO
+message PBCsGamePushShopGiftInfoMsg {
+  PBPlayerShopMergeGiftInfo shop_merge_info = 1; //组合礼包（三合一）
+  bool liquan_shouchong_gift = 2; //奖券首冲推荐
+}
+
+//CS_MSG_GAME_ACTIVITY_ADD_QQGROUP_COPY
+message PBCsGameActivityAddQQGroupCopyReqMsg {
+  int32 activity_id = 1;
+}
+
+//CS_MSG_GAME_EXCHANGE_CONFIG
+message PBCsGameExchangeConfigReqMsg {
+}
+
+message PBCsGameExchangeConfigResMsg{
+  repeated PBExchangeConfigItem items = 1;
+  string  exchange_json_data = 2;
+}
+
+//CS_MSG_GAME_GIVE_CHECK
+message PBCsGameGiveCheckReqMsg {
+}
+
+message PBCsGameGiveCheckResMsg{
+  bool can_give = 1;
+}
+
+//CS_MSG_GAME_NOTIFY_UPDATE_TOKEN
+message PBCsGameNotifyUpdataTokenMsg {
+  string token = 1;
+}
+
+// CS_MSG_GAME_CHANGE_NAME_INFO
+message PBCsGameChangeNameInfoMsg{
+  string nick_name = 1;
+  int64 uid = 2;
+}
+
+// CS_MSG_GAME_CHANGE_NAME_RET
+message PBCsGameChangeNameRetMsg {
+  int32 ret_code = 1;
+  string old_Name = 2;
+  string new_name = 3;
+  int32 item_id = 4;
+  int64 money_num = 5;
+}
+
+//CS_MSG_GAME_REAL_NAME_AUTH
+message PBCsGameRealNameAuthMsg {
+  string name = 1;//姓名
+  string identity = 2;
+}
+
+//CS_MSG_GAME_REAL_NAME_AUTH_RET
+message PBCsGameRealNameAuthRetMsg {
+  int32 ret_code = 1;
+  string name = 2;//姓名
+  string identity = 3;
+}
+
+//CS_MSG_GAME_SET_TELEPHONE
+message PBCsGameSetTelephoneMsg {
+  string phone = 1;
+  string code = 2;
+  bool   cancel = 3;
+  int32  cancel_int = 4;
+}
+
+//CS_MSG_GAME_CANCEL_SET_TELEPHONE
+message PBCsGameCancelSetTelephoneMsg {
+  string phone = 1;
+  string code = 2;
+}
+
+//CS_MSG_GAME_SET_TELEPHONE_RET
+message PBCsGameSetTelephoneRetMsg {
+  int32 ret_code = 1;
+  string phone = 2;
+  int32 award_type = 3;
+  int64 award_num = 4;
+  bool  cancel = 5;
+}
+
+// CS_MSG_GAME_ONLINE_TIME
+message PBCsGameNotifyOnlineTimeMsg {
+  int64 online_time = 1;
+}
+
+//CS_MSG_GAME_REQUEST_PHONE_CODE
+message PBCsGameRequestPhoneCodeMsg {
+  string phone = 1;
+}
+
+// CS_MSG_GAME_REQUEST_PHONE_CODE_RET
+message PBCsGameRequestPhoneCodeRetMsg {
+  int32 ret_code = 1;
+}
+
+//CS_MSG_GAME_CHANGE_PASSWORD
+message PBCsGameChangePasswordMsg {
+  string code = 1;
+  string password = 2;
+}
+
+//CS_MSG_GAME_CHANGE_PASSWORD_RET
+message PBCsGameChangePasswordRetMsg{
+  int32 ret_code = 1;
+}
+
+//CS_MSG_GAME_REQUEST_CHANGE_NAME
+message PBCsGameRequestChangeNameMsg{
+}
+
+//CS_MSG_GAME_REQUEST_CHANGE_NAME_RET
+message PBCsGameRequestChangeNameRetMsg {
+  int32 change_num = 1;
+  int32 cost_type = 2;
+  int32 cost_value = 3;
+}
+
+//CS_MSG_GAME_REQUEST_SET_PHONE_AWARD
+message PBCsGameRequestSetPhoneAwardMsg{
+}
+
+//CS_MSG_GAME_REQUEST_SET_PHONE_AWARD_RET
+message PBCsGameRequestSetPhoneAwardMsgRet{
+  int32 award_type = 2;
+  int32 award_num = 3;
+}
+
+//CS_MSG_GAME_STAR_PLAYER_RANK_INFO
+message PBCsGameStarPlayerRankInfoReqMsg{
+  repeated emStarPlayerType rank_type = 1; //不传就是全部类型
+}
+
+message PBCsGameStarPlayerRankInfoResMsg{
+  Ret                     ret = 1;
+  repeated PBStarPlayerRankInfo infos = 2;
+}
+
+//CS_MSG_GAME_CROSS_DAY_EVENT
+message PBCsGameCrossDayEventMsg{
+  int32  now = 1;
+}
+
+//CS_MSG_GAME_NAME_AUTH_REWARD 实名认证奖励
+message PBCsGameNameAuthRewardReqMsg{
+}
+
+message PBCsGameNameAuthRewardResMsg{
+  Ret                     ret = 1;
+  repeated PBGetItem      items = 2;
+}
+
+//CS_MSG_GAME_UPLOAD_GUIDE_DATA
+message PBCsGameUploadGuideDataReqMsg {
+  string guide_data = 1;
+}
+
+//SVR_MSG_GAME_BROAD_GATE_MSG
+message PBSvrGameBroadGateMsg {
+  int32 msg_id = 1;
+  bytes     msg_content = 2;
+}
+
+//CS_MSG_GAME_PMD_Broad_MSG
+message PBCsGamePmdBroadMsg {
+  int32                broad_type = 1;
+  string               content = 2;
+  emPaoMaDengType      type = 3;  //类型
+  int32                vip = 4;
+  string               nike_name = 5;
+  string               room_name = 6;           //房间名称
+  string               fish_name = 7;          //鱼名称
+  string               reward_name = 8;         //奖励名称
+  int64                reward_count = 9;          //奖励数量
+  string               head_image = 10;            //头像
+  int64                fish_score = 11;           //鱼分
+  int32                jockpot_type = 12;         //奖池类型
+  repeated string      contents = 13;                //基数颜色 偶数普通颜色
+  bytes                extra_content = 14;         //以后以上为公共字段，这个字段为特殊字段
+}
+
+
+
+//CS_MSG_GAME_SHOP_EXCHANGE_DELIVERY
+message PBCsGameShopExchangeDeliveryReqMsg {
+  int32 product_id = 1;
+  string auto_put = 2;       //自动推送参数
+  int64 count = 3;           //数量(目前赛季手册购买等级使用)
+  int32 index = 4;          //商品下标      特殊商品有就传 没有就不管
+}
+
+//CS_MSG_GAME_ADD_INVITE_CODE
+message PBCsGameAddInviteCodeReqMsg {
+  string code = 1;
+}
+
+message PBCsGameAddInviteCodeResMsg {
+  Ret ret = 1;
+  repeated PBGetItem      items = 2;
+}
+
+//CS_MSG_GAME_DAILY_SIGN
+message PBCsGameDailySignReqMsg {
+}
+
+message PBCsGameDailySignResMsg {
+  Ret ret = 1;
+  repeated PBGetItem  items = 2;
+}
+
+//CS_MSG_GAME_NEW_USER_DOUBLE_DAILY_SIGN         xlh  新手翻倍请求
+message PBCsGameNewUserDoubleDailySignReqMsg {
+}
+message PBCsGameNewUserDoubleDailySignResMsg {
+  Ret ret = 1;
+  int32   items_double = 2;                  //倍数
+}
+
+
+//CS_MSG_GAME_TASK_POINTS
+message PBCsGameTaskPointReqMsg {
+  int32 task_id = 1; // 0 领取所有任务活跃点；非0 领取具体任务活跃点数
+  emTaskDurationType task_d_type = 2;
+}
+
+message PBCsGameTaskPointResMsg {
+  Ret ret = 1;
+  int32 task_id = 2;
+  emTaskDurationType task_d_type = 3;
+  repeated PBGetItem  items = 4; //奖励
+}
+
+//CS_MSG_GAME_TASK_REWARD 任务领奖
+message PBCsGameTaskRewardReqMsg {
+  int32 points = 1; // 0 领取所有点数奖励; 非0 领取具体点数奖励
+  emTaskDurationType task_d_type = 2;
+}
+
+message PBCsGameTaskRewardResMsg {
+  Ret ret = 1;
+  int32 points = 2;
+  emTaskDurationType task_d_type = 3;
+  repeated PBGetItem  items = 4; //奖励
+}
+
+//CS_MSG_GAME_TASK_COMPLETE  任务完成推送
+message PBCsGameTaskCompleteMsg {
+  emTaskDurationType dtype = 1;
+  int32 update_time = 2;  //完成时间，防止极限情况下夸天
+  repeated PBPlayerTaskItem task_arr = 3; //记得和登录的数据进行合并
+}
+
+//CS_MSG_GAME_TASK_INFO 拉取任务
+message PBCsGameTaskInfoReqMsg {
+}
+
+message PBCsGameTaskInfoResMsg {
+  Ret ret = 1;
+  PBPlayerTaskInfo task_info = 2; //任务信息
+}
+
+//CS_MSG_GAME_MICRO_WECHAT_AUTH
+message PBCsGameMicroWechatAuthReqMsg {
+  string raw_data = 1; // 授权获取的用户rawdata信息
+}
+
+message PBCsGameMicroWechatAuthResMsg {
+  Ret ret = 1;
+  repeated PBGetItem  items = 4; //奖励
+}
+
+//CS_MSG_GAME_USE_DTFISH_BOX
+message PBCsGameUseDtfishBoxReqMsg {
+  int32 item_id = 1;
+  int64 count = 2;
+}
+
+message PBCsGameUseDtfishBoxResMsg {
+  Ret ret = 1;
+  int32 item_id = 2;
+  int64 count = 3;
+  repeated PBGetItem  items = 4; //奖励
+  uint64  uid = 5;
+}
+
+//CS_MSG_GAME_DTFISH_MSG_TRANSFER
+message PBCsGameDtfishMsgTransferReqMsg {
+  uint32 msg_id = 1;
+  bytes  pb_msg_data = 2; //大厅是protobuf2.0消息，序列化的结构
+}
+
+message PBCsGameDtfishMsgTransferResMsg {
+  uint32 msg_id = 1;
+  bytes  pb_msg_data = 2; //大厅是protobuf2.0消息，序列化的结构
+}
+
+//CS_MSG_GAME_JACKPOT_RECORD
+message PBCsGameJackpotRecordReqMsg {
+  int32 room_type = 1;
+  uint32 count = 2;
+}
+
+message PBCsGameJackpotRecordResMsg {
+  int32 room_type = 1;
+  repeated PBJackpotRecordPlayerInfo arr = 2;
+}
+
+//SVR_MSG_GAME_GATE_LOGIN_SUC
+message PBSvrGameGateLoginSucMsg {
+
+}
+
+//CS_MSG_GAME_NEW_PLAYER_TASK_INFO
+message PBCsGameNewPlayerTaskInfoReqMsg {
+}
+
+message PBCsGameNewPlayerTaskInfoResMsg {//触发红点逻辑时候也会主动推送
+  PBNewPlayerTaskInfo new_player_task = 71; //新手任务
+}
+
+//CS_MSG_GAME_NEW_PLAYER_TASK_REWARD
+message PBCsGameNewPlayerTaskRewardReqMsg {
+  int32 room_type = 1;
+  int32 id = 2;
+}
+
+message PBCsGameNewPlayerTaskRewardResMsg {//触发红点逻辑时候也会主动推送
+  Ret ret = 1;
+  int32 room_type = 2;
+  int32 id = 3;
+}
+
+
+
+//CS_MSG_GAME_JUBAO_SETTLEMENT 聚宝结算
+message PbCsGamePlayerJubaoSettlementReqMsg {
+  int32 paobei = 1; //炮倍
+}
+
+message PbCsGameJubaoSettlementResMsg {
+  Ret ret = 1;
+  repeated PBGetItem items = 2;
+}
+//CS_MSG_GAME_JUBAO_RANK_LIST
+message PbCsGamePlayerJubaoRankListReqMsg {
+}
+
+message PbCsGamePlayerJubaoRankListInfoMsg {
+  repeated PBJuBaoRankItem items = 2;
+  bool   broad = 3;                   //是否广播消息   xlh 增加
+}
+
+
+//CS_MSG_GAME_CLIENT_TEST                       用于服务器自己方便测试消息协议用，  xlh 增加
+message PbCsGamePlayerClientTestReqMsg {
+  float  x = 1;
+  float  y = 2;
+  float  z = 3;
+}
+
+
+//CS_MSG_GAME_SHOP_PRODUCT_REWARD
+message PbCsGameShopProductRewardReqMsg {
+  int32 product_id = 1;
+  bool all = 2;
+  int32 id = 3; //id，当某些礼包有分级奖励id，如成长礼包的任务id
+}
+message PbCsGameShopProductRewardResMsg {
+  Ret  ret = 1;
+  repeated PBGetItem reward_items = 2;
+  PBPlayerBuyItem new_buy_item_info = 3;
+  bool all = 4;
+  int32 id = 5;
+}
+
+//CS_MSG_GAME_SHOP_BUY_INFO
+message PbCsGameShopBuyInfoReqMsg {
+  int32 product_id = 1;
+}
+message PbCsGameShopBuyInfoResMsg {
+  Ret  ret = 1;
+  repeated PBPlayerBuyItem buy_item_arr = 2;
+  int32 product_id = 3;
+}
+
+//CS_MSG_GAME_BLESS_DO
+message PbCsGameBlessDoReqMsg {
+  int32 index = 1; //传-1表示全部祈福
+  bool free = 2; //是否是免费祈福，index（不能-1）
+}
+message PbCsGameBlessDoResMsg {
+  Ret  ret = 1;
+  PBPlayerCollectBlessInfo bless_info = 2; //祈福信息
+  repeated PBGetItem need_items = 3; //消耗的东西
+  repeated PBGetItem reward_items = 4; //获得的奖励
+}
+
+//CS_MSG_GAME_BLESS_REST
+message PbCsGameBlessResetReqMsg {
+
+}
+
+message PbCsGameBlessResetResMsg {
+  Ret  ret = 1;
+  PBPlayerCollectBlessInfo bless_info = 2; //祈福信息
+  repeated PBGetItem need_items = 3; //消耗的东西
+}
+
+//CS_MSG_GAME_BLESS_RANK
+message PbCsGameBlessRankReqMsg {
+  uint32 begin_rank = 1; //最小为1
+  uint32 end_rank = 2; // 必须 > begin_rank, end_rank - begin_rank <= 50，太多了消息包会很大溢出
+  uint32 before_day = 3; //前几天，今天为0，昨天就1
+}
+
+message PbCsGameBlessRankResMsg {
+  Ret  ret = 1;
+  repeated PBBlessRankItem rank_arr = 2;
+  PBBlessRankItem self_rank_info = 3;
+  bool end = 4;
+  uint32 before_day = 5; //前几天，今天为0，昨天就1
+}
+
+// 每日抽奖活动页面内容请求
+message PbCsGameRecvDailyLuckyDrawActivityReqMsg {
+}
+// 每日抽奖活动页面内容响应
+message PbCsGameRecvDailyLuckyDrawActivityResMsg {
+  // 返回消息
+  Ret ret = 1;
+  // 用户今日可抽奖次数
+  uint32 draw_daily_count = 2;
+  // 用户今日已抽奖次数
+  uint32 draw_count = 3;
+  // 用户上一次抽到的奖励的下标（如首次打开没有边框高亮，返回-1）
+  int32 last_draw_index = 4;
+  // 用户已经抽取过的奖励的下标
+  repeated uint32 obtained_prize_index = 5;
+}
+// 每日抽奖活动用户抽奖请求
+message PbCsGameRecvDailyLuckyDrawReqMsg {
+  // 抽奖时间
+  int64  draw_time = 1;
+}
+// 每日抽奖活动用户抽奖结果响应
+message PbCsGameRecvDailyLuckyDrawResMsg {
+  // 返回消息
+  Ret ret = 1;
+  // 可抽奖次数
+  uint32 draw_daily_count = 2;
+  // 今日已抽奖次数
+  uint32 draw_count = 3;
+  // 抽中的奖品ID（奖品处在奖品列表的位置），如抽奖条件不满足，则此值为-1
+  int32 draw_index = 4;
+}
+
+enum emItemType {
+  it_all = 0;
+  it_magical = 1;
+  it_dantou = 2;
+  it_fish_fork = 3;
+}
+
+// 获取背包物品请求
+message PbCsGameGetBagItemsReqMsg {
+  emItemType item_type = 1;
+}
+// 获取背包物品响应
+message PbCsGameGetBagItemsResMsg {
+  Ret ret = 1;
+  PBPlayerItemInfo items = 2;
+}
+
+// 升级神器请求(此处item_id为神器id)
+message PbCsGameUpgradeMagicalReqMsg {
+  int32 item_id = 1;
+}
+// 升级神器响应
+message PbCsGameUpgradeMagicalResMsg {
+  Ret ret = 1;
+  PBPlayerItemInfo geitems = 2;
+  PBPlayerItemInfo spenditems = 3;
+}
+
+// 出售神器请求(此处item_id为神器碎片id)
+message PbCsGameSellMagicalReqMsg {
+  int32 item_id = 1;
+}
+// 出售神器响应
+message PbCsGameSellMagicalResMsg {
+  Ret ret = 1;
+  PBPlayerItemInfo geitems = 2;
+  PBPlayerItemInfo spenditems = 3;
+}
+
+//SVR_MSG_GAME_PLAYER_LOGIN_ACTION
+message PBSvrGamePlayerLoginActionReqMsg {
+  uint64                      uid = 1;
+  emPlayerLoginActionType     atype = 2;
+}
+
+// 月签到请求
+message PbCsGameMonthlySignInReqMsg {
+}
+// 月签到响应
+message PbCsGameMonthlySignInResMsg {
+  Ret ret = 1;
+  PBGetItemInfo items = 2;
+}
+
+//CS_MSG_GAME_WORLD_BOSS_RANK_INFO
+message PbCsGameWorldBossRankInfoReqMsg {
+  int32 before_index = 1; //0为最近一期，1为上一期，以此类推...
+}
+
+message PbCsGameWorldBossRankInfoResMsg {
+  Ret ret = 1;
+  int32 before_index = 2;
+  PBWorldBossRankCacheData rank_data = 3;
+  int32  sum_term = 4; //总期数
+}
+
+//CS_MSG_GAME_REDEEM_CODE
+message PbCsGameRedeemCodeReqMsg {
+  string code = 1; //兑换码
+}
+
+message PbCsGameRedeemCodeResMsg {
+  Ret ret = 1;
+  repeated PBGetItem rewards = 2; //奖励
+}
+
+// CS_MSG_GAME_LV_UPDATE 炮倍升级请求
+message PBCsGamePlayerLvUpdateReqMsg {
+  uint32 level = 1;      // 升到指定等级
+  uint32 yuanbao = 2;    // 不够升级用元宝换经验
+}
+
+// CS_MSG_GAME_LV_UPDATE 炮倍升级回复
+message PBCsGamePlayerLvUpdateResMsg {
+  int32 ret = 1;
+  // 等级
+  uint32 level = 2;
+  // 奖励
+  repeated PBGetItem rewards = 3;
+  // 消耗的道具奖励
+  repeated PBGetItem consume = 4;
+  // 能量石总个数
+  int64 energy = 5;
+}
+
+//CS_MSG_GAME_RECYCLE_PROPS 回收道具
+message PBCsGameRecyclePropsReqMsg {
+  int32 item_id = 1;
+  int64 count = 2;
+}
+
+message PBCsGameRecyclePropsResMsg {
+  Ret ret = 1;
+  int32 item_id = 2;
+  int64 count = 3;
+  repeated PBGetItem  items = 4; //奖励
+}
+
+// 启航基金数据
+message PBSailingFundConfig{
+  repeated PBSailingFundItems rewards = 1;
+  int32 product_ID = 2;
+}
+
+message PBSailingFundItems{
+  int32 pao = 1;
+  repeated PBGetItem free_rewards = 2;
+  repeated PBGetItem pay_rewards = 3;
+}
+
+// CS_MSG_GAME_SAILING_FUND_CONF 获取启航基金数据请求
+message PBCsGameSailingFundConfigReqMsg {
+}
+// 启航基金数据回复
+message PBCsGameSailingFundConfigResMsg {
+  Ret ret = 1;
+  PBSailingFundConfig config = 2;
+  PBPlayerSailingFundData player_data = 3;
+}
+
+// CS_MSG_GAME_SAILING_FUND_REWARD  领取启航基金奖励请求
+message PBCsGameSailingFundRewardReqMsg {
+  int32 reward_state = 1; //0表示领取免费奖励 1表示领取付费奖励 2表示领取某炮倍全部奖励 3表示领取某炮倍前（含）全部奖励
+  int32 pao = 2;
+}
+
+message PBCsGameSailingFundRewardResMsg {
+  Ret ret = 1;
+  repeated PBGetItem reward_items = 2;
+  PBPlayerSailingFundData player_data = 3;
+}
+
+// SVR_MSG_ROOM_PAO_UNLOCK
+message PBSvrGameSailingFundUnlockPaoReqMsg {
+  int32 pao = 1;
+}
+
+//// SVR_MSG_WORLD_ACTIVITY_BUY_SAILING_FUND
+//message PBSvrWorldActivitySailingFundBuyReqMsg {
+//    int32 activity_id = 1;
+//    int32 product_id = 2;
+//}
+
+
+// CS_MSG_GAME_USE_ITEM
+message PBCsGamePlayerUseItemReqMsg {
+  int32 item_id = 1;
+  int64  item_count = 2; //使用数量
+}
+
+
+message PBCsGamePlayerUseItemResMsg {
+  Ret  ret = 1;
+  int32 item_id = 2;
+  int64 item_count = 3;
+
+  int64  use_msec = 4; //使用的时间（毫秒时间戳）
+  int32  jfcard_end_time = 5; //积分卡失效时间戳
+  int32  jfcard_use_time = 6; //积分卡上次使用时间
+  int32  jfcard_use_cnt = 7; //积分卡使用次数
+}
+
+// CS_MSG_GAME_XXSC_CONF 心想事橙配置
+message PBCsGameXxscConfigReqMsg {
+}
+
+message PBCsGameXxscConfigResMsg {
+  Ret ret = 1;
+  PBXxscConfig config = 2;
+  PBPlayerXxscData player_date = 3;
+}
+
+message PBXxscConfig {
+  int64   begin_time = 1;
+  int64   end_time = 2;
+  repeated int32 activity_type = 3;
+  repeated int32 activity_change = 4;
+  int64 change_time = 5;
+  int64 min_pao = 6;
+  repeated PBXxscTaskConfig task = 7;
+  repeated PBXxscTaskConfig task_change = 8;
+}
+
+message PBXxscTaskConfig {
+  int32 task_id = 1;
+  int64 prop_num = 2;
+  repeated PBGetItem reward_items = 3;
+}
+
+//CS_MSG_GAME_ACHIEVEMENT_LOGIN_INFO
+message PBCsGameAchievementLoginInfoMsg {
+  PBPlayerAchievementInfo info = 1;
+}
+
+//CS_MSG_GAME_ACHIEVEMENT_UPDATE
+message PBCsGameAchievementUpdateMsg {
+  repeated PBPlayerAchievementItem update_item = 1;
+}
+
+//CS_MSG_GAME_ACHIEVEMENT_REWARD
+message PBCsGameAchievementRewardReqMsg {
+  int32 id = 1;
+}
+
+message PBCsGameAchievementRewardResMsg {
+  Ret ret = 1;
+  int32 id = 2;
+}
+
+//CS_MSG_GAME_ACHIEVEMENT_POINT_REWARD
+message PBCsGameAchievementPointRewardReqMsg {
+  int32 point = 1;
+}
+
+message PBCsGameAchievementPointRewardResMsg {
+  Ret     ret = 1;
+  int32   point = 2;
+}
+
+//SVR_MSG_GAME_PLAYER_ACHIEVEMENT_NOTIFY_INFO
+message PbSvrGamePlayerAchievementNotifyMsg {
+  uint64 uid = 1;
+  repeated PBPlayerAchievementNofityItem items = 2;
+};
+
+//CS_MSG_GAME_ACHIEVEMENT_GET_INFO
+message PBCsGameAchievementGetInfoReqMsg {
+  repeated int32 groups = 1;
+}
+
+message PBCsGameAchievementGetInfoResMsg {
+  Ret     ret = 1;
+  repeated PBPlayerAchievementItem items = 2;
+}
+
+//CS_MSG_GAME_SEASON_MANUAL_LOGIN_INFO
+message PBCsGameSeasonManualLoginInfoMsg {
+  PBPlayerSeasonManualInfo info = 1;
+}
+
+//CS_MSG_GAME_SEASON_MANUAL_TASK_GET_INFO
+message PBCsGameSeasonManualTaskGetInfoReqMsg {
+}
+
+message PBCsGameSeasonManualTaskGetInfoResMsg {
+  Ret     ret = 1;
+  repeated PBPlayerSeasonManualTaskItem task_items = 2;
+}
+
+//CS_MSG_GAME_SEASON_MANUAL_TASK_UPDATE
+message PBCsGameSeasonManualTaskUpdateMsg {
+  repeated PBPlayerSeasonManualTaskItem task_items = 1;
+}
+
+//CS_MSG_GAME_SEASON_MANUAL_LEVEL_REWARD
+message PBCsGameSeasonManualLevelRewardReqMsg {
+  int32 level = 1; //为0则为一建领取
+  int32 rtype = 2; //0为所有，1位普通，2为至尊
+}
+
+message PBCsGameSeasonManualLevelRewardResMsg {
+  Ret     ret = 1;
+  int32   level = 2; //为0则为一建领取
+  int32   rtype = 3; //0为所有，1位普通，2为至尊
+}
+
+//CS_MSG_GAME_SEASON_MANUAL_ACTIVE_REWARD
+message PBCsGameSeasonManualActiveRewardReqMsg {
+  int32 buy_count = 1;
+}
+
+message PBCsGameSeasonManualActiveRewardResMsg {
+  Ret     ret = 1;
+  int32   buy_count = 2;
+}
+
+//CS_MSG_GAME_SEASON_MANUAL_EXCHANGE
+message PBCsGameSeasonManualExchangeReqMsg {
+  int32 id = 1;
+  int32 count = 2;
+}
+
+message PBCsGameSeasonManualExchangeResMsg {
+  Ret     ret = 1;
+  int32   id = 2;
+  int32   count = 3;
+}
+
+//CS_MSG_GAME_SEASON_MANUAL_TASK_REWARD
+message PBCsGameSeasonManualTaskRewardReqMsg {
+  int32 task_id = 1;
+  bool  ext = 2;
+}
+
+message PBCsGameSeasonManualTaskRewardResMsg {
+  Ret     ret = 1;
+  repeated int32   task_ids = 2;
+  bool   ext = 3;
+}
+
+// CS_MSG_GAME_FORGE_PAO
+message PBCsGamePlayerForgePaoReqMsg {
+  int64  forge_pao = 1; //使用数量
+}
+
+message PBCsGamePlayerForgePaoResMsg {
+  Ret  ret = 1;
+  int64 shu_lian_du = 2;          //玩家熟练度
+}
+
+//CS_MSG_GAME_FORGE_FRESH_SHOP
+message PbCsGamePlayerForgeFreshShopReqMsg {
+  bool pay_fresh = 1;             //是否付费刷新    是 传true 直接拉数据 传false
+}
+
+message PbCsGamePlayerForgeFreshShopResMsg {
+  bool pay_fresh = 1;
+  PBPlayerCollectForgeShopInfo  shop_info = 2;      //商品信息
+}
+
+//CS_MSG_GAME_ACTIVITY_PLAYER_INFO
+message PBCsGameActivityPlayerInfoReqMsg {
+  repeated int32 activity_id = 1;
+}
+
+message PBCsGameActivityPlayerInfoResMsg {
+  Ret ret = 1;
+  repeated PBGamePlayerActivityInfo ativities = 2;
+}
+
+//CS_MSG_GAME_ACTIVITY_PANTAO_TASK_REWARD
+message PBCsGameActivityPanTaoTaskRewardReqMsg {
+  int32 activity_id = 1;
+  int32 task_id = 2;
+  bool  reward_all = 3;
+}
+
+message PBCsGameActivityPanTaoTaskRewardResMsg {
+  Ret ret = 1;
+  int32 activity_id = 2;
+  int32 task_id = 3;
+  bool  reward_all = 4;
+}
+
+//CS_MSG_GAME_ACTIVITY_PANTAO_EXCHANGE
+message PBCsGameActivityPanTaoExchangeReqMsg {
+  int32 activity_id = 1;
+  int32 exchange_id = 2;
+  int32 count = 3;
+}
+
+message PBCsGameActivityPanTaoExchangeResMsg {
+  Ret ret = 1;
+  int32 activity_id = 2;
+  int32 exchange_id = 3;
+  int32 count = 4;
+}
+
+//CS_MSG_GAME_ACTIVITY_PANTAO_TASK_UPDATE
+message PBCsGameActivityPanTaoTaskUpdateMsg {
+  int32   activity_id = 1;
+  repeated PBPlayerBaseTaskItem task_items = 2;
+}
+
+//CS_MSG_GAME_BASE_TASK_TEST
+message PBCsGameBaseTaskTestReqMsg {
+  int32   ttype = 1; // 0成就 1赛季 2蟠桃
+  int32   group = 2; // 0全部 其他具体group
+  uint64  tuid = 3;
+  string  platform = 4;
+  int32   activity_id = 5; //如果是活动（如蟠桃）则为活动id
+}
+
+message PBCsGameBaseTaskTestResMsg {
+  Ret    ret = 1;
+  PBCsGameBaseTaskTestReqMsg req_msg = 2;
+}
+
+//CS_MSG_GAME_COMMON_RANK_LIST
+message PBCsGameCommonRankListReqMsg {
+  emRankType rank_type = 1;
+  uint32 begin_rank = 2; //最小为1
+  uint32 end_rank = 3; // 必须 > begin_rank, end_rank - begin_rank <= 50，太多了消息包会很大溢出
+  string param = 4; //客户端和服务器约定，根据rank_type 解析
+  bool  need_others = 5;
+  int32 activity_id = 6; //如果是活动相关，取活动id
+}
+
+message PBCsGameCommonRankListResMsg {
+  Ret  ret = 1;
+  emRankType rank_type = 2;
+  repeated PBCommonRankItem rank_arr = 3;
+  PBCommonRankItem self_rank_info = 4;
+  repeated PBCommonRankItem other_rank_arr = 5; //其他的入榜条件
+  bool end = 10;
+  string param = 11; //客户端和服务器约定，根据rank_type 解析
+  int64 pool_value = 12;
+  int32 activity_id = 13; //如果是活动相关，取活动id
+}
+
+
+//CS_MSG_GAME_HAISHEN_INFO
+message PBCsGameHaiShenInfoReqMsg {
+
+}
+
+message PBCsGameHaiShenInfoResMsg {
+  Ret  ret = 1;
+  string config = 2;
+  PBPlayerHaiShenInfo player_info = 3;
+}
+
+//CS_MSG_GAME_HAISHEN_EXCHANGE
+message PBCsGameHaiShenExchangeReqMsg {
+  int32 id = 1;
+}
+
+message PBCsGameHaiShenExchangeResMsg {
+  Ret  ret = 1;
+  int32 id = 2;
+  int64 lucky_score = 3; //幸运积分
+}
+
+//CS_MSG_GAME_HAISHEN_EXCHANGE_FRESH
+message PBCsGameHaiShenExchangeFreshReqMsg {
+}
+
+message PBCsGameHaiShenExchangeFreshResMsg {
+  Ret  ret = 1;
+}
+
+//CS_MSG_GAME_HAISHEN_FORGE
+message PBCsGameHaiShenForgeReqMsg {
+  int32 id = 1;
+  int32 num = 2;
+}
+
+message PBCsGameHaiShenForgeResMsg {
+  Ret  ret = 1;
+  int32 id = 2;
+  int32 num = 3;
+}
+
+//CS_MSG_GAME_ACTIVITY_SJB_CRAZY_DUOBAO
+message PBCsGameActivitySJBCrazyDuoBaoReqMsg {
+  int32 activity_id = 1;
+  uint32 count = 2;
+}
+
+message PBCsGameActivitySJBCrazyDuoBaoResMsg {
+  Ret ret = 1;
+  int32 activity_id = 2;
+  uint32 count = 3;
+  PBBoxRewards rewards = 4;
+}
+
+//CS_MSG_GAME_ACTIVITY_SJB_CRAZY_DUOBAO_REWARD
+message PBCsGameActivitySJBCrazyDuoBaoRewardReqMsg {
+  int32 activity_id = 1;  // 活动id
+  int32 count = 2;        // 在新春活动中,对应表中duobao.rewards.index
+  int32 num = 3;          // 领取次数,新春活动中同一档奖励可以重复领取,一次请求中可以领取多次
+}
+
+message PBCsGameActivitySJBCrazyDuoBaoRewardResMsg {
+  Ret ret = 1;
+  int32 activity_id = 2;                    // 活动id
+  int32 count = 3;                          // 在新春活动中,对应表中duobao.rewards.index
+  repeated PBGetItem rewards = 4;           // 奖励道具
+  repeated PBGetItem reward_box_items = 5;  // 奖励道具中的宝箱items,开出来的items
+}
+
+//CS_MSG_GAME_ACTIVITY_SJB_CRAZY_TASK_REWARD
+message PBCsGameActivitySJBCrazyTaskRewardReqMsg {
+  int32 activity_id = 1;
+  int32 task_id = 2;
+  bool reward_all = 3;
+}
+
+message PBCsGameActivitySJBCrazyTaskRewardResMsg {
+  Ret ret = 1;
+  int32 activity_id = 2;
+  int32 task_id = 3;
+  bool reward_all = 4;
+  PBBoxRewards rewards = 5;
+}
+
+//CS_MSG_GAME_ACTIVITY_SJB_CRAZY_HZ_TEAM_REWARD
+message PBCsGameActivitySJBCrazyHZTeamRewardReqMsg {
+  int32 activity_id = 1;
+  int32 id = 2;
+}
+
+message PBCsGameActivitySJBCrazyHZTeamRewardResMsg {
+  Ret ret = 1;
+  int32 activity_id = 2;
+  int32 id = 3;
+  repeated PBGetItem rewards = 4;
+}
+
+//CS_MSG_GAME_ACTIVITY_SJB_CRAZY_HZ_GROUP_REWARD
+message PBCsGameActivitySJBCrazyHZGroupRewardReqMsg {
+  int32 activity_id = 1;
+  int32 id = 2;
+}
+
+message PBCsGameActivitySJBCrazyHZGroupRewardResMsg {
+  Ret ret = 1;
+  int32 activity_id = 2;
+  int32 id = 3;
+  repeated PBGetItem rewards = 4;
+}
+
+//CS_MSG_GAME_ACTIVITY_SJB_CRAZY_HZ_WEEK_REWARD
+message PBCsGameActivitySJBCrazyHZWeekRewardReqMsg {
+  int32 activity_id = 1;
+}
+
+message PBCsGameActivitySJBCrazyHZWeekRewardResMsg {
+  Ret ret = 1;
+  int32 activity_id = 2;
+  int32 week = 3; //0表示第一周，以此类推
+  repeated PBGetItem rewards = 4;
+}
+
+
+//CS_MSG_GAME_ACTIVITY_SJB_CRAZY_SHOP_BUY
+message PBCsGameActivitySJBCrazyShopBuyReqMsg {
+  int32 activity_id = 1;
+  int32 id = 2;
+}
+
+message PBCsGameActivitySJBCrazyShopBuyResMsg {
+  Ret ret = 1;
+  int32 activity_id = 2;
+  int32 id = 3;
+  PBBoxRewards rewards = 5;
+}
+

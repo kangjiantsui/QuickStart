@@ -1,0 +1,3559 @@
+syntax = "proto2";
+import "packet.proto";
+import "GameCommon.proto";
+
+package DTFishProtoMsg;
+
+option optimize_for = SPEED;
+
+///////////////////data define begin///////////////////
+enum EnumLoginType
+{
+    enumLoginTypeToRegisterNewUser = 0;
+    enumLoginTypeGuestAccount = 1;
+    enumLoginTypeRegisterAccount = 2;
+    enumLoginTypeRegisterByMobile = 3;
+    enumLoginTypeWeChatAccount = 4;
+    enumLoginTypeQQAccount = 5;
+    enumLoginTypeBaiDuAccount = 6;
+    enumLoginTypeXiaoMiAccount = 7;
+    enumLoginTypeHuaWeiAccount = 8;
+    enumLoginTypeYingYongBaoQQAccount = 9;
+    enumLoginTypeYingYongBaoWechatAccount = 10;
+    enumLoginTypeNewHuaWeiAccount = 11;
+    enumLoginTypeLenovoAccount = 12;
+    enumLoginTypeJinLiAccount = 13;
+    enumLoginTypeOppoAccount = 14;
+    enumLoginTypeUserID = 15;
+    enumLoginTypeWebWeChatAccount = 16;
+    enumLoginTypeVivoAccount = 17;
+    enumLoginTypeHuaWeiKuaiYouXiAccount = 18;
+    enumLoginTypeFaceBook = 19;
+    enumLoginTypeBaiDuXiaoYouXiAccount = 20;
+    enumLoginTypeXiaoMiXiaoYouXiAccount = 21;
+    enumLoginTypeWebXiaoMiAccount = 22;
+    enumLoginTypeLine = 23;
+    enumLoginTypeMeiZuKuaiYouXi = 24;
+    enumLoginTypeOppoH5 = 25;
+    enumLoginTypeQuTouTiao = 26;
+    enumLoginTypeMengXiangHeLi = 27;
+    enumLoginTypeHago = 28;
+    enumLoginTypeTouTiao = 29;
+    enumLoginTypeQQXiaoYouXi = 30;
+    enumLoginTypeFaceBookXiaoYouXi = 31;
+    enumLoginTypeOppoXiaoYouXi = 32;
+    enumLoginTypeKuPai = 33;
+    enumLoginType360 = 34;
+    enumLoginTypeHuaWeiv3 = 35;
+    enumLoginTypeGG = 36;
+    enumLoginType233 = 37;
+    enumLoginTypeQingLongMao = 38;
+    enumLoginType9G  = 39;
+    enumLoginTypeLeQi = 40;
+    enumLoginTypeBianWanJia = 41;
+    enumLoginType360ShouJiWeiShi = 42;//这个是假的,只是用来把这个渠道的账号判定成小游戏好走配置
+    enumLoginTypeHuaWeiOAuth2Account =  43;//华为OAuth2 账号
+    enumLoginTypeVivoXiaoYouXi = 44;//vivo 快应用(小游戏)
+    enumLoginTypeGoogle = 45;  //谷歌登录
+    enumLoginTypeRRTV = 46;//人人视频
+}
+
+enum EnumVIPLevel
+{
+    enumVIPLevelNone = 0;
+    enumVIPLevelSilver = 1;
+    enumVIPLevelGold = 2;
+    enumVIPLevelPlatinum = 3;
+    enumVIPLevelDiamond = 4;
+}
+
+enum EnumGameType
+{
+    enumGameTypeUnknown = 0x0000;
+    enumGameTypeTexasPokerPuTong = 0x0001;
+    enumGameTypeTexasPokerJiaBei = 0x0002;
+    enumGameTypeTexasPokerHuanLe = 0x0003;
+    enumGameTypeTexasPokerTournament = 0x0004;
+    enumGameTypeTexasPokerBaiRen = 0x0005;
+    enumGameTypeTexasPokerPrivate = 0x0006;
+    enumGameTypeTexasPokerJiSu = 0x0007;
+	enumGameTypeTexasPrivate = 0x0008;
+    enumGameTypeNiuNiu = 0x0011;
+    enumGameTypeNiuNiuQiangZhuang = 0x0012;
+    enumGameTypeNiuNiuXueZhanDaoDi = 0x0013;
+    enumGameTypeNiuNiuSeenCardQZ = 0x0014;
+    enumGameTypeNiuNiuBaiRen = 0x0015;
+    enumGameTypeNiuNiuTournament = 0x0016;
+    enumGameTypeBaccarat = 0x0021;
+    enumGameTypeZhaJinHua = 0x0031;
+    enumGameTypeTournamentZhaJinHua = 0x0032;
+    enumGameTypeZhaJinHuaPrivate = 0x0033;
+    enumGameTypeZhaJinHuaBaiRen = 0x0034;
+    enumGameTypeSlots = 0x0041;
+    enumGameTypePinFan = 0x0042;
+    enumGameTypeRoulette = 0x0051;
+    enumGameTypeDouDiZhu = 0x0061;
+    enumGameTypeDouDiZhuHuanLe = 0x0062;
+    enumGameTypeTournamentDouDiZhuHuanLe = 0x0063;
+    enumGameTypeTournamentDouDiZhu = 0x0064;
+    enumGameTypeDouDiZhuLaiZi = 0x0065;
+    enumGameTypeDouDiZhuDanJi = 0x0066;
+    enumGameTypeTournamentDouDiZhuLaiZi = 0x0067;
+    enumGameTypeDouDiZhuZhiBo = 0x0068;
+    enumGameTypeDouDiZhuFriend = 0x0069;
+    enumGameTypeDouDiZhuHuanLeFriend = 0x006A;
+    enumGameTypeDouDiZhuLaiZiFriend = 0x006B;
+    enumGameTypeDouDiZhuHuanLeZhiBo = 0x006C;
+    enumGameTypeDouDiZhuPrivate = 0x0070;
+    enumGameTypeBlackJack = 0x0071;
+    enumGameTypeDouDiZhuQuanMin = 0x0072;
+    enumGameTypeDouDiZhuCustomMatch = 0x0073;
+    enumGameTypeDouDiZhuRankingMatch = 0x0074;
+    enumGameTypeDouDiZhuAIChallengeMatch = 0x0075;
+    enumGameTypeDouDiZhuQuanMinJingCai = 0x0076;
+    enumGameTypeStud = 0x0081;
+    enumGameTypeGuanDan = 0x0091;       
+    enumGameTypeGuanDanPrivate = 0x0092;
+    enumGameTypeGuanDanLocal = 0x0093;
+    enumGameTypeGuanDanTVTournament = 0x0094;
+    enumGameTypeGuanDanTournamentFree = 0x0095;  
+    enumGameTypeGuanDanFriend = 0x0096;         //150 好友场
+    enumGameTypeTournamentGuanDan = 0x0097;         
+    enumGameTypeGuanDanCustomMatch = 0x0098;
+    enumGameTypeGuanDanRankingMatch = 0x0099;
+    enumGameTypeGuanDanTwoPersonFriend = 0x009A;   //154 二人掼蛋好友场
+    enumGameTypeGuanDanTeamRankMatch = 0x009B;   //155 组队排位赛
+    enumGameTypeShiSanZhang = 0x00A1;
+    enumGameTypeMJ2P = 0x00B1;
+    enumGameTypeMJ = 0x00B2;
+    enumGameTypeMJZJ = 0x00B3;
+    enumGameTypeMJXUEZHAN = 0x00B4;
+    enumGameTypeMJXUEZHANDD = 0x00B5;
+    enumGameTypeMJXUEZHANHaoYou = 0x00B6;
+    enumGameTypeMJXZHAOYOUDD = 0x00B7;
+    enumGameTypeMaJiangXueLiuTournament = 0x00B8;
+    enumGameTypeMaJiangXueZhanTournament = 0x00B9;
+    enumGameTypeMaJiangZhuoJiFriend = 0x00BA;
+    enumGameTypeMaJiangZhuoJiTournament = 0x00BB;
+    enumGameTypeMaJiangZhuoJiEx = 0x00BC;
+    enumGameTypeMaJiangZhuoJiExFriend = 0x00BD;
+    enumGameTypeMaJiangZhuoJiExTournament = 0x00BE;
+    enumGameTypeFishingOnline = 0x00C1;
+    enumGameTypeAirplane = 0x00C2;
+    enumGameTypeLKPY = 0x00D1;
+    enumGameTypeBuYuOL = 0x00F1;
+    enumGameTypeTeenPatti = 0x0101;
+    enumGameTypeTeenPattiSitAndGo = 0x0102;
+    enumGameTypeTeenPattiTournament = 0x0103;
+    enumGameTypeOkey = 0x0111;
+    enumGameTypeVideoarcade = 0x0121;
+    enumGameTypeShengJi = 0x0131;
+    enumGameTypeShengJiChaoDi = 0x0132;
+    enumGameTypeShengJiPrivate = 0x0133;
+    enumGameTypeShengJiTournamentContinuousWin = 0x0134;
+    enumGameTypeShengJiTournamentNew = 0x0135;
+    enumGameTypeShengJiFriend = 0x0136;
+    enumGameTypeShengJiChaoDiFriend = 0x0137;
+    enumGameTypeShengJiRankingMatch = 0x0138;
+    enumGameTypePaoDeKuai = 0x0141;
+    enumGameTypePaoDeKuaiTournament = 0x0142;
+    enumGameTypePaoDeKuaiFriend = 0x0143;
+    enumGameTypeDaDaA = 0x0151;
+    enumGameTypeDaDaAFriend = 0x0152;
+    enumGameTypeDaDaATournament = 0x0153;
+    enumGameTypeDaDaAZhiBo = 0x0154;
+    enumGameTypeDaDaARankingMatch = 0x0155;
+    enumGameTypeDaDaATeamMode = 0x0156;
+    enumGameTypeDaDaAFriend4Ren = 0x0157;
+    enumGameTypeBaoHuangWeiHai = 0x0161;
+    enumGameTypeBaoHuangWeiFang = 0x0162;
+    enumGameTypeBaoHuangQingDao = 0x0163;
+    enumGameTypeBaoHuangPrivate = 0x0164;
+    enumGameTypeBaoHuangTournamentWeiHai = 0x0165;
+    enumGameTypeBaoHuangTournamentWeiFang = 0x0166;
+    enumGameTypeBaoHuangTournamentQingDao = 0x0167;
+    enumGameTypeBaoHuangFriendWeiHai = 0x0168;
+    enumGameTypeBaoHuangFriendWeiFang = 0x0169;
+    enumGameTypeBaoHuangFriendQingDao = 0x016A;
+    enumGameTypeShuangKouJingDian = 0x0171;
+    enumGameTypeShuangKouHuoPin = 0x0172;
+    enumGameTypeShuangKouQianBian = 0x0173;
+    enumGameTypeShuangKouTournamentJingDian = 0x0174;
+    enumGameTypeShuangKouTournamentHuoPin = 0x0175;
+    enumGameTypeShuangKouTournamentQianBian = 0x0176;
+    enumGameTypeShuangKouFriendJingDian = 0x0177;
+    enumGameTypeShuangKouFriendHuoPin = 0x0178;
+    enumGameTypeShuangKouFriendQianBian = 0x0179;
+    enumGameTypeGuanDanZhiBo = 0x0181;
+    enumGameTypeGuanDanZhiBoPrivate = 0x0182;
+    enumGameTypeLobby = 0x0191;
+    enumGameTypeActivity = 0x0192;
+    enumGameTypeMJDAZHONG = 0x01A1;
+    enumGameTypeMaJiangDaZhongFriend = 0x01A2;
+    enumGameTypeMaJiangDaZhongTournament = 0x01A3;
+    enumGameTypeMaJiangDaZhongErRenFriend = 0x01A4;
+    enumGameTypeMaJiangDaZhongErRenTournament = 0x01A5;
+    enumGameTypeMaJiangDaZhongErRen = 0x01A6;
+    enumGameTypeMaJiangHuanLeFriend = 0x01A7;
+    enumGameTypeMaJiangHuanLeTournament = 0x01A8;
+    enumGameTypeMaJiangHuanLe = 0x01A9;
+    enumGameTypeMaJiangDaZhongErRenPrivate = 0x01AA;
+    enumGameTypeMaJiangHangZhou = 0x01B1;
+    enumGameTypeMaJiangHangZhouFriend = 0x01B2;
+    enumGameTypeMaJiangHangZhouTournament = 0x01B3;
+    enumGameTypeMaJiangZheJiangHangZhouTournament = 0x01B4;
+    enumGameTypeMaJiangHuanLeXueZhanDaoDi = 0x01B5;
+    enumGameTypeMaJiangHangZhouErRen = 0x01B6;
+    enumGameTypeMaJiangGuangDongTuiDaoHu = 0x01C1;
+    enumGameTypeMaJiangGuangDong100Zhang = 0x01D1;
+    enumGameTypeSanKouYi = 0x01E1;
+    enumGameTypeSanKouYiFriend = 0x01E2;
+    enumGameTypeSanKouYiTournament = 0x01E3;
+    enumGameTypeMaJiangNanJing = 0x01F1;
+    enumGameTypeMaJiangNanJingFriend = 0x01F2;
+    enumGameTypeMaJiangYangZhouFriend = 0x01F3;
+    enumGameTypeMaJiangJiangSuFriend= 0x01F4;
+    enumGameTypeMaJiangChangZhouFriend= 0x01F5;
+    enumGameTypeMaJiangTaiZhouFriend = 0x01F6;
+    enumGameTypeMaJiangSuZhouFriend = 0x01F7;
+    enumGameTypeMaJiangSuZhouBaiDaFriend = 0x01F8;
+    enumGameTypeMaJiangSuZhouTuanTuanZhuangFriend = 0x01F9;
+    enumGameTypeMaJiangSuZhouXingHuaFriend = 0x01FA;
+    enumGameTypeMaJiangSuZhouYanChengHuangHuangFriend = 0x01FB;
+    enumGameTypeMaJiangJiangXiFriend = 0x0200;
+    enumGameTypeMaJiangJiangXiNanChangFriend = 0x0201;
+    enumGameTypeMaJiangJiangXiJiuJiangFriend = 0x0202;
+    enumGameTypeMaJiangJiangXiJingDeZhengFriend = 0x0203;
+    enumGameTypeMaJiangJiangXiFuZhouFriend = 0x0204;
+    enumGameTypeMaJiangJiangXiShangRaoFriend = 0x0205;
+    enumGameTypeMaJiangJiangXiYiChunFriend = 0x0206;
+    enumGameTypeMaJiangJiangXiPingXiang258Friend = 0x0207;
+    enumGameTypeMaJiangJiangXiXinYuFriend = 0x0208;    
+    enumGameTypeMaJiangJiangXiJiAnFriend = 0x0209;
+    enumGameTypeMaJiangJiangNanChang = 0x020a;
+    enumGameTypeMaJiangZheJiangFriend = 0x220;
+    enumGameTypeMaJiangWenZhouFriend = 0x221;
+    enumGameTypeMaJiangWenLingFriend = 0x222;
+    enumGameTypeMaJiangHuZhouFriend = 0x223;
+    enumGameTypeMaJiangQuZhouFriend = 0x224;
+    enumGameTypeMaJiangLiShuiFriend = 0x225;
+    enumGameTypeMaJiangWenLingWuHuaFriend = 0x226;
+    enumGameTypeMaJiangYuHuanFriend = 0x227;
+    enumGameTypeMaJiangWenZhouFangPaoFriend = 0x228;
+    enumGameTypeMaJiangRuiAnFriend = 0x229;
+    enumGameTypeMaJiangJiaXingYingZiMoFriend = 0x22A;
+    enumGameTypeMaJiangJiaXingChuDianHuFriend = 0x22B;
+    enumGameTypeMaJiangQuZhouLaTaHuFriend = 0x22C;
+    enumGameTypeMaJiangNeiMengGuFriend = 0x258;
+    enumGameTypeMaJiangNeiMengGuTuiDaoHuFriend = 0x259;
+    enumGameTypeMaJiangNeiMengGuHuShiFriend = 0x25A;
+    enumGameTypeMaJiangNeiMengGuTongLiaoFriend = 0x25B;
+    enumGameTypeMaJiangNeiMengGuWuHaiFriend = 0x25C;
+    enumGameTypeMaJiangNeiMengGuBaoTouFriend = 0x25D;
+    enumGameTypeMaJiangNeiMengGuChiFengQiongHuFriend = 0x25E;
+    enumGameTypeMaJiangNeiMengGuChiFengTuiDaoHuFriend = 0x25F;
+    enumGameTypeMaJiangNeiMengGuEErDuoSiFriend = 0x260;
+    enumGameTypeMaJiangNeiMengGuBaMengFriend = 0x261;
+    enumGameTypeMaJiangNeiMengGuXingAnMengFriend = 0x262;
+    enumGameTypeMaJiangNeiMengGuTuiDaoHuTournament = 0x263;
+    enumGameTypeMaJiangNeiMengGuBaoTouTournament = 0x264;
+    enumGameTypeMaJiangNeiMengGuEErDuoSi = 0x265;
+    enumGameTypeChinaChess = 0x0270;
+    enumGameTypeChinaChessEvaluate = 0x0271;
+    enumGameTypeChinaChessRushLevel = 0x0272;
+    enumGameTypeChinaChessLocalGame = 0x0274;
+    enumGameTypeChinaChessReplayGame = 0x0275;
+    enumGameTypeChinaChessFriendShiFen = 0x0276;
+    enumGameTypeChinaChessFriendErShiFen = 0x0277;
+    enumGameTypeChinaChessNew = 0x0278;
+    enumGameTypeChinaChessRushLevelNew = 0x0279;
+    enumGameTypeChinaChessRankingMatch = 0x027A;
+    enumGameTypeChinaChessOpenChess = 0x027B;
+    enumGameTypeChinaChessOpenChessFriendShiFen = 0x027C;
+    enumGameTypeChinaChessOpenChessFriendErShiFen = 0x027D;
+    enumGameTypeMaJiangJiangXiNanChangTournament = 0x28A;
+    enumGameTypeMaJiangJiangXiJiuJiangTournament = 0x28B;
+    enumGameTypeMaJiangJiangXiJingDeZhengTournament = 0x28C;
+    enumGameTypeMaJiangJiangXiFuZhouTournament = 0x28D;
+    enumGameTypeMaJiangJiangXiShangRaoTournament = 0x28E;
+    enumGameTypeMaJiangJiangXiYiChunTournament = 0x28F;
+    enumGameTypeMaJiangJiangXiPingXiang258Tournament = 0x290;
+    enumGameTypeMaJiangJiangXiXinYuTournament = 0x291;    
+    enumGameTypeMaJiangJiangXiJiAnTournament = 0x292;
+    enumGameTypeMaJiangSiChuanXueLiuChengHeFriend = 0x2A0;
+    enumGameTypeMaJiangXueLiuChengHe = 0x2A1;
+    enumGameTypeMaJiangXueLiuChengHeTournament = 0x2A2;
+    enumGameTypeMaJiangXueLiuChengHeFriend = 0x2A3;
+    enumGameTypeMaJiangXueZhanDaoDi = 0x2A4;
+    enumGameTypeMaJiangXueZhanDaoDiTournament = 0x2A5;
+    enumGameTypeMaJiangXueZhanDaoDiFriend = 0x2A6;
+    enumGameTypePaoYao = 0x2B0;
+    enumGameTypePaoYaoFriend = 0x2B1;
+    enumGameTypePaoYaoTournament = 0x2B2;
+    enumGameTypeErQiWangSanRen = 0x2C0;
+    enumGameTypeErQiWangSiRen = 0x2C1;
+    enumGameTypeErQiWangTournamentSanRen = 0x2C2;
+    enumGameTypeErQiWangTournamentSiRen = 0x2C3;
+    enumGameTypeErQiWangFriendSanRen = 0x2C4;
+    enumGameTypeErQiWangFriendSiRen = 0x2C5;
+    enumGameTypeMaJiangJiangSuNanJingTournament = 0x2D0;
+    enumGameTypeMaJiangJiangSuTaiZhouTournament = 0x2D1;
+    enumGameTypeMaJiangJiangSuYangZhouTournament = 0x2D2;
+    enumGameTypeGanDengYan = 0x2E0;
+    enumGameTypeGanDengYanFriend = 0x2E1;
+    enumGameTypeGanDengYanTournament = 0x2E2;
+    enumGameTypeMaJiangHeNanFriend = 0x2EE;
+    enumGameTypeMaJiangHeNanZhengZhouFriend = 0x2EF;
+    enumGameTypeMaJiangHeNanLuoYangFriend = 0x2F0;
+    enumGameTypeMaJiangHeNanZhuMaDianFriend = 0x2F1;
+    enumGameTypeMaJiangHeNanZhengZhouTournament = 0x2F2;
+    enumGameTypeMaJiangHeNanLuoYangTournament = 0x2F3;
+    enumGameTypeMaJiangHeNanZhuMaDianTournament = 0x2F4;
+    enumGameTypeGomokuEvaluate = 0x300;
+    enumGameTypeGomokuDanJi = 0x301;
+    enumGameTypeGomokuBan = 0x302;
+    enumGameTypeGomokuFriend = 0x303;
+    enumGameTypePaoHuZi = 0x316;
+    enumGameTypePaoHuZiFriend = 0x317;
+    enumGameTypePaoHuZiTournament = 0x318;
+    enumGameTypePaoHuZiChangShaFrieng = 0x319;
+    enumGameTypePaoHuZiChenZhouFriend = 0x31A;
+    enumGameTypeMaJiangJapanese = 0x31B;
+    enumGameTypeMaJiangAll = 0x31C;
+    enumGameTypeThailandPoker = 0x3E8;
+    enumGameTypeThailandPokerTwoCard = 0x3E9;
+    enumGameTypeThailandPokDeng = 0x3EA;
+    enumGameTypeThailandPokDengBaiRen = 0x3EB;
+    enumGameTypeThailandPaiKeang = 0x3EC;
+    enumGameTypeThailandPaiKeangDouble = 0x3ED;
+    enumGameTypeThailandPaiKeangPirate = 0x3EE;
+    enumGameTypeThailandDummy = 0x3EF;
+    enumGameTypeThailandDoubleTen = 0x3F0;
+    enumGameTypeThailandTouZi = 0x3F1;
+    enumGameTypeThailandTouZiBaiRen = 0x3F2;
+    enumGameTypeThailandYuXiaXie = 0x3F3;
+    enumGameTypeThailandYuXiaXieBaiRen = 0x3F4;
+    enumGameTypeThailandDomino = 0x3F5;
+    enumGameTypeThailandAll = 0x3F6;
+    enumGameTypeThailandPokerFivePlayer = 0x3F7;
+    enumGameTypeThailandPokerTwoCardFivePlayer = 0x3F8;
+    enumGameTypeBaiRenThailandPoker = 0x3F9;
+}
+
+enum EnumGameTypeStatus
+{
+    enumGameTypeStatusAvailable  = 0;
+    enumGameTypeStatusComingSoon = 1;
+    enumGameTypeStatusComingHot  = 2;
+}
+
+enum EnumDeviceType
+{
+    enumDeviceTypeUnknown = 0;
+    enumDeviceTypeiPad = 1;
+    enumDeviceTypeAndroid = 2;
+    enumDeviceTypeWindows = 3;
+    enumDeviceTypeRobot = 4;
+    enumDeviceTypeiPhone = 5;
+    enumDeviceTypeWebWechat = 6;
+}
+
+enum EnumPlatformType
+{
+    enumPlatformTypeAndroid = 0;
+    enumPlatformTypeIos = 1;
+}
+
+enum EnumGender
+{
+    enumGenderFemale = 0;
+    enumGenderMale = 1;
+    enumGenderUnknown = 2;
+}
+
+enum EnumResult
+{
+    enumResultSucc = 0;
+    enumResultFail = 1;
+}
+
+enum EnumLoginResult
+{
+    enumLoginResultSucc             = 0;
+    enumLoginResultAccountNotExist  = 1;
+    enumLoginResultWrongPassword    = 2;
+    enumRegisterResultSucc          = 3;
+    enumRegisterResultAlreadyExist  = 4;
+    enumRegisterResultDatabaseError = 5;
+    enumBlackIP = 6;
+    enumBlackMac = 7;
+    enumBlackUserID = 8;
+    enumRegBlockedByCount = 9;
+    enumLoginResultInPlayingGame = 10;
+    enumLoginResultInvalidToken = 11;
+    enumLoginResultExpiredVersion = 12;
+    enumLoginResultTooFrequently = 13;
+    enumLoginResultNeedVerification = 14;
+    enumRegisterResultWrongVerificationCode = 15;
+    enumLoginResultAuthFailed = 16;
+    enumLoginResultInvalidAccessToken = 17;
+    enumRegisterResultIllegalPassword = 18;
+    enumLoginResultSystemMaintenance = 19;
+    enumLoginResultWaitGameStop = 20;
+}
+
+enum EnumNewVersion
+{
+    enumUpdateTipNoNewVersion  = 0;
+    enumUpdateTipHasNewVersion = 1;
+    enumUpdateTipHasNewVersionMandatoryUpdate = 2;
+}
+
+enum EnumChangeTotalScoreReason
+{
+    enumChangeTotalScoreReasonUnknown = 0;
+    enumChangeTotalScoreReasonPlayGame = 1;
+    enumChangeTotalScorePresentGift = 2;
+    enumChangeTotalScorePresentChips = 3;
+    enumChangeTotalScorePresentProperty = 4;
+    enumChangeTotalScoreBonus = 5;
+    enumChangeTotalScoreSellProperty = 6;
+    enumChangeTotalScoreShutdownOldConnection = 7;
+    enumChangeTotalScoreOnlineReward = 8;
+    enumChangeTotalScoreTableReward = 9;
+    enumChangeTotalScoreRoulette = 10;
+    enumChangeTotalScoreSlotsReward = 11;
+    enumChangeTotalScoreReasonZhaJinHuaXiQian = 12;
+    enumChangeTotalScoreBuySpeaker = 13;
+    enumChangeTotalScoreTax = 14;
+    enumChangeTotalScoreSetPaySucc = 15;
+    enumChangeTotalScoreSetQueryUserInfo = 16;
+    enumChangeTotalScoreSetRobot = 17;
+    enumChangeTotalScoreMinusPresentChipsInGameServer = 18;
+    enumChangeTotalScoreDisconnect = 19;
+    enumChangeTotalScoreLogin = 20;
+    enumChangeTotalScoreMissionReward = 21;
+    enumChangeTotalScoreTournamentReward = 22;
+    enumChangeTotalScoreTournamentApplyFee = 23;
+    enumChangeTotalScoreNewGift = 24;
+    enumChangeTotalScoreAnimationEmotion = 25;
+    enumChangeTotalScoreCoffer = 26;
+    enumChangeTotalScoreFanFanLe = 27;
+    enumChangeTotalScoreNewMakeUp = 28;
+    enumChangeTotalScoreLuckyRedPacket = 29;
+};
+
+enum EnumBroadcastEventType
+{
+    enumBroadcastEventTypeAddNotification = 0;
+    enumBroadcastEventTypeDelNotification = 1;
+    enumBroadcastEventTypeAddActivity = 2;
+    enumBroadcastEventTypeDelActivity = 3;
+    enumBroadcastEventTypePopNotification = 4;
+    enumBroadcastEventTypePopActivity = 5;
+    enumBroadcastEventTypeFeedBackOpen = 6;
+    enumBroadcastEventTypeFeedBackClose = 7;
+    enumBroadcastEventTypeExchangeProductStockChange = 8;
+    enumBroadcastEventTypeTryLuckResult = 9;
+}
+
+enum EnumFeedBackOperation
+{
+    enumFeedBackOpen = 0;
+    enumFeedBackClose = 1;
+}
+
+enum EnumZhajinhuaCardType
+{
+    enumZhajinhuaCardTypeSingle = 1;
+    enumZhajinhuaCardTypeDouble = 2;
+    enumZhajinhuaCardTypeShunZi = 3;
+    enumZhajinhuaCardTypeJinHua = 4;
+    enumZhajinhuaCardTypeShunJin = 5;
+    enumZhajinhuaCardTypeBaoZi = 6;
+    enumZhajinhuaCardTypeSpecial = 7;
+}
+
+enum EnumFeedBackSwitch
+{
+    enumFeedBackSwitch_Close = 0;
+    enumFeedBackSwitch_Open = 1;
+}
+
+enum EnumQueryUserInfoType
+{
+    enumQueryUserInfoType_Normal = 0;
+    enumQueryUserInfoType_Client = 1;
+}
+
+enum EnumEnterGameFailReason
+{
+    enumEnterGameFailReasonUnknown = 0;
+    enumEnterGameFailReasonInvalidGame = 1;
+}
+
+enum EnumQuickStartFailReason
+{
+    enumFailReasonUnknown = 0;
+    enumFailReasonUnMatchedScore = 1;
+    enumFailReasonUnFinishedGame = 2;
+    enumFailReasonNoValidTable = 3;
+    enumFailReasonScoreTooLow = 4;
+    enumFailReasonScoreTooHigh = 5;
+    enumFailReasonNoValidSeat = 6;
+    enumFailReasonFullRoom = 7;
+    enumFailReasonPlayTooMuch = 8;
+    enumFailReasonExpTooLow = 9;
+    enumFailReasonServerMaintain = 10;    
+}
+
+enum EnumEnterTableFailReason
+{
+    enumEnterTableFailReasonUnknown = 0;
+    enumEnterTableFailReasonTableIsCreating = 1;
+    enumEnterTableFailReasonWrongPassword = 2;
+    enumEnterTableSuccessBeCreator = 3;
+    enumEnterTableFailReasonNoEnoughScore = 4;
+    enumEnterTableFailReasonWinTooMuch = 5;
+    enumEnterTableFailReasonTableIsFull = 6;
+}
+
+enum EnumUserActionBlockedReason
+{
+    enumUserActionBlockedReasonIsGaming = 1;
+}
+
+enum EnumCofferOperationResult
+{
+    enumCofferOperationSuccess = 0;
+    enumCofferOperationFailUnknown = 1;
+    enumCofferOperationNoEnoughScore = 2;
+    enumCofferOperationWrongPassword = 3;
+    enumCofferOperationIllegalOperationScore = 4;
+    enumCofferOperationUnfinishedGame = 5;
+}
+
+enum EnumSignInResult
+{
+    enumSignInResultSuccess = 0;
+    enumSignInResultFailUnknown = 1;
+    enumSignInResultHasSigned = 2;
+    enumSignInResultNoAdditionalDay = 3;
+    enumSignInResultMaxAdditionalTimes = 4;
+    enumSignInResultNoEnoughCard = 5;
+}
+
+enum EnumItemType
+{
+    enumItemChip = 0;//金豆
+    enumItemSpeaker = 1;//小喇叭
+    enumItemCoupon = 2;//兑奖券
+    enumItemSignCard = 3;//抽奖卡
+    enumItemNoteCardDevice = 4;
+    enumItemKingFrameLevel = 5;
+    enumItemWealthFrameLevel = 6;
+    enumItemCanSaiQuan = 7;
+    enumItemSilverTreasureBox = 8;//银宝盒
+    enumItemGoldenTreasureBox = 9;//金宝盒
+    enumItemFishingSecondMoney = 10;//钻石
+    enumItemHuaFeiQuan = 11;//话费券
+    enumItemFishingSkill1 = 12;
+    enumItemFishingSkill2 = 13;
+    enumItemFishingSkill3 = 14;
+    enumItemWechatRedPacket = 15;//红包
+    enumItemFriendRoomCard = 16;
+    enumItemWinRateResetCard = 17;//胜率重置卡
+    enumItemTVCanSaiQuan = 18;//电视台参赛券
+    enumItemActivityCoin = 19;//活动币
+    enumItemSecondMoney = 20;//棋牌第二货币
+    enumItemGift = 21;
+    enumItemGoldenActivityCoin = 22;
+    enumItemVipExp = 23;//vip经验
+
+    enumItemTypeFishBegin = 100;//100开始保留给捕鱼
+    
+    enumItemTypeSharkExchangeCard = 10000;//10000-20000,大厅兑换卡道具,存捕鱼表里
+    
+    enumItemTypeJingDongGiftCard = 20001;//京东礼品卡(实际上不存在,只是为了兑换表)
+    enumItemTypeHuaFei = 20002;//话费,和京东卡类似,虚拟类型,兑换用
+
+    //21000-22000,表示一些可装备的道具
+    enumItemHeadFrame = 21000;//头像框
+    enumItemChessBoard = 21001;//棋盘
+    enumItemChessman = 21002;//棋子
+    enumItemTimeLimitHeadFrame = 21003;//限时头像框
+    enumItemNewHeadFrame = 21004;//新永久头像框
+	
+	//麻将
+	enumItemUserChipsPool = 30000;	//麻将玩家金豆池
+	enumItemRedPacketPool = 30001;	//福券库
+	enumItemRobotRepertory = 30002;	//机器人库存
+    enumItemTypeDouDiZhuBegin = 40000; //40000开始保留给斗地主
+    enumItemTypeDouDiZhuEnd = 80000;   //80000结束保留给斗地主
+
+    enumItemNewYuanBao = 501;   //新元宝币
+}
+
+enum EnumPropertyChangeType
+{
+    enumPropertyChangeType_Buy = 1;
+    enumPropertyChangeType_TryLuck = 2;
+}
+
+enum EnumRouletteFailReason
+{
+    enumRouletteFailUnknown = 1;
+    enumRouletteFailUnfinishedGame = 2;
+}
+
+enum EnumUserSpecialGameInfoType
+{
+    enumUserMaxWinScore = 1000;
+    enumUserThumbUp = 1001;
+    enumUserShareGame = 1002;
+    enumDayPlayGameCount = 1003;//今日对局总数
+    enumDayWinGameCount = 1004;//今日对局赢的局数
+    enumTotalPlayGameCount = 1005;//所有游戏总局数
+    enumHighestWinGame = 1006;//胜率最高游戏
+    enumDayLoseGameCount = 1007;//今日对局输的局数
+    enumAttentionLineAccount = 1008;//关注line
+    enumFiveStarPraise = 1009;//五星好评
+    enumLimitTimeGiftPacket = 1010;//每日限时礼包
+    enumHidePayChannel = 1011;//隐藏泰国充值方式
+    enumDayWinScore = 1012;//玩家日净分
+    enumPokeDengPeriodGameCount = 1013;//搏定周期游戏数据
+    enumPokeDengPeriodGameScore = 1014;//搏定周期游戏净分
+    enumPokeDengContinueLoseGameCount = 1015;//搏定连输局数
+    enumShareHagoThumbUp = 1016; //Hago点赞数
+    enumJumpToOfficialWebsite = 1017; //跳转官网
+    enumMasterScore = 1018;//大师分
+    enumFiveStarPromotionalImage = 1019;//宣传图五星好评
+    enumQuestionnaire = 1020;//问卷调查
+    enumYouTube = 1021;//youtube领奖
+    enumVipAttentionLineAccount = 1022;//vip关注line
+}
+
+enum EnumShareGameType
+{
+    enumShareGame = 0;
+    enumShareThumbUp = 1;
+    enumShareAttentionLineAccount = 2;
+    enumShareFiveStarPraise = 3;
+    enumJumpOfficialWebsite = 4;
+    enumJumpFiveStartPromotionalImage = 5;
+    enumJumpQuestionnaire = 6;
+    enumJumpYouTube = 7;
+    enumVipShareAttentionLine = 8;
+}
+
+message FlagInfo
+{
+    required int32 flagID = 1;
+    required int32 flagPurview = 2;
+    required string flagImg = 3;
+    required string flagName = 4;
+    required int32 flagEffectiveDay = 5;
+    required int32 flagPrice = 6;
+    optional int32 timeAddedToUser = 7;
+    optional string flagImgInStore = 8;
+    optional int32 flagType = 9; 
+}
+
+message FlagInfos
+{
+    repeated FlagInfo flags = 11;
+}
+
+message TexasPokerUserInfo
+{
+    optional int64 texasPokerMaxWinScoreSingleGame = 1;
+    optional int32 texasPokerAvatarIndex = 2 [default = -1];
+}
+
+message AvatarFrameInfo
+{
+    //value = 1,golden;2,silver;3,bronze
+    optional int32 kingFrameLevel = 1;
+    optional int32 wealthFrameLevel = 2;
+}
+
+message UserExpInfo
+{
+    required uint64 userID = 1;
+    optional int32 gameCode = 2;
+    optional int32 gameType = 3;
+    optional int32 roomType = 4;
+    optional int32 exp = 5;
+}
+
+message UserRushLevelInfo
+{
+    required uint64 userID = 1;
+    optional int32 gameCode = 2;
+    optional int32 gameType = 3;
+    optional int32 level = 4;
+    optional int32 roomID = 5;
+    optional bool finish=6[default=false];
+}
+
+message UserSpecialGameInfo
+{
+    required uint64 userID = 1;
+    optional int32 gameCode = 2;
+    optional int32 itemID = 3;
+    optional int64 itemValue = 4;
+    optional int32 updateType = 5;
+}
+
+message BasicUserInfo
+{
+    required uint64 userID = 1;
+    required string userNick = 2;
+    required string userAvatar = 3;
+    required EnumGender userGender = 4;
+    required int64 userScore = 5;
+    required uint64 userExperience = 6;
+    optional EnumVIPLevel vipLevel = 7;
+    repeated FuncCard funcCards = 8;
+    optional int32 yuanBaoCount = 9;
+    repeated EnumIdentity identity = 10;//don't use this field, use the next one: flags
+    optional FlagInfos flags = 11;
+    optional int32 coupon = 12;
+    optional int32 gameTurnSum = 13;
+    optional int32 continuousWinTime = 14;
+    optional int32 totalBuy = 15;
+    optional int32 totalGameTurnSum = 16;
+    optional int32 rewardGameTurnSum = 17;
+    optional int64 totalGift = 18;
+    optional int32 fishWeaponCurLevel = 19;
+    optional int32 bulletCount = 20;
+    optional int32 fish_quest_complete_count = 21;
+    optional string fish_quest_info = 22;
+    optional int32 coupon_total_given = 23;
+    optional int64 scoreWinFromRobot = 24 [default = 0];
+    optional int64 serviceFee = 25 [default = 0];
+    optional int32 avatarIndex = 26 [default = -1];
+    optional int32 canSaiQuan = 27 [default = 0];
+    optional string userIDCard = 28;
+    optional string userIDCardName = 29;
+    optional int32 totalExchangeValue = 30 [default = 0];
+    optional string texasPokerBestCards = 31;
+    optional int32 firstBuyStatus = 32;
+    optional TexasPokerUserInfo texasPokerUserInfo = 33;
+    optional AvatarFrameInfo avatarFrameInfo = 34;
+    optional uint64 newgiftindex = 35 [default = 0];
+    optional int32 newgiftid = 36 [default = 0];
+    optional int32 huaFeiQuan = 37 [default = 0];
+    optional int32 roleIndex = 38 [default = 0];
+    optional string boundMobileNumber = 39;
+    optional string mobilenumber = 40;
+    optional int32 titleExp = 41;
+    optional int32 useLoginProtection = 42;
+    optional string userNewNick = 43;
+    optional uint64 fakeUserID = 44;
+    repeated UserExpInfo expInfo = 45;
+    repeated UserRushLevelInfo rushLevelInfo = 46;
+    optional string province = 47;
+    optional string city = 48;
+    optional int64 secondMoney = 49;
+    optional int32 headFrame = 50;
+}
+
+message DetailUserInfo
+{
+    required uint64 userID = 1;
+    required uint32 winCount = 2;
+    required uint32 lostCount = 3;
+    required uint32 drawCount = 4;
+    required string gift = 5;
+    required int32  speakerCount = 6;
+    optional string password = 7;
+    optional string user_email = 8;
+    optional string user_device_id = 9;
+    optional int32  wallet = 10;
+    optional string ip = 11;
+    optional string mac = 12;
+    optional int32  isblock = 13;
+    optional string channel_id = 14;
+    optional string activate_device = 15;
+    optional string uuid = 16;
+    optional string location = 17;
+    optional string officalgiftinfo = 18;
+    optional int32  consecutive_login = 19;
+    optional string registertime = 20;
+    optional string lastlogintime = 21;
+    optional string property = 22;
+    optional int64 lastlogintime_int = 23;
+    optional int64 gift_given_time = 24;
+    optional int64 viplasteffectivetime = 25;
+    optional int64 totalbuychips = 26;
+    optional int64 monthbuychips = 27;
+    optional uint32 totalcompetitiontimes = 28;
+    optional string mobilenumber = 29;
+    optional int64 selfpooltotalwin = 30;
+    optional int64 selfpooltotalcost = 31;
+    optional int32 selfpooltotalgametime = 32;
+    optional uint32 BuySpecialGoodsFirst = 33;
+    optional int64 vip_left_seconds = 34;
+    optional int64 fishexp = 35;
+    optional int64 fishlevel = 36;
+    optional int64 fishpowerpool = 37;
+    optional int64 payContribution = 38;
+    optional int32 payBonusGameCount = 39;
+    optional int32 winCountGuanDan = 40 [default = 0];
+    optional int32 loseCountGuanDan = 41 [default = 0];
+    optional string lastLoginIp = 42;
+    optional string lastLoginMac = 43;
+    optional int64 lastModifyNickTime = 44;
+    optional int64 lastUnbindMobileTime = 45;
+    optional int32 newUserBenefitStatus = 46;
+    optional int32 guildID = 47;
+    optional bool isInRedList = 48;
+    repeated UserSpecialGameInfo specialGameInfo = 49;
+}
+
+message ChipsBonusInfo
+{
+    required bool isLoginBonus           = 1;
+    optional uint32 consecutiveLoginDays = 2;
+    required int64 bonusChips           = 3;
+    required int64 totalChips           = 4;
+    optional uint64 userID = 5;
+    optional EnumVIPLevel vipLevel = 6;
+    optional int64 vipBonusChips = 7;
+    repeated int64 loginReward = 8;
+    optional int32 remainReliefRewardCount = 9;
+    optional int32 moneyItemId = 10;
+}
+
+message BaggageInfo
+{
+    required uint64 userID = 1;
+    optional int64 couponCount = 2;
+    optional int32 speakerCount = 3;
+    optional int32 signCardCount = 4;
+    optional int64 cofferChips = 5;
+    optional string cofferpassword = 6;
+    optional int64 noteCardDeviceEffectiveTime = 7;
+    optional int32 noteCardDeviceLeftEffectiveDays = 8;
+    optional int32 canSaiQuanCount = 9;
+    optional int32 silverTreasureBoxCount = 10;
+    optional int32 goldenTreasureBoxCount = 11;
+    optional string coffernewpassword = 12;
+    optional int64 fishSecondMoney = 13;
+    optional int32 fishSkill1 = 14;
+    optional int32 fishSkill2 = 15;
+    optional int32 wechatRedPacket = 16;
+    optional int32 friendRoomCard = 17;
+    optional int32 winRateResetCard = 18;
+    repeated ItemPair item = 19;
+}
+
+message SignInStatus
+{
+    required uint64 userID = 1;
+    required int32 signInRecord = 2;
+    required int32 rewardAvailableStatus = 3;
+    required int32 additionalSignInTimes = 4;
+    optional int32 maxAdditionalSignInTimes = 5;
+    optional int32 currentYear = 6;
+    optional int32 currentMonth = 7;
+    optional int32 currentDay = 8;
+    optional int64 lastSignInTime = 9;
+    optional int32 consecutiveSignInDays = 10;
+    optional int32 rewardGivenStatus = 11;
+}
+
+message UpdateInfo
+{
+    optional int32 channelID = 1;
+    optional int32 gameID = 2;
+    optional int32 updateVersion = 3;
+    optional string updateContent = 4;
+    optional int32 updateType = 5;
+    optional string versionStr = 6;
+    optional string packageSize = 7;
+    optional string md5 = 8;
+    optional string downloadURL = 9;
+    optional string packageName = 10;
+}
+
+message VipInfo
+{
+    required uint64 userID = 1;
+    required int32 level = 2;
+    required int32 exp = 3;
+    required int32 leftEffectiveDays = 4;
+    optional int32 expireDate = 5;
+    optional int32 lastRewardDate = 6;
+    optional int64 vipLoginReward = 7;
+    optional int64 rewardSecondMoney = 8;
+    repeated ItemPair vipLoginRewardItem = 9;
+    optional int64 makeUpMoney = 10;
+	optional int64 vipCofferSaveToday = 11;//泰国项目使用，VIP当日存入保险箱累计金额
+	optional int64 vipCofferDrawToday = 12;//泰国项目使用，VIP当日取出保险箱累计金额
+}
+
+message MotorInfo
+{
+    required uint64 userID = 1;
+    repeated int32 activeMotorID = 2;
+    optional int32 inUseMotorID = 3;
+}
+
+message PackageUpdateInfo
+{
+    required uint32 latestVersion = 1;
+    required uint32 expiredVersion = 2;
+    optional string url = 3;
+}
+
+message ModuleUpdateInfo
+{
+    required string moduleName = 1;
+    required uint32 latestVersion = 2;
+    required uint32 expiredVersion = 3;
+}
+
+message UserSpecialSingleGameInfo
+{
+    optional uint64 userID = 1;
+    optional int32 gameCode = 2;
+    optional int32 gameType = 3;
+    optional int32 itemID = 4;
+    optional int64 itemValue = 5;
+}
+
+message TableUserInfo
+{
+    required int32 seatID = 1;
+    required BasicUserInfo basicInfo = 2;
+    optional int64 takeInScore = 3;
+    optional int32 inUseMotorID = 4;
+    optional BaggageInfo baggageInfo = 5;
+    optional VipInfo vipInfo = 6;
+    optional DetailUserInfo DetailUserInfo = 7;
+    repeated UserSpecialSingleGameInfo specialSingleGameInfo = 8;
+    repeated QueryUserTableDataResponse userTableData = 9;
+}
+
+message TableInfo
+{
+    required EnumGameType gameType = 1;
+    required int32 tableID = 2;
+    required int32 seatCount = 3;
+    repeated TableUserInfo tableUserInfo = 4;
+    optional int32 innerGameIndex = 5;
+    optional uint64 tableCreator = 6;
+    optional bytes serialized = 100;
+}
+
+message GameInfo
+{
+    required EnumGameType gameType = 1;
+    required EnumGameTypeStatus gameTypeStatus = 2;
+}
+
+message NewGameInfo
+{
+    required int32 gameType = 1;//EnumGameType
+    required int32 gameTypeStatus = 2;//EnumGameTypeStatus 
+}
+
+message UserInfoPair
+{
+    required string fieldName = 1;
+    required string fieldValue = 2;
+}
+
+message GameRoomConfig
+{
+    required int32 gameType = 1;//EnumGameType
+    repeated string serialized = 2;//for normal game,is enter game cell, for tournament game, is game config
+}
+
+message TournamentRoomStatus
+{
+    required int32 gameType = 1;
+    required int32 tournamentGameType = 2;
+    required int32 tournamentRoomID = 3;
+    optional int32 currentPlayerCount = 4;
+    optional bool inThisTournamentRoom = 5;
+}
+
+enum EnumUserInfoFieldName
+{
+    enumUserInfoFieldNameNick = 1;
+    enumUserInfoFieldNameAvatar = 2;//only used for query 
+    enumUserInfoFieldNameGender = 3;
+    enumUserInfoFieldNameAvatarForModify = 4;//only used for modify
+    enumUserInfoFieldNameVIPLevel = 5;
+    enumUserInfoFieldNameMobileNumber = 6;
+    enumUserInfoFieldNameGameTurnSum = 7;
+    enumUserInfoFieldNameContinuousWinTime = 8;
+    enumUserInfoFieldNameCoupon = 9;
+    enumUserInfoFieldNameBuySpecialGoodsFirst = 10;
+    enumUserInfoFieldNameFishWeaponLevel = 11;
+    enumUserInfoFieldNameAvatarIndex = 12;
+    enumUserInfoFieldNameServiceFee = 13;
+    enumUserInfoFieldNameScoreWinFromRobot = 14;
+    enumUserInfoFieldNamePassword = 15;
+    enumUserInfoFieldNameSpeakerNum = 16;
+    enumUserInfoFieldNameTotalExchangeValue = 17;
+    enumUserInfoFieldNameTexasPokerBestCards = 18;
+    enumUserInfoFieldNameEmail = 19;
+    enumUserInfoFieldNameTexasPokerAvatarIndex = 20;
+    enumUserInfoFieldNameNewGiftIndex = 21;
+    enumUserInfoFieldNameNewGiftID = 22;
+    enumUserInfoFieldNameRoleIndex = 23;
+    enumUserInfoFieldNameUserIDCard = 24;
+    enumUserInfoFieldNameUserIDCardName = 25;
+    enumUserInfoFieldNameUseLoginProtection = 26;
+    enumUserInfoFieldNameNewNick = 27;
+    enumUserInfoFieldNameProvince = 28;
+    enumUserInfoFieldNameCity = 29;
+    enumUserInfoFieldNameGiftGivenTime = 30;
+}    
+
+message PairIntString
+{
+    required EnumUserInfoFieldName fieldName = 1;
+    required string fieldValue = 2;
+}
+
+enum EnumChatType
+{
+    enumChatTypeText = 0;
+    enumChatTypeEmotion = 1;
+    enumChatTypeShortcut = 2;
+    enumChatTypeVoice = 3;
+    enumChatTypeVoiceExtend = 4;
+}
+
+enum EnumMissionType
+{
+    enumMissionTypeDaily = 0;
+    enumMissionTypeSystem = 1;
+}
+
+///////////////////data define end///////////////////
+
+message ConnectGameServer
+{
+    required string ip = 1;
+    required uint32 port = 2;
+}
+
+message MobileRegisterInfo
+{
+    required string mobileNumber = 1;
+    required string verificationCode = 2;
+    optional int32 localMobileAccountNumber = 3;
+}
+
+message WeChatAuthInfo
+{
+    required string appid = 1;
+    required string code = 2;
+}
+
+message WeChatLoginInfo
+{
+    required string unionID = 1;
+    required string accessToken = 2;
+}
+
+message QQAuthInfo
+{
+    required string appID = 1;
+    required string openID = 2;
+    required string openKey = 3;
+}
+
+message ThirdPartyAuthInfo
+{
+    optional string appID = 1;
+    optional string accessToken = 2;
+    optional string openID = 3;
+    optional string ts = 4;
+    optional string nickName = 5;
+    optional string avatar = 6;
+    optional int32 platformType = 7;//平台类型,EnumPlatformType
+}
+
+message UserIDAuthInfo
+{
+    optional uint64 userID = 1;
+    optional string verificationCode = 2;
+    optional string loginToken = 3;
+}
+
+enum EnumUserSourceType
+{
+    enumUserSourceTypeWechatAdvert = 1;
+    enumUserSourceTypeOtherGame = 2;
+    enumUserSourceTypeInvited = 3;
+    enumUserSourceTypeIosAdv = 4;
+    enumUserSourceTypeFacebookAdv = 5;
+    enumUserSourceTypeGoogleAdv = 6;
+    enumUserSourceTypeQQXiaoYouXiAdv = 7;
+    enumUserSourceTypeTictokAdv = 8;
+    enumUserSourceTypeUnityAdv = 9;
+}
+
+enum EnumInviteType
+{
+    enumInviteTypeDefault = 0;//默认
+    enumInviteTypeBackGame = 1;//老玩家回归
+    enumInviteTypeShareUrl = 2;//分享链接
+}
+
+message UserSource
+{
+    optional int32 sourceType = 1;
+    optional string sourceId = 2;
+    optional int32 inviteType = 3;//为enumUserSourceTypeInvited再细化
+    optional string token = 4;//邀请用的标记
+	optional string shareType = 5;//通过会话卡片进入时，是通过哪个卡片进入的
+	optional string loginChannel = 6;	//通过什么渠道进来的 share：分享卡片进入、search：小程序搜索、applet：我的小程序、floating_window：浮窗
+}
+
+message LoginExtraInfo
+{
+    optional int32 signVersion = 1;//签名版本,决定不同的逻辑
+    optional string sign = 2;//签名,防作弊
+    optional string deviceType = 3;//设备型号,LoginRequest里那个是类型,-.-
+    optional string os = 4;//操作系统
+}
+
+message LoginRequest
+{
+    required EnumLoginType loginType = 1;
+    required EnumGameType gameType = 2;
+    required string account = 3;//email,91account
+    required string password = 4;
+    required string nickname = 5;
+    required EnumGender gender = 6;
+    required EnumDeviceType deviceType = 7;
+    required string deviceID = 8;
+    optional string deviceToken = 9;//iOS device push token
+    required string macAddress = 10;
+    required string secureKey = 11;//avoid hacker attack
+    required string channel = 12;//marketing channel
+    required uint32 version = 13;//current version
+    optional string loginipaddress = 14;//login ip address
+    optional uint32 loginipport = 15;//login port
+    optional uint32 gameserveripaddress = 16;
+    optional uint32 gameserveripport = 17;
+    optional string mobilenumber = 18;
+    optional int32 channelid = 19;
+    optional string imei = 20;
+    optional int32 gameCode = 21;
+    optional string userIDCard = 22;
+    optional string userIDCardName = 23;
+    optional int32 gameID = 24;
+    optional uint32 androidVersion = 25;
+    optional int32 language = 26;
+    optional int32 lobbyGameCode = 27;
+    optional string lobbyTag = 28;
+    optional string packageChannelName = 29;
+    optional string packageSignature = 30;
+    optional string packageName = 31;
+    optional MobileRegisterInfo mobileRegisterInfo = 32;
+    optional WeChatAuthInfo weChatAuthInfo = 33;
+    optional WeChatLoginInfo weChatLoginInfo = 34;
+    optional QQAuthInfo qqAuthInfo = 35;
+    optional ThirdPartyAuthInfo thirdPartyAuthInfo = 36;
+    optional string td = 37;
+    optional string secureNumber = 38;
+    optional int32 newLoginType = 39;
+    optional UserIDAuthInfo userIDAuthInfo = 40;
+    optional UserSource userSource = 41;
+    optional bytes loginExtraInfo = 42;//用LoginExtraInfo解析和序列化
+	optional DataServerCommonFields dataServerCommonFields = 43;
+	optional string oaid = 44;   //Android的OAID
+}
+
+message DataServerCommonFields
+{
+	optional string gameId = 1;
+	optional string appId = 2;
+	optional string packageName = 3;
+	optional string channelId = 4;
+	optional string idfa = 5;
+	optional string idfv = 6;
+	optional string androidId = 7;
+	optional string googleAid = 8;
+	optional string language = 9;
+	optional string carrier = 10;
+	optional string osType = 11;
+	optional string osVersion = 12;
+	optional string appVersion = 13;
+	optional string originalAppVersion = 14;
+	optional string deviceType = 15;
+	optional string deviceBrand = 16;
+	optional string deviceModel = 17;
+    optional string gdtvid = 18;
+    optional string sourceid = 19;
+	optional string wxVersion = 20;
+	optional string ip = 21;
+	optional string adjustAdId = 22;
+    optional string isSimulater = 23;
+    optional string simulater = 24;
+    optional string oaid = 25;   //Android的OAID  这个变成了公共字段
+    optional string device_id = 26;// 这个变成了公共字段
+}
+
+message UserDataAccountField
+{
+	optional string Game_id = 1;
+	optional string Open_id = 2;		//SDK服务器分配给游戏的唯一id
+	optional string User_id = 3;		//游戏服务器为账号分配的唯一id，不同角色共享一个user_id，游戏服务器可以直接使用open_id作为user_id
+	optional string Role_id = 4;		//游戏服务器为不同角色分配的唯一id，同一个app_id下的role_id全局唯一
+	optional string Server_id = 5;		//不同服务器的id，不分服则填null
+	optional string Role_name = 6;		//玩家当前角色名称，没有这个设定或者获取不到填null
+	optional string Level = 7;			//角色等级，没有这个设定或者获取不到填空字符
+	optional string Vip_level = 8;		//vip经验值，没有这个设定或者获取不到填null
+	optional string Guild_id = 9;		//当前工会id，没有这个设定或者获取不到填null
+	optional string Gender = 10;		//角色信息里的性别，没有这个设定或者获取不到填null
+	optional string Total_charge = 11;	//角色累计充值金额，单位为美分，只在国内发行的游戏单位为分
+	optional string Is_self = 12;		//是否是公司内部账号
+	optional string Validity = 13;		//VIP有效期，单位为秒
+	optional string Last_pay = 14;		//最后一次充值时间
+	optional string Last_login = 15;	//最后一次登录时间
+	optional string Safebox = 16;		//保险箱金额
+	optional string App_id = 17;     	//同一游戏下，不同应用对应的唯一ID，由发行提供
+	optional string URL = 18;			//微信广告转化url
+	optional int32  SourceType = 19;	//账号来源类型,广告等
+	optional string IsRobot = 20;		//是否是机器人
+}
+
+enum EnumChannelUpdateType
+{
+    enumChannelUpdateTypeNotice = 0;
+    enumChannelUpdateTypeForce = 1;
+}
+
+message UserTVTournamentInfo
+{
+    required uint64 userID = 1;
+    required int32 gameID = 2;
+    required int64 tvTournamentType = 3;
+    required int64 tvTournamentScore = 4;
+    required int32 tvTournamentWinCount = 5;
+    required int32 tvTournamentLoseCount = 6;
+}
+
+//断线重入的具体信息
+message Offline2OnlineInfo
+{
+    optional int32 gameType = 1;
+}
+
+message LoginResponse
+{
+       required int32 result = 1;//EnumLoginResult
+       optional BasicUserInfo basicUserInfo = 2;
+       repeated GameInfo gameInfo = 3;
+       optional EnumNewVersion update = 4;
+       optional string updateURL = 5;
+       optional string iOSUpdateURL = 6;
+       optional string latestVersion = 7;
+       optional string updateInfo = 8;
+       optional uint32 gameserveripaddress = 16;
+       optional uint32 gameserveripport = 17;
+       optional ChipsBonusInfo bonusinfo = 18;
+       optional int32  speakerCount = 19;
+       optional EnumFeedBackOperation feedback = 20;
+       repeated NewGameInfo newGameInfo = 21;
+       optional bool offline2online = 22 [default = false];
+       optional bool isGuest = 23 [default = false];
+       optional int32 channelid = 24;
+       optional string channel_newest_version = 25;
+       optional int32 channel_update_type = 26;
+       optional string channel_update_url = 27;
+       optional string channel_update_describe = 28;
+       optional BaggageInfo baggageInfo = 29;
+       optional int32 isFirstLoginToday = 30;
+       optional bool isNewUser = 31;
+       optional UpdateInfo newUpdateInfo = 32;
+       optional int32 rankRewardAvailableCount = 33;
+       repeated GameRoomConfig roomConfig = 34;
+       repeated TournamentRoomStatus tournamentRoomStatus = 35;
+       optional string lobbyLatestVersion = 36;
+       optional VipInfo vipInfo = 37;
+       optional int32 povertyRewardAvailableCount = 38;
+       optional int32 povertyRewardDailyMaxCount = 39;
+       optional MotorInfo motorInfo = 40;
+       optional int32 unfinishedGameCode = 41;
+       optional string token = 42;
+       optional int32 adWallStatus = 43;//0,closed;1,opened
+       optional int32 gameID = 44 [default = -1];
+       optional DetailUserInfo detailUserInfo = 45;
+       repeated UserTVTournamentInfo tvTournamentInfo = 46;
+       repeated int32 newGameTypeFlag = 47;
+       repeated int32 hotGameTypeFlag = 48;
+       optional PackageUpdateInfo packageUpdateInfo = 49;
+       repeated ModuleUpdateInfo moduleUpdateInfo = 50;
+       optional WeChatLoginInfo weChatLoginInfo = 51;
+       optional bytes commonInfo = 52;//GameCommon.LoginCommonInfo来解析
+       optional bytes specialInfo = 53;
+       optional Offline2OnlineInfo offline2OnlineInfo = 54;
+       optional BagInfo bagInfo = 55;
+       optional bool otherPaymentOpen = 56;
+       optional string td = 57;
+   	   optional string serverTime = 61;	//当前服务器时间
+       optional bool newUserGuide = 62;    //是否显示新手引导
+       repeated ItemPair newUserGuideReward = 63;   //新手指导奖励
+       optional int64 sevenDaysTotalFee = 64;  //7日累计充值
+}
+
+message GameServerTableChat
+{
+    required int32 tableID = 1;
+    required uint64 senderUserID = 2;
+    required int32 senderSeatID = 3;
+    required EnumChatType chatType = 4;
+    required string msg = 5;
+    optional string senderNick = 6;    
+    optional int32 roleIndex = 7;
+    optional int32 vipLevel = 8;
+    optional bool sendTeam = 9 [default = false];			// 队伍聊天
+}
+
+message GameServerGetUserBasicInfoRequest
+{
+    required uint64 userid = 1;
+}
+message GameServerGetUserBasicInfoResponse
+{
+    required EnumResult result = 1;
+    required BasicUserInfo basicInfo = 2;
+}
+
+message GameServerEnterGameRequest
+{
+    required EnumGameType gameType = 1;
+    optional int32 version = 2;
+}
+
+message GameServerEnterGameResponse
+{
+    required EnumResult result = 1;
+    required EnumGameType gameType = 2;
+    optional bytes serialized = 3;
+    optional int32 failReason = 4;
+}
+
+message GameServerGetRoomListRequest
+{
+    required int32 gameType = 1; 
+}
+
+message GameServerGetRoomListResponse
+{
+    required int32 result = 1;
+    required int32 gameType = 2;
+    optional bytes serialized = 3;
+}
+
+message GameServerLeaveGameRequest
+{
+    required EnumGameType gameType = 1; 
+}
+
+message GameServerLeaveGameResponse
+{
+    required EnumResult result = 1;
+    required EnumGameType gameType = 2;
+}
+
+message GameServerGetTableListRequest
+{
+    required EnumGameType gameType = 1;
+    required bytes serialized = 2;
+}
+
+message GameServerGetTableListResponse
+{
+    required EnumResult result = 1;
+    repeated TableInfo tableInfo = 2;
+    optional int32 pageIndex = 3;
+}
+
+message GameServerEnterTableRequest
+{
+    required EnumGameType gameType = 1;
+    required int32 tableID = 2;
+    optional string password = 3;
+}
+
+message GameServerEnterTableResponse
+{
+    required EnumResult result = 1;
+    optional TableInfo tableInfo = 2;
+    optional int32 failReason = 3;
+}
+
+message GameServerModifyTakeInScoreRequest
+{
+    required int32 seatID = 1;
+    required int64 scoreTakeIn = 2;
+}
+
+message GameServerModifyTakeInScoreResponse
+{
+    required EnumResult result = 1;
+    required int32 seatID = 2;
+    required int64 scoreTakeIn = 3;
+}
+
+message GameServerModifyTakeInScoreBC
+{
+    required int32 seatID = 1;
+    required int64 scoreTakeIn = 2;
+}
+
+message GameServerEnterSeatRequest
+{
+    required int32 seatID = 1;
+    optional int64 scoreTakeIn = 2;
+}
+
+message GameServerEnterSeatResponse
+{
+    required EnumResult result = 1;
+    optional int32 tableID = 2;
+    optional int32 seatID = 3;
+    optional int64 scoreTakeIn = 4;
+}
+
+message GameServerEnterSeatBC
+{
+    required BasicUserInfo basicUserInfo = 1;
+    required int32 tableID = 2;
+    required int32 seatID = 3;
+    required int64 scoreTakeIn = 4;
+    optional int32 inUseMotorID = 5;
+    optional BaggageInfo baggageInfo = 6;
+    optional VipInfo vipInfo = 7;
+    optional DetailUserInfo DetailUserInfo = 8;
+}
+
+message GameServerLeaveSeatRequest
+{
+    required uint64 userID = 1;
+    required int32 tableID = 2;
+    required int32 seatID = 3;
+}
+
+message GameServerLeaveSeatResponse
+{
+    required EnumResult result = 1;
+    optional uint64 userID = 2;
+    optional int32 tableID = 3;
+    optional int32 seatID = 4;
+    optional int32 reason = 5;
+}
+
+message GameServerLeaveSeatBC
+{
+    required uint64 userID = 1;
+    required int32 tableID = 2;
+    required int32 seatID = 3;
+    optional int32 reason = 4;
+}
+
+message GameServerLogicData
+{
+    required int32 cmd = 1;
+    required bytes serialized = 100;
+    repeated GameServerExtraLogicData extraLogicData = 2;
+}
+
+message GameServerExtraLogicData
+{
+    optional int32 cmd = 1;
+    optional bytes serialized = 100;
+}
+
+message GameServerLeaveTableRequest
+{
+    required uint64 userID = 1;
+    required int32 tableID = 2;
+    optional bool needOffline2Online = 3;
+}
+
+message GameServerLeaveTableResponse
+{
+    required EnumResult result = 1;
+    optional uint64 userID = 2;
+    optional int32 tableID = 3;
+    optional int32 reason = 4;
+}
+
+message GameServerGetGameListResponse
+{
+    repeated GameInfo gameInfo = 1;
+    repeated NewGameInfo newGameInfo = 2;
+}
+
+message GameServerQuickStartRequest
+{
+    required EnumGameType gameType = 1;
+    optional uint64 baseScore = 2;
+    optional bool supportOffline2Online = 3 [default = false];
+    optional int32 seat = 4 [default = -1];
+    optional int32 tableID = 5 [default = -1];
+    optional bool needAutoPrepare = 6 [default = true];
+    optional int32 roomID = 7 [default = -1];
+    optional int32 rushLevel = 8 [default = 0];
+    optional bool visibleCard = 9 [default = false];
+}
+
+message GameServerQuickStartResponse
+{
+    required EnumResult result = 1;
+    optional TableInfo tableInfo = 2;
+    optional int32 failReason = 3;
+    optional int64 minScore = 4;
+    optional uint64 baseScore = 5;
+    optional int64 maxScore = 6;
+    optional int32 nextRoomID = 7;
+    optional int32 roomID = 8;
+}
+
+message GameServerCreatePrivateTableRequest
+{
+    required int32 gameType = 1;
+    required int32 tableID = 2;
+    required bytes serialized = 100;
+    optional string password = 3;
+}
+
+message GameServerCreatePrivateTableResponse
+{
+    required int32 result = 1;
+    optional bytes serialized = 100;
+}
+
+message GameServerQueryUserInfoRequest
+{
+    required uint64 userID = 1;
+    optional EnumQueryUserInfoType type = 2;
+    optional int32 gameCode = 3;
+    optional bool HeadFrameFlag = 4;
+    repeated int32 gameTypes = 5;   //需要多少给多少战绩数据，大佬们需要自己汇总显示
+}
+
+message GameServerQueryUserInfoResponse
+{
+    required EnumResult result = 1;
+    required BasicUserInfo basicUserInfo = 2;
+    required DetailUserInfo detailUserInfo = 3;
+    optional BaggageInfo baggageInfo = 4;
+    optional VipInfo vipInfo = 5;
+    optional MotorInfo motorInfo = 6;
+    optional UserLocationInfo locationInfo = 7;
+    optional BagInfo bagInfo = 8;
+}
+
+message GameServerQueryUserGameGradeRequest
+{
+    required uint64 userID =1;
+    repeated int32 gameTypes = 2;   //需要多少给多少战绩数据，大佬们需要自己汇总显示
+}
+
+message GameServerUserGameGrade
+{
+    optional int32 gameType = 1;
+    optional int32 winCount = 2;
+    optional int32 loseCount = 3;
+    optional int32 drawCount = 4;
+}
+message GameServerQueryUserGameGradeResponse
+{
+     required uint64 userID =1;
+    repeated GameServerUserGameGrade gameGrade=2;    //战绩信息
+}
+
+message GameServerSearchUserRequest
+{
+    required uint64 userID = 1;
+}
+
+message GameServerSearchUserResponse
+{
+    required EnumResult result = 1;
+    required uint64 userID = 2;
+    optional BasicUserInfo basicUserInfo = 3;
+}
+
+message GameServerModifyUserInfoRequest
+{
+    required uint64 userid = 1;
+    repeated PairIntString kv = 2;
+}
+
+message GameServerPresentScoreRequest
+{
+    required uint64 userIDFrom = 1;
+    required uint64 userIDTo = 2;
+    required int64 score = 3;
+    optional EnumGameType gameType = 4;
+    optional int32 gameCode = 5;
+}
+
+message GameServerPresentScoreResponse
+{
+    required EnumResult result = 1;
+    required uint64 userIDFrom = 2;
+    required uint64 userIDTo = 3;
+    optional EnumGameType gameType = 4;    
+    required int64 scoreFrom = 5;
+    required int64 scoreTo = 6;
+    optional int32 gameCode = 7;
+}
+
+enum EnumModifyNewNickFailReason
+{
+    enumModifyNewNickFailReasonUnknown = 1;
+    enumModifyNewNickFailReasonNewNickExists = 2;
+    enumModifyNewNickFailReasonNewNickIllegal = 3;
+    enumModifyNewNickFailReasonNewNickSameAsOld = 4;
+    enumModifyNewNickFailReasonTooCloseToLastModifyTime = 5;
+}
+
+message GameServerModifyUserInfoResponse
+{
+    required EnumResult result = 1;
+    required uint64 userid = 2;
+    repeated PairIntString kv = 3;
+    optional int32 failReason = 4;
+}
+
+message GamerServerTotalScoreChanged
+{
+    required uint64 userid = 1;
+    required int64 totalScoreChanged = 2;
+    required int64 totalScoreAfterChanged = 3;
+    required EnumChangeTotalScoreReason reason = 4;
+}
+
+message GameServerTakeInScoreChanged
+{
+    required uint64 userID = 1;
+    required int64 newTakeInScore = 2;
+}
+
+message GamerServerChangeScoreWithOldConnection
+{
+    required uint64 userid = 1;
+    required int64 totalScoreChanged = 2;
+}
+
+
+
+message GameServerKickOnlineUser
+{
+    required uint64 userid = 1;
+    required string key = 2;
+    required uint64 token = 3;
+}
+
+message ModifyUserInfoReq
+{
+    required BasicUserInfo basicUserInfo = 1;
+    required DetailUserInfo detailUserInfo = 2;
+}
+
+message ModifyUserInfoRsp
+{
+    required int32 returncode = 1;
+}
+
+
+
+
+message AddFriendRequest
+{
+    required uint64 userIDAdd = 1;
+    required uint64 userIDAdded = 2;
+    optional string reason = 3;
+    optional BasicUserInfo userInfoAdd = 4;
+    optional BasicUserInfo userInfoAdded = 5;
+}
+
+message AcceptFriendRequest
+{
+    required uint64 userIDAccept = 1;
+    required uint64 userIDAccepted = 2;
+    optional BasicUserInfo userInfoAccept = 3;
+    optional BasicUserInfo userInfoAccepted = 4;
+}
+
+message AcceptFriendResponse
+{
+    required EnumResult result = 1; 
+    required uint64 userIDAccept = 2;
+    required uint64 userIDAccepted = 3;
+    optional BasicUserInfo userInfoAccept = 4;
+    optional BasicUserInfo userInfoAccepted = 5;
+}
+
+message RejectFriendRequest
+{
+    required uint64 userIDReject = 1;
+    required uint64 userIDRejected = 2;
+    optional string reason = 3;
+    optional BasicUserInfo userInfoReject = 4;
+    optional BasicUserInfo userInfoRejected = 5;
+}
+
+message RemoveFriendRequest
+{
+    required uint64 userIDRemove = 1;
+    required uint64 userIDRemoved = 2;
+    optional BasicUserInfo userInfoRemove = 3;
+    optional BasicUserInfo userInfoRemoved = 4;
+}
+
+message RemoveFriendResponse
+{
+    required EnumResult result = 1;
+    optional uint64 userIDRemove = 2;
+    optional uint64 userIDRemoved = 3;
+    optional BasicUserInfo userInfoRemove = 4;
+    optional BasicUserInfo userInfoRemoved = 5;
+}
+
+message RemoveFriendBC
+{
+    required uint64 userIDRemove = 1;
+    required uint64 userIDRemoved = 2;
+    optional BasicUserInfo userInfoRemove = 3;
+    optional BasicUserInfo userInfoRemoved = 4;
+}
+
+message GetAddFriendRequestListRequest
+{
+    required uint64 userID = 1;
+    optional uint32 sessionID = 2;
+}
+
+message GetAddFriendRequestListResponse
+{
+    required EnumResult result = 1;
+    required uint64 userID = 2;
+    optional uint32 sessionID = 3;
+    repeated BasicUserInfo userInfos = 4;
+    optional bool end = 5;
+}
+
+message GetFriendListRequest
+{
+    required uint64 userID = 1;
+    required uint32 sessionID = 2;
+}
+
+message GetFriendListResponse
+{
+    required EnumResult result = 1;
+    required uint64 userID = 2;
+    required uint32 sessionID = 3;
+    repeated BasicUserInfo userInfos = 4;
+    optional bool end = 5;
+}
+
+message SingleChatMsg
+{
+    required uint64 userIDFrom = 1;
+    required uint64 userIDTo = 2;
+    required string msg = 3;
+    optional string timestamp = 4;
+    optional BasicUserInfo userInfoFrom = 5;
+    optional BasicUserInfo userInfoTo = 6;
+}
+
+message GetOfflineMsgRequest
+{
+    required uint64 userID = 1;
+    required uint32 sessionID = 2;
+}
+
+message GetOfflineMsgResponse
+{
+    required EnumResult result = 1;
+    required uint64 userID = 2;
+    required uint32 sessionID = 3;
+    repeated SingleChatMsg msgs = 4;
+    optional bool end = 5;
+}
+
+message BuySpeakerReq
+{
+    required uint64 userID = 1;
+    required int32 speakerNum = 2;
+    required int64 totalPrice = 3;
+}
+
+message BuySpeakerRsp
+{
+    required int32 returncode = 1;
+    required uint64 userID = 2;
+    required int64 subscore = 3;
+}
+
+message KickUserFromTableRequest
+{
+    required uint64 userIDKicked = 1;
+    required EnumGameType gameType = 2;
+    required int32 tableID = 3;
+}
+
+message KickUserFromTableResponse
+{
+    required EnumResult result = 1;
+    required uint64 userIDKick = 2;
+    required uint64 userIDKicked = 3;
+    required EnumGameType gameType = 4;
+    required int32 tableID = 5;
+}
+
+message ExchangeToolRequest
+{
+    required uint64 userID = 1;
+    required string productID = 2;
+}
+
+message ExchangeToolResponse
+{
+    required EnumResult result = 1;
+}
+
+message ServerClientBroadcastData
+{
+    required EnumBroadcastEventType broadcastEventType = 1;
+    optional bytes serialized = 2;
+}
+
+message XiaoLaBaNotify
+{
+    required int32 gameCode = 1;
+    required EnumXiaoLaBaNotifyType type = 2;
+    optional int32 value = 3;
+    optional uint64 userID = 4;
+    optional string nickName = 5;
+    optional uint64 baseScore = 6;
+}
+
+message SpeakerAutoSendConfigInfo
+{
+    optional int64 msgBuyThreshold = 1;
+    optional int64 commonBuyThreshold = 2;
+    optional EnumZhajinhuaCardType zhaJinHuaCardTypeThreshold = 3;
+    optional int64 singleTurnWinThreshold = 4;
+    optional int64 rouletteWinThreshold = 5;
+    optional int64 tableRewardThreshold = 6;
+}
+
+message GetSpeakerAutoSendConfigReq
+{
+    optional int32 gameCode = 1;
+}
+
+message GetSpeakerAutoSendConfigRsp
+{
+    required int32 returncode = 1; 
+    optional SpeakerAutoSendConfigInfo configInfo = 2;
+}
+
+message ModifySpeakerAutoSendConfigReq
+{
+    required SpeakerAutoSendConfigInfo configInfo = 1;
+}
+
+message ModifySpeakerAutoSendConfigRsp
+{
+    required int32 returncode = 1;
+}
+
+message ModifySpeakerAutoSendConfigNotify
+{
+    required SpeakerAutoSendConfigInfo configInfo = 1;
+}
+
+message ForbidUserActionNotify
+{
+    required uint64 userID = 1;
+}
+
+message AllowUserActionNotify
+{
+    required uint64 userID = 1;
+    optional int64 userScore = 2;
+}
+
+message ClientGameServerOffline2OnlineResponse
+{
+    required uint64 userID = 1;
+    optional int32 gameType = 2;
+    optional int32 tournamentGameType = 3;
+    optional TableInfo tableInfo = 4;
+    optional int32 roomID = 5;
+    
+    optional bytes offline2OnlineGameScene = 100;
+    optional bytes tournamentOffline2OnlineGameScene = 101;
+    optional bytes friendGameOffline2OnlineGameScene = 102;
+}
+
+message ClientGameServerUserOfflineNotify
+{
+    required uint64 userID  = 1;
+}
+
+message UserActionBlockedNotify
+{
+    required int32 reason = 1;//EnumUserActionBlockedReason
+}
+
+message UserGetATaskNotify
+{
+    required int32 taskID = 1;
+    required string taskName = 2;
+    required int32 couponNum = 3;
+    required int32 getType = 4;
+    required int32 version = 5;
+    required string opinfor = 6;
+}
+
+message UserGetChallengeTask
+{
+    optional uint64 userID = 1;
+    repeated UserGetATaskNotify taskNotify = 2;
+    optional int32 getType = 3;
+    
+}
+
+message ClientGameServerAddictionPreventionNotify
+{
+    required uint64 userID = 1;
+    required string message = 2;
+    required bool isAddicted = 3;
+}
+
+
+message InGameTask
+{
+    required int32 gameType = 1;//EnumGameType
+    required int32 taskID = 2;
+    required string taskName = 3;
+    required int32 rewardNum = 4;
+    required int32 rewardType = 5;//0:coupon, 1:chips
+}
+
+message InGameTaskNotify
+{
+    repeated InGameTask tasks = 1;
+}
+
+message InGameTaskFinishNotfify
+{
+    required uint64 userID = 1;
+    repeated InGameTask tasks = 2;
+}
+
+message QueryUserBaggageInfoRequest
+{
+    required uint64 userID = 1;
+}
+
+message QueryUserBaggageInfoResponse
+{
+    required int32 result = 1;
+    optional BaggageInfo baggageInfo = 2;
+}
+
+message CofferOperationRequest
+{
+    required uint64 userID = 1;
+    required int32 operationType = 2;
+    required int64 operationScore = 3;
+    required string password = 4;
+}
+
+message CofferOperationResponse
+{
+    required int32 result = 1;
+    required int32 operationType = 2;
+    required int64 operationScore = 3;
+    required int64 currentCofferScore = 4;
+    required int64 currentUserScore = 5;
+    optional int64 serviceFee = 6;
+	optional int64 vipCofferSaveToday = 7;//泰国项目使用，VIP当日存入保险箱累计金额
+	optional int64 vipCofferDrawToday = 8;//泰国项目使用，VIP当日取出保险箱累计金额
+}
+
+enum EnumModifyCofferNewPasswordResult
+{
+    enumModifyCofferNewPasswordResultSucc = 0;
+    enumModifyCofferNewPasswordResultUnknown = 1;
+    enumModifyCofferNewPasswordResultNotSameInput = 2;
+    enumModifyCofferNewPasswordResultWrongOldPassword = 3;
+    enumModifyCofferNewPasswordResultIllegalNewPassword = 4;
+    enumModifyCofferNewPasswordResultWrongVerificationCode = 5;
+}
+
+message ModifyCofferNewPasswordRequest
+{
+    required uint64 userID = 1;
+    required string oldPassword = 2;
+    required string newPassword = 3;
+}
+
+message ModifyCofferNewPasswordResponse
+{
+    required int32 result = 1;
+}
+
+message ResetCofferNewPasswordRequest
+{
+    required uint64 userID = 1;
+    required string verificationCode = 2;
+    required string newPassword = 3;
+}
+
+message ResetCofferNewPasswordResponse
+{
+    required int32 result = 1;
+}
+
+message QuerySignInStatusRequest
+{
+    required uint64 userID = 1;
+    optional int32 gameCode = 2;
+}
+
+message SignInRewardInfo
+{
+    required int32 rewardType = 1;
+    repeated ItemPair rewardItem = 2;
+}
+
+message QuerySignInStatusResponse
+{
+    required int32 result = 1;
+    optional SignInStatus signInStatus = 2;
+    repeated SignInRewardInfo signInRewardInfo = 3;
+    optional int32 signCardCount = 4;
+    repeated int64 dailySignInReward = 5;
+}
+
+message SignInRequest
+{
+    required uint64 userID = 1;
+    required int32 signInType = 2;
+}
+
+message SignInResponse
+{
+    required int32 result = 1;
+    required uint64 userID = 2;
+    optional int32 rewardChips = 3;
+    optional int32 finalChips = 4;
+    optional SignInStatus signInStatus = 5;
+    optional int32 signCardCount = 6;
+}
+
+message GetSignInRewardRequest
+{
+    required uint64 userID = 1;
+    required int32 rewardType = 2;
+    optional int32 gameCode = 3;
+}
+
+message GetSignInRewardResponse
+{
+    required int32 result = 1;
+    required int32 rewardType = 2;
+    required uint64 userID = 3;
+    repeated ItemPair rewardItem = 4;
+    optional int32 newRewardAvailableStatus = 5;
+    optional int32 newRewardGivenStatus = 6;
+}
+
+message UseNoteCardDeviceRequest
+{
+    required uint64 userID = 1;
+}
+
+message UseNoteCardDeviceResponse
+{
+    required int32 result = 1;
+    optional int32 leftEffectiveDays = 2;
+}
+
+message GuestRegistRequest
+{
+    required string guestAccount = 1;
+    required string guestPassword = 2;
+    required string registAccount = 3;
+    required string registPassword = 4;
+    required uint64 userID = 5;
+    optional string verificationCode = 6;
+    optional int32 localMobileAccountNumber = 7;
+}
+
+enum EnumGuestRegistResult
+{
+    enumGuestRegistResultSucc = 0;
+    enumGuestRegistResultGuestAccountNotExist = 1;
+    enumGuestRegistResultGuestPasswordError = 2;
+    enumGuestRegistResultRegistAccountExist = 3;
+    enumGuestRegistResultRegistPasswordInvalid = 4;
+    enumGuestRegistResultRegistAccountInvalid = 5;
+    enumGuestRegistResultModifyDBError = 6;
+    enumGuestRegistResultModifyCacheError = 7;
+    enumGuestRegistResultYouAreNotGuest = 8;
+    enumGuestRegistResultGuestAccountUserIDNotMatch = 9;
+    enumGuestRegistResultWrongVerificationCode = 10;
+    enumGuestRegistResultAuthFailed = 11;
+    enumGuestRegistResultRegistUnknownError = 100;
+}
+
+message GuestRegistResponse
+{
+    required string guestAccount = 1;
+    required string guestPassword = 2;
+    required string registAccount = 3;
+    required string registPassword = 4;
+    required uint64 userID = 5;
+    required int32 result = 6;//EnumGuestRegistResult
+    repeated ItemPair rewardItem = 7;
+}
+
+message GuestRegistWeChatAccountRequest
+{
+    required string guestAccount = 1;
+    required string guestPassword = 2;
+    required uint64 userID = 3;
+    required WeChatAuthInfo weChatAuthInfo = 4;
+}
+
+message GuestRegistWeChatAccountResponse
+{
+    required string guestAccount = 1;
+    required string guestPassword = 2;
+    required uint64 userID = 3;
+    required int32 result = 4;//EnumGuestRegistResult
+    optional WeChatLoginInfo weChatLoginInfo = 5;
+    repeated ItemPair rewardItem = 6;
+}
+
+message GuestRegistQQAccountRequest
+{
+    required string guestAccount = 1;
+    required string guestPassword = 2;
+    required uint64 userID = 3;
+    required QQAuthInfo qqAuthInfo = 4;
+}
+
+message QueryRouletteConfigRequest
+{
+    required uint64 userID = 1;
+}
+
+message RouletteConfig
+{
+    repeated ItemPair rewardItems = 1;
+    optional int64 costChips = 2;
+}
+
+message SendAnimationEmotionRequest
+{
+    required uint64 userIDFrom = 1;
+    required uint64 userIDTo = 2;
+    required int32 emotionID = 3;
+}
+
+message SendAnimationEmotionResponse
+{
+    required int32 result = 1;
+    required uint64 userIDFrom = 2;
+    required uint64 userIDTo = 3;
+    required int32 emotionID = 4;
+    optional int64 price = 5;
+}
+
+message BuyNewGiftRequest
+{
+    required uint64 userIDFrom = 1;
+    required uint64 userIDTo = 2;
+    required int32 giftID = 3;
+    required int32 buyMethod = 4;//0:buy for myself 1:buy for another
+    optional int32 validDays = 5;//client need not fill in this field, only used between gameserver and midlayer server
+    repeated uint64 usersIDTo = 6;
+    optional int32 type = 7;
+    optional int64 userLeftScore = 8;
+}
+
+message BuyNewGiftResponse
+{
+    required int32 result = 1;
+    required uint64 userIDFrom = 2;
+    required uint64 userIDTo = 3;
+    required int32 giftID = 4;
+    optional int64 price = 5;
+    optional int32 buyMethod = 6;
+    optional uint64 giftindex = 7;
+    optional int32 buytime = 8;
+    repeated uint64 usersIDTo = 9;
+    optional int32 type = 10;
+}
+
+message SellNewGiftRequest
+{
+    required uint64 giftindex = 1;
+    required int32 giftID = 2;
+    optional uint64 userID = 3;
+}
+
+message SellNewGiftResponse
+{
+    required int32 result = 1;
+    required uint64 giftindex = 2;
+    required int32 giftID = 3;
+    optional int64 price = 4;
+    optional uint64 userID = 5;
+}
+
+message UseNewGiftRequest
+{
+   required uint64 giftindex = 1;
+   optional uint64 userID = 2;
+   optional int32 giftID = 3;
+}
+
+message UseNewGiftResponse
+{
+   required int32 result = 1;
+   required uint64 giftindex = 2;
+   optional uint64 userID = 3;
+   optional int32 giftID = 4;
+}
+
+message QueryUserNewGiftsRequest
+{
+    required uint64 userID = 1;
+}
+
+message UserNewGiftInfo
+{
+    required uint64 giftindex = 1;
+    required int32 giftid = 2;
+    required int32 buytime = 3;
+    required int32 buymethod = 4;
+    optional int32 leftvaliddays = 5;
+    optional int32 type = 6;
+}
+message QueryUserNewGiftsResponse
+{
+    required uint64 userID = 1;
+    repeated UserNewGiftInfo gifts = 2;
+}
+
+message UserTournamentStat
+{
+    required int32 gameType = 1;//GameServer.EnumGameType 
+    required int32 tournamentGameType = 2;//EnumTournamentGameType
+    required int32 tournamentRoomID = 3;
+    required uint64 userID = 4;
+    required int32 placing = 5;
+    repeated ItemPair reward = 6;
+    optional int64 bestPlacingTime = 7;
+}
+
+message QueryUserTournamentStatRequest
+{
+    required uint64 userID = 1;
+    repeated int32 gameType = 2;
+}
+
+message QueryUserTournamentStatResponse
+{
+    required uint64 userID = 1;
+    repeated UserTournamentStat stats = 2;
+}
+
+message QueryUserRoomTournamentStatRequest
+{
+    required uint64 userID = 1;
+    required int32 gameType = 2;
+    required int32 tournamentGameType = 3;
+    required int32 tournamentRoomID = 4;
+}
+
+message QueryUserRoomTournamentStatResponse
+{
+    required uint64 userID = 1;
+    optional UserTournamentStat stat = 2;
+}
+
+message UpdateUserTournamentStatRequest
+{
+    required UserTournamentStat stat = 2;
+}
+
+message AddTableAttentionUserRequest
+{
+    required int32 gameType = 1;
+    required int32 tableID = 2;
+}
+
+message AddTableAttentionUserResponse
+{
+    required int32 gameType = 1;
+    required int32 tableID = 2;
+    repeated int32 seatUsed = 3;
+}
+
+message RemoveTableAttentionUserRequest
+{
+    required int32 gameType = 1;
+    required uint64 tableID = 2;
+}
+
+
+message AddSuperWatcherRequest
+{
+    required int32 gameType = 1;
+    required uint64 tableID = 2;
+}
+
+message AddSuperWatcherResponse
+{
+    required int32 gameType = 1;
+    required uint64 tableID = 2;
+    optional TableInfo tableInfo = 3;
+}
+
+message ExchangeHuaFeiRequest
+{
+    required uint64 userID = 1;
+    required string phoneNumber = 2;
+    required int32 huaFeiQuan = 3;
+}
+
+message ExchangeHuaFeiResponse
+{
+    required uint64 userID = 1;
+    required int32 result = 2;
+    required int32 consumeHuaFeiQuan = 3;
+    optional int32 failReason = 4;//0,unknown;1,no enough huafeiquan
+}
+
+message ExchangeHuaFeiQuan2CouponNotify
+{
+    required uint64 userID = 1;
+    required int32 subHuaFeiQuan = 2;
+    required int32 addCoupon = 3;
+}
+
+message ExchangeCoupon2ChipRequest
+{
+    required uint64 userID = 1;
+    required int32 coupon = 2;
+    required int32 gameCode = 3;
+    // 兑换类型， 0: 兑换券兑金豆 1: 一元话费券兑金豆 2: 福券兑金豆 3: 福券兑兑换券 5: 福券兑银宝箱 6: 福券兑金宝箱 7:福券兑话费 8：福券兑京东卡
+    optional int32 couponType = 4;
+    optional bool useConfig = 5;//是否使用固定配置项(是则只允许兑配置的各项)
+	optional string mobile = 6;	//玩家兑换用的手机号
+}
+
+message ExchangeCoupon2ChipResponse
+{
+    required uint64 userID = 1;
+    required int32 result = 2;
+    optional int32 subCoupon = 3;
+    optional int64 addChip = 4;
+    optional int32 couponType = 5;
+}
+
+message PaySuccessNotify
+{
+    required uint64 userid = 1;
+        optional int64 newScore = 2;
+        optional int32 newSpeakerCount = 3;
+        optional int32 newVipLevel = 4;
+        repeated FuncCard funcCards = 5;
+        repeated EnumIdentity newIdentity = 6;//don't use this field, use the next one: flags
+        optional FlagInfos flags = 7;
+        optional int32 totalBuy = 8;
+        optional int32 newCouponNum = 9;
+        optional EnumPropertyChangeType type = 10;
+        optional int32 newSignCardCount = 11;
+        optional int64 newNoteCardDeviceEffectiveTime = 12;
+        optional int32 newFirstBuyStatus = 13;
+        optional int32 newNoteCardDeviceLeftEffectiveDays = 14;
+        optional int64 newPayContribution = 15;
+        optional int32 newPayBonusGameCount = 16;
+        optional VipInfo newVipInfo = 17;
+        optional MotorInfo newMotorInfo = 18;
+        optional string orderId = 19;
+        optional int64 addScore = 20;
+        optional int32 addSpeaker = 21;
+        optional int32 addVipLevel = 22;
+        optional string productId = 23;
+        repeated ItemPair reward = 24;
+        optional int32 totalFee = 25;
+    	optional int64 vipRewardScore = 26;//本次VIP加赠获得的筹码，只作为客户端显示用
+        repeated ItemPair rewardItem = 27;
+        optional string payType = 28;
+        optional int64 newSecondMoney = 29;//第二货币
+        optional int32 payGiftBagID = 30;	//如果是充值礼包，为充值礼包的ID
+        optional string registerTD = 31;    //玩家的注册TD
+}
+
+message AddUserCouponResponse
+{
+    required int32 result = 1;
+    required uint64 userID = 2;
+    required int32 couponNumAdded = 3;
+    required int32 reason = 4;
+    required int32 gameCode = 5;
+    required int32 gameType = 6;
+    required int32 roomID = 7;
+    required int32 newCouponNum = 8;
+    required string goodID = 9;
+    required string orderID = 10;
+    required int32 taskID = 11;
+}
+
+enum EnumChangeSeatResult
+{
+    enumChangeSeatResultSucc = 0;
+    enumChangeSeatResultSeatBusy = 1;
+}
+
+message GameServerChangeSeatRequest
+{
+    required int32 newSeatID = 1;
+}
+
+message GameServerChangeSeatResponse
+{
+    required int32 result = 1;
+    required int32 tableID = 2;
+    required int32 oldSeatID = 3;
+    required int32 newSeatID = 4;
+    optional uint64 userID = 5;
+}
+
+message GameServerNewGetTableListRequest
+{
+    required EnumGameType gameType = 1;
+    required bytes serialized = 2;
+}
+message GameServerNewGetTableListResponse
+{
+    required EnumGameType gameType = 1;
+    required bytes serialized = 2;
+}
+
+message TableStatusChangedNotify
+{
+    required EnumGameType gameType = 1;
+    required int32 tableID = 2;
+    required int32 newStatus = 3;//1: playing 0:not playing
+}
+
+message RouletteTaskEnergyPointRequest
+{
+    required EnumGameType gameType = 1;
+}
+
+message RouletteTaskEnergyPointResponse
+{
+    required EnumGameType gameType = 1;
+    required int32 energyPoint = 2;
+    optional int32 addEnergyPoint = 3;
+}
+
+message RouletteTaskAward
+{
+    required int32 roomID = 1;
+    required int32 awardID = 2;
+    required int32 awardType = 3;
+    required int32 awardNum = 4;
+    required int32 goodsType = 5;
+    required int32 goodsNum = 6;
+    required int32 locked = 7;
+}
+
+message RouletteTaskCardType
+{
+    required int32 roomID = 1;
+    required int32 cardType = 2;
+    required int32 energyPoint = 3;
+}
+
+message RouletteTaskConfigRequest
+{
+    required EnumGameType gameType = 1;
+}
+
+message RouletteTaskConfigResponse
+{
+    required EnumGameType gameType = 1;
+    repeated RouletteTaskAward awards = 2;
+    repeated RouletteTaskCardType cardTypes = 3;
+}
+
+message RouletteTaskPlayRequest
+{
+    required EnumGameType gameType = 1;
+}
+
+message RouletteTaskPlayResponse
+{
+    required EnumGameType gameType = 1;
+    required uint64 userID = 2; 
+    required int32 awardID = 3;
+    required int32 energyPoint = 4;
+}
+
+enum BroadcastMsgType
+{
+    enumSystemMsg = 1;
+    enumUserMsg = 2;
+    enumActivityMsg = 3;
+}
+
+enum BroadcastMsgAwardType
+{
+    enumBroadcastGoldenTreasureBox = 1;
+    enumBroadcastTexasRoyalFlush = 2;
+    enumBroadcastKeaningTongHuaShun = 3;
+    enumBroadcastKaogayThreeCards = 4;
+    enumBroadcastPokeDengTongHuaShun = 5;
+    enumBroadcastPokeDengThreeCards = 6;
+    enumBroadcastDummyKnockAndNoGroupAndSameColor = 7;
+    enumBroadcastWinChips = 8;
+}
+
+message RouletteTaskNotify
+{
+    required string nickName = 1;
+    required string content = 2;
+    required string awardName = 3;
+    optional int32 awardType = 4;
+    optional int64 awardValue = 5;
+    optional int32 msgType = 6;
+    optional int64 compareValue = 7;
+    repeated string keyValues = 8;
+}
+
+message EscapePunishmentNotify
+{
+    required uint64 userID = 1;
+    required int64 score = 2;
+}
+
+message RewardForOtherEscapeNotify
+{
+    required uint64 userID = 1;
+    required int64 score = 2;
+    required string nick = 3;
+}
+
+message UseMotorRequest
+{
+    required uint64 userID = 1;
+    required int32 motorID = 2;
+}
+
+message UseMotorResponse
+{
+    required int32 result = 1;
+    optional int32 newMotorID = 2;
+}
+
+message GetPovertyRewardRequest
+{
+    required uint64 userID = 1;
+    optional int32 gameCode = 2;
+    optional int32 moneyItemId = 3;
+	optional int32 hasSeeAdver = 4 [default = 0];
+	optional bool bIsGetInfo = 5;
+}
+
+message GetPovertyRewardResponse
+{
+    required int32 result = 1;
+    required int32 povertyRewardAvailableCount = 2;
+    required int32 povertyRewardDailyMaxCount = 3;
+    optional int64 rewardScore = 4;
+    optional int32 moneyItemId = 5;
+	optional uint64 userID =6;
+	optional int64 vipRewardScore = 7;//本次VIP加赠获得的筹码，只作为客户端显示用
+}
+
+message PresentItemRequest
+{
+    required uint64 fromUserID = 1;
+    required uint64 toUserID = 2;
+    required int32 itemType = 3;
+    required int32 itemCount = 4;
+    optional string fromUserNick = 5;
+}
+
+message PresentItemResponse
+{
+    required int32 result = 1;
+    optional int32 subItemType = 2;
+    optional int32 subItemCount = 3;
+}
+
+message SinglePresentItemRequest
+{
+    required uint64 id = 1;
+    required uint64 fromUserID = 2;
+    required uint64 toUserID = 3;
+    required int32 itemType = 4;
+    required int32 itemCount = 5;
+    optional string fromUserNick = 6;
+    required int64 presentTime = 7;    
+}
+
+message PresentItemRequestList
+{
+    repeated SinglePresentItemRequest singleRequest = 1;
+    optional bool end = 2;
+}
+
+message AcceptPresentItemRequest
+{
+    required uint64 userID = 1;
+    required uint64 presentRequestId = 2;
+}
+
+message AcceptPresentItemResponse
+{
+    required int32 result = 1;
+    optional int32 itemType = 2;
+    optional int32 itemCount = 3;
+    optional uint64 userID = 4;
+}
+
+message UseItemRequest
+{
+    required uint64 userID = 1;
+    required int32 itemType = 2;
+    required int32 itemCount = 3;
+    optional int32 gamecode = 4;
+}
+
+message UseItemResponse
+{
+    required int32 result = 1;
+    optional int32 subItemType = 2;
+    optional int32 subItemCount = 3;
+    repeated ItemPair rewardItem = 4;
+    optional uint64 userID = 5;
+}
+
+enum EnumModifyPasswordResult
+{
+    enumModifyPasswordResultSuccess = 0;
+    enumModifyPasswordResultUnknownError = 1;
+    enumModifyPasswordResultWrongOldPassword = 2;
+    enumModifyPasswordResultInvalidNewPassword = 3;
+    enumModifyPasswordResultSameWithOldPassword = 4;
+    enumModifyPasswordResultWrongVerificationCode = 5;
+    enumModifyPasswordResultVerificationCodeErrorManyTimes = 6;
+}
+
+message ModifyPasswordRequest
+{
+    required uint64 userID = 1;
+    required string oldPassword = 2;
+    required string newPassword = 3;
+}
+
+message ModifyPasswordResponse
+{
+    required int32 result = 1;
+    optional string newPassword = 2;
+}
+
+message ResetPasswordRequest
+{
+    required uint64 userID = 1;
+    required string verificationCode = 2;
+    required string newPassword = 3;
+}
+
+message ResetPasswordResponse
+{
+    required int32 result = 1;
+}
+
+enum EnumBindMobileNumberResult
+{
+    enumBindResultSucc = 0;
+    enumBindResultFailUnknown = 1;
+    enumBindResultInvalidMobileNumber = 2;
+    enumBindResultWrongVerificationCode = 3;
+    enumBindResultHasBoundMobileNumber = 4;
+    enumBindResultExpiredVerificationCode = 5;
+    enumBindResultTooManyAccountsBound = 6;
+    enumBindResultNotSameMobileNumber = 102;
+    enumBindResultNoEnoughServiceFee = 103;
+    enumBindResultTooFrequent = 104;
+}
+
+message BindMobileNumberRequest
+{
+    required uint64 userID = 1;
+    required string mobileNumber = 2;
+    required string verificationCode = 3;
+}
+
+message BindMobileNumberResponse
+{
+    required int32 result = 1;//enumBindMobileNumberResult
+    optional string moblieNumber = 2;
+}
+
+message UnbindMobileNumberRequest
+{
+    required uint64 userID = 1;
+    required string verificationCode = 2;
+}
+
+message UnbindMobileNumberResponse
+{
+    required int32 result = 1;//enumBindMobileNumberResult
+    optional int64 subServiceFee = 2;
+}
+
+message GetTVTournamentListRequest
+{
+    required int32 gameType = 1;//enumGameTypeGuanDanTournamentTV
+    optional bool showSecondTV = 2 [default=false];
+}
+message GetTVTournamentListResponse
+{
+    required int32 gameType = 1;//enumGameTypeGuanDanTournamentTV
+    optional bytes serialized = 100;
+}
+
+message GetTVTournamentDateRangeRequest
+{
+    required int32 tvTournamentType = 1;//0:daily 1:weekly 2:monthly
+}
+message DateRange
+{
+    required int32 yearBegin = 1;
+    required int32 monthBegin = 2;
+    required int32 dayBegin = 3;
+    required int32 yearEnd = 4;
+    required int32 monthEnd = 5;
+    required int32 dayEnd = 6;
+}
+message GetTVTournamentDateRangeResponse
+{
+    required int32 tvTournamentType = 1;
+    repeated DateRange dataRange = 2;
+}
+
+message WatchTVGameRequest
+{
+    required int32 gameType = 1;
+    optional int32 tableID = 2 [default = 0];
+    optional int32 seatID = 3 [default = -1];
+}
+
+message WatchTVGameResponse
+{
+    required int32 gameType = 1;
+    optional TableInfo tableInfo = 2;
+    optional int32 gameNum = 3;
+    optional int32 nHand = 4;
+    optional bool practice = 5;
+    optional int32 tableID = 6 [default = 0];
+    optional int32 seatID = 7 [default = -1];
+    optional bytes tvGameScene = 100;
+}
+
+message ControlTVGameRequest
+{
+    required int32 gameType = 1;
+}
+
+message ControlTVGameResponse
+{
+    required int32 gameType = 1;
+    required string team1Name = 2;
+    required string team2Name = 3;
+    optional string seat0Name = 4;
+    optional string seat1Name = 5;
+    optional string seat2Name = 6;
+    optional string seat3Name = 7;
+    optional string autoStart = 8;
+    optional bool bPaused = 9 [default = false]; 
+    optional int32 tableID = 10;
+}
+
+message NewControlTVGameResponse
+{
+    required int32 gameType = 1;
+    optional TableInfo tableInfo = 2;
+}
+
+message ReplayTVGameTimesRequest
+{
+    optional int32 gameType = 1;
+    optional string replayDate = 2;
+}
+
+message ReplayTVGameTimesResponse
+{
+    repeated ReplayTVGameItemCount gameTimes = 1;
+}
+
+message ReplayTVGameItemCount
+{
+    optional int32 tvGameNum = 1;
+    optional int32 gameNum = 2;
+    optional int32 handCount = 3;
+}
+
+message ReplayTVGameRequest
+{
+    required int32 gameType = 1;
+    required string replayDate = 2;
+    required int32 gameNum = 3;
+    required int32 nHand = 4;
+}
+
+message ReplayTVGameResponse
+{
+    required int32 result = 1;
+    required int32 gameType = 2;
+    required string replayDate = 3;
+    required int32 gameNum = 4;
+    required int32 nHand = 5;
+    optional TableInfo tableInfo = 6;
+    optional bytes tvGameScene = 100;
+    optional bytes tableConfig = 101;
+    optional bytes tvTableInfo = 102;
+}
+
+
+
+message UpdateUserLocationRequest
+{
+    required uint64 userID = 1;
+    required UserLocationInfo locationInfo = 2;
+}
+
+message QueryUserLocationRequest
+{
+    required uint64 userID = 1;
+}
+
+message QueryUserLocationResponse
+{
+    required int32 result = 1;
+    optional UserLocationInfo locationInfo = 2;
+}
+
+message QueryUserExtraInfoRequest
+{
+    required uint64 userID = 1;
+}
+
+message QueryUserExtraInfoResponse
+{
+    required uint64 userID = 1;
+    required int32 result = 2;
+    required UserBuyInfo buyInfo = 3;
+    repeated UserVipRewardStatus vipRewardStatus = 4;
+    optional int32 iosGradeRewardStatus = 5;//0,available;1,unavailable
+    optional int64 maxDailyBuyChip = 6;
+    optional bool isRewardBlack = 7;
+    optional int64 dailyWinScoreUpperLimit = 8;
+    optional int64 dailyWinScoreLowerLimit = 9;
+    optional int32 minExpShowOtherGames = 10;
+    optional int32 minExpAllowGuestBuy = 11;
+    optional int32 minExpShowBaiRenGames = 12;
+    repeated ItemPair expConfig = 13;
+    optional int64 minPovertyReward = 14;
+    optional int64 maxPovertyReward = 15;
+    repeated ItemPair gameSpecialConfig = 16;
+}
+
+message UserBuyInfo
+{
+    required int32 firstBuyRewardStatus = 1;
+    repeated ProductInfo buyProduct = 2;
+}
+
+message ProductInfo
+{
+    required string productID = 1;
+}
+
+message UserVipRewardStatus
+{
+    required int32 vipLevel = 1;
+    required int32 rewardStatus = 2;
+}
+
+message GetBuyRewardRequest
+{
+    required uint64 userID = 1;
+}
+
+message GetBuyRewardResponse
+{
+    required uint64 userID = 1;
+    required int32 result = 2;
+    repeated ItemPair rewardItem = 3;
+    optional int32 newFirstBuyRewardStatus = 4;
+}
+
+message GetVipRewardRequest
+{
+    required uint64 userID = 1;
+    required int32 vipLevel = 2;
+}
+
+message GetVipRewardResponse
+{
+    required uint64 userID = 1;
+    required int32 vipLevel = 2;
+    required int32 result = 3;
+    repeated ItemPair rewardItem = 4;
+}
+
+message SnsUser
+{
+    required uint64 userID = 1;
+    optional string nick = 2;
+    optional int32 roleIndex = 3;
+    optional int32 vipLevel = 4;
+    optional int32 inUseMotorID = 5;
+    optional string remarkNick = 6;
+    optional int32 sex = 7;
+    optional string avatar = 8;
+}
+
+enum EnumFriendOperationType
+{
+    enumAddFriendRequest = 1;
+    enumAddFriendResponse = 2;
+    enumAcceptFriendRequest = 3;
+    enumAcceptFriendResponse = 4;
+    enumRejectFriendRequest = 5;
+    enumRejectFriendResponse = 6;
+    enumRemoveFriendRequest = 7;
+    enumRemoveFriendResponse = 8;
+    enumChatText = 9;
+    enumFriendBroadcastRequest = 10;
+    enumFriendBroadcastResponse = 11;
+}
+
+enum EnumFriendOperationResult
+{
+    enumOperationSuccess = 0;
+    enumUnknownError = 1;
+    enumAddUserFriendFull = 2;
+    enumAddedUserFriendFull = 3;
+    enumAddRequestHasSent = 4;
+    enumFriendHasAdded = 5;
+    enumAddSelfAsFriend = 6;
+    enumNoEnoughSpeaker = 7;
+}
+
+message FriendOperation
+{
+    required int32 type = 1;
+    required SnsUser fromUser = 2;
+    required SnsUser toUser = 3;
+    optional string msg = 4;
+    optional int64 timestamp = 5;
+    optional int32 result = 6;
+    optional uint64 id = 7;
+}
+
+message GetFriendInfoRequest
+{
+    required uint64 userID = 1;
+    optional int32 version = 2;
+}
+
+message GetFriendInfoResponse
+{
+    required uint64 userID = 1;
+    required int32 version = 2;
+    repeated FriendOperation operation = 3;
+    repeated SnsUser friend = 4;
+    required int32 pageIndex = 5;
+    required int32 pageCount = 6;
+}
+
+message SearchFriendRequest
+{
+    required uint64 userID = 1;
+}
+
+message SearchFriendResponse
+{
+    required int32 result = 1;
+    optional SnsUser friend = 2;
+}
+
+message ModifyFriendRemarkNickRequest
+{
+    required uint64 userID = 1;
+    required uint64 friendUserID = 2;
+    required string remarkNick = 3;
+}
+
+message ModifyFriendRemarkNickResponse
+{
+    required uint64 userID = 1;
+    required uint64 friendUserID = 2;
+    required int32 result = 3;
+    optional string remarkNick = 4;
+}
+
+message ReturnToMainMenuNotify
+{
+    required uint64 userID = 1;
+}
+
+message SetUserAutoTakeInScore
+{
+    required uint64 userID = 1;
+    required int32 roomID = 2;
+    required int64 takeInScore = 3;
+}
+
+enum EnumGetVerificationCodeType
+{
+    enumGetVerificationCodeTypeNormal = 0;
+    enumGetVerificationCodeTypeLoginProtection = 1;
+}
+
+message GetVerificationCodeRequest
+{
+    required uint64 userID = 1;
+    required string mobileNumber = 2;
+    optional int32 type = 3;
+}
+
+message GetVerificationCodeNewMobileRequest
+{
+    required string mobileNumber = 1;
+    optional uint64 userID = 2;//to distinguish id login and reset password
+}
+
+enum EnumGetVerificationCodeResult
+{
+    enumGetVerificationCodeSuccess = 0;
+    enumGetVerificationCodeNoUserID = 1;
+    enumGetVerificationCodeWrongMobile = 2;
+    enumGetVerificationCodeMobileNotBound = 3;
+}
+
+message GetVerificationCodeResponse
+{
+    required int32 result = 1;
+}
+
+message LoginVerificationRequest
+{
+    required uint64 userID = 1;
+    required string verificationCode = 2;
+}
+
+message LoginVerificationResponse
+{
+    required int32 result = 1;
+}
+
+message QueryRewardStatusRequest
+{
+    required uint64 userID = 1;
+}
+
+message QueryRewardStatusResponse
+{
+    required int32 leftWechatShareRewardCount = 1;
+    optional int32 leftDailyRouletteFreeCount = 2;
+    optional int32 leftWechatShareRouletteFreeCount = 3;
+    optional int32 leftVipDailyRewardCount = 4;
+}
+
+message GetWechatShareRewardRequest
+{
+    required uint64 userID = 1;
+    optional int32  type = 2;//EnumShareGameType
+}
+
+message GetWechatShareRewardResponse
+{
+    required uint64 userID = 1;
+    required int32 result = 2;
+    optional int64 rewardScore = 3;
+    repeated ItemPair rewardItem = 4;
+    optional int32 type = 5;
+}
+
+message GetIosGradeRewardRequest
+{
+    required uint64 userID = 1;
+}
+
+message GetIosGradeRewardResponse
+{
+    required uint64 userID = 1;
+    required int32 result = 2;
+    optional int64 rewardScore = 3;
+}
+
+message ExchangeRealHuaFeiRequest
+{
+    required uint64  userID = 1;
+    required string  phoneNumber = 2;
+    required int32   Goodid = 3; 
+    required int32   Fee = 4; 
+    required int32   Coin = 5; 
+    required int32   Coupon = 6; 
+    optional int32   gameid = 7;
+    optional int32   gamecode = 8;
+    optional int32   channel= 9;
+    optional string  carrier= 10;
+    optional string  reason= 11;
+    optional string  producttype = 12;
+    optional string  productid = 13;
+    optional string  productname = 14;
+    optional string  des= 15;
+    optional string  version = 16;
+}
+
+
+message ExchangeRealBodyRequest
+{
+    required uint64  userID = 1;
+    required string  phoneNumber = 2;
+    required int32   Goodid = 3; 
+    required int32   Fee = 4;
+    required int32   Coin = 5; 
+    required int32   Coupon = 6; 
+    required string  Postcodes = 7;
+    required string  Province = 8;
+    required string  City = 9;
+    required string  District = 10;
+    required string  Address = 12;
+    optional int32   gameid = 13;
+    optional int32   gamecode = 14;
+    optional int32   channel= 15;
+    optional string  carrier= 16;
+    optional string  version = 17;
+    optional string  name = 18;
+    optional string  reason= 19;
+    optional string  producttype = 20;
+    optional string  productid = 21;
+    optional string  productname = 22;
+    optional string  des= 23;
+}
+
+message ExchangeRealResponse
+{
+    required uint64 userID = 1;
+    required int32 result = 2;
+    required int32 consumeCoin = 3;
+    required int32 consumeCoupon = 4;
+    optional int32 failReason = 5;//0:unknown;1:no enough Coupon,2:no enough Coin,3:error phone ,4:error address
+}
+
+enum EnumRoomType
+{
+    enumRoomTypeFreeTournament = 1;
+    enumRoomTypeWinStreak = 2;
+    enumRoomTypeFreeGame = 3;
+}
+
+message RoomIndex
+{
+    required int32 gameType = 1;
+    required int32 roomID = 2;
+    repeated int32 roomTag = 3;
+}
+
+message TypeRoomList
+{
+    required int32 roomType = 1;
+    repeated RoomIndex roomIndex = 2;
+}
+
+message GameRoomList
+{
+    required int32 gameType = 1;
+    repeated TypeRoomList typeRoomList = 2;
+}
+
+message SingleRoomConfig
+{
+    required int32 gameType = 1;
+    required int32 roomID = 2;
+    optional bytes roomConfig = 3;
+}
+
+message QueryAllRoomConfigRequest
+{
+    required int64 version = 1;
+    optional int32 gameVersion = 2;
+}
+
+message QueryAllRoomConfigResponse
+{
+    required int64 currentVersion = 1;
+    repeated GameRoomList allRoomList = 2;
+    repeated SingleRoomConfig allRoomConfig = 3;
+}
+
+message SingleGameTypeConfigRequest
+{
+    optional int32 gameType = 1;
+    optional int64 version = 2;
+}
+
+message QueryGameRoomConfigByGameTypeRequest
+{
+    repeated SingleGameTypeConfigRequest requestList = 1;
+    optional int32 gameVersion = 2;
+}
+
+message SingleGameTypeConfigResponse
+{
+    optional int32 gameType = 1;
+    optional int64 version = 2;
+    repeated SingleRoomConfig allRoomConfig = 3;
+}
+
+message QueryGameRoomConfigByGameTypeResponse
+{
+    repeated SingleGameTypeConfigResponse responseList = 2;
+
+}
+
+message SingleRoomStatus
+{
+    required int32 gameType = 1;
+    required int32 roomID = 2;
+    optional int32 roomUserCount = 3;
+    optional int32 roomAttentionUserCount = 4;
+    optional int32 usedFreeApplyCount = 5;
+}
+
+message QueryAllRoomStatusResponse
+{
+    repeated SingleRoomStatus allRoomStatus = 1;
+    optional int64 serverTimeStamp = 2;
+}
+
+message QueryRoomStatusByGameTypeRequest
+{
+    repeated int32 gameType = 1;
+}
+
+message QueryRoomStatusByGameTypeResponse
+{
+    repeated SingleRoomStatus allRoomStatus = 1;
+    optional int64 serverTimeStamp = 2;
+}
+
+message QueryGamePlayingResponse
+{
+    required int32 result = 1;
+    optional int32 gameType = 2;
+    optional int32 roomID = 3;
+}
+
+enum EnumUserPlayBroadcastResult
+{
+    enumUserPlayBroadcastSuccess = 0;
+    enumUserPlayBroadcastError = 1;
+    enumUserPlayBroadcastNotHaveSpeaker = 2;
+}
+
+message UserPlayBroadcastRequest
+{
+	required uint64 userID = 1;
+    optional string msg = 2;
+}
+
+message UserPlayBroadcastResponse
+{
+    required uint64 userID = 1;
+	required string nickName = 2;
+    optional string msg = 3;
+    optional int64 timestamp = 4;
+    optional int32 result = 5;
+}
+
+message UserPositionRequest
+{
+	optional string lng = 1;
+	optional string lat = 2;
+}
+
+message UserPositionResponse
+{
+	optional int32 result = 1;
+}
+
+message UserGetCommonDailyRewardRequest
+{
+    required uint64 userID = 1;
+    optional int32 gameType = 2;
+    required int32 rewardNumber = 3;
+}
+
+message UserGetCommonDailyRewardResponse 
+{
+    required uint64 userID = 1;
+    optional int32 gameType = 2;
+    optional int64 timestamp = 3;
+    repeated ItemPair rewardItem = 4;
+    
+}
+
+message BagInfo
+{
+    required uint64 userID = 1;
+    repeated ItemInfo item = 2;
+}
+
+message DDZAllowanceAwardItem
+{
+	optional int32 itemType = 1;
+    optional int32 itemCnt = 2;
+	optional int32 awardType = 3;
+}
+
+message DDZAllowanceMode
+{
+	optional int32 popType = 1;
+    optional int32 popCnt = 2;
+}
+
+message DDZAllowanceGameCfg
+{
+    optional int32 gameType = 1;
+    optional bool isOpen = 2;
+    repeated DDZAllowanceMode modeCfg = 3;
+}
+
+message QueryDDZAllowanceConfigResponse
+{
+    optional int64 totoalNum = 1;
+    repeated DDZAllowanceAwardItem awardCfg = 2;
+	repeated DDZAllowanceGameCfg gameCfg = 3;
+}
+
+message QueryDDZAllowanceConfigRequest
+{
+    optional int32 version = 1;
+}
+
+message DDZAllowanceRecieveAwardReq
+{
+    optional uint64 userID = 1;
+    optional int32 gameType = 2;
+	optional int32 awardType = 3;     
+}
+
+
+message DDZAllowanceDataRsp
+{
+    optional uint64 userID = 1;
+	optional int32 result = 2;
+	optional int32 todayReceivedCnt = 3;
+    repeated DDZAllowanceAwardItem awardRes = 4;
+}
+
+
+//kFishLogicServerUpdateFishBasicUserInfo = 44001
+message UpdateFishBasicUserInfo
+{
+    required uint64 userID = 1;
+    optional uint32 expLevel = 2;
+    optional uint32 expValue = 3;
+    optional int64 money = 4;//金币
+    optional int64 secondMoney = 5;
+    optional uint32 gunIndex = 6;
+    optional int32 gameCode = 7;
+    optional int32 newGuideProgress = 8;
+    optional int32 attackCount = 9;
+    optional int32 loginRewardStatus = 10;
+    optional int64 shopRefreshTime = 11;
+    optional int32 shopFlag = 12;
+    optional int32 shopBuyKey = 13;
+    optional int32 shopSellKey = 14;
+}
+
+//kMidLayerGameServerAddUserItem = 60169
+message AddItemRequest
+{
+    optional uint64 userID = 1;
+    optional int32 itemType = 2;
+    optional int64 itemCount = 3;
+    optional int32 gameCode = 4;
+    optional int32 eventType = 5;
+    optional int32 roomID = 6;
+    optional int32 gameType = 7;
+    optional int32 source = 8;//来源 EnumAddItemSource
+    optional int32 updateType = 9;//更新类型 GameCommon.EnumDBFieldUpdateType
+}
+
+message AddItemResponse
+{
+    required uint64 userID = 1;
+    required int32 result = 2;
+    optional int64 newItemCount = 3;
+}
+
+//kMidlayerGameServerAddMultiItem
+message AddMultiItemRequest
+{
+    repeated AddItemRequest singleRequest = 1;
+}
+
+message AddMultiItemResponse
+{
+    repeated AddItemResponse singleResponse = 2;
+}
+
+
+//kGameServerKeepAlive = 20019 空包packet
+
+//kMidLayerGameServerConnectToMidLayer = 60150
+message GameServerAttribute
+{
+    required int32 gamecode = 1; //新定义
+    required string gameserverip = 2; //自己服务器的ip
+    required string gameserverport = 3; //自己的端口
+    optional int64 sessionID = 4; //用时间戳就行
+    optional int32 keepAliveInterval = 5; //心跳间隔
+}
+
+//kMidLayerGameServerUserDisconnect = 60107
+message UserDisconnect
+{
+    required uint64 userID = 1;
+    optional bool keepToken = 2;
+    optional string token = 3;//LoginResponse.token
+}
+
+//kGameServerKickDuplicateUser = 20034
+message KickOffUser
+{
+    required uint64 userID = 1;
+    optional uint32 gameip = 2;
+    optional uint32 gameport = 3;
+    optional bool sameMac = 4;
+}
+
+//大厅经验回写
+message GameServerMiddleLayerServerUpdateExperience
+{
+    required uint64 userID = 1;
+    required int64 experienceAdded = 2;
+}
+
+message QueryPayGiftBagInfoRequest
+{
+    optional int32 type = 1;   //查询的活动类型
+}
+
+message PayGiftBagInfo
+{
+    optional int32 ID = 1;      //礼包配置ID
+    optional int32 type = 2;    //礼包类型
+    optional int32 subtype = 3; //礼包子类型，根据礼包类型有不同含义
+    optional int32 rmbprice = 4;//礼包的价格
+    optional int32 buydays = 5; //连购礼包，礼包购买的天数
+    optional int32 daylimit = 6;//每日购买次数限制
+    repeated ItemPair rewards = 7;//礼包的内容
+}
+
+message GiftBagBuyInfo
+{
+    optional int32 subtype = 1;    //同子类型的特惠礼包
+    optional int32 buydays = 2;    //当前连购天数,从1开始
+    optional int32 buytimes = 3;    //当日已购买次数
+}
+
+message QueryPayGiftBagInfoResponse
+{
+    optional int32 result = 1;          //查询错误码，非0表示失败
+    optional int32 type = 2;            //返回的礼包类型
+    repeated PayGiftBagInfo infos = 3;  //礼包信息
+    repeated GiftBagBuyInfo buyinfos = 4;//特惠礼包购买信息
+}
+
+message SetPayGiftBagInfoRequest
+{
+    optional int32 ID = 1;      //待设置的礼包ID
+}
+
+message SetPayGiftBagInfoResponse
+{
+    optional int32 result = 1;  //错误码，非0表示失败
+    optional int32 ID = 2;      //设置的礼包ID
+}
+
+enum EnumItemChangeNotifyType
+{
+        enumItemChangeNotifyTypeUnknown = 0;
+        enumItemChangeNotifyTypeBuy = 1;
+        enumItemChangeNotifyTypeVipDailyReward = 2;
+        enumItemChangeNotifyTypeClientUse = 3;
+}
+
+message FishingItemPair
+{
+        required int32 itemType = 1;
+        required int64 itemCount = 2;
+}
+
+message FishingItemChangeNotify
+{
+        required int32 notifyType = 1;
+        repeated FishingItemPair changeItem = 2;
+}
+
+message RealNameVerifyInfoReward
+{
+    repeated ItemPair rewards = 1;   // 奖励列表
+    optional int32 PovertyRewardCount = 2;  //破产补助次数
+}
+
+message ExchangeYuanbaoItemRequest
+{
+    optional int32 ID = 1;      //玩家元宝兑换的ID
+}
+
+message ExchangeYuanbaoItemResponse
+{
+    optional int32 result = 1;  //兑换的结果，0表示成功
+    optional int32 ID = 2;      //元宝兑换的ID
+    repeated ItemPair rewards = 3;   //奖励
+    optional VipInfo newVipInfo = 4;
+}

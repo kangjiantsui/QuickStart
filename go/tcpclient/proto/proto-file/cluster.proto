@@ -1,0 +1,72 @@
+syntax = "proto3";
+import "base.proto";
+import "cs_protoid.proto";
+import "ss_protoid.proto";
+
+package ProtoMsg;
+
+
+enum emSvrType {
+    ST_Invalid = 0;
+	Gate = 1;
+	Gs = 2;
+	World =3;
+	Login = 4;
+	Chat = 5;
+	DB = 6;
+	Cluster = 7;
+	Room = 8;
+	Pay = 9;
+	DTFish = 100; //大厅
+};
+
+message PbSvrBaseInfo {
+    int32       group_id = 1;
+    int32       svr_id = 2;
+    emSvrType   svr_type = 3;
+    string      addr = 4;
+    int32       ttl = 5;
+    int32       timeout = 6;
+    emCSMsgId   cs_msg_begin = 7;
+    emCSMsgId   cs_msg_end = 8;
+    emSSMsgId   ss_msg_begin = 9;
+    emSSMsgId   ss_msg_end = 10;
+    string      protocol = 11; // ws, wss或者原生的tcp
+    string      web_domain = 12; //如果有web接口（eg: http://ip:port)
+    string      web_secret = 13; //如果有web接口, 为key
+    int32      ctype = 14; //子类型
+};
+
+//SVR_MSG_REGISTER_CLUSTER
+message PbSvrRegisterClusterReqMsg {
+   PbSvrBaseInfo        svr_info = 1;
+   repeated emSvrType   svr_types = 2;
+};
+
+message PbSvrRegisterClusterResMsg {
+   Ret ret = 1;
+   repeated PbSvrBaseInfo svrs = 2;
+};
+
+enum emClusterOprType {
+    COT_Invalid = 0;
+    Add = 1;
+    Del = 2;
+};
+
+//SVR_MSG_BROAD_CLUSTER
+message PbSvrBroadClusterMsg {
+    emClusterOprType opr_type = 1;
+    PbSvrBaseInfo svr_info = 2;
+};
+
+
+//SVR_MSG_CLUSTER_GET_SVRINFO
+message PbSvrGetSvrInfoReqMsg {
+    int32 group_id = 1;
+    repeated emSvrType svr_types = 2;
+};
+
+message PbSvrGetSvrInfoResMsg {
+    repeated PbSvrBaseInfo svrs = 1;
+};

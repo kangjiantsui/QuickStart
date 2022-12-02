@@ -1,0 +1,978 @@
+syntax = "proto3";
+import "base.proto";
+import "login.proto";
+import "user_data.proto";
+import "activity.proto";
+
+package ProtoMsg;
+
+enum emDBEngin {
+    DB_engine_invalid = 0;
+    DB_engine_redis = 1;
+    DB_engine_mysql = 2;
+};
+
+message PbSvrDBServiceReqMsg {
+    emDBEngin db_engine = 1;
+    string req_msg_name = 2; //请求的消息名
+    bytes req_data = 3; //请求的数据
+};
+
+message PbSvrDBServiceResMsg {
+    Ret ret = 1;
+    emDBEngin db_engine = 2;
+    string res_msg_name = 3; //响应的消息名
+    bytes res_data = 4; //响应的数据
+};
+
+//测试db访问
+message PbSvrDBTestRecvReqMsg {
+    int32 id = 1;
+    string name = 2;
+};
+
+message PbSvrDBTestRecvResMsg {
+    int32 id = 1;
+    string name = 2;
+};
+
+//rp测试
+message PbSvrDBTestRpRecvReqMsg {
+
+};
+
+//玩家登陆
+message PbSvrDBLoginReqMsg {
+    int32 gate_id = 1; //玩家所在的网管服id
+    uint32 seq = 2;
+    uint64 session_id = 3;
+    PbCsPlayerLoginReqMsg login_req = 4;
+    bytes dt_login_res_data = 5; //大厅登录返回
+    string ip = 6;
+};
+
+message PbSvrDBLoginResMsg {
+    Ret  ret = 1; //可能有一些错误还是需要返回给客户端显示
+    int32 gate_id = 2; //玩家所在的网管服id
+    uint32 seq = 3;
+    uint64 session_id = 4;
+    bool is_reg = 5;
+    PBUserInfo user_info = 6;
+    PBPlayerItemInfo player_item_info = 7;
+    PBPlayerCollectInfo player_collect_info = 8;
+    PbCsPlayerLoginReqMsg login_req = 9;
+    PBPlayerBuyInfo     player_buy_info = 10;
+    PBAccountCloseInfo  close_info  = 11;
+    bytes dt_login_res_data = 12; //大厅登录返回
+    bool   b_dtfish_copy = 13;    //是否是大厅拷贝用户
+
+    repeated PBSvrPlayerPropItem tmp_offline_prop_items = 14;
+    PBSvrDBPlayerRechargeMsg   player_recharge_info =15;
+};
+
+//保存玩家核心数据
+message PbSvrDBSavePlayerMsg {
+    PBUserInfo user_info = 1;
+    PBPlayerItemInfo player_item_info = 2;
+    PBPlayerCollectInfo player_collect_info = 3;
+    emUserInfoSaveType  save_type = 4;
+};
+
+//玩家邮件操作
+message PbSvrDBPlayerLoadMailReqMsg {
+    uint64 uid = 1;
+};
+
+message PbSvrDBPlayerLoadMailResMsg {
+    uint64 uid = 1;
+    PBPlayerMailInfo mail_info = 2;
+};
+
+message PbSvrDBPlayerSaveMailReqMsg {
+    uint64 uid = 1;
+    repeated PBMailItem mod_mails = 2; //修改的mail
+    repeated PBMailItem del_mails = 3; //删除的mail
+};
+
+message PbSvrDBPlayerSaveMailResMsg {
+    uint64 uid = 1;
+    repeated PBMailItem mod_mails = 2; //修改的mail
+    repeated PBMailItem del_mails = 3; //删除的mail
+};
+
+//新增的邮件
+message PbSvrDBPlayerNewMailReqMsg {
+    uint64 uid = 1;
+    PBMailItem new_mail = 2; //新增的邮件
+    uint64 sys_id = 3;
+};
+
+message PbSvrDBPlayerNewMailResMsg {
+   PbSvrDBPlayerNewMailReqMsg req_msg = 1;
+};
+
+
+
+//商城
+message PbSvrDBPlayerFirstRechargePacketReqMsg {
+    uint64 uid = 1;
+    int32 flag  = 2;
+};
+message PbSvrDBPlayerFirstRechargePacketCheckReqMsg {
+    uint64 uid = 1;
+};
+message PbSvrDBPlayerFirstRechargePacketCheckResMsg {
+    uint64 uid = 1;
+    int32 flag = 2;
+};
+
+//充值
+message PbSvrDBPlayerRechargeSuccessReqMsg {
+    uint64 uid = 1;
+    bytes order_id = 2;
+    string state = 3;
+};
+
+message PbSvrDBPlayerRechargeCheckReqMsg {
+    uint64 uid = 1;
+};
+
+message PbSvrDBPlayerRechargeCheckResMsg {
+    uint64 uid = 1;
+    repeated PBPlayerOrderInfo infos = 2;
+    repeated PBPlayerOrderInfo new_order_infos = 3;
+};
+
+//转盘
+message PbSvrDBPlayerLoadRoundPlateReqMsg {
+    uint64 uid = 1;
+};
+
+message PbSvrDBPlayerLoadRoundPlateResMsg {
+    uint64 uid = 1;
+    uint32 total_login_days = 2;
+    uint32 rest_round_times = 3;
+    uint64 latest_login_day_time = 4;
+    int32  three_days_recharge_flag = 5;
+};
+message PbSvrDBPlayerSaveRoundPlateReqMsg {
+    uint64 uid = 1;
+    uint32 total_login_days = 2;
+    uint32 rest_round_times = 3;
+    uint64 latest_login_day_time = 4;
+    int32  three_days_recharge_flag = 5;
+};
+
+//整点奖励
+//查询列表
+message PbSvrDBGetZhengDianRewardListReqMsg {
+    uint64 uid = 1;
+};
+message PbSvrDBGetZhengDianRewardListResMsg {
+    uint64 uid = 1;
+    repeated PBRewardZhengDianInfo info = 2;
+};
+
+//整点奖励
+//查询个人
+message PbSvrDBGetZhengDianRewardByUidAndItemIdReqMsg {
+    uint64 uid = 1;
+    int32 list_id = 2;
+};
+message PbSvrDBGetZhengDianRewardByUidAndItemIdResMsg {
+    uint64 uid = 1;
+    int32 list_id = 2;
+    int32 status = 3; //1:未领取 2:已领取
+};
+
+//整点奖励
+//保存
+message PbSvrDBSaveZhengDianRewardReqMsg {
+    uint64 uid = 1;
+    int32 list_id = 2;
+};
+
+//领取救济金
+//查询
+message PbSvrDBGetDoleCountReqMsg {
+    uint64 uid = 1;
+    int32 status = 2; //1查询，2验证
+};
+message PbSvrDBGetDoleCountResMsg {
+    uint64 uid = 1;
+    int32 status = 2; //1查询，2验证
+    int32 used_count = 3; //使用次数
+};
+
+//领取救济金
+//保存
+message PbSvrDBSaveDoleReqMsg {
+    uint64 uid = 1;
+};
+
+//赔偿奖励
+//保存
+message PbSvrDBSaveRedressReqMsg {
+    uint64 uid = 1;
+    int32 item_id = 2;
+    int64 item_count = 3;
+};
+
+//兑换信息
+//保存
+message PbSvrDBSaveExchangeInfoReqMsg {
+    uint64 uid = 1;
+    int32 exchange_id = 2;//兑换ID
+    int32 item_id = 3;//兑换的物品id
+    int64 item_count = 4;//兑换的物品数量
+    string describe = 5;//物品描述
+    string name = 6;//玩家名
+    string phone = 7;//手机号
+    string address = 8;//地址
+    int32 sex = 9;//性别
+    int32 status = 10;//状态 status 1:刚入库 2:在途中 3:已完成
+    int64 create_timestamp = 11;//兑换时间
+    int64 update_timestamp = 12;//操作时间
+    int32 quantity = 13;//兑换数量
+    string nick_name = 14;//昵称
+    PBExchangeAddress exchange_info = 15;
+    string platform = 16; //兑换所在渠道包标志
+    repeated PBGetItem need_items = 17; //所需道具
+    string ip = 18; //ip
+};
+
+//兑换信息
+//查询
+message PbSvrDBGetExchangeInfoReqMsg {
+    uint64 uid = 1;
+};
+message PbSvrDBGetExchangeInfoResMsg {
+    uint64 uid = 1;
+    repeated PBExchangeRecord record = 2;
+};
+
+//兑换收货地址
+//保存
+message PbSvrDBSaveExchangeAddressReqMsg {
+    uint64 uid = 1;
+    PBExchangeAddress address = 2;
+};
+
+//兑换收货地址
+//查询
+message PbSvrDBGetExchangeAddressReqMsg {
+    uint64 uid = 1;  
+};
+message PbSvrDBGetExchangeAddressResMsg {
+    uint64 uid = 1;
+    PBExchangeAddress address = 2;
+};
+
+//统计玩家在线
+message PbSvrDBSaveOnlineDataReqMsg {
+    string date_time = 1;
+    uint32 online_count = 2;
+};
+
+//修改数据
+message PbSvrDBModPlayerDataReqMsg {
+    uint64 uid = 1;
+    repeated PBModePlayerDataItem items = 2;
+    int64  redblue_add_sys_ntax = 3;
+    int64  redblue_win_gold = 4;
+    int64  redblue_total_win_gold = 5;
+}
+
+// 弹头排行榜 更新弹头数量
+message PbSvrDBModDanTouRankingReqMsg {
+    uint64 uid = 1;
+    int32 type_id = 2;// type_id: 14:白金弹头 13:黄金弹头 12:白银弹头 11:青铜弹头
+    int32 count = 3;// 弹头数量
+}
+
+// 重置弹头排行榜
+message PbSvrDBResetDanTouRankingReqMsg {
+    int32 type_id = 1;// type_id: 14:白金弹头 13:黄金弹头 12:白银弹头 11:青铜弹头
+}
+message PbSvrDBResetDanTouRankingResMsg {
+    int32 type_id = 1;// type_id: 14:白金弹头 13:黄金弹头 12:白银弹头 11:青铜弹头
+    repeated PBDanTouRank list = 2;
+}
+
+// 查询自己上次排行榜的弹头
+message PbSvrDBGetSelfDanTouRankingReqMsg {
+    int32 type_id = 1;// type_id: 14:白金弹头 13:黄金弹头 12:白银弹头 11:青铜弹头
+    uint64 uid = 2;
+}
+message PbSvrDBGetSelfDanTouRankingResMsg {
+    uint64 uid = 1;
+    int32 type_id = 2;// type_id: 14:白金弹头 13:黄金弹头 12:白银弹头 11:青铜弹头
+    int32 count = 3;
+}
+
+//流水
+message PbSvrDBLiushuiReqMsg {
+    uint64 uid = 1;
+    bytes  reason = 2;
+    bytes  record = 3;
+    bytes  param = 4;
+    string gen_time = 5;
+}
+
+//更新分享信息
+message PbSvrDBPlayerUpdateShareReqMsg {
+    uint64 uid = 1;
+    uint64 uid2  = 2;
+    bool state = 3;
+    repeated  int32 award_arr = 4;
+    PBNewShareData  share_data = 5;
+};
+
+// 拉取分享信息
+message PbSvrDBLoadShareInfoReqMsg {
+   uint64 uid = 1;
+}
+
+message PbSvrDBLoadShareInfoResMsg {
+   uint64 uid = 1;
+   repeated PBShareInfoItem uid_arr = 2;
+   repeated  int32 award_arr = 3;
+}
+
+// 合成列表
+message PBSvrDBLoadDebrisListReqMsg {
+    uint64 uid = 1;
+}
+
+message PBSvrDBLoadDebrisListResMsg {
+    uint64 uid = 1;
+    repeated DebrisComposeItem list = 2;
+}
+
+message PBSvrDBAddDebrisListReqMsg {
+    uint64 uid = 1;
+    int64  left_count = 2;
+    DebrisComposeItem item = 3;
+}
+
+//日和月充值记录
+message PBSvrDBAddRechargeLimitInfoReqMsg {
+    uint64 uid = 1;
+    int64 recharge_amount = 2; //充值金额
+    int32 recharge_time = 3; //充值（下单）时间
+}
+
+//玩家活动数据
+message PBPlayerDBActivityItem {
+    int32 activity_id = 1;
+    bytes activity_data = 2;
+    emActivityType atype = 3;
+    string         key_suffix = 4;
+}
+
+message PBPlayerDBActivityLoadItem {
+    int32 activity_id = 1;
+    emActivityType atype = 2;
+    string key_suffix = 3;
+}
+
+message PBSvrDBLoadPlayerActivityReqMsg {
+    uint64 uid = 1;
+    bool   register = 2;
+    int64  now_unix = 3;
+}
+
+message PBSvrDBLoadPlayerActivityResMsg {
+    uint64 uid = 1;
+    repeated PBPlayerDBActivityItem list = 2;
+    int64 now_unix = 3;
+}
+
+message PBSvrDBUpdatePlayerActivityReqMsg {
+    uint64 uid = 1;
+    PBPlayerDBActivityItem activity_data = 2;
+    bool  old = 3;
+    int64 now_unix = 4;
+    bool is_game = 5;
+}
+
+//删除gamesvr活动数据
+message PBSvrDBRemoveGameActivityPlayerDataReqMsg {
+    int32 activity_id = 1;
+    string key_suffix = 2;
+}
+
+//全局活动数据
+message PBSvrDBUpdateActivityInfoReqMsg {
+    int32 activity_id    = 1;
+    bool  remove         = 2;
+    bytes activity_data  = 3;
+}
+
+message PBSvrDBHaiWangZhenBaReqItem {
+    emHaiWangZhengBaRankType rtype = 1;
+    int32 count = 2;
+    repeated uint32 other_rank_arr = 3; //其他名次的信息
+}
+
+//按照活动id拉取用户数据
+message PBSvrDBLoadPlayerActivityInfoByIdReqMsg {
+    uint64   uid = 1;
+    repeated PBPlayerDBActivityLoadItem    activities = 2;
+    int64    now_unix = 3;
+    bool     is_game = 4;
+}
+
+message PBSvrDBLoadPlayerActivityInfoByIdResMsg {
+    uint64   uid = 1;
+    repeated PBPlayerDBActivityItem items = 2;
+     int64 now_unix = 3;
+}
+
+//海王争霸排行榜拉取
+message PBSvrDBHaiWangZhenBaGetReqMsg {
+    uint64 self_uid = 1;
+    repeated PBSvrDBHaiWangZhenBaReqItem req_arr = 2;
+}
+
+message PBSvrDBHaiWangZhenBaGetResMsg {
+    uint64 self_uid = 1;
+    repeated PBHaiWangZhengBaRankInfo rank_arr = 2;
+}
+
+//海王争霸排行榜更新
+message PBSvrDBHaiWangZhenBaUpdateReqMsg {
+    uint64 uid = 1;
+    repeated emHaiWangZhengBaRankType rtype_arr = 2;
+    int64  add_score = 3;
+    int32   vip_lv = 4;
+}
+
+//充值下单
+message PBSvrDBPayGetOrderReqMsg {
+    PBPlayerOrderInfo    order_info = 1; //订单信息
+    int32                   pay_seq = 2;
+    string                  pre_order_info = 3; //如果存在预下单，则为第三方平台预下单信息
+}
+
+message PBSvrDBPayGetOrderResMsg {
+    PBPlayerOrderInfo    order_info = 1; //订单信息
+    bool success = 2;
+    int32                   pay_seq = 3;
+    string                  pre_order_info = 4; //如果存在预下单，则为第三方平台预下单信息
+}
+
+//copy qq群号
+message PBSvrDBAddQQGroupCopyReqMsg {
+    uint64 uid = 1;
+    int32 activity_id = 2;
+}
+
+message PBSvrDBAddQQGroupCopyResMsg {
+     uint64 uid = 1;
+     int32 activity_id = 2;
+}
+
+//微信小游戏玩家的上传
+message PbSvrDBWechatReportReqMsg {
+    PBWechatAdvertItem report_info = 1;
+};
+
+// 存储更改的名字到sql
+message PBSvrDBChangeUserInfoMsg {
+    int64  uid = 1;
+    string phone = 2;
+    string old_name = 3;
+    string new_name = 4;
+    int32 login_type = 5;
+    string account = 6;
+    string head_image = 7;
+    emSex  sex = 8;
+    bool  from_auth = 9;
+}
+
+// 更改玩家的登陆密码
+message PBSvrDBChangePasswordMsg {
+    int64  uid = 1;
+    string name = 2;
+    string password = 3;
+    int32 login_type = 4;
+    string account = 5;
+}
+
+message PBSvrDBSetPhonedMsg {
+    int64 uid = 1;
+    string phone = 2;
+    string name = 3;
+    int32 login_type = 4;
+    string account = 5;
+    string old_phone = 6;
+    bool cancel = 7;
+}
+
+//充值排行榜排行榜更新
+message PBSvrDBPayRankUpdateReqMsg {
+    uint64 uid = 1;
+    int32  vip_lv = 2;
+    repeated emPayRankType rtype_arr = 3;
+    int64  add_money = 4;
+}
+
+//弹头价值排行榜
+message PBSvrDBDantouPriceRankUpdateReqMsg {
+    uint64 uid = 1;
+    int32  vip_lv = 2;
+    int64  total_dantou_price = 3;
+}
+
+//刷新明星玩家
+message PBSvrDBFlushStarPlayerReqMsg {
+    repeated emStarPlayerType rtype_arr = 1;
+    int64   dantou_price_limit = 2;
+}
+
+//拉取明星玩家数据
+message PBSvrDBStarPlayerRankInfoReqMsg {
+
+}
+
+message PBSvrDBStarPlayerRankInfoResMsg {
+    repeated PBStarPlayerRankInfo infos = 1;
+}
+
+//单独保存buyinfo
+message PBSvrDBSavePlayerBuyInfoReqMsg {
+    uint64   uid = 1;
+    PBPlayerBuyInfo     player_buy_info = 2;
+}
+
+//保存赠送记录
+message PbSvrDBSaveZengSongRecordReqMsg {
+    uint64 uid = 1; //
+    uint64 zs_uid = 2;
+    int32 item_id = 3;
+    int64 item_count = 4;
+};
+
+//gglog
+message PbSvrDBGGLogReqMsg {
+    repeated string log_json_str = 1;
+};
+
+//玩家兑换信息
+message PbSvrDBPlayerExchangeInfoReqMsg {
+    uint64  uid = 1;
+};
+
+message PbSvrDBPlayerExchangeInfoResMsg {
+    uint64  uid = 1;
+    repeated PBPlayerExchangeConfigItem items = 2;
+};
+
+//保存玩家兑换信息
+message PbSvrDBPlayerExchangeInfoSaveReqMsg {
+    uint64  uid = 1;
+    repeated PBPlayerExchangeConfigItem items = 2;
+};
+
+//杀鱼活动排行榜更新
+message PBSvrDBKillFishRankUpdateReqMsg {
+    int32 activity_id = 1;
+    uint64 uid = 2;
+    int64  add_score = 3;
+    int32   vip_lv = 4;
+    int32  expire_second = 5;
+}
+
+//杀鱼活动排行榜拉取
+message PBSvrDBKillFishRankGetReqMsg {
+    int32 activity_id = 1;
+    uint64 self_uid = 2;
+    int32 count = 3;
+    repeated uint32 other_rank_arr = 4; //其他名次的信息
+}
+
+message PBSvrDBKillFishRankGetResMsg {
+    int32 activity_id = 1;
+    uint64 self_uid = 2;
+    repeated PBHaiWangZhengBaRankItem arr = 3;
+    PBHaiWangZhengBaRankItem self_rank_item = 4;
+    repeated PBHaiWangZhengBaRankItem other_rank_arr = 5;
+}
+
+//彩金池
+message PBSvrDBJackpotOprReqMsg {
+    int64 jackpot_gold = 1; //变化量
+    repeated PBJackpotRoomItem display_jackpot_items = 2; //变化量
+    int64 bless_gold =3;          //祈福奖池 变化量
+    int64 world_boss_value = 4;      //世界boss 变化量
+    int64 zxf_pool     = 5;    //自选房排行池子变化
+}
+
+message PBSvrDBJackpotOprResMsg {
+    int64 jackpot_gold = 1; //最新值
+    repeated PBJackpotRoomItem display_jackpot_items = 2; //最新值
+    int64 bless_gold = 3;  //最新值
+    int64 world_boss_value = 4;       //最新值
+    int64 zxf_pool_value = 5;       //最新值
+}
+
+message PBSvrDBJackpotRecordItemAddReqMsg { //彩金池记录
+    int32 room_type = 1;
+    uint64 uid = 2;
+    int64 win_gold = 3;
+    int32 update_time = 4;
+    emJackpotWinType win_type = 5;
+}
+
+message PBSvrDBJackpotRecordGetReqMsg { //彩金池记录获取
+    int32 room_type = 1;
+    uint32 count = 2;
+    uint64 uid  = 3;
+}
+
+message PBSvrDBJackpotRecordGetResMsg { //彩金池记录获取
+    int32 room_type = 1;
+    uint64 uid  = 2;
+    repeated PBJackpotRecordPlayerInfo arr = 3;
+}
+
+//保存 聚宝玩法记录
+message PBSvrDBPlayerJubaoRankSaveReqMsg {
+    int32 save_cnt = 1;
+    PBJuBaoRankItem rank_item = 2;
+}
+
+message PBSvrDBPlayerJubaoRankGetReqMsg {
+    int32 rank_cnt  = 1;
+    uint64 uid = 2;
+}
+
+message PBSvrDBPlayerJubaoRankGetResMsg {
+    uint64 uid = 1;
+    repeated PBJuBaoRankItem rank_item_arr = 2;
+}
+
+
+//拉取海王日榜数据
+message PBSvrDBHwzbDayRankGetReqMsg {
+    uint32 begin_rank  = 1;
+    uint32 end_rank  = 2;
+}
+
+message PBSvrDBHwzbDayRankGetResMsg {
+    repeated PBHaiWangZhengBaRankItem arr = 1;
+}
+
+//存取道具属性临时数据
+message PBSvrDBPlayerTmpAddPropItemReqMsg {
+    uint64 uid = 1;
+    repeated PBSvrPlayerPropItem items = 2;  //属性
+};
+
+
+//活动币纪录
+message PBSvrDBUpdateUniversalCoinActivityRecordReqMsg {
+    PBUniversalCoinRankItem rank_item = 1;
+    int32   save_cnt = 2;
+    int64   expire_time=3;
+}
+
+message PBSvrDBUpdateUniversalCoinGetRecordReqMsg {
+    int32     rank_cnt  = 1;
+    uint64    uid = 2;
+    int32     activit_id=3;
+}
+message PBSvrDBPlayerUniversalCoinRankGetResMsg {
+    uint64 uid = 1;
+    repeated PBUniversalCoinRankItem rank_item_arr = 2;
+    int32  activity_id=3;
+}
+
+//保存玩家充值信息
+message PBSvrDBPlayerRechargeMsg {
+  repeated PBRechargeItem  recharge_items = 1;
+}
+
+message PBSvrDBPlayerRechargeInfoSaveReqMsg {
+    uint64   uid=1;
+    PBSvrDBPlayerRechargeMsg player_recharge = 2;
+}
+
+//更新祈福排行
+message PBSvrDBPlayerBlessRankUpdateReqMsg {
+    uint64 uid = 1;
+    int32 bless_words_cnt = 2;
+    int64 update_unix = 3;
+}
+
+//拉取祈福排行
+message PBSvrDBPlayerBlessRankGetReqMsg {
+     uint64 self_uid = 1;
+     uint32 begin_rank = 2; //最小为1
+     uint32 end_rank = 3;
+     uint32 max_rank = 4; //配置里最大的排行上榜数量
+     uint32 before_day = 5; //前几天，今天为0，昨天就1
+     bool  need_user_info = 6; //是否需要user_info
+     bool  load_total_bless_words_cnt = 7; //是否拉取上榜玩家的总福字数量
+     uint32 min_count = 8;    //上榜最小福字    xlh 新增
+}
+
+message PBSvrDBPlayerBlessRankGetResMsg {
+    uint64 self_uid = 1;
+    repeated PBBlessRankItem rank_arr = 2;
+    PBBlessRankItem self_rank_info = 3;
+    bool end = 4;
+    uint32 before_day = 5; //前几天，今天为0，昨天就1
+    int64  bless_pool_value = 6; //那天的池子值
+    int32  total_bless_words_cnt = 7; //上榜玩家的总福字数量
+}
+
+//-----------------------------------世界boss----------------------------
+//roomsvr定时通知dbsvr刷新伤害并判定是否击杀
+message PBSvrDBWorldBossPlayerHitItem {
+    uint64  uid = 1;
+    int32   gold = 2;
+    int64   total_hit_gold = 3; //总击杀
+}
+
+message PBSvrDBWorldBossHitReqMsg {
+    int32 room_svr_id               = 1;
+    PBWorldBossCfg  boss_cfg   = 2;
+    repeated PBSvrDBWorldBossPlayerHitItem player_hit_items = 3; //这里如果间隔同步内玩家过多可以优化
+
+    uint64 last_hit_uid = 50; //期间内最后一击的玩家
+    int32 last_hit_pao = 51; //期间内最后一击的玩家使用的炮倍
+    bool  is_last_hit_fish = 52;  //是否最后一击打死的鱼   xlh
+}
+
+message PBSvrDBWorldBossHitResMsg {
+    PBSvrDBWorldBossHitReqMsg req_msg = 1;
+    bool killed = 2; //是否已经击杀
+    bool hit = 3; //是否是此次击杀
+    int64 cur_boss_gold = 4;
+}
+
+
+//结束拉取排行计算奖励
+message PBSvrDBWorldBossRankGenReqMsg {
+     PBWorldBossCfg boss_cfg = 1;
+     PBWorldBossTmpKillerInfo killed_player = 2;//击杀者信息
+}
+
+message PBSvrDBWorldBossRankGenResMsg {
+    PBWorldBossRankCacheData rank_data = 1;
+    int64 cur_world_boss_pool = 2;  //奖池当前值
+    int64 cur_world_boss_blood = 3;
+}
+
+//保存缓存记录
+message PBSvrDBWorldBossRankCacheSaveReqMsg {
+    PBWorldBossRankCacheData rank_data = 1;
+}
+
+message PBSvrDBWorldBossRankCacheSaveResMsg {
+    PBWorldBossCfg boss_cfg = 1;
+}
+
+//拉取缓存记录
+ message PBSvrDBWorldBossRankCacheGetReqMsg {
+     int32 index = 1;
+ }
+
+ message PBSvrDBWorldBossRankCacheGetResMsg {
+     PBWorldBossRankCacheData rank_data = 1;
+ }
+
+ //玩家使用兑换码
+ message PBSvrDBPlayerRedeemCodeInfo {
+    int32 code_type =1;
+    int64 start_time =2;
+    int64 end_time = 3;
+    int32 state = 4;
+    string platform = 5;
+    string codename = 6;
+    string code = 7;
+    int64  gift_id = 8;
+    int64  id = 9;     //批号
+ }
+ message PBSvrDBPlayerUseRedeemCodeReqMsg {
+     string code = 1;
+     uint64 uid = 2;
+ }
+
+ message PBSvrDBPlayerUseRedeemCodeResMsg {
+     Ret ret = 1;
+     string code = 2;
+     uint64 uid = 4;
+     PBSvrDBPlayerRedeemCodeInfo code_info = 5;
+     bool   is_use = 6;
+ }
+
+ //更新兑换码使用
+  message PBSvrDBPlayerUseRedeemCodeUpdateMsg {
+      uint64 uid = 1;
+      string nike_name = 2;
+      string  platform = 3;
+      int32   vip = 4;
+      int64   use_time =5;
+      string  code = 6;
+      string  code_name = 7;
+      int32   code_type = 8;
+      string  code_content = 9;
+      int64   gift_id = 10;
+      int64   expire = 11;
+  }
+
+
+  //更新祈福排行
+  message PBSvrDBPlayerTianRankUpdateReqMsg {
+      uint64 uid = 1;
+      int32  rise_cnt = 2;
+      int64 update_unix = 3;
+      int32 activity_id = 4;
+  }
+
+  //拉取天蓬排行
+  message PBSvrDBPlayerTianPengRankGetReqMsg {
+       uint64 self_uid = 1;
+       uint32 begin_rank = 2; //最小为1
+       uint32 end_rank = 3;
+       uint32 max_rank = 4; //配置里最大的排行上榜数量
+       bool  need_user_info = 5; //是否需要user_info
+       uint32 min_rise_count = 6;    //最小上升层数
+       int32  activity_id = 7;
+  }
+
+  message PBSvrDBPlayerTianPengRankGetResMsg {
+      uint64 self_uid = 1;
+      repeated PBTianPengRankItem rank_arr = 2;
+      PBTianPengRankItem self_rank_info = 3;
+      bool end = 4;
+      int32  activity_id = 5;
+  }
+
+  //金牛排行榜更新
+  message PBSvrDBPlayerJinNiuUpdateReqMsg {
+      uint64 uid = 1;
+      int64  max_damage = 2;                //秒杀伤害
+      int64  total_damage = 3;
+      int64  update_unix = 4;
+      int32  activity_id = 5;
+  }
+
+  //拉取金牛排行榜
+  message PBSvrDBPlayerJinNiuRankGetReqMsg {
+      uint64 self_uid = 1;
+      uint32 begin_rank = 2; //最小为1
+      uint32 end_rank = 3;
+      uint32 max_rank = 4;       //配置里最大的排行上榜数量
+      bool   need_user_info = 5; //是否需要user_info
+      uint32 min_damage = 6;     //最小伤害
+      uint32 before_day = 7; //前几天，今天为0，昨天就1
+      int32  activity_id = 8;
+      int32  rank_type = 9;
+  }
+
+  message PBSvrDBPlayerJiuNiuRankGetResMsg {
+      uint64   self_uid = 1;
+      repeated PBJinNiuRankItem rank_arr = 2;
+      PBJinNiuRankItem self_rank_info = 3;
+      bool end = 4;
+      int32  activity_id = 5;
+      uint32 before_day = 6; //前几天，今天为0，昨天就1
+      int32  rank_type = 7;
+  }
+
+
+//==========================成就相关========================
+//登录拉取成就
+message PBSvrDBPlayerAchievementsLoadReqMsg {
+    uint64 uid = 1;
+}
+
+message PBSvrDBPlayerAchievementsLoadResMsg {
+    uint64 uid = 1;
+    PBPlayerAchievementInfo info = 2;
+    repeated PBPlayerAchievementNofityItem notify_items = 3;       //成就触发数据，主要用于离线
+}
+
+//更新成就信息
+message PBSvrDBPlayerAchievementsUpdateReqMsg {
+    uint64 uid = 1;
+    repeated PBPlayerAchievementItem update_items = 2;      //更新的成就
+    int32 total_points = 3;                                 //总领取点数,负数表示不更新
+    repeated int32 reward_point_arr = 4;                    //已经领取的点数奖，为空表示不更新
+    repeated PBPlayerAchievementNofityItem notify_items = 5;       //成就触发数据，主要用于离线
+}
+
+//删除成就notify信息
+message PBSvrDBPlayerAchievementsNofityDelReqMsg {
+    uint64 uid = 1;
+    repeated PBPlayerAchievementNofityItem notify_items = 2;       //成就触发数据，主要用于离线
+}
+
+//==========================赛季手册相关========================
+//登录拉取赛季手册
+message PBSvrDBPlayerSeasonManualLoadReqMsg {
+    uint64 uid = 1;
+}
+
+message PBSvrDBPlayerSeasonManualLoadResMsg {
+    uint64 uid = 1;
+    PBPlayerSeasonManualInfo info = 2;
+}
+
+//更新赛季手册信息
+message PBSvrDBPlayerSeasonManualUpdateReqMsg {
+    uint64 uid = 1;
+    PBPlayerSeasonManualInfo update_info = 3;
+}
+
+message PBSvrDBPlayerSeasonManualDelReqMsg {
+    uint64 uid = 1;
+}
+
+//通用的排行榜(海神祭坛，海神狂欢等）
+message PBSvrDBPlayerCommRankUpdateReqMsg {
+    uint64 uid = 1;
+    int64  rank_value = 2;
+    string rank_key = 3;
+    int64  expire_sec = 4; // -1表示永不过期
+    bool  replace = 5;
+    emRankSortType sort_type = 6;
+}
+
+//拉取海神祭坛排行
+message PBSvrDBPlayerCommRankGetReqMsg {
+    int64 rank_unix = 1; //未必都用
+    uint64 self_uid = 2;
+    uint32 begin_rank = 3; //最小为1
+    uint32 end_rank = 4;
+    uint32 max_rank = 5; //配置里最大的排行上榜数量
+    string rank_key = 6; //
+    string pool_key = 7; //如果不需要拉取，不传就行
+    bool need_total_score = 8; //是否获取max_rank 的总积分
+    emRankType rank_type = 9;
+    string param = 10;
+    repeated uint32 other_rank_arr = 11; //其他的入榜条件
+    emRankSortType sort_type = 12;
+    int32 activity_id = 13; //如果是活动相关，取活动id
+}
+
+message PBSvrDBPlayerCommRankGetResMsg {
+    int64 rank_unix = 1;
+    uint64 self_uid = 2;
+    repeated PBCommonRankItem rank_arr = 3;
+    PBCommonRankItem self_rank_info = 4;
+    bool end = 5;
+    int64  pool_value = 6; //那天的池子值 根据pool_key决定是否拉取
+    uint64  total_score = 7; //总积分计算奖励
+    string rank_key = 8;
+    emRankType rank_type = 9;
+    string param = 10;
+    repeated PBCommonRankItem other_rank_arr = 11; //其他的入榜条件
+    emRankSortType sort_type = 12;
+    int32 activity_id = 13; //如果是活动相关，取活动id
+}
+

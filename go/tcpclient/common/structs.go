@@ -1,6 +1,7 @@
 package common
 
 import (
+	DTFishProtoMsg "QuickStart/go/tcpclient/proto/dtfish"
 	"bytes"
 	"encoding/binary"
 	"io"
@@ -129,7 +130,7 @@ func InnerToClientHead(head IMsgHead) IMsgHead {
 }
 
 // 大厅捕鱼头部
-/*type DTFishProtocolInnerHead struct {
+type DTFishProtocolInnerHead struct {
 	DTFishProtoMsg.Packet
 }
 
@@ -148,4 +149,3 @@ func (h *DTFishProtocolInnerHead) GetSeq() uint32 {
 
 	return uint32(*h.SequenceNumber)
 }
-*/

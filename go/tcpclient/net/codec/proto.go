@@ -102,9 +102,10 @@ type ProtoInnerProtocol struct {
 }
 
 func (p *ProtoInnerProtocol) NewCodec() tcp.Codec {
-	return &ProtoInnerCodec{
-		Endian_: p.Endian_,
-		Parse_:  p.Parse_,
+	return &DTFishInnerProtoCodec{
+		Endian_:    p.Endian_,
+		Parse_:     p.Parse_,
+		Game_type_: 97,
 	}
 }
 

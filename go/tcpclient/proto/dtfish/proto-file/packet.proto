@@ -1,0 +1,129 @@
+syntax = "proto2";
+package DTFishProtoMsg;
+
+option optimize_for = SPEED;
+
+message Packet {
+	required uint32		version      = 1;
+	required uint32		command      = 2;
+	optional bytes		serialized   = 3;
+	optional uint64		connectionid = 4;
+	optional uint64		gameserverconnectionid = 5;
+	optional int32		targettype = 6;
+	optional uint64		userID = 7;
+	optional int32		selftype = 8;
+	optional uint64		touserconnectionid = 9; 
+	optional uint64		dispatchconnectionid = 10;
+	optional uint64		sequenceNumber = 11;
+	optional int32		gametype = 12;
+	optional int32		httptag  = 13;
+	optional bytes 		extraInfo = 14;
+	optional uint64 	middleLayerServerID = 15;
+	optional int32		gameCode = 16;
+	repeated InnerPacket innerPacket = 17;
+	optional string		ip = 18;
+	optional int32		tag = 19;
+	optional int32		clientType = 20;
+    optional int32      serverType = 21;
+};
+
+message InnerPacket {
+	required uint32 command = 1;
+	optional bytes serialized = 2;
+};
+
+message PacketExtraInfo {
+	optional string loginIp = 1;
+	optional uint32 loginPort = 2;
+	optional uint32 gameServerIp = 3;
+	optional uint32 gameServerPort = 4;
+	optional int32 gameCode = 5;
+}
+
+enum EnumFuncCardType
+{
+	enumFuncCardKickUserFromTable = 0;
+}
+
+enum EnumLanguageType
+{
+	enumLanguageTypeEnglish = 0;
+	enumLanguageTypeZhcn = 1;
+	enumLanguageTypeFrench = 2;
+	enumLanguageTypeItalian = 3;
+	enumLanguageTypeGerman = 4;
+	enumLanguageTypeSpanish = 5;
+	enumLanguageTypeRussian = 6;
+	enumLanguageTypeKorean = 7;
+	enumLanguageTypeZhtw = 8;
+	enumLanguageTypeThai = 9;
+	enumLanguageTypeIndonesian = 10;
+}
+
+enum EnumSysNotificationType
+{
+	enumSysNotificationNormal = 0;
+	enumSysNotificationImportant = 1;
+}
+
+enum EnumSysActivityType
+{
+	enumActivityNormal = 0;
+	enumActivityImportant = 1;
+}
+
+enum EnumSysActivityExpiredType
+{
+	enumActivityNotExpired = 0;
+	enumActivityExpired = 1;
+}
+
+message FuncCard
+{
+	required EnumFuncCardType cardType = 1;
+	required int32 cardCount = 2;
+}
+
+enum EnumIdentity
+{
+	enumIdentityRose = 0;
+	enumIdentityTulip = 1;
+	enumIdentityPeony = 2;
+	enumIdentityBLUELOVER = 3;
+}
+
+enum EnumXiaoLaBaNotifyType
+{
+	enumXiaoLaBaNotifyTypePay = 0;
+	enumXiaoLaBaNotifyTypeCardType = 1;
+	enumXiaoLaBaNotifyTypePlayGame = 2;
+	enumXiaoLaBaNotifyTypePlayRoulette = 3;
+}
+
+enum EnumGameLevel
+{
+	enumGameLevelChuJi = 0;
+	enumGameLevelZhongJi = 1;
+	enumGameLevelGaoJi = 2;
+	enumGameLevelFuHao = 3;
+}
+
+message ItemPair
+{
+	required int32 itemType = 1;
+	required int64 itemCount = 2;
+	optional int32 extra = 3;
+}
+
+message ItemInfo
+{
+	required int32 itemId = 1;
+	required int64 itemCount = 2;
+	optional string itemName = 3;
+	optional string itemDes = 4;
+	optional int64 itemExpire = 5;
+	optional int32 itemType = 6;
+	optional int32 itemSubType = 7;
+	optional bool canUse = 8;
+	optional bool visible = 9;
+}

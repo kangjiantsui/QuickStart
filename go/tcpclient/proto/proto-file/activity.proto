@@ -1,0 +1,489 @@
+syntax = "proto3";
+
+import "base.proto";
+package ProtoMsg;
+
+enum emActivityType {
+  Invalid = 0;
+  PhoneBill = 1;          //话费券
+  PublicNumer = 2;        //公众号
+  VipAuthentication = 3;  //贵族认证
+  AddQQGroup = 4;         //加群领奖
+  TotalRecharge = 5;      //累计充值
+  Lottery_profit = 6;     //兑换券倍数活动
+  Kill_fish_rank = 7;     //打鱼排行榜（需配置鱼id）
+  Consume_rebate = 8;     //消费返利
+  Fish_score_reward = 9;  //鱼分奖励(1800倍五龙)
+  Universal_coin = 10;    //通用活动币    xlh 新增
+  Five_bless = 11;        //五福活动
+  Tian_peng = 12;         //天蓬
+  Jin_niu = 13;           //金牛
+  Pan_tao = 14;           //蟠桃兑换
+  SJB_crazy = 15;         //世界杯狂欢
+  New_year_crazy = 16;    //新春狂欢
+}
+
+message PBActivityInfo {
+  emActivityType atype = 1;
+  int32 id = 2;
+  int32 begin_time = 3;
+  int32 end_time = 4;
+  int32 priority = 5;
+  string name = 7;
+  string label = 8;
+  string description = 9;
+  bool  completeShow = 10; //完成后是否显示
+  repeated string  platform = 11;//平台
+  string  image = 12;//活动图片
+
+  PBActivityPhoneBillData                 phone_bill_data = 100;
+  PBActivityPublicNumberData              public_number_data = 101;
+  PBActivityVipAuthenticationData         vip_authentication_data = 102;
+  PBActivityTotalRechargeData             total_recharge_data = 103;
+  PBActivityLotteryProfitData             lottery_profit_data = 104;
+  PBActivityKillFishRankData              kill_fish_rank_data = 105;
+  PBActivityConsumeRebateData             consume_rebate_data = 106;
+  PBActivityFishScoreRewardData           fish_score_reward_data = 107;
+  PBActivityUniversalCoinData             universal_coin_data = 108;
+  PBActivityTianPengData                  tianpeng_data = 109;
+  PBActivityPanTaoData                    pantao_data = 110;
+  PBActivitySJBCrazyData                   sjb_crazy_data = 111;
+}
+
+message PBPlayerActivityInfo {
+  PBPlayerActivityPhoneBillData               phone_bill_data = 1;
+  PBPlayerActivityPublicNumberData            public_number_data = 2;
+  PBPlayerActivityVipAuthenticationData       vip_authentication_data = 3;
+  PBPlayerActivityTotalRechargeData           total_recharge_data = 4;
+  PBPlayerActivityConsumeRebateData           consume_rebate_data = 5;
+  PBPlayerActivityFishScoreRewardData         fish_score_reward_data = 6;
+  PBPlayerActivityUniversalCoinData           universal_coin_data = 7;
+  PBPlayerActivityTianPengData                tian_peng_data = 8;
+  PBPlayerActivityJinNiuData                  jin_niu_data = 9;
+}
+
+//客户端玩家数据
+message PBClientActivityInfo {
+  PBActivityInfo       config_info = 1;
+  PBPlayerActivityInfo player_info = 2;
+}
+
+//gamesvr活动数据
+message PBGamePlayerActivityInfo {
+  int32 activity_id = 1;
+  emActivityType atype = 2;
+
+  PBPlayerActivityPanTaoData pan_tao_data = 100;          //蟠桃信息
+  PBPlayerActivitySJBCrazyData sjb_crazy_data = 101;      //世界杯狂欢
+}
+
+//话费券
+message PBActivityPhoneBillData {
+  int32 exchange_item_id = 1;
+  int32 discount = 2; //折扣1-10（如6 表示6折）
+  int32 expire_second = 3; //多少秒有效，用于倒计时（目前是7 * 24 * 3600）
+};
+
+message PBPlayerActivityPhoneBillData {
+  int32 state = 1; // 0表示未领取 1表示领取 2表示已经兑换（话费券其实兑换了 针对个人 活动已经结束）
+  int32 begin_time = 2; //什么时候开始
+};
+
+//公众号
+message PBActivityPublicNumberData {
+  repeated PBGetItem reward_items = 1;
+};
+
+message PBPlayerActivityPublicNumberData {
+  int32 state = 1; // 0表示未关注 1表示关注 2表示关注已经领取
+};
+
+//贵族认证
+message PBActivityVipAuthenticationData {
+  repeated PBGetItem reward_items = 1;
+};
+
+message PBPlayerActivityVipAuthenticationData {
+  PBVipAuthenInfo vip_authen_info = 1;
+};
+
+//累充
+message PBActivityTotalRechargeDataItem {
+  int32 money = 1;
+  repeated PBGetItem reward_items = 2;
+}
+message PBActivityTotalRechargeData {
+  repeated PBActivityTotalRechargeDataItem levels = 1;
+};
+
+message PBPlayerActivityTotalRechargeData {
+  int32 money = 1;
+  int32 last_time = 2;
+  repeated int32 reward_states = 3;
+};
+
+//兑换券翻倍活动
+message PBActivityLotteryProfitData {
+  uint32 profit = 1; //倍数
+}
+
+//杀鱼排行榜
+message PBActivityKillFishRankData {
+  repeated int32 target_fish_ids = 1; //鱼id
+  repeated PBHaiWangZhengBaRewardItem rewards = 2; //奖励,复用海王宝藏的结构
+}
+
+//消费返利
+message PBActivityConsumeRebateVipItem {
+  int32 vip_lv = 1;
+  int64 percent = 2; //10000为100%
+  int64 day_lmt = 3; //每天最大上限
+}
+
+message PBActivityConsumeRebateData {
+  repeated int32 item_id_arr = 1; //消费道具id
+  repeated PBActivityConsumeRebateVipItem vip_items = 2;
+}
+
+message PBSvrActivityConsumeRebateData {
+  int64 yestoday_score = 1;
+  int64 today_score = 2;
+  int64 last_update_time = 3;
+  int32  reward_date = 4; //领奖时间
+};
+
+message PBPlayerActivityConsumeRebateData {
+  int64 yestoday_score = 1;
+  int64 today_score = 2;
+  bool  rewarded = 3; //今日是否领取
+};
+
+//鱼分奖励(1800倍五龙)
+message PBActivityFishScoreRewardFishPaoItem {
+  int32 cannon = 1; //鱼
+  int32 reward_cnt_limit = 2; //最大领取次数
+  repeated PBGetItem rewards = 3;
+}
+
+message PBActivityFishScoreRewardFishItem {
+  repeated int32 ids = 1; //鱼
+  int32   score = 2; //鱼分
+  repeated PBActivityFishScoreRewardFishPaoItem pao_rewards = 3;
+}
+message PBActivityFishScoreRewardData{
+  PBActivityFishScoreRewardFishItem fish = 1;
+  int32  show_cnt = 2;
+}
+
+message PBPlayerActivityFishScoreRewardItem {
+  int32 pao = 1;  //炮倍
+  int32 do_cnt = 2;   //完成几次
+  int32 rewarded_cnt = 3;//领取几次
+};
+
+message PBPlayerActivityFishScoreRewardData {
+  repeated PBPlayerActivityFishScoreRewardItem datas = 1;
+  int64 update_time = 2;
+};
+
+message PBPlayerActivityFishScoreRewardRankItem {
+  PBBaseRankItem base_info = 1;
+  PBPlayerActivityFishScoreRewardData activity_data = 2;
+}
+
+//通用活动币
+message PBActivityUniversalCoinData{
+  repeated PBActivityUniversalCoinInfo coin_info = 1;
+  int32  show_cnt = 2;
+  int64  show_record_gold_limit = 3;
+}
+
+message PBActivityNumConfig{
+  int32  num = 1;
+  int32  weight = 2;
+}
+
+message PBActivityUniversalCoinInfo {
+  int32    id = 1;         //小游戏对应的id
+  float    multi = 2;     //数字对应的倍数
+  repeated PBGetItem unlock = 3;    //解锁需要的道具
+  repeated PBGetItem shake = 4;    //重摇 需要的道具
+  repeated PBActivityNumConfig  rand_num = 5;    //重摇 需要的道具
+  int32    refull = 6;
+  int32    refull_add = 7;
+}
+
+message PBPlayerActivityUniversalCoinRewardItem {
+  int32 id = 1;  //  小游戏对应的id
+  int32 cur_num = 2;   //当前数字
+  int32 max_num = 3;    //最高纪录
+  int32 state = 4;         //状态  0,锁定 1,已解锁
+  int32 shake_count = 5;     //重摇次数
+};
+
+message PBPlayerActivityUniversalCoinData {
+  repeated PBPlayerActivityUniversalCoinRewardItem datas = 1;
+  int64 update_time = 2;
+};
+
+message PBPlayerActivityyUniversalCoinRewardRankItem {
+  PBBaseRankItem base_info = 1;
+}
+
+//天蓬活动
+message PBActivityTianPengData{
+  repeated  int64                     free_duration_sec_arr = 1;            //免费刷新时间
+  repeated  PBActivityFloorsInfo      free_floors = 2;                     //免费层数
+  repeated  PBGetItem                 per_needs = 3;                       //每次需要消耗道具
+  repeated  PBActivityFloorsInfo      pay_floors = 4;                     //免费层数
+  PBActivityRake                      jiu_chi_rake = 5;                   //九齿钉耙
+  repeated PBActivityBoxInfo          total_box = 6;                     //累计宝盒
+  repeated PBActivitySpecialInfo      special = 7;                        //特殊情况
+  repeated int32                      reset_pay_count_grade_id = 8;      //付费次数 重置格子
+  int32                               rank_rising_floor_cnt = 9;                //进排行榜 层数
+  repeated PBActivityRankInfo         rank_rewards = 10;                //排行奖励
+  int32                               player_init_floor = 11;            //玩家初始层数
+  int32                               player_init_grade = 12;           //玩家初始层数
+}
+
+message PBActivityFloorsInfo {
+  int32     floor = 1;
+  repeated  PBActivityGradeInfo  grades = 2;
+}
+
+message PBActivityGradeInfo {
+  int32   id = 1;
+  int32   weight = 2;
+  int32   rise = 3;
+  repeated PBGetItem rewards = 4;
+}
+
+message PBActivityRake {
+  int32   need_value = 1;
+  int32   first_add = 2;
+  int32   rise_add = 3;
+  int32   desc_add = 4;
+  repeated PBActivityRewardsNumInfo rewards_num = 5;
+  bool    free_floor = 6;                // 是否付费层
+}
+
+message PBActivityRewardsNumInfo {
+  int32   num = 1;
+  int32   weight = 2;
+}
+
+//累计宝盒
+message PBActivityBoxInfo {
+  int32   id = 1;
+  int32   count = 2;
+  repeated PBGetItem rewards = 3;
+}
+
+//特殊情况
+message PBActivitySpecialInfo {
+  int32   cur_floor = 1;
+  repeated int32  pay_count = 2;
+  repeated int32  next_grade_id = 3;
+}
+
+//排行榜奖励
+message PBActivityRankInfo {
+  int32   begin = 1;
+  int32   end = 2;
+  repeated PBGetItem rewards = 3;
+}
+
+//玩家数据
+message PBPlayerActivityTianPengData {
+  int32 cur_floor = 1;              //玩家所在当前层数
+  int32 cur_grade = 2;              //玩家所在当前格子
+  int64 free_time = 3;               //免费时间
+  int64 jiu_chi_proce = 4;            //九尺钉耙进度
+  PBPlayerActivityBoxInfo box_info = 5;                //盒子信息，每日更新
+  int64 total_rise_count = 6;            //总共上升次数
+  int64 pay_count = 7;                     //付费次数,可能是会重置,按配置来
+  int64 update_time = 8;
+};
+
+message PBPlayerActivityBoxInfo {
+  int32 today_count = 1;              //当天投掷总次数
+  repeated int32 today_box_arr = 2;    //当日已经领取的盒子
+  int64 time = 3;                    //投掷时间
+};
+
+//金牛排行榜
+enum emActivityJinNiuRankType {
+  InvalidRank = 0;
+  MiaoShaRank = 1;          //秒杀排行榜
+  FuRuiRank = 2;           //福瑞排行榜
+}
+
+//金牛玩家数据
+message PBPlayerActivityJinNiuData {
+  int64  total_damage = 1;         //总伤害
+  int64  total_pay_count = 2;      //总付费次数
+  PBPlayerActivityTodayJinNiuInfo today_info = 3;           //当天消息
+  int64 update_time = 4;
+};
+
+message PBPlayerActivityTodayJinNiuInfo {
+  int64  cur_jinniu_damage = 1;                   //当前金牛的伤害
+  int64  today_max_damage = 2;        //今日最高伤害
+  int64  time = 3;                    //更新时间
+};
+
+//蟠桃活动数据
+message PBActivityPanTaoData {
+  repeated PBPlayerBaseTaskConfigItem tasks = 1;
+  repeated PBPlayerBaseExchangeConfigItem exchanges = 2;
+}
+
+//蟠桃玩家数据
+message PBPlayerActivityPanTaoData {
+  repeated PBPlayerBaseTaskItem task_items = 1;
+  repeated PBPlayerBaseExchangeItem exchange_items = 2;
+};
+
+//世界杯狂欢数据
+message PBActivitySJBCrazyBoxItem {
+  int32                 id = 1;
+  repeated PBWeightItem items = 3;
+}
+
+message PBActivitySJBCrazyBoxData {
+  repeated PBActivitySJBCrazyBoxItem box = 1;
+}
+
+message PBActivitySJBCrazyTaskData {//球王历练
+  string name = 1;
+  int32   id = 2;
+  repeated PBPlayerBaseTaskConfigItem tasks = 3;
+}
+
+message PBActivitySJBCrazyHuiZhangTeam {
+  int32 id = 1;
+  string name = 2;
+  int32 groupid = 3;
+  repeated PBGetItem rewards = 4;
+}
+
+message PBActivitySJBCrazyHuiZhangGroup {
+  int32 groupid = 1;              // 分组id
+  repeated int32 teamsId = 2;     // 该组下的徽章id
+  repeated PBGetItem rewards = 3; // 全部集齐的奖励
+  int32 limit = 4;                // 反向保底限制,如果大于0则最后一个徽章必须在抽到该组对应的宝箱limit次之后才可产出
+}
+
+message PBActivitySJBCrazyHuiZhangWeek {
+  int32 week = 1;
+  repeated PBGetItem rewards = 3;
+}
+
+message PBActivitySJBCrazyHuiZhangData {//徽章达人
+  string name = 1;
+  int32   id = 2;
+  repeated PBActivitySJBCrazyHuiZhangTeam teams = 3;
+  repeated PBActivitySJBCrazyHuiZhangGroup group = 4;
+  repeated PBActivitySJBCrazyHuiZhangWeek all = 5;
+}
+
+
+message PBActivitySJBCrazyShopItem {
+  string name = 1;
+  int32   id = 2;
+  int32 limit_count = 3;
+  int64 per = 4;
+  int64 need_yuanbao = 5;
+  repeated PBGetItem items = 6;
+}
+
+message PBActivitySJBCrazyShopData {
+  string name = 1;
+  int32   id = 2;
+  repeated PBActivitySJBCrazyShopItem shops = 3;
+}
+
+message PBActivitySJBCrazyDuoBaoRewardItem {
+  int32   index = 1;
+  int32   need_score = 2;
+  repeated PBGetItem items = 3;
+}
+
+message PBActivitySJBCrazyDuoBaoData {
+  string name = 1;
+  int32   id = 2;
+  repeated PBGetItem need_items = 3;
+  repeated PBWeightItem draw_items = 4;
+  repeated PBActivitySJBCrazyDuoBaoRewardItem  rewards = 5;
+  repeated int32 lucky_scores = 6;
+  repeated int32 huizhang_scores = 7;
+}
+
+message PBActivitySJBCrazyRankData {
+  string name = 1;
+  int32   id = 2;
+  PBCommonRankConfig xinyun_rank = 3;
+  PBCommonRankConfig leiji_rank = 4;
+}
+
+message PBActivitySJBCrazyData {
+  PBActivitySJBCrazyTaskData task = 1;          // 球王历练
+  PBActivitySJBCrazyHuiZhangData huizhang = 2;  // 徽章达人
+  PBActivitySJBCrazyShopData shop = 3;          // 超能补给
+  PBActivitySJBCrazyDuoBaoData duobao = 4;      // 绿茵夺宝
+  PBActivitySJBCrazyRankData rank = 5;          // 狂欢排行榜
+  PBActivitySJBCrazyBoxData       box = 6;      // 宝箱
+}
+
+//世界杯狂欢玩家数据
+message PBPlayerActivitySJBCrazyTaskData {
+  int64    task_unix = 1;
+  repeated PBPlayerBaseTaskItem task_items = 2;
+}
+message PBPlayerActivitySJBCrazyHuiZhangTeamItem {
+  int32 id = 1;
+  int32 num = 2;
+  bool rewarded = 3;
+}
+
+message PBPlayerActivitySJBCrazyHuiZhangGroupItem {
+  int32 id = 1;
+  bool rewarded = 3;
+}
+
+message PBPlayerActivitySJBCrazyHuiZhangData {
+  int64  huizhang_unix = 1;
+  repeated PBPlayerActivitySJBCrazyHuiZhangTeamItem team = 2;
+  repeated PBPlayerActivitySJBCrazyHuiZhangGroupItem group = 3;
+  bool  week_rewarded = 4;
+}
+
+message PBPlayerActivitySJBCrazyDuoBaoData {
+  int64  duobao_unix = 1;
+  int32   huizhang_score = 3;
+  repeated int32 score_rewards = 4;
+  map<int32, int32> box_count = 5;  // 宝箱开启计数,<box_id,count>
+}
+
+message PBPlayerActivitySJBCrazyShopItem {
+  int32 id = 1;
+  int32 buy_count = 2;
+}
+
+message PBPlayerActivitySJBCrazyShopData {
+  int64 shop_unix = 1;
+  repeated  PBPlayerActivitySJBCrazyShopItem items = 2;
+}
+
+message PBPlayerActivitySJBCrazyRankData {
+  PBPlayerRankValue  lucky = 4;
+}
+
+message PBPlayerActivitySJBCrazyData {
+  PBPlayerActivitySJBCrazyTaskData   task = 1;
+  PBPlayerActivitySJBCrazyHuiZhangData huizhang = 2;
+  PBPlayerActivitySJBCrazyDuoBaoData duobao = 3;
+  PBPlayerActivitySJBCrazyRankData  rank = 4;
+  PBPlayerActivitySJBCrazyShopData shop = 5;
+};
+

@@ -1,0 +1,94 @@
+syntax = "proto3";
+package ProtoMsg;
+
+enum emSSMsgId {
+    SVR_MSG_INVALID = 0;
+    SVR_MSG_HEART_BEAT = 1;
+
+    SVR_MSG_BEGIN               = 200000;
+
+    //内部公共消息
+    SVR_MSG_COMMON_PUSH_PLAYER_SVRID =  200001;
+    SVR_MSG_COMMON_REGISTER_SVR      = 200002;
+    SVR_MSG_COMMON_END      =200999;
+
+    //集群服务
+    SVR_MSG_CLUSTER_BEGIN       = 201000;
+    SVR_MSG_REGISTER_CLUSTER    = 201001; //注册集群服务器
+    SVR_MSG_BROAD_CLUSTER       = 201002; //集群服务器更新广播
+    SVR_MSG_CLUSTER_GET_SVRINFO         = 201003; //请求服务器配置
+    SVR_MSG_CLUSTER_END       = 201999;
+
+    //game
+    SVR_MSG_GAME_BEGIN              = 210000;
+    SVR_MSG_GAME_LOGIN              = 210001;   //游戏服登陆
+    SVR_MSG_GAME_NEW_MAIL           = 210002;   //新邮件
+    SVR_MSG_GAME_NEW_SYS_MAIL       = 210003;   //新的系统邮件
+    SVR_MSG_GAME_PLAYER_PROP_SYNC   = 210005;   //同步属性信息。主要是针对gamesvr和roomsvr之间的交互
+    SVR_MSG_GAME_BAG_ZENGSONG       = 210006;   //赠送到room同步   
+    SVR_MSG_GAME_PLAYER_RECHARGE    = 210007;   //玩家充值
+    SVR_MSG_GAME_NEW_MARQUEE        = 210008;   //新的跑马灯消息
+    SVR_MSG_GAME_UPLOAD_ROOM_INFO   = 210009;   //上传roomsvr用户分布情况
+    SVR_MSG_GAME_BROAD_GATE_MSG     = 210011;   //内部广播信息，不通知world服务器，单个game直接通知所有gate广播
+    SVR_MSG_GAME_GATE_LOGIN_SUC     = 210012;   //玩家gate登录成功后，通知一下
+    SVR_MSG_GAME_ADD_PROP_ITEM      = 210013;   //gamesvr 属性道具添加
+    SVR_MSG_GAME_PLAYER_LOGIN_ACTION                = 210014;   //玩家登陆期间行为
+    SVR_MSG_GAME_PLAYER_ACHIEVEMENT_NOTIFY_INFO     = 210015;   //玩家成就触发数据
+    SVR_MSG_GAME_END                = 219999;
+
+    //world
+    SVR_MSG_WORLD_BEGIN                 = 220000;
+    SVR_MSG_WORLD_LOGIN                 = 220001;   //世界服登陆
+    SVR_MSG_WORLD_BROAD_LOGIN           = 220002;   //通知玩家上下线
+    SVR_MSG_WORLD_KICK_PLAYER           = 220003;   //剔除玩家
+    SVR_MSG_WORLD_MOD_PLAYER_DATA       = 220004;   //修改玩家数据
+    SVR_MSG_WORLD_ANNOUNCEMENT          = 220005;   //后端公告
+    SVR_MSG_WORLD_CHANGE_PlAYER_PROP     = 220006;  //修改玩家数据
+    SVR_MSG_WORLD_ACTIVITY_ACTION        = 220007;  //活动相关操作
+    SVR_MSG_WORLD_PHONE_BILL_DISCOUNT    = 220008;  //获取话费兑换内容
+    SVR_MSG_WORLD_PLAYER_INFO_CHANGED    = 220009;  //用户信息变化
+    SVR_MSG_WORLD_ROOM_DURATION_INFO     = 220010;  //房间变化相关信息
+    SVR_MSG_WORLD_JACKPOT_TRIGGER        = 220011;  //彩金池触发
+    SVR_MSG_WORLD_DTFISH_SPECIAL_RECHARGE  = 220012;  //大厅的特殊项充值，礼包、月卡等
+    SVR_MSG_WORLD_ACTIVITY_FISH_KILLED     = 220013;  //击杀某些特殊的活动鱼
+    SVR_MSG_WORLD_PMD_NOTICE               = 220014;  //触发跑马灯通知世界服 处理  xlh 增加
+    SVR_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN    = 220015;  //活动币通知gamsvr 服 扣除道具   xlh 增加
+    SVR_MSG_WORLD_MATCH_ROOM_ID_OPR          = 220016;  //比赛场id操作
+    SVR_MSG_WORLD_ADD_GAME_LIUSHUI          = 220017;  // word 服流水日志
+    SVR_MSG_WORLD_WORLD_BOSS_DIE            = 220018;  //世界boss死亡
+    SVR_MSG_WORLD_WORLD_BOSS_RANK_INFO      = 220019;  //世界boss结算后排行信息
+    SVR_MSG_WORLD_WORLD_BOSS_NOTICE           = 220020;  // world服通知世界boss来了（通知、出现和结束） xlh
+    SVR_MSG_WORLD_ACTIVITY_CONSUM_ITEMS_REQ    = 220021;  //活动扣除道具请求   xlh 增加
+    SVR_MSG_WORLD_ACTIVITY_YAN_HUA_ITEM_REQ    = 220022;  //金牛活动 烟花扣除  此次特殊   xlh 增加
+    SVR_MSG_WORLD_ZIXUAN_SETTING            = 220023;  //自选房设置
+    SVR_MSG_WORLD_END                   = 229999;
+
+    //登陆
+    SVR_MSG_LOGIN_BEGIN         = 230000;
+    SVR_MSG_LOGIN_END           = 239999;
+
+    //db相关
+    SVR_MSG_DB_BEGIN       = 240000;
+    SVR_MSG_DB_SERVICE          = 240001;
+    SVR_MSG_DB_END       = 249999;
+
+    //room
+    SVR_MSG_ROOM_BEGIN                 = 280000;
+    SVR_MSG_ROOM_ENTER                 = 280001; // 进入房间
+    SVR_MSG_ROOM_SYNC_PLAYER_INFO      = 280002; // 同步房间数据
+    SVR_MSG_ROOM_NOTICE                = 280003; // 通知room服事件
+    SVR_MSG_ROOM_REDBLUE_BET_LEAVE_SYNC  = 280005;   //红蓝争霸下注期间离开房间的结算
+    SVR_MSG_ROOM_SHOP_DELIVERY         = 280006;   //商城兑换商品协议
+    SVR_MSG_ROOM_BUY_INFO_ADD             = 280007;   //新的购买信息同步
+    SVR_MSG_ROOM_FIVE_BLESS_DO             = 280008;   //五福房间协议
+    SVR_MSG_ROOM_FIVE_BLESS_RESET          = 280009;   //五福房间协议
+    SVR_MSG_ROOM_POCHAN_BUFF_ADD           = 280010;   // 救济金 破产buff 新增
+    SVR_MSG_ROOM_PAO_UNLOCK          = 280011;      // 解锁炮倍
+    SVR_MSG_ROOM_FORGE_SHOP_FRESH         = 280012;    //锻造商城刷新
+    SVR_MSG_ROOM_QS_ATTRIBUTE             = 280013;    //强杀属性新增 必须到room 涉及到delta  xlh
+    SVR_MSG_ROOM_ZIXUANFANG_SYS_ROOM_CREATE             = 280014;    //创建系统房
+    SVR_MSG_ROOM_ZIXUANFANG_SYS_ROOM_OPR             = 280015;    //系统房操作
+    SVR_MSG_ROOM_END                      = 289999;
+
+    SVR_MSG_END                 = 299999;
+};

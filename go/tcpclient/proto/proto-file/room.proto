@@ -1,0 +1,678 @@
+syntax = "proto3";
+package ProtoMsg;
+
+import "base.proto";
+import "user_data.proto";
+
+// SVR_MSG_ROOM_ENTER
+message PbSvrRoomEnterReqMsg {
+    PBRoomPlayerInfo   player_info = 1;
+    bool enter = 2; //进入还是退出
+    bool ready = 3;//获取数据
+    bool force_leave = 4; //出现异常情况下，用来清理roomsvr桌子信息
+    bool offline = 5;
+};
+
+message PbSvrRoomEnterResMsg {
+    Ret ret = 1;
+    bool enter = 2;
+    int32 room_id = 3; //哪个roomsvr
+    int32 room_type = 4;
+    uint64 room_desk_id = 5;
+    int32 room_pos = 6;
+    int32 cur_scene_id  = 7;
+    int32 time_offset = 8;
+    PBRoomPlayerInfo cur_player_info = 9; //退出时候的玩家现场数据
+    PBPlayerRoomDurationInfo room_duraion_info = 10; //退出时候玩家的变化数据
+};
+
+//SVR_MSG_ROOM_SYNC_PLAYER_INFO
+message PbSvrRoomSyncPlayerInfoReqMsg {
+    int32 room_type = 1;
+    uint64 uid = 2;
+    bool offline = 3;
+};
+
+//SVR_MSG_ROOM_NOTICE
+message PbSvrRoomNoticeReqMsg {
+    uint64 uid = 1;
+    emRoomNotice notice_type = 2;
+};
+
+//SVR_MSG_ROOM_SHOP_DELIVERY
+message PbSvrRoomShopDeliveryReqMsg {
+    uint64 uid = 1;
+    int32 product_id = 2;
+    repeated PBGetItem need_item = 3;
+    string auto_put = 4;
+    int64 count = 5;
+    int32 index = 6;
+};
+
+message PbSvrRoomShopDeliveryResMsg {
+    Ret ret = 1;
+    uint64 uid = 2;
+    int32 product_id = 3;
+    string auto_put = 4;
+    int64 count = 5;
+    int32 index = 6;
+    repeated PBGetItem need_item = 7;
+};
+
+//SVR_MSG_ROOM_BUY_INFO_ADD
+message PbSvrRoomBuyInfoAddReqMsg {
+    uint64 uid = 1;
+    repeated PBPlayerBuyItem new_buy_items = 2;
+};
+
+//SVR_MSG_ROOM_POCHAN_BUFF_ADD
+message PbSvrRoomPoChanBuffAddReqMsg {
+    uint64 uid = 1;
+};
+
+//=====================client=================
+message PbSvrRoomSyncPlayerInfoResMsg {
+    PBRoomPlayerInfo player_info = 1;
+    bool offline = 2;
+};
+
+//CS_MSG_ROOM_BROAD_PLAYER_ENTER_DESK
+message PBCsRoomPlayerEnterDeskBroadMsg {
+    PBRoomPlayerBaseInfo room_player = 1;
+    bool enter = 2; //进入或者离开
+}
+
+//CS_MSG_ROOM_BROAD_SCENE
+message PBCsRoomScenBroadMsg {
+    int32 scene_id = 1; //当前scenid
+    repeated int32 team_id = 2; //team id
+    int32 time_msec_offset = 3; //当前播放时间偏移量（毫秒）
+    int64 now_time = 4;        //当前时间搓
+}
+
+//CS_MSG_ROOM_CHANGE_PAO 切换炮倍
+message PBCsRoomPlayerChangePaoReqMsg {
+    int32 pao = 1;
+}
+
+message PBCsRoomPlayerChangePaoBroadMsg {
+    int32 pao = 1;
+    uint64 uid = 2;
+    int32  need_vip_lv = 3; //如果vip等级不够，会返回vip等级，此时pao=0
+}
+
+enum emBulletType {
+    bullet_type_normal = 0; //正常子弹
+    bullet_type_zuantou = 1; //钻头
+    bullet_type_hongyuan = 2; //鸿运
+    bullet_type_missile = 3; //使用导弹
+    bullet_type_qinglongpao = 4; //青龙炮
+    bullet_type_yinlongpao = 5; //银龙炮
+    bullet_type_jinlongpao = 6; //金龙炮
+    bullet_type_pao_skill = 7; //炮台技能类,虚拟出来的
+    bullet_type_fish_fork = 8;  //鱼叉
+};
+
+message PBCsRoomPlayerFishForkInfo {
+    int32   fork_id = 1;     //鱼叉id
+    int64   count = 2 ;     //默认数量为1
+}
+
+// CS_MSG_ROOM_PLAYE_SYNC_PAO_ANGLE 同步炮台角度方向
+message PBCsRoomPlayeSyncPaoAngleMsg {
+    int32 uid = 1;
+    double rotation_angle = 2;           //炮台的角度
+}
+
+//CS_MSG_ROOM_BULLET 发射子弹
+message PBCsRoomPlayerBulletReqMsg {
+    uint64 bullet_id = 1;               //客户端自己生成
+    emBulletType bullet_type = 2; //子弹类型
+    double rotation_angle = 3;           //子弹发射时候的角度
+    string fish_id = 4;
+    int32 client_bullet_type = 5; //透传字段，客户端子弹类型
+    PBCsRoomPlayerFishForkInfo fork_info = 6;    //发射鱼叉时，信息
+}
+
+message PBCsRoomPlayerBulletResMsg { //发射子弹失败返回
+    uint64 bullet_id = 1;               //客户端自己生成
+    int64 gold = 2;
+    int32 longpao = 3;
+}
+
+//CS_MSG_ROOM_BROAD_BULLET
+message PBCsRoomPlayerBulletBroadMsg {
+    uint64 uid = 1;
+    uint64 bullet_id = 2; //客户端自己生成
+    emBulletType bullet_type = 3; //子弹类型
+    uint64 count = 4;   //金币就是发射时候的炮倍，其他暂时都是1
+    double rotation_angle = 5; //子弹发射时候的角度
+    string fish_id = 6;
+    int64 diamond = 7;
+    int64 gold = 8;
+    PBPlayerCollectRoomDrawItem draw_info = 9;
+    int32 client_bullet_type = 10; //透传字段，客户端子弹类型
+    PBCsRoomPlayerFishForkInfo fork_info = 11;    //鱼叉相关信息
+}
+
+//CS_MSG_ROOM_HIT 命中
+message PBCsRoomPlayerHitReqMsg {
+    uint64 bullet_id = 1; //客户端自己生成
+    string fish_id = 2;
+    bool   is_world_boss = 3; //是否世界boss
+    int32  world_boss_id = 4;  //世界boss fish_src_id
+    int32  skill_item_id = 5; //使用的技能道具id
+}
+
+message PBCsRoomPlayerHitResMsg { //当击中的鱼不存在的时候 才回复
+    uint64 bullet_id = 1;
+    string fish_id = 2;
+    int64  gold = 3; //当前金币
+}
+
+//CS_MSG_ROOM_BROAD_HIT
+message PBCsRoomPlayerHitBroadMsg {
+    uint64 uid = 1; //
+    uint64 bullet_id = 2; //客户端自己生成
+    string fish_id = 3;
+    PBDropInfo drops = 4;
+    int64 diamond = 5;
+    int64 gold = 6;
+    PBRoomPlayerSpecialFishInfo special_fish_info = 7;
+    int64  liquan = 8; //当前礼券
+    int32  vip_fish_id = 9; //如果是vip鱼，则为vip id
+    bool  be_vip_fish_boss = 10; //如果是vip鱼, 则为是boss
+    PBPlayerCollectRoomDrawItem draw_info = 11;
+    int64 total_fire_gold = 12; //总使用金币
+    PBRoomPlayerPaoSkillInfo  pao_skill_info = 13; //炮台技能触发
+    PBRoomPlayerJackpotInfo  jackpot_info = 14; //彩金池触发
+    int32   jackpot_percent = 15; //彩金池进度
+    PBDropInfo extern_drops = 16; //额外掉落
+    repeated PBMatchRoomRankItem match_room_rank_arr = 17; //如果是比赛场，这里存的是四个玩家的排名信息
+    PBRoomPlayerForkInfo   fork_info =18;
+    int64   cur_pao = 19;                     //当前使用的炮倍
+    PBRoomFishInfo boss_info = 20;            //boss 死忙的时候的信息 用于客户端切后台同步 xlh
+    bool    is_world_boss = 21;              //是否是世界boss
+    int32   world_boss_src_id = 22;          // 世界boss的src_id
+    double  experience = 23;                //玩家总经验值
+    PBRoomPlayerDropDetailInfo drop_detail = 24; //掉落详情,如自选房大小鱼的处理
+}
+
+//CS_MSG_ROOM_BROAD_REBORN_FISH
+message PBCsRoomRebornFishBroadMsg {
+    repeated PBRoomFishInfo fishs = 1;
+}
+
+//CS_MSG_ROOM_BROAD_BOSS_FISH   xlh 新增
+message PBCsRoomBossFishBroadMsg {
+    repeated PBRoomFishInfo fishs = 1;
+    int64    now_time = 2;      //当前时间搓
+}
+
+//CS_MSG_ROOM_BROAD_BOSS_FISH_COME   xlh 新增
+message PBCsRoomBossFishComeBroadMsg {
+    int32  fish_src_id = 1;
+    int32  pre_notice_time = 2;            //提前多少时间 通知
+}
+
+//CS_MSG_ROOM_CHANGE_LONGPAO
+message PBCsRoomPlayerChangeLongPaoReqMsg {
+    int32 change_flag = 1;
+    int32 longpao_id = 2;
+}
+
+message PBCsRoomPlayerChangeLongPaoResMsg {
+   int32 res = 1;
+}
+
+//CS_MSG_ROOM_CHANGE_LONGPAO_BROAD
+message PBCsRoomPlayerChangeLongPaoBroadMsg {
+    uint64 uid = 1;
+    int32 longpao_id = 2;
+    int32 change_flag = 3;
+}
+
+
+//CS_MSG_ROOM_USE_ITEM
+message PBCsRoomPlayerUseItemReqMsg {
+    int32 item_id = 1;
+    string fish_id = 2; //使用技能锁定或者是炮弹的时候会用
+    int64  item_count = 3; //使用数量
+
+    repeated string scene_fish_ids = 10; //场景里可见的鱼，一般使用固定类技能会使用（如电磁炮）
+}
+
+//只有失败的时候回返回，否则 PBCsRoomPlayerUseItemBroadMsg
+message PBCsRoomPlayerUseItemResMsg { //使用道具失败的时候，会返回当前道具的数量信息
+    Ret  ret = 1;
+    int32 item_id = 2;
+    int64 item_count = 3;
+}
+
+//CS_MSG_ROOM_BROAD_USE_ITEM
+message PBCsRoomPlayerUseItemBroadMsg {
+    PBRoomUseItemInfo item_info = 1;
+}
+
+
+//CS_MSG_ROOM_OVERTIME_KICK_PLAYER
+message PBCsRoomOverTimePlayerKickMsg {
+    emRoomKickType  kick_code = 1;
+}
+
+//CS_MSG_ROOM_BROAD_EQUIP_PAO_ITEM
+message PBCsRoomEquipPaoItemBroadMsg {
+   uint64 uid = 1;
+   int32 pao_item = 2;
+   emEquipType equip_type = 3;
+}
+
+//CS_MSG_ROOM_BROAD_SPECIAL_FISH_END
+message PBCsRoomSpecialFishEndBroadMsg {
+   uint64                           uid = 1;
+   PBRoomPlayerSpecialFishInfo       special_fish_info = 2; //特色鱼类型
+}
+
+//CS_MSG_ROOM_HWBZ_CLICK 海王宝藏点击
+message PBCsRoomPlayerHwbzClickReqMsg {
+
+}
+
+message PBCsRoomPlayerHwbzClickResMsg {
+    uint64 bullet_id = 1;
+    int64  reward_gold = 2;
+    int64  total_reward_gold = 3;
+    int32  left_msec = 4;
+    int64  reward_score = 5; //积分
+}
+
+//CS_MSG_ROOM_XYZP_GET_REWARD 响应信息是 PBCsRoomSpecialFishEndBroadMsg
+message PBCsRoomPlayerXyzpGetRewardReqMsg {
+
+}
+
+//CS_MSG_ROOM_ZSHY_COLLECT 珠事好运领奖
+message PBCsRoomPlayerZshyCollectReqMsg {
+}
+
+message PBCsRoomPlayerZshyCollectResMsg {
+    int64  total_reward_gold = 3;
+}
+
+//CS_MSG_ROOM_WLDB_COLLECT 五龙夺宝领奖
+message PBCsRoomPlayerWldbCollectReqMsg {
+}
+
+message PBCsRoomPlayerWldbCollectResMsg {
+    int64  total_reward_gold = 3;
+}
+
+//CS_MSG_ROOM_JFSF_COLLECT 金佛送福领奖
+message PBCsRoomPlayerJfsfCollectReqMsg {
+}
+
+//CS_MSG_ROOM_RYJS_COLLECT 熔岩巨兽领奖
+message PBCsRoomPlayerRyjsCollectReqMsg {
+}
+
+//CS_MSG_ROOM_HWBZ_START
+message PBCsRoomPlayerHwbzStartReqMsg {
+
+}
+
+message PBCsRoomPlayerHwbzStartResMsg {
+    Ret ret = 1;
+}
+
+//CS_MSG_ROOM_ZUANTOU_BOMB 响应信息是 PBCsRoomSpecialFishEndBroadMsg
+message PBCsRoomPlayerZuantouBombReqMsg {
+    repeated string fish_ids = 1;
+}
+
+//CS_MSG_ROOM_HIT_TEST 命中测试
+message PBCsRoomPlayerHitTestReqMsg {
+    uint64 bullet_id = 1; //客户端自己生成
+    string fish_id = 2;
+}
+
+message PBCsRoomPlayerHitTestResMsg {
+   PBRoomPlayerSpecialFishInfo special_fish_info = 1;
+}
+
+
+//CS_MSG_ROOM_DESTORY_BULLET
+message PBCsRoomDestroyBulletReqMsg {
+   repeated uint64 bullect_ids = 1;
+}
+
+//CS_MSG_ROOM_GET_TODAY_TOTAL_KILL_GOLD
+message PBCsRoomGetTodayTotalKillGoldReqMsg {
+}
+
+message PBCsRoomGetTodayTotalKillGoldResMsg {
+   Ret ret = 1;
+   int64 today_total_kill_gold = 2;
+}
+
+//CS_MSG_ROOM_PAY_PAO_LEVEL_UP
+message PBCsRoomPayPaoLevelUpReqMsg {
+    bool  to_max = 1;       //是否一件升级到最大
+}
+
+message PBCsRoomPayPaoLevelUpResMsg {
+   Ret ret = 1;
+   int32 pay_pao = 2;
+}
+
+//CS_MSG_ROOM_SCORE_HEALTH_EVENT
+message PBCsRoomScoreHealthEventMsg {
+   int32 today_score_room_time = 1;  //单位是秒
+}
+
+//CS_MSG_ROOM_DRAW_REWARD
+message PBCsRoomDrawRewardReqMsg {
+}
+
+message PBCsRoomDrawRewardResMsg {
+   Ret ret = 1;
+   int32 reward_index = 2;
+   PBPlayerCollectRoomDrawItem draw_info = 3;
+}
+
+//CS_MSG_ROOM_SYNC_ROOM_INFO
+message PBCsRoomSyncRoomInfoReqMsg {
+    bool syn_fishs = 1;
+}
+
+message PBCsRoomSyncRoomInfoResMsg {
+   Ret ret = 1;
+   int32 cur_scene_id = 2;
+   int32 time_offset = 3;
+   repeated PBRoomFishInfo fish_ids = 4;
+   int32 xjdb_play_second = 5; //如果是星际夺宝房间，已玩多久
+}
+
+//CS_MSG_ROOM_CLEAR_SPECIAL_FISH
+message PBCsRoomClearSpecialFishReqMsg {
+
+}
+
+//CS_MSG_ROOM_REDBLUE_ADD_GOLD           = 121001; //下注
+message PBCsRoomRedBlueAddGoldReqMsg {
+    emRedBlueType ag_type = 1;
+    int64 add_gold = 2;
+}
+
+message PBCsRoomRedBlueAddGoldBroadMsg { //如果是前6名，会出发广播，不然只有自己能收到
+    Ret ret = 1;
+    uint64 uid = 2;
+    emRedBlueType ag_type = 3;
+    int64 add_gold = 4;
+    int64 cur_gold = 5;
+}
+
+//CS_MSG_ROOM_REDBLUE_BROAD_INFO           = 121002; //场景广播（状态，最近10局 下注额度，结算信息，前6排行玩家）
+message PBCsRoomRedBlueInfoBroadMsg {
+    PBRedBlueRoomInfo update_info = 1;
+    PBRedBluePlayerInfo self_info = 2;//个人信息，结算时候用
+}
+
+//CS_MSG_ROOM_REDBLUE_GET_RANK             = 121003; //拉取排行榜
+message PBCsRoomRedBlueGetRankReqMsg {
+    uint32 begin_rank = 1;
+    uint32 count = 2;
+}
+
+message PBCsRoomRedBlueGetRankResMsg {
+    Ret ret = 1;
+    uint32 rank_total_count = 2;
+    repeated PBRedBluePlayerInfo rank_players = 3;
+}
+
+
+//SVR_MSG_ROOM_REDBLUE_BET_LEAVE_SYNC
+message PBSvrRoomRedBlueBetLeaveSyncMsg {
+    int64 add_sys_ntax = 1; //系统抽水
+    int64 win_gold = 2; //赢的钱
+    int64 total_win_gold = 3;//输赢总数的钱
+}
+
+//CS_MSG_ROOM_PAO_SKILL_USE
+message PBCsRoomPaoSkillUseReqMsg {
+    repeated string fish_id_arr = 1; //选鱼
+    bool  end = 2; //客户端主动结束
+    double rotation_angle = 3;           //子弹发射时候的角度
+}
+
+message PBCsRoomPaoSkillUseBroadMsg { //只有在同一个技能可以多次释放才会有这条消息
+    uint64   uid = 1;
+    PBRoomPlayerPaoSkillInfo pao_skill_info = 2;
+}
+
+//CS_MSG_ROOM_PAO_SKILL_END
+message PBCsRoomPaoSkillEndBroadMsg { //技能结束
+    uint64   uid = 1;
+    PBRoomPlayerPaoSkillInfo pao_skill_info = 2;
+}
+
+//CS_MSG_ROOM_JACKPOT_REWARD
+message PBCsRoomJackpotRewardReqMsg {
+
+}
+
+//CS_MSG_ROOM_JACKPOT_END
+message PBCsRoomJackpotEndBroadMsg {
+    uint64   uid = 1;
+    PBRoomPlayerJackpotInfo jackpot_info = 2;
+}
+
+
+//CS_MSG_ROOM_TEST_INFO             xlh 新增 仅仅为了测试
+message PBCsRoomPlayerTestReqMsg {
+    float       x=1;
+    float       y=2;
+    float       z=3;
+}
+
+//CS_MSG_ROOM_MATCH_ROOM_START
+message PBCsRoomMatchRoomStartReqMsg{
+}
+
+message PBCsRoomMatchRoomStartBroadMsg {
+    repeated PBMatchRoomRankItem match_room_rank_arr = 1;
+}
+
+
+//CS_MSG_ROOM_BOSS_AWAKE_FRID_FISH   boss觉醒炸鱼请求  xlh
+message PBCsRoomBossAwakeFirdFishReqMsg {
+    int32      seq = 1;                      //觉醒次数，第几次觉醒
+    repeated string fish_id_arr = 2;
+}
+
+message PBCsRoomBossAwakeFirdFishBroadMsg { //炸鱼回复
+    uint64   uid = 1;                                           //是哪个玩家的触发的觉醒
+    int32    seq = 2;                                            //第几轮的广播
+    repeated PBRoomPlayerBossAwakeFishItem  all_fire_fish = 3;
+    int64    per_fish_score = 4;                              //累计扣除鱼分
+}
+
+//CS_MSG_ROOM_BOSS_AWAKE_BORN_FISH   boss觉醒出鱼请求  xlh
+message PBCsRoomBossAwakeBornFishReqMsg {
+    int32      seq = 1;               //
+    bool       awake_end =2;          //觉醒是否结束
+}
+
+message PBCsRoomBossAwakeBornFishResMsg { //炸鱼回复
+    int32   scene_id= 1;                      //剧本id
+    int32   seq = 2;                          //第几轮的广播
+}
+
+//CS_MSG_ROOM_PLAYER_MEASSAGE_BROAD
+message PBCsRoomPlayerMeassageBroadReqMsg {
+    emRoomPlayerBroadMsgId msg_id = 1;
+    PBRoomPlayerBroadForkMsg fork_msg = 2;
+}
+
+message PBCsRoomPlayerMessageBroadMsg {
+    Ret                               ret = 1;
+    uint64                            uid = 2;
+    PBCsRoomPlayerMeassageBroadReqMsg broad_msg = 3;
+}
+
+//CS_MSG_ROOM_BROAD_BOSS_FISH_END
+message PBCsRoomBossFishEndBroadMsg {
+    string fish_id = 1;                  //最后一条鱼id 结束
+}
+
+//CS_MSG_ROOM_BOSS_AWAKE_HIT_FISH   boss觉醒击中鱼  xlh
+message PBCsRoomBossAwakeHitFishReqMsg {
+    int32      seq = 1;                      //第几次觉醒 打鱼
+    repeated string     fish_ids = 2;                  // 鱼fish_id
+}
+
+message PBCsRoomBossAwakeHitFishBroadMsg { //炸鱼回复
+    uint64   uid = 1;                                           //是哪个玩家的触发的觉醒打鱼
+    int32    seq = 2;                                            //第几轮的广播
+    repeated PBRoomPlayerBossAwakeFishItem  hit_fishs = 3;
+}
+
+//CS_MSG_ROOM_WORLD_BOSS_BROAD_STATE
+message PBCsRoomWorldBossStateBroadMsg {
+     PBWorldBossCfg                  boss_info       = 1;
+     emWorldBossNoticeType           state           = 2;
+     PBWorldBossRankCacheData        rank_data       = 3; //reward_end时候会被赋值
+     PBWorldBossConfigItem           world_cfg       = 4;  //世界boss 其他配置  xlh
+}
+
+//CS_MSG_ROOM_WORLD_BOSS_BROAD_BLOOD 定时广播血量
+message PBCsRoomWorldBossBloodBroadMsg {
+     PBWorldBossCfg   boss_info       = 1;
+     int64            cur_blood       = 2;
+}
+
+// CS_MSG_ROOM_LV_UPDATE 炮倍升级请求
+message PBCsRoomPlayerLvUpdateReqMsg {
+    uint32 level = 1;      // 升到指定等级
+    uint32 yuanbao = 2;    // 不够升级用元宝换经验
+    uint32 lv_update_type = 3;  // 升级类型（礼包直升1，普通升级0）
+}
+
+// CS_MSG_ROOM_LV_UPDATE 炮倍升级回复
+message PBCsRoomPlayerLvUpdateResMsg {
+    // 等级
+    uint32 level = 1;
+    // 升级类型（礼包直升1，普通升级0）
+    uint32 lv_update_type = 2;
+    // 奖励
+    repeated PBGetItem rewards = 3;
+    // 消耗的道具奖励
+    repeated PBGetItem consume = 4;
+    int32 ret = 5;
+    // 能量石总个数
+    int64 energy = 6;
+}
+
+//CS_MSG_ROOM_BOSS_INFO             xlh 新增 仅仅为了测试
+message PBCsRoomDeskBOSSReqMsg {
+  int32  fish_src_id = 1;
+}
+
+// CS_MSG_ROOM_XXSC_REWARD 心想事橙完成任务领奖
+message PBCsRoomXxscRewardReqMsg {
+    int32 xxsc_type = 1;
+    int32 task_index = 2;
+    int32 prop_num = 3;
+    int64 task_time = 4;
+}
+
+message PBCsRoomXxscRewardResMsg {
+    Ret     ret = 1;
+    repeated PBGetItem reward_items = 2;
+    bool threshold = 3;     // 奖励翻倍阈值
+}
+
+// SVR_MSG_ROOM_FORGE_SHOP_FRESH
+message PbSvrRoomForgeShopFreshReqMsg {
+    uint64 uid = 1;
+    repeated PBGetItem need_item = 2;
+};
+
+message PbSvrRoomForgeShopFreshResMsg {
+    Ret ret = 1;
+    uint64 uid = 2;
+};
+
+//SVR_MSG_ROOM_QS_ATTRIBUTE
+message PbSvrRoomQSAttributeReqMsg {
+    uint64 uid = 1;
+    int64  shop_price = 2;
+};
+
+//SVR_MSG_ROOM_ZIXUANFANG_SYS_ROOM_CREATE
+message PbSvrRoomZiXuanFangSysRoomCreateReqMsg {
+    repeated PBWorldMatchRoomInfo room_info = 1;
+};
+
+//SVR_MSG_ROOM_ZIXUANFANG_SYS_ROOM_OPR
+message PbSvrRoomZiXuanFangSysRoomOprReqMsg {
+    int32 opr_type = 1; //1、删除
+    int32 room_type = 2;
+    uint64 match_room_id = 3;
+};
+
+//CS_MSG_ROOM_ZIXUAN_SETTING
+message PBCsRoomZiXuanSettingReqMsg {
+    bool  private = 1;
+}
+
+message PBCsRoomZiXuanSettingBroadMsg {
+    Ret     ret = 1;
+    bool  private = 2;
+}
+
+//CS_MSG_ROOM_ZIXUAN_CALL_BOSS
+message PBCsRoomZiXuanCallBossReqMsg {
+    int32 boss_id = 1;
+    bool  private = 2;
+}
+
+message PBCsRoomZiXuanCallBossBroadMsg {
+    Ret     ret = 1;
+    bool  private = 2;
+    PBRoomFishInfo boss_info = 3;
+}
+
+//CS_MSG_ROOM_ZIXUAN_BOSS_END
+message PBRoomZiXuanBossRewardItem {
+    uint64 uid = 1;
+    repeated PBGetItem call_rewards = 2;
+    repeated PBGetItem xinyu_rewards = 3;
+}
+
+message PBCsRoomZiXuanCallBossEndBroadMsg {
+    string  boss_id = 1;
+    bool   killed = 2;
+    repeated PBRoomZiXuanBossRewardItem player_rewards = 3; //不为空则有奖励
+}
+
+//CS_MSG_ROOM_PLAYER_STATE
+message PBCsRoomPlayerStateReqMsg {
+   emPlayerRoomState state = 1; //设置状态，比如自选房狂暴
+   bool             close = 2;  //关闭或者开启
+}
+
+message PBCsRoomPlayerStateBroadMsg {
+    uint64 uid = 1;
+    repeated PBPlayerRoomStateItem states = 2; //设置状态，比如自选房狂暴
+}
+
+//CS_MSG_ROOM_EVENT_BROAD
+message PBCsRoomEventReqMsg {
+    emRoomEvent type = 1;
+    string      data = 2; //结构再逻辑里组合成string
+}
+
+message PBCsRoomEventBroadMsg {
+    emRoomEvent type = 1;
+    string      data = 2; //结构再逻辑里组合成string
+}

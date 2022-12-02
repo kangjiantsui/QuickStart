@@ -42,10 +42,10 @@ type MsgParser struct {
 
 func NewMsgParser() *MsgParser {
 	p := new(MsgParser)
-	p.lenMsgLen = 2
-	p.maxRecvMsgLen = 4096
-	p.maxSendMsgLen = 4096
-	p.littleEndian = false
+	p.lenMsgLen = 4
+	p.maxRecvMsgLen = 65535
+	p.maxSendMsgLen = 65535
+	p.littleEndian = true
 
 	return p
 }

@@ -1,0 +1,508 @@
+syntax = "proto3";
+import "base.proto";
+import "user_data.proto";
+import "activity.proto";
+import "game.proto";
+package ProtoMsg;
+
+//SVR_MSG_WORLD_LOGIN
+message PbSvrWorldLoginReqMsg {
+    uint64      uid = 1;
+    int32       gs_id = 2;
+    bool        online = 3;
+    PBUserInfo  user_info = 4;
+    bool        register = 5;
+    int32       gate_id = 6;
+};
+
+//SVR_MSG_WORLD_BROAD_LOGIN
+message PbSvrWorldLoginBroadMsg {
+    uint64      uid = 1;
+    bool        online = 2;
+    PBUserInfo  user_info = 4;
+    bool        register = 5;
+};
+
+//SVR_MSG_WORLD_KICK_PLAYER
+message PbSvrWorldKickPlayerReqMsg {
+    uint64      uid = 1;
+    bool        clear_cache = 2;
+    PBAccountCloseInfo close_info = 3;
+};
+
+message PbSvrWorldKickPlayerResMsg {
+    uint64      uid = 1;
+};
+
+//SVR_MSG_WORLD_MOD_PLAYER_DATA
+message PbSvrWorldModPlayerDataReqMsg {
+    uint64     uid = 1;
+    repeated   PBModePlayerDataItem items = 2;
+};
+
+//SVR_MSG_WORLD_ANNOUNCEMENT
+message PbSvrWorldAnnonucementReqMsg {
+    PBSysAnnouncementItem item = 1;
+    bool del = 2;//是否删除
+};
+
+//SVR_MSG_WORLD_CHANGE_PlAYER_PROP
+message PbSvrWorldChangePlayerPropReqMsg {
+    uint64 uid = 1;
+    int32 prop_type = 2; //0属性 1道具
+    int32 id = 3; //属性或者道具id
+    int64 value = 4;
+}
+
+//SVR_MSG_WORLD_ACTIVITY_ACTION
+message PbSvrWorldActivityActionMsg {
+    int32 action = 1; // 1、添加 2、删除 3、修改
+    PBActivityInfo activity_info = 2;//活动数据
+}
+
+//SVR_MSG_WORLD_PHONE_BILL_DISCOUNT
+message PbSvrWorldPhoneBillDiscountReqMsg {
+    int32  action = 1; //0获取 1设置
+    uint64  uid = 2;
+    int32   item_id = 3;
+
+    PbCsGameExchangeByLotteryReqMsg cli_exchange_msg = 4;
+}
+
+message PbSvrWorldPhoneBillDiscountResMsg {
+    uint64  uid = 1;
+    int32   item_id = 2;
+    int32  discount = 3;
+    PbCsGameExchangeByLotteryReqMsg cli_exchange_msg = 4;
+}
+
+//CS_MSG_WORLD_ACTIVITY_TOTAL_RECHARGE_REWARD
+message PBCsWorldActivityTotalRechargeRewardReqMsg {
+    int32 activity_id = 1;
+    int32  money = 2;
+}
+
+message PBCsWorldActivityTotalRechargeRewardResMsg {
+    Ret ret = 1;
+    int32 activity_id = 2;
+    int32 money = 3;
+    repeated PBGetItem reward_items = 4;
+}
+
+//CS_MSG_WORLD_ACTIVITY_PLAYER_INFO_CHANGED
+message PBCsWorldActivityPlayerInfoChangedMsg {
+    int32 activity_id = 1;
+    PBPlayerActivityInfo player_info = 2;
+}
+
+//SVR_MSG_WORLD_PLAYER_INFO_CHANGED
+message PbSvrWorldPlayerInfoChangedMsg {
+    PBUserInfo user_info = 1;
+    int32 room_svr_id = 2;
+    int32 room_type = 3;
+    bool broad = 4;
+};
+
+//CS_MSG_WORLD_ACTIVITY_KILL_FISH_RANK_GET
+message PBCsWorldActivityKillFishRankGetReqMsg {
+    int32 activity_id = 1;
+    uint32 count = 2;
+    repeated uint32 other_rank_arr = 3; //其他名次的信息
+}
+
+message PBCsWorldActivityKillFishRankGetResMsg {
+    Ret ret = 1;
+    int32 activity_id = 2;
+    repeated PBHaiWangZhengBaRankItem arr = 3;
+    PBHaiWangZhengBaRankItem self_rank_item = 4;
+    repeated PBHaiWangZhengBaRankItem other_rank_arr = 5;
+}
+
+//SVR_MSG_WORLD_ROOM_DURATION_INFO
+message PbSvrWorldRoomDurationInfoMsg {
+    uint64  uid = 1;
+    PBUserInfo user_info = 2;
+    repeated PBPlayerRoomDurationFishItem fish_items = 3;
+    int64  use_skill_gold = 4;
+}
+
+//CS_MSG_WORLD_ACTIVITY_CONSUME_REBATE_REWARD
+message PBCsWorldActivityConsumeRebateRewardReqMsg {
+    int32 activity_id = 1;
+}
+
+message PBCsWorldActivityConsumeRebateRewardResMsg {
+    Ret ret = 1;
+    int32 activity_id = 2;
+    repeated PBGetItem reward_items = 3;
+}
+
+//SVR_MSG_WORLD_JACKPOT_TRIGGER
+message PbSvrWorldJackpotTriggerReqMsg {
+    uint64  uid = 1;
+    PBJackpotRoomItem room_item = 2;
+}
+
+//CS_MSG_WORLD_JACKPOT_INFO_BROAD
+message PBCsWorldJackpotInfoBroadMsg {
+    repeated PBJackpotRoomItem display_jackpot_items = 1;
+}
+
+//SVR_MSG_WORLD_DTFISH_SPECIAL_RECHARGE
+message PbSvrWorldDtfishSpecialRechargeReqMsg {
+    bytes dtfish_recharge_data = 1;
+}
+
+
+//CS_MSG_WORLD_ACTIVITY_FISH_SCORE_REWARD
+message PBCsWorldActivityFishScoreRewardReqMsg {
+    int32 activity_id = 1;
+    int32 pao = 2; //0表示领取所有
+    bool  pao_reward_all = 3; //如果pao不为0，表示是不是单次领取
+}
+
+message PBCsWorldActivityFishScoreRewardResMsg {
+    Ret ret = 1;
+    int32 activity_id = 2;
+    int32 pao = 3;
+    bool  pao_reward_all = 4; //如果pao不为0，表示是不是单次领取
+    repeated PBGetItem reward_items = 5;
+}
+
+//CS_MSG_WORLD_ACTIVITY_FISH_SCORE_REWARD_RECORD
+message PBCsWorldActivityFishScoreRewardRecordReqMsg {
+    int32 activity_id = 1;
+}
+
+message PBCsWorldActivityFishScoreRewardRecordResMsg {
+    Ret ret = 1;
+    int32 activity_id = 2;
+    repeated PBPlayerActivityFishScoreRewardRankItem records = 3;
+}
+
+//SVR_MSG_WORLD_ACTIVITY_FISH_KILLED
+message PBFishKilledInfo {
+    int32 fish_id = 1;
+    int64 killed_time = 2;
+    int32 score = 3;
+    uint64 uid = 4; //击杀者
+    int32  pao = 5; //击杀炮倍
+}
+
+message PBSvrWorldFishKilledReqMsg {
+    int32 activity_id = 1;
+    PBFishKilledInfo killed_fish = 2;
+}
+
+
+
+//SVR_MSG_WORLD_PMD_NOTEICE  xlh:添加
+message PbSvrWorldPmdReqMsg {
+    emPaoMaDengType      type = 1;
+    int32                priority = 2;           //优先级
+    int64                time = 3;              //触发时间
+    int64                value = 4;             //价值    作为第二条件 判断优先级
+    int32                broad_type=5;          //广播类型
+    string               text=6;                //广播内容
+    int32                vip=7;                 //玩家vip
+    string               nick_name=8;           //昵称
+    string               room_name=9;           //房间名称
+    string               fish_name=10;          //鱼名称
+    string               reward_name=11;         //奖励名称
+    int64                reward_count=12;          //奖励数量
+    string               head_image=13;             //头像
+    int32                jock_pot_type=14;          //奖池类型 大 中 小奖 等
+    int64                fish_score=15;             //鱼分
+    repeated string       Content = 16;              //下表为基数需要颜色，偶数普通颜色
+    bytes                extra_content = 17;       //额外内容
+};
+
+//CS_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN_UNLOCK        xlh:添加
+message PBCsWorldActivityUniveralCoinUnlockReqMsg {           //玩家活动币 解锁、重摇请求
+    int32 activity_id = 1;                                    //活动id
+    int32 num_id=2;                                           //解锁数字的id
+    int32 type=3;                                             //0表示解锁 1表示重摇
+}
+
+message PBCsWorldActivityUniveralCoinUnlockResMsg {           //玩家活动币 解锁、重摇请求
+    int32 activity_id = 1;                                    //活动id
+    repeated PBPlayerActivityUniversalCoinRewardItem bit_data = 2;      //变动位
+}
+
+//SVR_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN              xlh
+message PbSvrWorldActivityUniversalCoinReqMsg {
+    uint64                                       uid=1;
+    repeated PBGetItem                           consume_items=2;               //消耗道具
+    PBCsWorldActivityUniveralCoinUnlockReqMsg    req_info = 3;//玩家请求数据
+    int32                                        unlock_state=4;                   //0 解锁 重摇 1 2 3 给打点用
+}
+
+message PbSvrWorldActivityUniversalCoinResMsg {
+    Ret ret = 1;
+    repeated PBGetItem   update_items=2;               //最新道具
+    PBCsWorldActivityUniveralCoinUnlockReqMsg req_info = 3;//玩家请求数据
+}
+
+//CS_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN_REWARD                活动币领奖
+message PBCsWorldActivityUniversalCoinRewardReqMsg {
+    int32 activity_id = 1;
+    int32 reward_state = 2; //0表示提前领取   1.表示 全部领取
+}
+
+message PBCsWorldActivityUniversalCoinRewardResMsg {
+    Ret ret = 1;
+    int32 activity_id = 2;
+    repeated PBGetItem reward_items = 3;
+}
+
+//CS_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN_RECORD                   活动币纪录
+message PBCsWorldActivityUniversalCoinRewardRecordReqMsg {
+    int32 activity_id = 1;
+}
+
+message PBCsWorldActivityUniversalCoinRewardRecordResMsg {
+    Ret ret = 1;
+    int32 activity_id = 2;
+    repeated PBUniversalCoinRankItem records = 3;
+}
+
+enum emWorldMatchRoomOpr {
+    wmro_create = 0; //创建
+    wmro_get = 1; //查询
+    wmro_back = 2; //返还
+}
+
+//SVR_MSG_WORLD_MATCH_ROOM_ID_OPR
+message PbSvrWorldMatchRoomIdOprReqMsg {
+    emWorldMatchRoomOpr opr_type = 1;
+    uint64 uid = 2;
+    int32 room_type = 3;
+    uint64 match_room_id = 4;
+    int32  room_svr_id = 5;
+    bool  no_check = 6;
+    int64 create_time = 7;
+}
+
+message PbSvrWorldMatchRoomIdOprResMsg {
+    Ret ret = 1;
+    emWorldMatchRoomOpr opr_type = 2;
+    uint64 match_room_id = 3;
+    PBWorldMatchRoomInfo room_info = 4;
+    bool  no_check = 6;
+}
+
+//SVR_MSG_WORLD_GAME_LIUSHUI           xlh word 服流水
+message PbSvrWorldLiuShuiNoticeGameReqMsg {
+    string                          reason = 1;
+    string                          params = 2;
+    int32                           item_id = 3;
+    int64                           item_count = 4;
+    uint64                          uid = 5;
+}
+
+//SVR_MSG_WORLD_WORLD_BOSS_DIE roomsvr会通知worldsvr击杀信息,正常情况下会触发 SVR_MSG_WORLD_WORLD_BOSS_NOTICE
+message PbSvrWorldWorldBossDieReqMsg {
+   PBWorldBossCfg boss_cfg = 1;
+   int32  room_svr_id = 2;
+}
+
+
+//SVR_MSG_WORLD_WORLD_BOSS_RANK_INFO
+message PbSvrWorldWorldBossRankBroadMsg {
+    PBWorldBossRankCacheData rank_data = 1;
+}
+
+//SVR_MSG_WORLD_WORLD_BOSS_NOTICE
+message PbSvrWorldWorldBossNoticeBroadMsg {
+    emWorldBossNoticeType           boss_type = 1;
+    PBWorldBossCfg                  boss_info = 2;
+    int64                           notice_time = 3;
+    PBWorldBossRankCacheData        rank_data = 4; //reward_end时候会被赋值
+}
+
+//SVR_MSG_WORLD_ACTIVITY_CONSUM_ITEMS_REQ
+message PbSvrWorldActivityConsumItemsMsgType {
+    int32                         activity_id = 1;              //活动id 如果是活动就传活动id
+    int32                         req_type = 2;
+}
+message PbSvrWorldActivityConsumItemsReqMsg {
+    uint64                          uid = 1;
+    repeated PBGetItem              consume_items = 2;               //消耗道具
+    bytes                           req_info = 3;                  //玩家请求数据
+    string                          reason = 4;                   //方便打点用
+    PbSvrWorldActivityConsumItemsMsgType    req_type = 5;              //活动id 如果是活动就传活动id
+}
+
+message PbSvrWorldActivityConsumItemsResMsg {
+    Ret ret = 1;
+    repeated PBGetItem   update_items = 2;               //最新道具
+    bytes                req_info = 3;              //玩家请求数据
+    PbSvrWorldActivityConsumItemsMsgType    req_type = 4;              //
+}
+
+//CS_MSG_WORLD_ACTIVITY_TIAN_PENG_THROW
+message PBCsWorldActivityTianPengThrowReqMsg {
+    int32 activity_id = 1;                                    //活动id
+    bool  free = 2;                                          //是否免费
+    int32 count = 3;                                        // 次数 免费只能一次，传错,服务器不处理
+}
+
+message PBCsWorldActivityTianPengGradeRewards {
+    int32  seq = 1;                                  //第几次
+    int32  floor = 2;                                //第几层数
+    int32  grade = 3;                               //第几个格子
+    repeated PBGetItem   reward = 4;               //奖励
+}
+
+message PBCsWorldActivityTianPengThrowResMsg {             //条件不满足，不返回
+    int32 activity_id = 1;
+    repeated PBCsWorldActivityTianPengGradeRewards  rewards = 2;       //奖励
+    int64   jiu_chi_proce = 3;  //九齿钉耙进度
+    PBPlayerActivityBoxInfo box_info = 4;   //宝箱信息
+    int32  cur_floor = 5;                  //玩家所在层数
+    int32  cur_grade = 6;                  //玩家所在格子， 不用直接忽略
+    int64  free_time = 7;                 //免费投掷的时间
+    bool   is_free = 8;             //是否免费
+}
+
+//CS_MSG_WORLD_ACTIVITY_TIAN_PENG_BOX
+message PBCsWorldActivityTianPengBoxReqMsg {
+    int32 activity_id = 1;                                    //活动id
+    int32 id = 2;                                           // 要领取的宝箱id
+}
+
+message PBCsWorldActivityTianPengBoxResMsg {             //条件不满足,不返回
+    int32 activity_id = 1;
+    int32 id = 2;                                    //宝箱id
+    repeated PBGetItem   reward = 3;                  //奖励
+}
+
+//CS_MSG_WORLD_ACTIVITY_TIAN_PENG_JIUCHI
+message PBCsWorldActivityTianPengJiuChiReqMsg {
+    int32 activity_id = 1;                                    //活动id
+}
+
+message PBCsWorldActivityTianPengJiuChiResMsg {             //条件不满足,不返回
+    int32 activity_id = 1;
+    repeated PBCsWorldActivityTianPengGradeRewards  rewards = 2;       //奖励
+}
+
+//CS_MSG_WORLD_ACTIVITY_TIAN_PENG_RANK
+message PBCsWorldActivityTianPengRankReqMsg {
+    int32 activity_id = 1;                                    //活动id
+    uint32 begin_rank = 2; //最小为1
+    uint32 end_rank = 3; // 必须 > begin_rank, end_rank - begin_rank <= 50，太多了消息包会很大溢出
+}
+
+message PBCsWorldActivityTianPengRankResMsg {             //条件不满足,不返回
+    Ret  ret  = 1;
+    int32 activity_id = 2;
+    repeated PBTianPengRankItem rank_arr = 3;
+    PBTianPengRankItem self_rank_info = 4;
+    bool end = 5;
+}
+
+//SVR_MSG_WORLD_ACTIVITY_YAN_HUA_ITEM_REQ
+message PbSvrWorldActivityJinNiuYanhuaItemReqMsg {
+    uint64                          uid = 1;
+    int32                           count = 2;                    //需要多少烟花数量
+    string                          reason = 4;                   //方便打点用
+    int32                           activity_id = 5;
+}
+
+message PbSvrWorldActivityJinNiuYanhuaItemResMsg {
+    Ret ret = 1;
+    repeated PBGetItem   update_items = 2;               //最新道具
+    int32                free_yanhua_count = 3;          //免费烟花个数
+    int32                pay_yanhua_count = 4;           //付费烟花个数
+    int32                activity_id = 5;
+}
+
+//CS_MSG_WORLD_ACTIVITY_JIN_NIU_THROW
+message PBCsWorldActivityJinNiuThrowReqMsg {
+    int32 activity_id = 1;                                    //活动id
+    int32 count = 2;                                        // 攻击次数，1或者10
+}
+
+message PBCsWorldActivityJinNiuGradeRewards {
+    int32  seq = 1;                                  //第几次
+    int32  id  = 2;                               //第几个格子
+    repeated PBGetItem   reward = 3;               //奖励
+    string   reason = 4;
+}
+
+message PBCsWorldActivityJinNiuThrowResMsg {             //条件不满足，不返回
+    int32   activity_id = 1;
+    int64   damage = 2;                              //此次造成的伤害
+    repeated PBCsWorldActivityJinNiuGradeRewards   rewards = 3;               //奖励
+    repeated PBGetItem   kill_reward = 4;             //击杀奖励，击杀了就有，没有击杀就没有
+    int64    cur_jinniu_blood = 5;                           //当前牛的血量
+}
+
+//  CS_MSG_WORLD_ACTIVITY_JIN_NIU_RANK    = 130017; // 金牛 排行榜
+message PBCsWorldActivityJinNiuRankReqMsg {
+    int32  activity_id = 1;                 //活动id
+    int32  rank_type = 2;                   // 传 1秒杀榜    2福瑞榜
+    uint32 begin_rank = 3;                 //最小为1
+    uint32 end_rank = 4;                  // 必须 > begin_rank, end_rank - begin_rank <= 50，太多了消息包会很大溢出
+    uint32 before_day = 5;              //  rank_type 为1时才生效  前几天 0 今天 1 昨天   （秒杀榜专用）
+}
+
+message PBCsWorldActivityJinNiuRankResMsg {             //条件不满足,不返回
+    Ret   ret  = 1;
+    int32 activity_id = 2;
+    int32 rank_type = 3;
+    repeated PBJinNiuRankItem rank_arr = 4;
+    PBJinNiuRankItem self_rank_info = 5;
+    bool end = 6;
+    uint32 before_day = 7;                  //前几天   0 今天 1 昨天, 秒杀榜时才有用
+    int64  rank_need_damage = 8;           //上榜需要的伤害
+}
+
+// CS_MSG_WORLD_ACTIVITY_CONFIG   // 拉取活动配置
+message PBCsGWorldGetActivityConfigReqMsg {
+    int32  activity_id = 1;                 //活动id
+}
+
+message PBCsWorldGetActivityConfigResMsg {
+    int32  activity_id = 1;                 //活动id
+    PBCsGWorldGetActivityJinNiuConfig  jin_niu_config = 2;
+}
+
+message PBCsGWorldGetActivityJinNiuRewardConfig{
+    int32  id = 1;
+    repeated PBGetItem   reward = 2;               //奖励
+}
+
+message PBCsGWorldGetActivityJinNiuVipDropConfig{
+    int32  vip_level = 1;
+    int32  drop_count = 2;
+}
+
+message PBCsGWorldGetActivityJinNiuConfig {
+    int64  total_blood = 1;
+    int64  cur_blood = 2;
+    repeated PBCsGWorldGetActivityJinNiuRewardConfig   rewards = 3;
+    repeated PBCsGWorldGetActivityJinNiuVipDropConfig  client_vip_daily_drops = 4;
+    repeated PBGetItem   kill_boss_reward = 5;               //奖励
+}
+
+//CS_MSG_WORLD_ZIXUAN_ROOM_FRESH_LIST
+message PBCsGWorldZiXuanRoomFreshListReqMsg {
+    int32  room_type = 1;
+    uint32  count = 2;
+}
+
+message PBCsGWorldZiXuanRoomFreshListResMsg{
+   Ret      ret = 1;
+   int32    room_type = 2;
+   repeated PBWorldMatchRoomInfo room_infos = 3;
+}
+
+//SVR_MSG_WORLD_ZIXUAN_SETTING
+message PbSvrWorldZiXuanSettingReqMsg {
+    uint64 room_id     = 1;
+    int32  boss_id     = 2;
+    bool   private     = 3;
+    repeated int32 has_player_pos = 4;     //当前有玩家的位置 [0, MAX_PLAYERS)
+}

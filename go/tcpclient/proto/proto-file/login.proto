@@ -1,0 +1,64 @@
+syntax = "proto3";
+import "base.proto";
+import "user_data.proto";
+
+package ProtoMsg;
+
+
+//CS_MSG_HEART_BEAT
+message PbCsPlayerHeartBeatResMsg {
+   int64  now_time_msec = 1;
+}
+
+//CS_MSG_PLAYER_TEST
+message PbCsPlayerTestReqMsg {
+   string echo_str = 1;
+}
+
+message PbCsPlayerTestResMsg {
+   string echo_str = 1;
+}
+
+//CS_MSG_PLAYER_LOGIN
+message PbCsPlayerLoginReqMsg {
+   emLoginType login_type = 1;
+   string account = 2;
+   string version = 3;
+   uint64 uid = 4; //uid
+   string token = 5;
+   emDeviceType device = 6;
+   uint64 invite_uid = 7;
+   string channel = 8;
+   string fresh_token = 9;
+   string platform = 10;
+
+   //有些第三方登录（UC）必须通过长连接才能传递到服务器
+   string nick_name = 11;
+   string sex 		= 12;
+   string head_image  = 13;
+   string tp_data  = 14; //需要透传的第三方信息，每一种平台（platform）结构不一致
+
+   PBLoginHead login_head = 15;
+
+   bytes dtfish_login_data = 16; //大厅捕鱼登录信息
+
+   string hall_version = 17; //大厅版本
+};
+
+message PbCsPlayerLoginResMsg {
+   Ret                  ret = 1;
+   PBUserClientInfo     user_info = 2;
+   PBPlayerItemInfo     player_item_info = 3;
+   PBUserConfigInfo     config_info = 4;
+   string               fresh_token = 5; //断线重连token
+   PBPlayerBuyInfo      buy_info = 6; //从user_info里独立出来，以后涉及特殊商品购买信息都存储在这里
+   PBAccountCloseInfo   close_info = 7; //封号信息
+
+   bytes dtfish_login_data = 8; //大厅捕鱼登录信息
+   PBMonthCardInfo      month_card_items = 9;  //每日月卡首次登入，奖励道具    xlh
+};
+
+//CS_MSG_PLAYER_KICK
+message PBCsPlayerKickMsg {
+    PBAccountCloseInfo close_info = 1; //如果是账号被封有这个字段
+};

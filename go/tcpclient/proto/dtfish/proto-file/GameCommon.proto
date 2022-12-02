@@ -1,0 +1,1010 @@
+syntax = "proto2";
+package DTFishProtoMsg;
+import "packet.proto";
+
+option optimize_for = SPEED;
+
+message FeedbackRequest
+{
+    optional uint64 userID = 1;
+    optional string mobile = 2;
+    optional string qqNumber = 3;
+    optional string content = 4;
+}
+
+message SystemMail
+{
+    optional uint64 id = 1;
+    optional string title = 2;
+    optional string content = 3;
+    repeated ItemPair reward = 4;
+    optional int64 generateTime = 5;
+    optional int64 expireTime = 6;
+    repeated string TDtype = 7;
+    repeated uint32 androidVersion = 8;
+}
+
+message QueryAllMailRequest
+{
+    required uint64 userID = 1;
+    optional uint32 androidVersion = 2;
+    optional string TDtype = 3;
+}
+
+message QueryAllMailResponse
+{
+    required uint64 userID = 1;
+    repeated SystemMail systemMail = 2;
+    repeated SystemMail systemNotice = 3;
+    repeated uint64 haveReadMail =4;
+}
+
+message GetMailRewardRequest
+{
+    required uint64 userID = 1;
+    optional uint64 mailID = 2;
+    optional int32 mailType = 3;
+}
+
+enum EnumMailType
+{
+    enumSystemMail = 1;
+    enumSystemNotice = 2;
+}
+
+enum GetMailRewardResult
+{
+    enumGetMailRewardResultSucc = 0;
+    enumGetMailRewardResultMailNotExists = 1;
+    enumGetMailRewardResultMailExpired = 2;
+}
+
+
+message GetMailRewardResponse
+{
+    required uint64 userID = 1;
+    optional uint64 mailID = 2;
+    optional int32 mailType = 3;
+    required int32 result = 4;//奖励在packet的innerpacket里
+}
+
+message SendSystemMail
+{
+    required uint64 userID = 1;
+    optional int32 mailType = 2;
+    optional SystemMail mail = 3;
+}
+
+message RewardItemInfo
+{
+    repeated ItemPair item = 1;
+    optional uint32 tag = 2;//万一一条里要分几种奖励,用这个来区分,到时候就用command定义的
+}
+
+enum EnumDBFieldType
+{
+    enumDBFieldTypeInt32 = 0;
+    enumDBFieldTypeUInt32 = 1;
+    enumDBFieldTypeInt64 = 2;
+    enumDBFieldTypeUInt64 = 3;
+    enumDBFieldTypeString = 4;
+    enumDBFieldTypeBytes = 5;
+};
+
+enum EnumDBFieldUpdateType
+{
+    enumDBFieldUpdateTypeAdd = 0;
+    enumDBFieldUpdateTypeReplace = 1;
+};
+
+message FieldValue
+{
+    optional int32 intValue = 1;
+    optional uint32 uintValue = 2;
+    optional int64 longValue = 3;
+    optional uint64 ulongValue = 4;
+    optional string strValue = 5;
+    optional bytes bytesValue = 6;
+    //TODO float, double
+}
+
+message Field
+{
+    optional string name = 1;
+    optional int32 type = 2;
+    optional int32 updateType = 3;
+    optional FieldValue value = 4;
+}
+
+message Row
+{
+    repeated Field index = 1;
+    repeated Field value = 2;
+}
+
+message QueryUserTableDataRequest
+{
+    optional uint64 userID = 1;
+    optional uint32 command = 2;
+    repeated Field index = 3;
+}
+
+message QueryUserTableDataResponse
+{
+    optional uint64 userID = 1;
+    optional uint32 command = 2;
+    repeated Row row = 3;
+    repeated Field index = 4;
+}
+
+message QueryCommonRewardInfoRequest
+{
+    optional int32 gamecode = 1;//什么游戏
+    optional uint32 command = 2;//什么奖励
+}
+
+message CommonRewardInfo
+{
+    optional uint32 command = 1;
+    optional uint64 id = 2;
+    optional bytes desc = 3;
+    repeated ItemPair rewardItem = 4;
+    optional int64 rewardTime = 5;
+}
+
+message QueryCommonRewardInfoResponse
+{
+    optional QueryCommonRewardInfoRequest request = 1;
+    repeated CommonRewardInfo rewardInfo = 2;
+}
+
+message GetCommonRewardRequest
+{
+    optional int32 gamecode = 1;
+    optional uint32 command = 2;
+    optional uint64 rewardID = 3;
+}
+
+//真正的奖励放在packet的innerpacket里
+//kGameServerRewardItem和RewardItemInfo
+//用来复用奖励逻辑
+message GetCommonRewardResponse
+{
+    optional GetCommonRewardRequest request = 1;
+    optional int32 result = 2;
+}
+
+message UserAchievementInfo
+{
+    optional int32 achievementId = 1;
+    optional int32 status = 2;
+    repeated ItemPair rewardItem = 3;
+    optional int64 progress = 4;//进度
+    optional int64 condition = 5;//条件
+}
+
+enum EnumAchievementType
+{
+    enumAchievementTypeRankingMatch = 1;//排位赛
+    enumAchievementTypeFollowWeChatPublicAccount = 2;//关注公众号
+    enumAchievementTypeBookmarkGame = 3;//收藏小游戏
+    enumAchievementTypeTotalLogin = 4;//累计登录
+}
+
+enum EnumAchievementStatus
+{
+    enumAchievementStatusNotAvailable = 0;
+    enumAchievementStatusAvailable = 1;
+    enumAchievementStatusGotReward = 2;
+}
+
+message QueryUserAchievementInfoRequest
+{
+    optional int32 gameCode = 1;
+    optional int32 gameType = 2;
+    optional int32 achievementType = 3;
+}
+
+message QueryUserAchievementInfoResponse
+{
+    optional QueryUserAchievementInfoRequest request = 1;
+    repeated UserAchievementInfo achievementInfo = 2;
+}
+
+message GetUserAchievementRewardRequest
+{
+    optional int32 gameCode = 1;
+    optional int32 gameType = 2;
+    optional int32 achievementType = 3;
+    optional int32 achievementId = 4;
+}
+
+message GetUserAchievementRewardResponse
+{
+    optional GetUserAchievementRewardRequest request = 1;
+    optional int32 result = 2;
+    optional UserAchievementInfo newAchievementInfo = 3;
+}
+
+enum EnumDailyLoginRewardStatus
+{
+    enumDailyLoginRewardStatusExpired = 0;
+    enumDailyLoginRewardStatusGot = 1;
+    enumDailyLoginRewardStatusAvailable = 2;
+}
+
+message DailyLoginRewardStatus
+{
+    optional int32 status = 1;
+    repeated ItemPair reward = 2;
+}
+
+message QueryNewUserLoginRewardStatusResponse
+{
+    repeated DailyLoginRewardStatus dailyLoginRewardstatus = 1;
+    optional int32 day = 2;
+    optional int32 leftReplenishCount = 3;//剩余补签次数
+}
+
+message GetNewUserLoginRewardResponse
+{
+    optional int32 result = 1;
+    optional int32 day = 2;
+    optional DailyLoginRewardStatus newStatus = 3;
+	optional int64 vipRewardScore = 4;//本次VIP加赠获得的筹码，只作为客户端显示用
+}
+
+enum EnumNewUserLoginRewardType
+{
+    enumNewUserLoginRewardTypeNormal = 0;//正常
+    enumNewUserLoginRewardTypeReplenish = 1;//补签
+}
+
+message GetNewUserLoginRewardRequest
+{
+    optional int32 type = 1;
+}
+
+
+enum EnumContinuousLoginRewardType
+{
+    enumContinuousLoginRewardTypeNormal = 0;
+    enumContinuousLoginRewardTypeDouble = 1;
+}
+
+message GetContinuousLoginRewardRequest
+{
+    optional int32 type = 1;
+}
+
+enum EnumExchangeCodeResultReason
+{
+    enumExchangeCodeReasonFailed = 1;
+    enumExchangeCodeReasonExpired = 2;//过期
+    enumExchangeCodeReasonNoLeftUseTimes = 3;//使用次数用完了
+    enumExchangeCodeReasonAlreadyGet = 4;//已经领取
+}
+
+/////////////////////////////////////////////////////////////////////////////
+//周签到相关
+
+enum EnumWeekSignDayStatus
+{
+    enumWeekSignDayStatusNormal = 0;
+    enumWeekSignDayStatusOldSign = 1;
+    enumWeekSignDayStatusGotReward = 2;
+}
+
+message WeekSignDayStatus
+{
+    optional int32 status = 1;
+    repeated ItemPair reward = 2;
+}
+
+// 获取周签到所有信息返回
+message QueryUserWeekSignInStatusResponse
+{
+    repeated WeekSignDayStatus dayStatus = 1;
+    optional int32 signDayCount = 2;
+    repeated ItemPair finalRewards = 3;
+	optional int32 remainOldSignTimes = 4; //今天剩余补签次数
+	optional int32 currentDay = 5; // 今天是第几天
+	optional bool isGotFinalReward = 6; // 是否领取周奖励
+}
+
+enum EnumWeekSignRewardType
+{
+    enumWeekSignRewardTypeNormal = 0;
+    enumWeekSignRewardTypeDouble = 1;
+}
+
+// 领取周签到签到奖励请求
+message GetUserWeekSignInRewardRequest
+{
+    optional int32 type = 1;
+}
+
+// 领取周签到签到奖励返回
+message GetUserWeekSignInRewardResponse
+{
+    optional int32 result = 1;
+    optional int32 day = 2;
+    optional WeekSignDayStatus newStatus = 3;
+}
+
+// 领取周签到补签奖励请求
+message GetUserWeekSignInOldRewardRequest
+{
+    optional int32 day = 1;
+}
+
+// 领取周签到补签奖励返回
+message GetUserWeekSignInOldRewardResponse
+{
+    optional int32 result = 1; //0成功,1失败,2今日补签次数已用完
+    optional int32 day = 2;
+    optional WeekSignDayStatus newStatus = 3;
+}
+
+// 领取周签到累计奖励返回
+message GetUserWeekSignInFinalRewardResponse
+{
+    optional int32 result = 1;
+    repeated ItemPair reward = 2;
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+
+message GetExchangeCodeRequest
+{
+    optional string code = 1;
+}
+
+message GetExchangeCodeResponse
+{
+    required int32 result = 1;
+    optional int32 itemID = 2;
+    optional int32 itemCount = 3;
+	repeated ItemPair reward = 4;
+}
+
+message ExchangeCodeInfo
+{
+    optional string code = 1;
+    optional int32 itemID = 2;
+    optional int32 minCount = 3;
+    optional int32 maxCount = 4;
+    optional int32 leftUseTimes = 5;
+    optional int32 expired = 6;
+}
+
+message ExchangeItemProductInfo
+{
+    optional int32 productId = 1;
+    optional ItemPair fromItem = 2;
+    optional ItemPair toItem = 3;
+}
+
+message QueryExchangeItemProductInfoResponse
+{
+    repeated ExchangeItemProductInfo productInfo = 1;
+}
+
+enum EnumExchangeItemResult
+{
+    enumExchangeItemResultSucc = 0;
+    enumExchangeItemResultFailUnknownReason = 1;//未知原因
+    enumExchangeItemResultNoSuchProduct = 2;//没有这个商品
+    enumExchangeItemResultNoEnoughItem = 3;//道具不足
+}
+
+message ExchangeItemRequest
+{
+    optional int32 productId = 1;
+}
+
+message ExchangeItemResponse
+{
+    optional int32 result = 1;
+    optional ExchangeItemProductInfo productInfo = 2;
+}
+
+message ItemChangeNotify
+{
+    repeated ItemPair changeItem = 1;
+}
+
+message ProductionInfo
+{
+    optional int32 leftBuyTimes = 1;
+    repeated ItemPair rewards = 2;
+    optional string productID = 3;
+    optional string price = 4;
+}
+
+message QueryProductionInfoRequest
+{
+    optional int32 type = 1;
+}
+
+message QueryProductionInfoResponse
+{
+    optional int32 result = 1;
+    repeated ProductionInfo productInfos = 2;
+    optional int64 leftTime = 3;
+    optional int32 payType = 4;
+	optional int64 ActivityType = 5; //默认0不开启
+}
+
+//跟登录授权类型,可以不全填,看sdk类型
+message SdkAuthInfo
+{
+    optional string appID = 1;
+    optional string accessToken = 2;
+    optional string openID = 3;
+    optional string extraInfo = 4;
+    optional string nickName = 5;
+    optional string avatar = 6;
+}
+
+message GuestRegistSdkAccountRequest
+{
+    optional string guestAccount = 1;//游客账号
+    optional string guestPassword = 2;//游客密码
+    optional int32 sdkType = 3;//sdk类型,就用EnumLoginType了
+    optional SdkAuthInfo authInfo = 4;//sdk授权信息
+}
+
+message SdkAuthResult
+{
+    optional string openID = 1;
+    optional string accessToken = 2;
+}
+
+message GuestRegistSdkAccountResponse
+{
+    optional string guestAccount = 1;
+    optional string guestPassword = 2;
+    optional int32 result = 3;//clientgameserver.proto中的EnumGuestRegistResult
+    optional SdkAuthResult authResult = 4;//跟登录返回的类似,可以保存下来接着登录用
+}
+
+message GetSceneRewardRequest
+{
+    optional string td = 1;//平台类型
+    optional string scenecode = 2;//场景值
+}
+
+message GetSceneRewardResponse
+{
+    optional int32 soluction = 1;//返回结果
+    repeated ItemPair reward = 2;
+}
+
+enum GetSceneRewardSolution
+{
+    enumSuccess = 0;//成功
+    enumError    = 1;
+    enumOutOfCount = 2;//超出领取次数
+    enumGameCodeErr = 3;//游戏类型错误
+    enumErrorSceneCode = 4;//场景值错误
+    enumErrorTdErr  = 5;//渠道参数错误
+}
+
+message OfflineRewardInfo
+{
+    optional int32 itemType = 1;//物品类型
+    optional int64 itemCount = 2;//物品数量
+    optional int64 cycle = 3;//周期
+    optional int64 addCount = 4;//每个周期增加数量
+    optional int64 upperLimit = 5;//累积上限
+    optional int32 leftRewardCount = 6;//还剩几次可领
+    optional int64 cycleLeftTime = 7;//本周期剩余时间
+    optional int32 dailyRewardCount = 8;//每天最大领取次数
+}
+
+//离线奖励
+enum EnumOfflineRewardType
+{
+    enumOfflineRewardTypeNormal = 0;
+    enumOfflineRewardTypeDouble = 1;
+}
+
+//kGameServerGetOfflineRewardRequest 20602
+message GetOfflineRewardRequest
+{
+    optional int32 type = 1;//EnumOfflineRewardType
+    optional int64 itemCount = 2;//累积数量
+}
+
+//kGameServerGetOfflineRewardResponse 20603
+message GetOfflineRewardResponse
+{
+    optional GetOfflineRewardRequest request = 1;
+    optional int32 result = 2;//返回结果
+    repeated ItemPair reward = 3;
+    optional OfflineRewardInfo info = 4;//新的信息
+}
+
+//kGameServerQueryOfflineRewardInfoRequest 20604
+//kGameServerQueryOfflineRewardInfoResponse 20605
+message QueryOfflineRewardInfoResponse
+{
+    optional OfflineRewardInfo info = 1;
+}
+
+message TipOffInfo
+{
+    optional int32 gameType = 1;
+    optional int32 roomID = 2;
+}
+
+
+//游客转正弹窗信息
+message GuestRegistPopupInfo
+{
+    optional bool canClose = 1;//可以关闭
+    repeated ItemPair reward = 2;//奖励
+}
+
+//认证弹窗相关信息
+message RealNamePopupInfo
+{
+    optional bool canClose = 1;//可以关闭
+    repeated ItemPair reward = 2;//奖励
+    optional int32 extraPovertyRewardCount = 3;//额外补助次数
+}
+
+//时长信息
+message RealNameTimeInfo
+{
+    optional int32 forbidLoginBeginTime = 1;//禁止登录开始时间,如果是22:00就写成2200
+    optional int32 forbidLoginEndTime = 2;//禁止登录结束时间,如果是8:00写成3200,加2400
+    optional int64 dailyGameTimeUpperLimit = 3;//最大游戏时间
+    optional int64 dailyGameTime = 4;//今日累计时间
+}
+
+//充值服务
+message RealNamePayInfo
+{
+    optional int32 singlePayMoneyUpperLimit = 1;//单次充值上限
+    optional int32 monthPayMoneyUpperLimit = 2;//每月充值上限
+    optional int32 monthPayMoney = 3;//本月累计充值
+}
+
+//实名认证信息
+message RealNameVerifyInfo
+{
+    optional int32 age = 1;//年龄
+    optional RealNamePopupInfo popupInfo = 2;//实名认证弹窗
+    optional RealNameTimeInfo timeInfo = 3;//时长
+    optional RealNamePayInfo payInfo = 4;//充值
+    optional GuestRegistPopupInfo guestRegistPopupInfo = 5;//游客转正弹窗
+    optional bool isVerified = 6;//是否认证过
+}
+
+//位置信息
+message UserLocationInfo
+{
+    required uint64 userID = 1;
+    required string latitude = 2;
+    required string longitude = 3;
+    required string city = 4;
+    required string district = 5;
+    required string street = 6;
+    required string address = 7;
+    required string describe = 8;
+}
+
+
+enum EnumLoginRewardType
+{
+    enumLoginTypeRewardBackGame = 0;//回归游戏
+}
+
+//登录时发的奖励
+message LoginRewardInfo
+{
+    optional int32 rewardType = 1;
+    repeated ItemPair rewardItem = 2;
+}
+
+message LoginCommonInfo
+{
+    optional UserLocationInfo locationInfo = 1;
+    optional string loginToken = 2;
+    optional int32 systemMailCount = 3;
+    optional int32 systemNoticeCount = 4;
+    optional bool isYellowListUser = 5;
+    optional bool isIosPayWhiteListUser = 6;
+    optional int64 fishTotalWinScore = 7;
+    optional string inviteUserNickName = 8;
+    optional bool isBackUser = 9;
+    repeated TipOffInfo tipOffInfo = 10;
+    optional RealNameVerifyInfo realNameVerifyInfo = 11;//实名认证
+    repeated LoginRewardInfo loginRewardInfo = 12;//登录时触发的奖励
+    optional int32 abTestGroup = 13;//abtest分组
+    optional UserLocationInfo locationInfoNew = 14;//其实跟1一样,无奈1有些客户端出问题了
+}
+
+enum EnumRealNameVerifyResult
+{
+    enumRealNameVerifyResultSuccessWithBenefit = 0;//成功,有福利
+    enumRealNameVerifyResultSuccessWithoutBenefit = 1;//成功,无福利
+    enumRealNameVerifyResultFail = 2;//失败
+}
+
+message RealNameVerifyRequest
+{
+    optional string realName = 1;//姓名
+    optional string idCardNum = 2;//身份证号
+}
+
+message RealNameVerifyResponse
+{
+    optional int32 result = 1;//结果
+    repeated ItemPair reward = 2;//奖励
+    optional int32 povertyRewardCount = 3;//实名后拥有的破产补助次数
+    optional RealNameVerifyInfo realNameVerifyInfo = 4;//新的认证信息
+}
+
+message SubscribeConfigRequest
+{
+    optional uint64 userID = 1;
+    optional int32 gamecode = 2;
+    optional int32 subtype = 3;//订阅类型（目前只有微信订阅）
+    optional int32 userType = 4; //新老玩家(0老，1新)
+}
+
+message SubscribeConfigResponse
+{
+    optional uint64 userID = 1;
+    optional bool isSubscribe = 2; //是否已经订阅，订阅不显示
+    optional int32 userType = 3;
+    repeated ItemPair instantReward = 4; //即时奖励
+    repeated ItemPair newuserReward = 5; //新用户订阅奖励
+    repeated ItemPair normalReward = 6; //老玩家订阅奖励
+}
+
+//这个是为了做统一的逻辑
+message GetRewardResponse
+{
+    optional uint64 userID = 1;//获奖用户id
+    optional uint32 command = 2;//实际获奖用的消息号
+    optional bytes serialized = 3;//获奖的实际消息
+}
+
+message UserSubscribeMessageRequest 
+{
+    optional uint64 userID = 1;
+    optional int32 gameCode = 2;
+    optional int32 subType = 3;
+    optional int32 userType = 4;
+}
+
+message UserSubscribeMessageResponse
+{
+    optional uint64 userID = 1;
+    optional int32 result = 2;
+}
+
+message TestDataServerRequest
+{
+    optional string jsonData = 2;
+    optional uint32 key = 3;
+    optional bytes serialized = 4;
+    repeated ItemPair rewards = 5;
+    optional int32 gameCode = 6;
+    optional int32 serverType = 7;
+    optional int32 type = 8;
+    optional int64 arg1 = 20;
+    optional int64 arg2 = 21;
+    
+    
+}
+
+enum EnumReplenishType
+{
+    enumReplenishTypeNot = 0;
+    enumReplenishTypeScore = 1;
+    enumReplenishTypeAdvert = 2;
+}
+
+message ReplenishContinuousRewardRequest
+{
+    optional int32 rewardType = 1;//是否多倍奖励
+    optional int32 replenishType = 2;//补签方式0不补签，1金币，2其他
+}
+
+//请求好友房任务信息
+message RequestFriendGameTaskInfo
+{
+    
+}
+
+message FriendGameTaskReward
+{
+    optional int32 rewardID = 1;
+    optional RewardItemInfo rewardInfo = 2;
+}
+message FriendGameTaskInfo
+{
+    optional int32 taskID = 1;
+    optional int32 taskProcess = 2;
+    optional int32 minCanRewardCount = 3;
+    optional int32 maxRewardCount = 4;
+    optional int32 leaveRewardCount = 5;
+    repeated FriendGameTaskReward friendGameTaskReward = 6;
+}
+
+message FriendGameTaskInfoResponse
+{
+    optional int32 version = 1;
+    repeated FriendGameTaskInfo friendGameTaskInfo = 2;
+}
+
+//请求领取好友房任务奖励
+message FriendGameTaskRewardRequest
+{
+    optional int32 taskID = 1;
+}
+
+enum GetFriendGameTaskRewardResult
+{
+    enumGetFriendGameTaskRewardResultSucc = 0;
+	enumGetFriendGameTaskRewardResultMaxRewardCountLimit = 1;
+	enumGetFriendGameTaskRewardResultMinConditionLimit = 2;
+}
+
+message FriendGameTaskRewardResponse
+{
+    optional GetFriendGameTaskRewardResult getFriendGameTaskRewardResult = 1;
+    optional int32 rewardID = 2;
+}
+
+//请求抽奖任务配置
+message DrawTaskConfigRequest
+{
+    optional int32 gameType = 1;
+}
+
+//抽奖任务 配置回复
+message DrawTaskConfigResponse
+{
+    optional int32 beginTime = 1;   //开始时间
+    optional int32 endTime = 2;     //结束时间
+    repeated int32 roomIDs = 3;     //参与活动房间号
+    optional int32 gameType = 4;    //游戏类型
+}
+
+//请求抽奖任务信息
+message DrawTaskInfoRequest
+{
+    optional int32 gameType = 1;
+    optional int32 roomID = 2;
+}
+
+//抽奖任务奖励信息
+message DrawTaskReward
+{
+    optional int32 rewardID = 1;
+    optional RewardItemInfo rewardInfo = 2;
+}
+//抽奖任务信息
+message DrawTaskInfo
+{
+    optional int32 taskID = 1;
+    optional int32 playCount = 2;   //当前游戏次数
+    optional int32 taskProcess = 3;  //当前可领取次数
+    optional int32 minCanRewardCount = 4;   //每多少次游戏胜利获取1次抽奖
+    optional int32 maxRewardCount = 5;      //最大可领取次数
+    optional int32 leaveRewardCount = 6;  //剩余领取次数
+    repeated DrawTaskReward taskRewards = 7;
+}
+
+//抽奖任务 信息回复
+message DrawTaskInfoResponse
+{
+    repeated DrawTaskInfo taskInfos = 1;
+}
+
+//请求领取抽奖任务奖励
+message DrawTaskRewardRequest
+{
+    optional int32 taskID = 1; 
+    optional int32 gameType = 2;
+    optional int32 roomID = 3;
+}
+
+//抽奖任务结果枚举
+enum DrawTaskRewardResult
+{
+    enumDrawTaskRewardResultSucc = 0;
+    enumDrawTaskRewardResultMaxRewardCountLimit = 1;
+    enumDrawTaskRewardResultMinConditionLimit = 2;
+}
+
+//抽奖任务 抽奖操作结果
+message DrawTaskRewardResponse
+{
+    optional DrawTaskRewardResult result = 1;
+    optional int32 rewardID = 2;
+}
+
+//请求节日头像框信息
+message FestivalHeadFrameInfo
+{
+    optional int32 festivalHeadFrameID = 1;
+    optional int64 beginTime = 2;
+    optional int64 endTime = 3;
+    optional int64 validTime = 4;
+    optional int64 flag = 5;
+}
+message FestivalHeadFrameInfoRequest
+{
+    
+}
+message FestivalHeadFrameInfoResponse
+{
+    repeated FestivalHeadFrameInfo festivalHeadFrameInfo = 1;
+}
+//请求领取节日头像
+message FestivalHeadFrameRewardRequest
+{
+    optional int32 festivalHeadFrameID = 1;
+}
+
+enum GetFestivalHeadFrameResult
+{
+    enumGetFestivalHeadFrameResultSucc = 0;
+    enumGetFestivalHeadFrameResultFestivalDateLimit = 1;
+}
+message FestivalHeadFrameRewardResponse
+{
+    optional int32 festivalHeadFrameID = 1;
+    optional GetFestivalHeadFrameResult getFestivalHeadFrameResult = 2;
+}
+
+enum EnumConstructSystemMailType
+{
+    enumSystemMailMissionType = 1;
+    enumSystemMailContinuousType =2;
+    enumSystemMailNewRegisterType =3;
+}
+message AddReward
+{
+    optional string productid = 1;
+    optional int32 addValue = 2;
+}
+
+message TrunkGiftBagRequest
+{
+    optional string payChannel = 1;
+}
+message FreeTrunkGiftBagReward
+{
+    optional string freeGiftBagID = 1;
+    repeated ItemPair freeRewardItem = 2;
+    optional bool buyOrNot = 3;
+    optional int32 iDailyBuyCount = 4;
+}
+
+message GetTrunkGiftBagFreeRewardRequest
+{
+    optional string payChannel = 1;
+    optional string freeGiftBagID = 2;
+}
+enum GetGiftBagFreeRewardResult
+{
+    enumGetGiftBagFreeRewardResultSucc = 0;
+    enumGetGiftBagFreeRewardResultFailedHasBought = 1;
+}
+
+message GetTrunkGiftBagFreeRewardResponse
+{
+    optional GetGiftBagFreeRewardResult result = 1;
+}
+message GetFirstRechargeGiftBagInfoRequest
+{
+    optional string payChannel = 1;
+}
+
+
+message GetPromotionalImageRewardRequest
+{
+    optional uint64 userID = 1;
+    optional int32 imageID = 2; //和泰国宣传图id一致
+}
+
+message GetPromotionalImageRewardResponse
+{
+    optional int32 imageID = 1; //和泰国宣传图id一致
+    optional int32 result = 2;  //1未知，2以领取，0正确
+    repeated ItemPair item = 3; //奖励内容
+}
+
+enum PromotionalImageRewardResult
+{
+    enumPromotionalImageRewardSuccess = 0;//成功
+    enumPromotionalImageRewardUnknown = 1;//失败
+    enumPromotionalImageRewardDuplicate = 2;//重复领取
+}
+
+// 查询组队任务
+message GetTeamGameTaskInfoRequest
+{
+}
+
+message TeamGameTaskInfo{
+    optional int32 taskId = 1;     // 任务id
+    optional int32 condition = 2;  // 条件
+    optional int32 progress = 3;   // 进度
+    optional int32 status = 4;   // 0 未完成 1 可领取 2 已领取
+    repeated ItemPair  rewards = 5; // 奖励
+    optional int32 roomId = 6;     // 房间限制 目前不用
+}
+
+message GetTeamGameTaskInfoResponse
+{
+    repeated TeamGameTaskInfo taskGroup = 1;
+    optional int32 teamScore = 2;     // 当前组队积分
+}
+
+message GetTeamGameTaskRewardRequest
+{
+    optional int32 taskId = 1;
+}
+
+message GetTeamGameTaskRewardResponse
+{
+    optional int32 result = 1;//结果,0成功,1失败,2未达到条件,3请勿重复领取
+    optional int32 taskId = 2;
+    repeated ItemPair rewards = 3;//奖励
+}
+
+//邮箱绑定请求验证码
+message BindEmailCodeRequest
+{
+    optional uint64 userID = 1;
+    optional string email = 2;
+}
+//邮箱绑定回复是否已经发送验证码
+message BindEmailCodeResponse
+{
+
+    optional uint32 result = 1;  //是否正确
+    optional uint32 type = 2;   //验证类型 1 是请求 验证码的确认 2 是绑定邮箱的确认
+}
+//邮箱绑定
+message BindEmail
+{
+    optional uint64 userID = 1;
+    optional string email = 2;  //邮箱
+    optional string code =3 ;   //验证码
+}
+
+message HorseRaceLampNotify
+{
+    optional int32 id = 1;		  //走马灯模板编号
+    optional int32 gamecode = 2;  
+    optional string params =3 ;   //参数
+}
+
+
+message GetGameServerRewardRequest
+{
+    optional uint64 userID = 1;
+    optional int32 rewardType = 2;
+    optional int32 subType = 3;
+}
+
+message GetGameServerRewardResponse
+{
+    required int32 result = 1;//返回结果
+    repeated ItemPair reward = 2;
+    required int32 rewardType = 3;
+    optional int32 gameType = 4;
+    optional int32 roomId = 5;
+    optional int32 gameCode = 6;
+}
