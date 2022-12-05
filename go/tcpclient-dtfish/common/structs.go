@@ -1,7 +1,7 @@
 package common
 
 import (
-	DTFishProtoMsg "QuickStart/go/tcpclient/proto/dtfish"
+	DTFishProtoMsg "QuickStart/go/tcpclient-dtfish/proto/dtfish"
 	"bytes"
 	"encoding/binary"
 	"io"

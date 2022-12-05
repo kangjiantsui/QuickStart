@@ -1,9 +1,9 @@
 package codec
 
 import (
-	"QuickStart/go/tcpclient/common"
-	"QuickStart/go/tcpclient/net/tcp"
-	DTFishProtoMsg "QuickStart/go/tcpclient/proto/dtfish"
+	"QuickStart/go/tcpclient-dtfish/common"
+	"QuickStart/go/tcpclient-dtfish/net/tcp"
+	DTFishProtoMsg "QuickStart/go/tcpclient-dtfish/proto/dtfish"
 	"encoding/binary"
 	"errors"
 	"github.com/golang/protobuf/proto"

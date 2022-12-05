@@ -160,6 +160,7 @@ func NewSession(conn netConn, sessionType SessionType, msgParser IMsgParser, pro
 		codec:       protocol.NewCodec(),
 		sendChan:    make(chan interface{}, sendChanSize),
 		closeChan:   make(chan struct{}),
+		data:        conn,
 	}
 
 	//开启写协程

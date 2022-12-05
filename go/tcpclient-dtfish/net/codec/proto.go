@@ -1,8 +1,8 @@
 package codec
 
 import (
-	"QuickStart/go/tcpclient/common"
-	"QuickStart/go/tcpclient/net/tcp"
+	"QuickStart/go/tcpclient-dtfish/common"
+	"QuickStart/go/tcpclient-dtfish/net/tcp"
 	"bytes"
 	"encoding/binary"
 	"errors"
