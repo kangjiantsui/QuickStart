@@ -172,7 +172,7 @@
           100000
         ],
         "target": [
-          922
+          1501
         ],
         "rewards": [
           {
@@ -192,7 +192,7 @@
           100000
         ],
         "target": [
-          922
+          1501
         ],
         "rewards": [
           {
@@ -212,7 +212,7 @@
           100000
         ],
         "target": [
-          922
+          1501
         ],
         "rewards": [
           {
@@ -232,7 +232,7 @@
           100000
         ],
         "target": [
-          922
+          1501
         ],
         "rewards": [
           {
@@ -252,7 +252,7 @@
           100000
         ],
         "target": [
-          922
+          1501
         ],
         "rewards": [
           {
@@ -272,7 +272,7 @@
           100000
         ],
         "target": [
-          922
+          1501
         ],
         "rewards": [
           {
@@ -1066,7 +1066,8 @@
             "item_id": 7004,
             "item_count": 3
           }
-        ]
+        ],
+        "limit": 30
       },
       {
         "groupid": 4,
@@ -1097,7 +1098,8 @@
             "item_id": 7004,
             "item_count": 8
           }
-        ]
+        ],
+        "limit": 38
       }
     ],
     "all": [
@@ -1465,8 +1467,8 @@
       }
     ],
     "lucky_scores": [
-      1000,
-      9999
+      999,
+      1000
     ]
   },
   "box": {
@@ -1475,7 +1477,7 @@
         "id": 50015,
         "items": [
           {
-            "weight": 10,
+            "weight": 200,
             "items": [
               {
                 "virtual_id": 1,
@@ -1484,11 +1486,11 @@
             ]
           },
           {
-            "weight": 30,
+            "weight": 200,
             "items": [
               {
                 "virtual_id": 33,
-                "item_count": 20
+                "item_count": 200
               }
             ]
           },
@@ -1516,7 +1518,7 @@
         "id": 50016,
         "items": [
           {
-            "weight": 15,
+            "weight": 200,
             "items": [
               {
                 "virtual_id": 2,
@@ -1525,11 +1527,11 @@
             ]
           },
           {
-            "weight": 30,
+            "weight": 200,
             "items": [
               {
                 "virtual_id": 33,
-                "item_count": 30
+                "item_count": 300
               }
             ]
           },
@@ -1557,7 +1559,7 @@
         "id": 50017,
         "items": [
           {
-            "weight": 15,
+            "weight": 200,
             "items": [
               {
                 "virtual_id": 3,
@@ -1566,11 +1568,11 @@
             ]
           },
           {
-            "weight": 30,
+            "weight": 200,
             "items": [
               {
                 "virtual_id": 33,
-                "item_count": 40
+                "item_count": 400
               }
             ]
           },
@@ -1598,7 +1600,7 @@
         "id": 50018,
         "items": [
           {
-            "weight": 20,
+            "weight": 200,
             "items": [
               {
                 "virtual_id": 4,
@@ -1607,11 +1609,11 @@
             ]
           },
           {
-            "weight": 25,
+            "weight": 200,
             "items": [
               {
                 "virtual_id": 33,
-                "item_count": 50
+                "item_count": 500
               }
             ]
           },
@@ -1947,7 +1949,7 @@
         },
         {
           "begin": 6,
-          "end": 10,
+          "end": 7,
           "rewards": [
             {
               "item_id": 7003,
@@ -1956,28 +1958,28 @@
           ]
         },
         {
-          "begin": 11,
-          "end": 15,
+          "begin": 8,
+          "end": 9,
           "rewards": [
             {
               "item_id": 7003,
-              "item_count": 2
+              "item_count": 4
             }
           ]
         },
         {
-          "begin": 16,
-          "end": 20,
+          "begin": 10,
+          "end": 11,
           "rewards": [
             {
-              "item_id": 7002,
-              "item_count": 8
+              "item_id": 7003,
+              "item_count": 4
             }
           ]
         },
         {
-          "begin": 21,
-          "end": 50,
+          "begin": 12,
+          "end": 13,
           "rewards": [
             {
               "item_id": 7002,
