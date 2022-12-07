@@ -15,7 +15,7 @@
         200
       ],
       "persecond_add": 1333,
-      "totalshot": 2000000,
+      "totalshot": 2000,
       "reward_display": [
         {
           "type": "small",
@@ -54,7 +54,7 @@
         200
       ],
       "persecond_add": 1333,
-      "totalshot": 20000000,
+      "totalshot": 20000,
       "reward_display": [
         {
           "type": "small",
@@ -93,7 +93,7 @@
         200
       ],
       "persecond_add": 1333,
-      "totalshot": 200000000,
+      "totalshot": 200000,
       "reward_display": [
         {
           "type": "small",
