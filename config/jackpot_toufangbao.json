@@ -1,0 +1,1041 @@
+{
+  "reward_display": [
+    {
+      "type": "small",
+      "rate": 300,
+      "weight": 1
+    },
+    {
+      "type": "mid",
+      "rate": 600,
+      "weight": 5
+    },
+    {
+      "type": "big",
+      "rate": 1200,
+      "weight": 10
+    },
+    {
+      "type": "huge",
+      "rate": 10000,
+      "weight": 25
+    }
+  ],
+  "countdown": 60,
+  "jackpot_reward_rand_percent": 200,
+  "deltagolds_limit": 1000000000,
+  "daliyreward_limit": 600000000,
+  "roomreward_limit_rate": 6001,
+  "jackpot_pool_limit": 1500000000,
+  "jackpot_init_value": 500000000,
+  "skill_taxes": 0,
+  "common_taxes": 20,
+  "single_taxes": {
+    "vip": [
+      {
+        "vip": 0,
+        "rate": 20
+      },
+      {
+        "vip": 1,
+        "rate": 20
+      },
+      {
+        "vip": 2,
+        "rate": 20
+      },
+      {
+        "vip": 3,
+        "rate": 20
+      },
+      {
+        "vip": 4,
+        "rate": 20
+      },
+      {
+        "vip": 5,
+        "rate": 20
+      },
+      {
+        "vip": 6,
+        "rate": 20
+      },
+      {
+        "vip": 7,
+        "rate": 20
+      },
+      {
+        "vip": 8,
+        "rate": 20
+      },
+      {
+        "vip": 9,
+        "rate": 25
+      },
+      {
+        "vip": 10,
+        "rate": 30
+      },
+      {
+        "vip": 11,
+        "rate": 35
+      },
+      {
+        "vip": 12,
+        "rate": 40
+      }
+    ],
+    "cannon": [
+      {
+        "cannon": 8000,
+        "rate": 10
+      },
+      {
+        "cannon": 100000,
+        "rate": 50
+      }
+    ]
+  },
+  "ROOMS": [
+    {
+      "id": 3,
+      "totalshot": 100000000,
+      "persecond_add": 2000,
+      "jackpot_min_value": 20000000,
+      "jackpot_init_value": 30000000,
+      "reward_display_bar": [
+        {
+          "percent": 1000,
+          "parameter1": 2.5,
+          "parameter2": 0
+        },
+        {
+          "percent": 10000,
+          "parameter1": 0.83,
+          "parameter2": 17
+        }
+      ],
+      "pool_change": [
+        {
+          "pool": 15000000,
+          "rate": 200,
+          "reduce_min": 400000,
+          "reduce_max": 750000,
+          "add_min": 120000,
+          "add_max": 480000
+        },
+        {
+          "pool": 22000000,
+          "rate": 500,
+          "reduce_min": 550000,
+          "reduce_max": 3000000,
+          "add_min": 120000,
+          "add_max": 480000
+        },
+        {
+          "pool": 29000000,
+          "rate": 1000,
+          "reduce_min": 700000,
+          "reduce_max": 1300000,
+          "add_min": 120000,
+          "add_max": 480000
+        },
+        {
+          "pool": 36000000,
+          "rate": 400,
+          "reduce_min": 1850000,
+          "reduce_max": 6000000,
+          "add_min": 120000,
+          "add_max": 480000
+        },
+        {
+          "pool": 43000000,
+          "rate": 1500,
+          "reduce_min": 1000000,
+          "reduce_max": 1900000,
+          "add_min": 120000,
+          "add_max": 480000
+        },
+        {
+          "pool": 50000000,
+          "rate": 400,
+          "reduce_min": 2150000,
+          "reduce_max": 8000000,
+          "add_min": 120000,
+          "add_max": 480000
+        },
+        {
+          "pool": 57000000,
+          "rate": 1000,
+          "reduce_min": 1300000,
+          "reduce_max": 3000000,
+          "add_min": 120000,
+          "add_max": 480000
+        },
+        {
+          "pool": 64000000,
+          "rate": 400,
+          "reduce_min": 2450000,
+          "reduce_max": 22800000,
+          "add_min": 120000,
+          "add_max": 480000
+        },
+        {
+          "pool": 120000000,
+          "rate": 300,
+          "reduce_min": 2000000,
+          "reduce_max": 40000000,
+          "add_min": 120000,
+          "add_max": 480000
+        },
+        {
+          "pool": 99999999999,
+          "rate": 10000,
+          "reduce_min": 15000000,
+          "reduce_max": 90000000,
+          "add_min": 120000,
+          "add_max": 480000
+        }
+      ],
+      "week_recharge": [
+        {
+          "week_income": 99000,
+          "taxes": 0,
+          "single_reward": [
+            {
+              "min": 3500,
+              "max": 6000,
+              "chance": 1000
+            },
+            {
+              "min": 6000,
+              "max": 8500,
+              "chance": 1800
+            },
+            {
+              "min": 8500,
+              "max": 10000,
+              "chance": 5000
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 1500
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 700
+            }
+          ],
+          "rate": 0,
+          "extra_reward": [
+            {
+              "min": 0,
+              "max": 0,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 650000,
+          "taxes": 70,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 700,
+          "extra_reward": [
+            {
+              "min": 0,
+              "max": 0,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 2000000,
+          "taxes": 120,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 800,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 500,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 4000000,
+          "taxes": 150,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1000,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 500,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 10000000,
+          "taxes": 200,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1000,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 500,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 50000000,
+          "taxes": 300,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1000,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 200,
+              "chance": 3000
+            },
+            {
+              "min": 200,
+              "max": 500,
+              "chance": 5000
+            },
+            {
+              "min": 500,
+              "max": 800,
+              "chance": 2000
+            }
+          ]
+        },
+        {
+          "week_income": 99999999999000,
+          "taxes": 350,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1200,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 200,
+              "chance": 3000
+            },
+            {
+              "min": 200,
+              "max": 500,
+              "chance": 5000
+            },
+            {
+              "min": 500,
+              "max": 800,
+              "chance": 2000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "totalshot": 600000000,
+      "persecond_add": 8000,
+      "jackpot_min_value": 88000000,
+      "jackpot_init_value": 120000000,
+      "reward_display_bar": [
+        {
+          "percent": 1000,
+          "parameter1": 2.5,
+          "parameter2": 0
+        },
+        {
+          "percent": 10000,
+          "parameter1": 0.83,
+          "parameter2": 17
+        }
+      ],
+      "pool_change": [
+        {
+          "pool": 150000000,
+          "rate": 0,
+          "reduce_min": 4000000,
+          "reduce_max": 7500000,
+          "add_min": 1440000,
+          "add_max": 4440000
+        },
+        {
+          "pool": 220000000,
+          "rate": 10,
+          "reduce_min": 5500000,
+          "reduce_max": 30000000,
+          "add_min": 1440000,
+          "add_max": 4440000
+        },
+        {
+          "pool": 290000000,
+          "rate": 50,
+          "reduce_min": 7000000,
+          "reduce_max": 13000000,
+          "add_min": 1440000,
+          "add_max": 4440000
+        },
+        {
+          "pool": 360000000,
+          "rate": 100,
+          "reduce_min": 18500000,
+          "reduce_max": 60000000,
+          "add_min": 1440000,
+          "add_max": 4440000
+        },
+        {
+          "pool": 430000000,
+          "rate": 200,
+          "reduce_min": 10000000,
+          "reduce_max": 19000000,
+          "add_min": 480000,
+          "add_max": 2960000
+        },
+        {
+          "pool": 500000000,
+          "rate": 300,
+          "reduce_min": 21500000,
+          "reduce_max": 80000000,
+          "add_min": 480000,
+          "add_max": 2960000
+        },
+        {
+          "pool": 570000000,
+          "rate": 500,
+          "reduce_min": 13000000,
+          "reduce_max": 30000000,
+          "add_min": 480000,
+          "add_max": 2960000
+        },
+        {
+          "pool": 640000000,
+          "rate": 400,
+          "reduce_min": 24500000,
+          "reduce_max": 228000000,
+          "add_min": 480000,
+          "add_max": 2960000
+        },
+        {
+          "pool": 1000000000,
+          "rate": 700,
+          "reduce_min": 20000000,
+          "reduce_max": 400000000,
+          "add_min": 480000,
+          "add_max": 2960000
+        },
+        {
+          "pool": 99999999999,
+          "rate": 1000,
+          "reduce_min": 20000001,
+          "reduce_max": 60000000,
+          "add_min": 480000,
+          "add_max": 2960000
+        }
+      ],
+      "week_recharge": [
+        {
+          "week_income": 99000,
+          "taxes": 0,
+          "single_reward": [
+            {
+              "min": 3500,
+              "max": 6000,
+              "chance": 1000
+            },
+            {
+              "min": 6000,
+              "max": 8500,
+              "chance": 1800
+            },
+            {
+              "min": 8500,
+              "max": 10000,
+              "chance": 5000
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 1500
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 700
+            }
+          ],
+          "rate": 0,
+          "extra_reward": [
+            {
+              "min": 0,
+              "max": 0,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 650000,
+          "taxes": 80,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 700,
+          "extra_reward": [
+            {
+              "min": 0,
+              "max": 0,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 4000000,
+          "taxes": 120,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 800,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 500,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 8800000,
+          "taxes": 150,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1000,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 500,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 12800000,
+          "taxes": 180,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1000,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 500,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 16800000,
+          "taxes": 180,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1000,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 500,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 25000000,
+          "taxes": 250,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1200,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 500,
+              "chance": 1000
+            }
+          ]
+        },
+        {
+          "week_income": 1000000000,
+          "taxes": 300,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1500,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 200,
+              "chance": 3000
+            },
+            {
+              "min": 200,
+              "max": 500,
+              "chance": 5000
+            },
+            {
+              "min": 500,
+              "max": 800,
+              "chance": 2000
+            }
+          ]
+        },
+        {
+          "week_income": 99999999999000,
+          "taxes": 350,
+          "single_reward": [
+            {
+              "min": 1000,
+              "max": 3000,
+              "chance": 1000
+            },
+            {
+              "min": 3000,
+              "max": 6000,
+              "chance": 1800
+            },
+            {
+              "min": 6000,
+              "max": 10000,
+              "chance": 2500
+            },
+            {
+              "min": 10000,
+              "max": 13000,
+              "chance": 2400
+            },
+            {
+              "min": 13000,
+              "max": 18000,
+              "chance": 1800
+            },
+            {
+              "min": 18000,
+              "max": 20000,
+              "chance": 500
+            }
+          ],
+          "rate": 1500,
+          "extra_reward": [
+            {
+              "min": 100,
+              "max": 200,
+              "chance": 3000
+            },
+            {
+              "min": 200,
+              "max": 500,
+              "chance": 5000
+            },
+            {
+              "min": 500,
+              "max": 800,
+              "chance": 2000
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
