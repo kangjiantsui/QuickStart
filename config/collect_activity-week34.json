@@ -1,11 +1,11 @@
 {
   "atype": 16,
   "id": 243,
-  "begin_time": 1671120000,
-  "end_time": 1671551999,
+  "begin_time": 1671638400,
+  "end_time": 1672156799,
   "priority": 10000,
-  "name": "新春狂欢2",
-  "description": "新春狂欢2",
+  "name": "新春狂欢4",
+  "description": "新春狂欢4",
   "completeShow": true,
   "sjb_crazy_data": {
     "task": {
@@ -185,7 +185,7 @@
           ],
           "rewards": [
             {
-              "item_id": 4146,
+              "item_id": 4142,
               "item_count": 1
             }
           ]
@@ -1075,7 +1075,8 @@
               "item_id": 7004,
               "item_count": 3
             }
-          ]
+          ],
+          "limit": 30
         },
         {
           "groupid": 4,
@@ -1106,18 +1107,19 @@
               "item_id": 7004,
               "item_count": 8
             }
-          ]
+          ],
+          "limit": 38
         }
       ],
       "all": [
         {
           "rewards": [
             {
-              "item_id": 4046,
+              "item_id": 4042,
               "item_count": 1
             },
             {
-              "item_id": 14034,
+              "item_id": 14030,
               "item_count": 1
             },
             {
