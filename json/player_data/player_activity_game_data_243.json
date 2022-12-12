@@ -1,0 +1,30 @@
+{
+  "task": {
+    "task_unix": 1673108454,
+    "task_items": [
+      {
+        "group_id": 301,
+        "count": 51
+      },
+      {
+        "group_id": 201,
+        "count": 1750000
+      }
+    ]
+  },
+  "huizhang": {
+    "huizhang_unix": 1673021031,
+    "team": [
+      {
+        "id": 20,
+        "num": 1
+      }
+    ]
+  },
+  "rank": {
+    "lucky": {
+      "value": 8944,
+      "update_time": 1673021031
+    }
+  }
+}

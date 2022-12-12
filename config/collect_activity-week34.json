@@ -1,11 +1,11 @@
 {
   "atype": 16,
   "id": 243,
-  "begin_time": 1671638400,
-  "end_time": 1672156799,
+  "begin_time": 1672761600,
+  "end_time": 1673366399,
   "priority": 10000,
-  "name": "新春狂欢4",
-  "description": "新春狂欢4",
+  "name": "新春狂欢7",
+  "description": "新春狂欢7",
   "completeShow": true,
   "sjb_crazy_data": {
     "task": {
@@ -185,7 +185,7 @@
           ],
           "rewards": [
             {
-              "item_id": 4142,
+              "item_id": 4146,
               "item_count": 1
             }
           ]
@@ -1013,7 +1013,8 @@
               "item_id": 7003,
               "item_count": 3
             }
-          ]
+          ],
+          "limit": 40
         },
         {
           "groupid": 2,
@@ -1044,7 +1045,8 @@
               "item_id": 7004,
               "item_count": 1
             }
-          ]
+          ],
+          "limit": 40
         },
         {
           "groupid": 3,
@@ -1075,8 +1077,7 @@
               "item_id": 7004,
               "item_count": 3
             }
-          ],
-          "limit": 30
+          ]
         },
         {
           "groupid": 4,
@@ -1107,19 +1108,18 @@
               "item_id": 7004,
               "item_count": 8
             }
-          ],
-          "limit": 38
+          ]
         }
       ],
       "all": [
         {
           "rewards": [
             {
-              "item_id": 4042,
+              "item_id": 4046,
               "item_count": 1
             },
             {
-              "item_id": 14030,
+              "item_id": 14034,
               "item_count": 1
             },
             {
@@ -1272,7 +1272,7 @@
       ],
       "draw_items": [
         {
-          "weight": 18,
+          "weight": 20,
           "items": [
             {
               "item_id": 50015,
@@ -1326,7 +1326,7 @@
           ]
         },
         {
-          "weight": 16,
+          "weight": 14,
           "items": [
             {
               "item_id": 1001,
@@ -1675,7 +1675,7 @@
           "id": 50015,
           "items": [
             {
-              "weight": 10,
+              "weight": 20,
               "items": [
                 {
                   "item_count": 1,
@@ -1684,7 +1684,7 @@
               ]
             },
             {
-              "weight": 30,
+              "weight": 25,
               "items": [
                 {
                   "item_count": 20,
@@ -1693,7 +1693,7 @@
               ]
             },
             {
-              "weight": 30,
+              "weight": 25,
               "items": [
                 {
                   "item_id": 5,
