@@ -1,30 +1,164 @@
 {
   "task": {
-    "task_unix": 1673108454,
+    "task_unix": 1673539885,
     "task_items": [
       {
-        "group_id": 301,
-        "count": 51
+        "group_id": 101,
+        "group_complete_count": 1
       },
       {
-        "group_id": 201,
-        "count": 1750000
+        "group_id": 501,
+        "group_complete_count": 1
       }
     ]
   },
   "huizhang": {
-    "huizhang_unix": 1673021031,
+    "huizhang_unix": 1673539885,
     "team": [
       {
+        "id": 22,
+        "num": 1
+      },
+      {
+        "id": 3,
+        "num": 1
+      },
+      {
+        "id": 25,
+        "num": 1
+      },
+      {
+        "id": 14,
+        "num": 1
+      },
+      {
+        "id": 21,
+        "num": 1
+      },
+      {
+        "id": 4,
+        "num": 1
+      },
+      {
+        "id": 6,
+        "num": 1
+      },
+      {
+        "id": 31,
+        "num": 1
+      },
+      {
+        "id": 27,
+        "num": 1
+      },
+      {
+        "id": 1,
+        "num": 1
+      },
+      {
+        "id": 5,
+        "num": 1
+      },
+      {
+        "id": 32,
+        "num": 1
+      },
+      {
+        "id": 12,
+        "num": 1
+      },
+      {
+        "id": 7,
+        "num": 1
+      },
+      {
+        "id": 8,
+        "num": 1
+      },
+      {
+        "id": 10,
+        "num": 1
+      },
+      {
+        "id": 2,
+        "num": 1
+      },
+      {
+        "id": 24,
+        "num": 1
+      },
+      {
+        "id": 15,
+        "num": 1
+      },
+      {
+        "id": 16,
+        "num": 1
+      },
+      {
+        "id": 11,
+        "num": 1
+      },
+      {
+        "id": 30,
+        "num": 1
+      },
+      {
         "id": 20,
+        "num": 1
+      },
+      {
+        "id": 9,
+        "num": 1
+      },
+      {
+        "id": 13,
+        "num": 1
+      },
+      {
+        "id": 19,
+        "num": 1
+      },
+      {
+        "id": 17,
+        "num": 1
+      },
+      {
+        "id": 18,
+        "num": 1
+      },
+      {
+        "id": 28,
+        "num": 1
+      },
+      {
+        "id": 23,
+        "num": 1
+      },
+      {
+        "id": 26,
+        "num": 1
+      },
+      {
+        "id": 29,
         "num": 1
       }
     ]
   },
+  "duobao": {
+    "duobao_unix": 1673539885,
+    "huizhang_score": 7960,
+    "box_count": {
+      "50015": 249,
+      "50016": 171,
+      "50017": 116,
+      "50018": 58
+    }
+  },
   "rank": {
     "lucky": {
-      "value": 8944,
-      "update_time": 1673021031
+      "value": 9991,
+      "update_time": 1673539885
     }
   }
 }
