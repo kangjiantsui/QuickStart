@@ -1264,7 +1264,7 @@
     "duobao": {
       "name": "祈愿广场",
       "id": 4,
-      "Guaranteed": 100,
+      "guaranteed": 100,
       "need_items": [
         {
           "item_id": 2004,
@@ -1280,7 +1280,7 @@
               "item_count": 1
             }
           ],
-          "Guaranteed": 10
+          "guaranteed": 10
         },
         {
           "weight": 15,
@@ -1798,7 +1798,7 @@
         },
         {
           "id": 50018,
-          "Guaranteed": 40,
+          "guaranteed": 40,
           "items": [
             {
               "weight": 20,
@@ -1817,7 +1817,7 @@
                   "virtual_id": 33
                 }
               ],
-              "Guaranteed": 2
+              "guaranteed": 2
             },
             {
               "weight": 25,
