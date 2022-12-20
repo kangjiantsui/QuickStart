@@ -1,0 +1,3248 @@
+{
+  "recharge_gift": [
+    {
+      "recharge": 100000,
+      "item_id": 3001,
+      "item_count": 0
+    },
+    {
+      "recharge": 50000,
+      "item_id": 3001,
+      "item_count": 0
+    },
+    {
+      "recharge": 0,
+      "item_id": 3001,
+      "item_count": 0
+    }
+  ],
+  "settings": {
+    "recharge_day_max": 20000000000,
+    "recharge_month_max": 150000000000,
+    "ts1": 1.0,
+    "ts2": 1.0,
+    "ts3": 1.0,
+    "ts4": 1.0,
+    "ts5": 1.0,
+    "ts6": 1.0,
+    "ts7": 1.0,
+    "ts8": 1.0,
+    "ts9": 1.0,
+    "ts10": 1.0
+  },
+  "switch": {
+    "yuanbao": true,
+    "gold": true,
+    "giftbag": true
+  },
+  "weight_items": [
+    {
+      "id": 1,
+      "desc": "三叉戟礼盒",
+      "weights": [
+        {
+          "weight": 100,
+          "items": [
+            {
+              "item_id": 7001,
+              "item_count": 5
+            }
+          ]
+        },
+        {
+          "weight": 100,
+          "items": [
+            {
+              "item_id": 7001,
+              "item_count": 10
+            }
+          ]
+        },
+        {
+          "weight": 100,
+          "items": [
+            {
+              "item_id": 7002,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "weight": 100,
+          "items": [
+            {
+              "item_id": 7002,
+              "item_count": 6
+            }
+          ]
+        },
+        {
+          "weight": 100,
+          "items": [
+            {
+              "item_id": 7003,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "weight": 100,
+          "items": [
+            {
+              "item_id": 7003,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "weight": 100,
+          "items": [
+            {
+              "item_id": 7004,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "weight": 100,
+          "items": [
+            {
+              "item_id": 7004,
+              "item_count": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "products": [
+    {
+      "id": 10122001,
+      "name": "6元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "platform": 2,
+      "stype": 2,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 36000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "type": 0,
+      "income": 60000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10122002,
+      "name": "12元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 120
+        }
+      ],
+      "platform": 2,
+      "stype": 2,
+      "index": 2,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 84000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "type": 0,
+      "income": 120000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10122003,
+      "name": "78元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "platform": 2,
+      "stype": 2,
+      "index": 3,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 624000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 6
+        }
+      ],
+      "type": 0,
+      "income": 780000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10122004,
+      "name": "198元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "platform": 2,
+      "stype": 2,
+      "index": 4,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 1584000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 18
+        }
+      ],
+      "type": 0,
+      "income": 1980000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10122005,
+      "name": "328元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "platform": 2,
+      "stype": 2,
+      "index": 5,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 2952000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 28
+        }
+      ],
+      "type": 0,
+      "income": 3280000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10122006,
+      "name": "648元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 2,
+      "stype": 2,
+      "index": 6,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 6480000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 50
+        }
+      ],
+      "type": 0,
+      "income": 6080000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10112001,
+      "name": "5元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 50
+        }
+      ],
+      "platform": 1,
+      "stype": 2,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 25000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "type": 0,
+      "income": 50000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10112002,
+      "name": "10元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 100
+        }
+      ],
+      "platform": 1,
+      "stype": 2,
+      "index": 2,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 55000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "type": 0,
+      "income": 100000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10112003,
+      "name": "30元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 1,
+      "stype": 2,
+      "index": 3,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 210000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "type": 0,
+      "income": 300000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10112004,
+      "name": "50元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 500
+        }
+      ],
+      "platform": 1,
+      "stype": 2,
+      "index": 4,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 350000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 2
+        }
+      ],
+      "type": 0,
+      "income": 500000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10112005,
+      "name": "100元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1000
+        }
+      ],
+      "platform": 1,
+      "stype": 2,
+      "index": 5,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 800000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 6
+        }
+      ],
+      "type": 0,
+      "income": 1000000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10112006,
+      "name": "500元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 5000
+        }
+      ],
+      "platform": 1,
+      "stype": 2,
+      "index": 6,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 4500000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 25
+        }
+      ],
+      "type": 0,
+      "income": 5000000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10112007,
+      "name": "1000元金币",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 10000
+        }
+      ],
+      "platform": 1,
+      "stype": 2,
+      "index": 7,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 10000000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 50
+        }
+      ],
+      "type": 0,
+      "income": 10000000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10125001,
+      "name": "7天雷霆警戒",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "platform": 2,
+      "stype": 5,
+      "order": 1,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 7
+        }
+      ],
+      "type": 0,
+      "income": 9600000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10125002,
+      "name": "14天雷霆警戒",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "platform": 2,
+      "stype": 5,
+      "order": 2,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 14
+        }
+      ],
+      "type": 0,
+      "income": 49600000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10125003,
+      "name": "30天雷霆警戒",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 2,
+      "stype": 5,
+      "order": 3,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 30
+        }
+      ],
+      "type": 0,
+      "income": 99600000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10126001,
+      "name": "雷霆警戒礼包",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 2,
+      "cost": 9720,
+      "stype": 6,
+      "order": 1,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 15
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 5000000
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 20
+        },
+        {
+          "item_id": 1003,
+          "type": 1,
+          "item_count": 20
+        }
+      ],
+      "type": 1,
+      "income": 99600000,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "show": false
+    },
+    {
+      "id": 10115001,
+      "name": "3天雷霆警戒",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1000
+        }
+      ],
+      "platform": 1,
+      "stype": 5,
+      "order": 1,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 3
+        }
+      ],
+      "type": 0,
+      "income": 19400000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10115002,
+      "name": "21天雷霆警戒",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 5000
+        }
+      ],
+      "platform": 1,
+      "stype": 5,
+      "order": 2,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 21
+        }
+      ],
+      "type": 0,
+      "income": 32400000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10115003,
+      "name": "50天雷霆警戒",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 10000
+        }
+      ],
+      "platform": 1,
+      "stype": 5,
+      "order": 3,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 50
+        }
+      ],
+      "type": 0,
+      "income": 64400000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 10116001,
+      "name": "雷霆警戒礼包",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 10000
+        }
+      ],
+      "platform": 1,
+      "cost": 14000,
+      "stype": 6,
+      "order": 1,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 15
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 8888888
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 50
+        },
+        {
+          "item_id": 1003,
+          "type": 1,
+          "item_count": 50
+        }
+      ],
+      "type": 1,
+      "income": 64400000,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "show": false
+    },
+    {
+      "id": 10116002,
+      "name": "500元新春礼包",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 5000
+        }
+      ],
+      "platform": 1,
+      "cost": 6080,
+      "stype": 6,
+      "items": [
+        {
+          "item_id": 3001,
+          "type": 1,
+          "item_count": 1
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 5280000
+        }
+      ],
+      "type": 1,
+      "income": 9600000,
+      "limit_second": 86400,
+      "limit_count": 1,
+      "open": false,
+      "open_time": "2021/2/11",
+      "end_time": "2021/2/18",
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "show": false
+    },
+    {
+      "id": 10116003,
+      "name": "1000元新春礼包",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 10000
+        }
+      ],
+      "platform": 1,
+      "cost": 13080,
+      "stype": 6,
+      "items": [
+        {
+          "item_id": 3001,
+          "type": 1,
+          "item_count": 1
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 12800000
+        }
+      ],
+      "type": 1,
+      "income": 49600000,
+      "limit_second": 86400,
+      "limit_count": 2,
+      "open": false,
+      "open_time": "2021/2/11",
+      "end_time": "2021/2/18",
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "show": false
+    },
+    {
+      "id": 10126002,
+      "name": "328元新春礼包",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "platform": 2,
+      "cost": 3980,
+      "stype": 6,
+      "items": [
+        {
+          "item_id": 3001,
+          "type": 1,
+          "item_count": 1
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 3380000
+        }
+      ],
+      "type": 1,
+      "income": 99600000,
+      "limit_second": 86400,
+      "limit_count": 1,
+      "open": false,
+      "open_time": "2021/2/11",
+      "end_time": "2021/2/18",
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "show": false
+    },
+    {
+      "id": 10126003,
+      "name": "648元新春礼包",
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 2,
+      "cost": 8380,
+      "stype": 6,
+      "items": [
+        {
+          "item_id": 3001,
+          "type": 1,
+          "item_count": 1
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 8180000
+        }
+      ],
+      "type": 1,
+      "income": 99600000,
+      "limit_second": 86400,
+      "limit_count": 2,
+      "open": false,
+      "open_time": "2021/2/11",
+      "end_time": "2021/2/18",
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "show": false
+    },
+    {
+      "id": 101120080,
+      "name": "6元金币",
+      "qiangsha_price": 6,
+      "fanshui": 30000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "platform": 0,
+      "stype": 2,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 36000
+        }
+      ],
+      "type": 3,
+      "client_type": 3,
+      "income": 50000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 1,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101120090,
+      "name": "12元金币",
+      "qiangsha_price": 12,
+      "fanshui": 60000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 120
+        }
+      ],
+      "platform": 0,
+      "stype": 2,
+      "index": 2,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 84000
+        }
+      ],
+      "type": 3,
+      "client_type": 3,
+      "income": 50000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 1,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101120100,
+      "name": "30元金币",
+      "qiangsha_price": 30,
+      "fanshui": 150000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 2,
+      "index": 3,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 210000
+        }
+      ],
+      "type": 3,
+      "client_type": 3,
+      "income": 300000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 1,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101120110,
+      "name": "78元金币",
+      "qiangsha_price": 78,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 300000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "platform": 0,
+      "stype": 2,
+      "index": 4,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 624000
+        }
+      ],
+      "type": 3,
+      "client_type": 3,
+      "income": 500000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 1,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101120120,
+      "name": "198元金币",
+      "qiangsha_price": 198,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 1000000,
+      "taxes": -500000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "platform": 0,
+      "stype": 2,
+      "index": 5,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 1584000
+        }
+      ],
+      "type": 3,
+      "client_type": 3,
+      "income": 1000000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 1,
+      "baozhicishu": 10,
+      "deltalevel": 200,
+      "label": 0
+    },
+    {
+      "id": 101120130,
+      "name": "328元金币",
+      "qiangsha_price": 328,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 1500000,
+      "taxes": -750000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "platform": 0,
+      "stype": 2,
+      "index": 6,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 2952000
+        }
+      ],
+      "type": 3,
+      "client_type": 3,
+      "income": 5000000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 1,
+      "baozhicishu": 10,
+      "deltalevel": 300,
+      "label": 0
+    },
+    {
+      "id": 101120140,
+      "name": "648元金币",
+      "qiangsha_price": 648,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 3000000,
+      "taxes": -1500000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 0,
+      "stype": 2,
+      "index": 7,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 6480000
+        }
+      ],
+      "type": 3,
+      "client_type": 3,
+      "income": 5000000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 1,
+      "baozhicishu": 10,
+      "deltalevel": 500,
+      "label": 0
+    },
+    {
+      "id": 101020001,
+      "name": "6元能量",
+      "qiangsha_price": 6,
+      "vip_gold_add": true,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "platform": 0,
+      "stype": 3,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 60
+        }
+      ],
+      "type": 11,
+      "client_type": 11,
+      "income": 50000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 2,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101020002,
+      "name": "12元能量",
+      "qiangsha_price": 12,
+      "vip_gold_add": true,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 120
+        }
+      ],
+      "platform": 0,
+      "stype": 3,
+      "index": 2,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 120
+        }
+      ],
+      "type": 11,
+      "client_type": 11,
+      "income": 50000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 2,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101020003,
+      "name": "30元能量",
+      "qiangsha_price": 30,
+      "vip_gold_add": true,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 3,
+      "index": 3,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 300
+        }
+      ],
+      "type": 11,
+      "client_type": 11,
+      "income": 300000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 2,
+      "baozhicishu": 10,
+      "deltalevel": 100,
+      "label": 0
+    },
+    {
+      "id": 101020004,
+      "name": "78元能量",
+      "qiangsha_price": 78,
+      "vip_gold_add": true,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "platform": 0,
+      "stype": 3,
+      "index": 4,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 780
+        }
+      ],
+      "type": 11,
+      "client_type": 11,
+      "income": 500000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 2,
+      "baozhicishu": 10,
+      "deltalevel": 200,
+      "label": 0
+    },
+    {
+      "id": 101020005,
+      "name": "198元能量",
+      "qiangsha_price": 198,
+      "vip_gold_add": true,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "platform": 0,
+      "stype": 3,
+      "index": 5,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 1980
+        }
+      ],
+      "type": 11,
+      "client_type": 11,
+      "income": 1000000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 2,
+      "baozhicishu": 10,
+      "deltalevel": 300,
+      "label": 0
+    },
+    {
+      "id": 101020006,
+      "name": "328元能量",
+      "qiangsha_price": 328,
+      "vip_gold_add": true,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "platform": 0,
+      "stype": 3,
+      "index": 6,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 3280
+        }
+      ],
+      "type": 11,
+      "client_type": 11,
+      "income": 5000000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 2,
+      "baozhicishu": 10,
+      "deltalevel": 400,
+      "label": 0
+    },
+    {
+      "id": 101020007,
+      "name": "648元能量",
+      "qiangsha_price": 648,
+      "vip_gold_add": true,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 0,
+      "stype": 3,
+      "index": 7,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 6480
+        }
+      ],
+      "type": 11,
+      "client_type": 11,
+      "income": 5000000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "first_multiple": 2,
+      "baozhicishu": 10,
+      "deltalevel": 500,
+      "label": 0
+    },
+    {
+      "id": 101250010,
+      "name": "3天雷霆警戒",
+      "qiangsha_price": 78,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "platform": 0,
+      "stype": 5,
+      "order": 1,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 3
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 300000
+        }
+      ],
+      "type": 0,
+      "client_type": 0,
+      "income": 9600000,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101260010,
+      "name": "雷霆警戒礼包",
+      "qiangsha_price": 648,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 0,
+      "cost": 9720,
+      "stype": 6,
+      "order": 3,
+      "items": [
+        {
+          "item_id": 4002,
+          "type": 1,
+          "item_count": 15
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 6480000
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 20
+        },
+        {
+          "item_id": 1003,
+          "type": 1,
+          "item_count": 20
+        }
+      ],
+      "type": 1,
+      "client_type": 1,
+      "income": 99600000,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 1,
+      "show": true
+    },
+    {
+      "id": 101260030,
+      "name": "牛转乾坤礼包",
+      "qiangsha_price": 648,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 0,
+      "cost": 9720,
+      "stype": 6,
+      "order": 4,
+      "items": [
+        {
+          "item_id": 4007,
+          "type": 1,
+          "item_count": 15
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 6480000
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 20
+        },
+        {
+          "item_id": 1003,
+          "type": 1,
+          "item_count": 20
+        }
+      ],
+      "type": 1,
+      "client_type": 1,
+      "income": -400000,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 1,
+      "show": true
+    },
+    {
+      "id": 101150040,
+      "name": "3天牛转乾坤",
+      "qiangsha_price": 78,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "platform": 0,
+      "stype": 5,
+      "order": 1,
+      "items": [
+        {
+          "item_id": 4007,
+          "type": 1,
+          "item_count": 3
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 300000
+        }
+      ],
+      "type": 0,
+      "client_type": 0,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101160080,
+      "name": "智者礼包",
+      "qiangsha_price": 30,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 250
+        }
+      ],
+      "platform": 0,
+      "stype": 6,
+      "order": 2,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 150000
+        }
+      ],
+      "type": 8,
+      "client_type": 8,
+      "task_type": 1,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "chixushijian": 604800,
+      "label": 2,
+      "show": true
+    },
+    {
+      "id": 101160090,
+      "name": "贤者礼包",
+      "qiangsha_price": 78,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 300000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "platform": 0,
+      "stype": 6,
+      "order": 2,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 546000
+        }
+      ],
+      "type": 8,
+      "client_type": 8,
+      "task_type": 1,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 10,
+      "deltalevel": 200,
+      "chixushijian": 604800,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160100,
+      "name": "勇者礼包",
+      "qiangsha_price": 328,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 600000,
+      "taxes": -300000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "platform": 0,
+      "stype": 6,
+      "order": 2,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 2952000
+        }
+      ],
+      "type": 8,
+      "client_type": 8,
+      "task_type": 1,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 10,
+      "deltalevel": 300,
+      "chixushijian": 604800,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160110,
+      "name": "王者礼包",
+      "qiangsha_price": 648,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 1200000,
+      "taxes": -600000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 0,
+      "stype": 6,
+      "order": 2,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 6480000
+        }
+      ],
+      "type": 8,
+      "client_type": 8,
+      "task_type": 1,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 10,
+      "deltalevel": 500,
+      "chixushijian": 604800,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160120,
+      "name": "生存礼包",
+      "qiangsha_price": 6,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "platform": 0,
+      "cost": 130,
+      "stype": 6,
+      "order": 1,
+      "type": 9,
+      "client_type": 9,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": true
+    },
+    {
+      "id": 101160130,
+      "name": "幸运礼包",
+      "qiangsha_price": 30,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "cost": 810,
+      "stype": 6,
+      "order": 1,
+      "type": 9,
+      "client_type": 9,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160160,
+      "name": "豪华礼包",
+      "qiangsha_price": 78,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 300000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "platform": 0,
+      "cost": 2540,
+      "stype": 6,
+      "order": 1,
+      "type": 9,
+      "client_type": 9,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": false,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160170,
+      "name": "奢华礼包",
+      "qiangsha_price": 198,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 400000,
+      "taxes": -200000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "platform": 0,
+      "cost": 7650,
+      "stype": 6,
+      "order": 1,
+      "type": 9,
+      "client_type": 9,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 10,
+      "deltalevel": 200,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160180,
+      "name": "无忧礼包",
+      "qiangsha_price": 328,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 1500000,
+      "taxes": -750000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "platform": 0,
+      "cost": 14760,
+      "stype": 6,
+      "order": 1,
+      "type": 9,
+      "client_type": 9,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 10,
+      "deltalevel": 300,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160190,
+      "name": "终极礼包",
+      "qiangsha_price": 648,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 3000000,
+      "taxes": -1500000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "platform": 0,
+      "cost": 33480,
+      "stype": 6,
+      "order": 1,
+      "type": 9,
+      "client_type": 9,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 10,
+      "deltalevel": 500,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160200,
+      "name": "道具礼包",
+      "qiangsha_price": 198,
+      "qdpingbi": [
+        "ali"
+      ],
+      "fanshui": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "discount": 3,
+      "platform": 0,
+      "cost": 5940,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 180
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 120
+        },
+        {
+          "item_id": 1003,
+          "type": 1,
+          "item_count": 20
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 3600000
+        }
+      ],
+      "type": 1,
+      "client_type": 1,
+      "limit_second": 86400,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": true
+    },
+    {
+      "id": 101060020,
+      "name": "超时空魔盒",
+      "qiangsha_price": 30,
+      "qdpingbi": [
+        "ali"
+      ],
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 6,
+      "order": 5,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 250000
+        }
+      ],
+      "type": 1,
+      "client_type": 1,
+      "limit_second": 86400,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160210,
+      "name": "30元聚能礼包",
+      "qiangsha_price": 30,
+      "lv": 12,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "cost": 649,
+      "fanshui": 0,
+      "platform": 0,
+      "stype": 6,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 450
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 100000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 1
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "order": 7,
+      "client_type": 10,
+      "type": 10,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160220,
+      "name": "78聚能礼包",
+      "qiangsha_price": 78,
+      "lv": 15,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "cost": 1789,
+      "fanshui": 0,
+      "platform": 0,
+      "stype": 6,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 1200
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 250000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 2
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "order": 7,
+      "client_type": 10,
+      "type": 10,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101160230,
+      "name": "328聚能礼包",
+      "qiangsha_price": 328,
+      "lv": 23,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "cost": 4694,
+      "fanshui": 0,
+      "platform": 0,
+      "stype": 6,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 4694
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 1000000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 10
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 5
+        }
+      ],
+      "order": 7,
+      "type": 10,
+      "client_type": 10,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": true
+    },
+    {
+      "id": 101160240,
+      "name": "648聚能礼包",
+      "qiangsha_price": 648,
+      "lv": 27,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "cost": 9214,
+      "fanshui": 0,
+      "platform": 0,
+      "stype": 6,
+      "items": [
+        {
+          "item_id": 6,
+          "type": 1,
+          "item_count": 9214
+        },
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 2000000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 20
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 10
+        }
+      ],
+      "order": 7,
+      "type": 10,
+      "client_type": 10,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060260,
+      "name": "6元每日礼包",
+      "qiangsha_price": 6,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "discount": 8.5,
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 42000
+        }
+      ],
+      "type": 1,
+      "client_type": 13,
+      "limit_second": 86400,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": true
+    },
+    {
+      "id": 101060270,
+      "name": "30元每日礼包",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "discount": 6.5,
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 280000
+        }
+      ],
+      "type": 1,
+      "client_type": 13,
+      "limit_second": 86400,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060280,
+      "name": "78元每日礼包",
+      "qiangsha_price": 78,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "discount": 5.5,
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 858000
+        }
+      ],
+      "type": 1,
+      "client_type": 13,
+      "limit_second": 86400,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060300,
+      "name": "30元每周礼包",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "discount": 6.5,
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 270000
+        }
+      ],
+      "type": 12,
+      "client_type": 12,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060310,
+      "name": "78元每周礼包",
+      "qiangsha_price": 78,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "discount": 5.5,
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 800000
+        }
+      ],
+      "type": 12,
+      "client_type": 12,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060320,
+      "name": "198元每周礼包",
+      "qiangsha_price": 198,
+      "fanshui": 1000000,
+      "taxes": -500000,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "discount": 4.5,
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 2560000
+        }
+      ],
+      "type": 12,
+      "client_type": 12,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060350,
+      "name": "起航基金",
+      "qiangsha_price": 78,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "fanshui": 0,
+      "platform": 0,
+      "stype": 6,
+      "order": 7,
+      "type": 10,
+      "client_type": 4,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060360,
+      "name": "精英宝藏",
+      "qiangsha_price": 60,
+      "fanshui": 0,
+      "taxes": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 600
+        }
+      ],
+      "discount": [],
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [],
+      "type": 15,
+      "season_manual_vip": 1,
+      "client_type": 15,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060370,
+      "name": "至尊宝藏豪华版",
+      "qiangsha_price": 198,
+      "fanshui": 0,
+      "taxes": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "discount": [],
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 20000,
+          "type": 1,
+          "item_count": 2000
+        }
+      ],
+      "type": 15,
+      "season_manual_vip": 3,
+      "client_type": 15,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060380,
+      "name": "战令活跃礼包",
+      "qiangsha_price": 100,
+      "fanshui": 0,
+      "taxes": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1000
+        }
+      ],
+      "discount": [],
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 20000,
+          "type": 1,
+          "item_count": 1000
+        }
+      ],
+      "type": 13,
+      "client_type": 15,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101060390,
+      "name": "战令等级购买",
+      "qiangsha_price": 10,
+      "fanshui": 0,
+      "taxes": 0,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 100
+        }
+      ],
+      "discount": [],
+      "platform": 0,
+      "stype": 6,
+      "order": 6,
+      "items": [
+        {
+          "item_id": 20000,
+          "type": 1,
+          "item_count": 100
+        }
+      ],
+      "type": 14,
+      "client_type": 15,
+      "limit_second": 0,
+      "limit_count": 1,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 2,
+      "show": false
+    },
+    {
+      "id": 101080010,
+      "name": "金牛烟花",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "platform": 0,
+      "stype": 6,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 11001,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "type": 16
+    },
+    {
+      "id": 101010030,
+      "name": "40个蓝水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12001,
+          "type": 1,
+          "item_count": 40
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010031,
+      "name": "45个蓝水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12001,
+          "type": 1,
+          "item_count": 45
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010032,
+      "name": "50个蓝水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12001,
+          "type": 1,
+          "item_count": 50
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010033,
+      "name": "30个蓝水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12001,
+          "type": 1,
+          "item_count": 30
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010034,
+      "name": "60个蓝水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12001,
+          "type": 1,
+          "item_count": 60
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010060,
+      "name": "40个绿水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12002,
+          "type": 1,
+          "item_count": 40
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010061,
+      "name": "45个绿水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12002,
+          "type": 1,
+          "item_count": 45
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010062,
+      "name": "50个绿水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12002,
+          "type": 1,
+          "item_count": 50
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010063,
+      "name": "30个绿水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12002,
+          "type": 1,
+          "item_count": 30
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010064,
+      "name": "60个绿水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12002,
+          "type": 1,
+          "item_count": 60
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010090,
+      "name": "40个黄水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12003,
+          "type": 1,
+          "item_count": 40
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010091,
+      "name": "45个黄水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12003,
+          "type": 1,
+          "item_count": 45
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010092,
+      "name": "50个黄水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12003,
+          "type": 1,
+          "item_count": 50
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010093,
+      "name": "30个黄水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12003,
+          "type": 1,
+          "item_count": 30
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010094,
+      "name": "60个黄水晶",
+      "qiangsha_price": 30,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 300
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 12003,
+          "type": 1,
+          "item_count": 60
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010200,
+      "name": "自选房福袋",
+      "qiangsha_price": 198,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "platform": 0,
+      "stype": 8,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5,
+          "type": 1,
+          "item_count": 4000000
+        },
+        {
+          "item_id": 1001,
+          "type": 1,
+          "item_count": 50
+        }
+      ],
+      "type": 18,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "rank_per": 2000,
+      "rank_type": 0
+    },
+    {
+      "id": 101010201,
+      "name": "海神祭坛福袋",
+      "qiangsha_price": 128,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1280
+        }
+      ],
+      "platform": 0,
+      "stype": 9,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 5006,
+          "type": 1,
+          "item_count": 10
+        },
+        {
+          "item_id": 7003,
+          "type": 1,
+          "item_count": 2
+        },
+        {
+          "item_id": 1002,
+          "type": 1,
+          "item_count": 10
+        }
+      ],
+      "type": 18,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "rank_per": 200,
+      "rank_type": 1
+    },
+    {
+      "id": 101010202,
+      "name": "三叉戟礼盒",
+      "qiangsha_price": 128,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1280
+        }
+      ],
+      "platform": 0,
+      "stype": 10,
+      "index": 1,
+      "tag": 0,
+      "items": [],
+      "type": 18,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "rank_per": 200,
+      "rank_type": 2,
+      "weight_items_id": 1
+    }
+  ]
+}
+
+

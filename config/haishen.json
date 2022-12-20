@@ -1,0 +1,737 @@
+{
+  "altar": {
+    "drops": [
+      {
+        "fish_ids": [
+          959
+        ],
+        "per": 10000,
+        "item_id": 5007
+      },
+      {
+        "fish_ids": [
+          301
+        ],
+        "per": 10000,
+        "item_id": 5007
+      },
+      {
+        "fish_ids": [
+          302
+        ],
+        "per": 10000,
+        "item_id": 5007
+      },
+      {
+        "fish_ids": [
+          303
+        ],
+        "per": 10000,
+        "item_id": 5007
+      },
+      {
+        "fish_ids": [
+          304
+        ],
+        "per": 10000,
+        "item_id": 5007
+      },
+      {
+        "fish_ids": [
+          305
+        ],
+        "per": 10000,
+        "item_id": 5007
+      }
+    ],
+    "exchange": {
+      "free_count": [
+        {
+          "vip": 0,
+          "count": 0
+        },
+        {
+          "vip": 1,
+          "count": 0
+        },
+        {
+          "vip": 2,
+          "count": 0
+        },
+        {
+          "vip": 3,
+          "count": 0
+        },
+        {
+          "vip": 4,
+          "count": 0
+        },
+        {
+          "vip": 5,
+          "count": 0
+        },
+        {
+          "vip": 6,
+          "count": 0
+        },
+        {
+          "vip": 7,
+          "count": 1
+        },
+        {
+          "vip": 8,
+          "count": 1
+        },
+        {
+          "vip": 9,
+          "count": 1
+        },
+        {
+          "vip": 10,
+          "count": 1
+        },
+        {
+          "vip": 11,
+          "count": 2
+        },
+        {
+          "vip": 12,
+          "count": 5
+        }
+      ],
+      "fresh_items": [
+        {
+          "item_id": 5006,
+          "item_count": 1
+        },
+        {
+          "item_id": 2004,
+          "item_count": 20
+        }
+      ],
+      "items": [
+        {
+          "id": 1,
+          "open": true,
+          "count": 1,
+          "rank_scores": [
+            1000,
+            6999
+          ],
+          "need_items": [
+            {
+              "item_id": 5007,
+              "item_count": 30
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7001,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "open": true,
+          "count": 1,
+          "rank_scores": [
+            2000,
+            6999
+          ],
+          "need_items": [
+            {
+              "item_id": 5007,
+              "item_count": 60
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7001,
+              "item_count": 2
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "open": true,
+          "count": 1,
+          "rank_scores": [
+            3000,
+            7999
+          ],
+          "need_items": [
+            {
+              "item_id": 5007,
+              "item_count": 100
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "open": true,
+          "count": 1,
+          "rank_scores": [
+            4000,
+            7999
+          ],
+          "need_items": [
+            {
+              "item_id": 5007,
+              "item_count": 200
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7002,
+              "item_count": 2
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "open": true,
+          "count": 1,
+          "rank_scores": [
+            5000,
+            8999
+          ],
+          "need_items": [
+            {
+              "item_id": 5007,
+              "item_count": 500
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7003,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "open": true,
+          "count": 1,
+          "rank_scores": [
+            5000,
+            9999
+          ],
+          "need_items": [
+            {
+              "item_id": 5007,
+              "item_count": 1000
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7004,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "open": true,
+          "count": 1,
+          "rank_scores": [
+            6000,
+            9999
+          ],
+          "need_items": [
+            {
+              "item_id": 5007,
+              "item_count": 1500
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7003,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "id": 8,
+          "open": true,
+          "count": 1,
+          "rank_scores": [
+            6000,
+            9999
+          ],
+          "need_items": [
+            {
+              "item_id": 5007,
+              "item_count": 3000
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7004,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "id": 9,
+          "open": true,
+          "count": 1,
+          "rank_scores": [
+            7000,
+            9999
+          ],
+          "need_items": [
+            {
+              "item_id": 5007,
+              "item_count": 4000
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7004,
+              "item_count": 4
+            }
+          ]
+        }
+      ]
+    },
+    "forge": {
+      "items": [
+        {
+          "id": 1,
+          "open": true,
+          "need_items": [
+            {
+              "item_id": 7001,
+              "item_count": 1
+            },
+            {
+              "item_id": 5007,
+              "item_count": 70
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "open": true,
+          "need_items": [
+            {
+              "item_id": 7002,
+              "item_count": 1
+            },
+            {
+              "item_id": 5007,
+              "item_count": 400
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7003,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "open": true,
+          "need_items": [
+            {
+              "item_id": 7003,
+              "item_count": 1
+            },
+            {
+              "item_id": 5007,
+              "item_count": 500
+            }
+          ],
+          "items": [
+            {
+              "item_id": 7004,
+              "item_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    "rank": {
+      "name": "每日幸运榜",
+      "sort_type": 2,
+      "rewards": [
+        {
+          "begin": 1,
+          "end": 1,
+          "rewards": [
+            {
+              "item_id": 7004,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "begin": 2,
+          "end": 2,
+          "rewards": [
+            {
+              "item_id": 7003,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "begin": 3,
+          "end": 3,
+          "rewards": [
+            {
+              "item_id": 7002,
+              "item_count": 4
+            }
+          ]
+        },
+        {
+          "begin": 4,
+          "end": 4,
+          "rewards": [
+            {
+              "item_id": 7002,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "begin": 5,
+          "end": 5,
+          "rewards": [
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "begin": 6,
+          "end": 10,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 80000
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "happy": {
+    "rank_scores": [
+      {
+        "rank_item": 7001,
+        "duration": [
+          1,
+          9999
+        ]
+      },
+      {
+        "rank_item": 7002,
+        "duration": [
+          1,
+          9999
+        ]
+      },
+      {
+        "rank_item": 7003,
+        "duration": [
+          1,
+          9999
+        ]
+      },
+      {
+        "rank_item": 7004,
+        "duration": [
+          1,
+          9999
+        ]
+      }
+    ],
+    "ranks": [
+      {
+        "name": "青铜幸运榜",
+        "rank_item": "7001",
+        "sort_type": 2,
+        "rewards": [
+          {
+            "begin": 1,
+            "end": 1,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 2
+              }
+            ]
+          },
+          {
+            "begin": 2,
+            "end": 2,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 3,
+            "end": 3,
+            "rewards": [
+              {
+                "item_id": 7001,
+                "item_count": 3
+              }
+            ]
+          },
+          {
+            "begin": 4,
+            "end": 4,
+            "rewards": [
+              {
+                "item_id": 7001,
+                "item_count": 2
+              }
+            ]
+          },
+          {
+            "begin": 5,
+            "end": 5,
+            "rewards": [
+              {
+                "item_id": 7001,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 6,
+            "end": 10,
+            "rewards": [
+              {
+                "item_id": 5,
+                "item_count": 8000
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rank_item": "7002",
+        "name": "玄冰幸运榜",
+        "sort_type": 2,
+        "rewards": [
+          {
+            "begin": 1,
+            "end": 1,
+            "rewards": [
+              {
+                "item_id": 7003,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 2,
+            "end": 2,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 2
+              }
+            ]
+          },
+          {
+            "begin": 3,
+            "end": 3,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 4,
+            "end": 4,
+            "rewards": [
+              {
+                "item_id": 7001,
+                "item_count": 3
+              }
+            ]
+          },
+          {
+            "begin": 5,
+            "end": 5,
+            "rewards": [
+              {
+                "item_id": 7001,
+                "item_count": 2
+              }
+            ]
+          },
+          {
+            "begin": 6,
+            "end": 10,
+            "rewards": [
+              {
+                "item_id": 5,
+                "item_count": 20000
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rank_item": "7003",
+        "name": "赤焰幸运榜",
+        "sort_type": 2,
+        "rewards": [
+          {
+            "begin": 1,
+            "end": 1,
+            "rewards": [
+              {
+                "item_id": 7004,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 2,
+            "end": 2,
+            "rewards": [
+              {
+                "item_id": 7003,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 3,
+            "end": 3,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 5
+              }
+            ]
+          },
+          {
+            "begin": 4,
+            "end": 4,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 3
+              }
+            ]
+          },
+          {
+            "begin": 5,
+            "end": 5,
+            "rewards": [
+              {
+                "item_id": 7001,
+                "item_count": 5
+              }
+            ]
+          },
+          {
+            "begin": 6,
+            "end": 10,
+            "rewards": [
+              {
+                "item_id": 5,
+                "item_count": 20000
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "rank_item": "7004",
+        "name": "紫晶幸运榜",
+        "sort_type": 2,
+        "rewards": [
+          {
+            "begin": 1,
+            "end": 1,
+            "rewards": [
+              {
+                "item_id": 7004,
+                "item_count": 2
+              }
+            ]
+          },
+          {
+            "begin": 2,
+            "end": 2,
+            "rewards": [
+              {
+                "item_id": 7003,
+                "item_count": 1
+              }
+            ]
+          },
+          {
+            "begin": 3,
+            "end": 3,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 5
+              }
+            ]
+          },
+          {
+            "begin": 4,
+            "end": 4,
+            "rewards": [
+              {
+                "item_id": 7002,
+                "item_count": 3
+              }
+            ]
+          },
+          {
+            "begin": 5,
+            "end": 5,
+            "rewards": [
+              {
+                "item_id": 7001,
+                "item_count": 5
+              }
+            ]
+          },
+          {
+            "begin": 6,
+            "end": 10,
+            "rewards": [
+              {
+                "item_id": 5,
+                "item_count": 20000
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
