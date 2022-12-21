@@ -3216,6 +3216,33 @@
       "rank_type": 1
     },
     {
+      "id": 101010202,
+      "name": "三叉戟礼盒",
+      "qiangsha_price": 128,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1280
+        }
+      ],
+      "platform": 0,
+      "stype": 10,
+      "index": 1,
+      "tag": 0,
+      "items": [],
+      "type": 18,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "rank_per": 200,
+      "rank_type": 2,
+      "weight_items_id": 1
+    },
+    {
       "id": 101010203,
       "name": "财神福袋",
       "qiangsha_price": 128,
@@ -3226,7 +3253,7 @@
         }
       ],
       "platform": 0,
-      "stype": 9,
+      "stype": 11,
       "index": 1,
       "tag": 0,
       "items": [
@@ -3256,33 +3283,6 @@
       "label": 0,
       "rank_per": 200,
       "rank_type": 5
-    },
-    {
-      "id": 101010202,
-      "name": "三叉戟礼盒",
-      "qiangsha_price": 128,
-      "need_items": [
-        {
-          "item_id": 2004,
-          "item_count": 1280
-        }
-      ],
-      "platform": 0,
-      "stype": 10,
-      "index": 1,
-      "tag": 0,
-      "items": [],
-      "type": 18,
-      "client_type": 14,
-      "limit_second": 0,
-      "limit_count": 0,
-      "open": true,
-      "baozhicishu": 0,
-      "deltalevel": 0,
-      "label": 0,
-      "rank_per": 200,
-      "rank_type": 2,
-      "weight_items_id": 1
     }
   ]
 }
