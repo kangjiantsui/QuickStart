@@ -79,7 +79,8 @@
         "forbid_freeze_time": 120,
         "open": false,
         "priority": 2,
-        "fish_info": []
+        "fish_info": [
+        ]
       }
     },
     {
@@ -243,7 +244,8 @@
         "forbid_interboss_time": 300,
         "forbid_freeze_time": 120,
         "priority": 2,
-        "fish_info": []
+        "fish_info": [
+        ]
       }
     },
     {
@@ -463,7 +465,8 @@
         "forbid_interboss_time": 300,
         "forbid_freeze_time": 120,
         "priority": 2,
-        "fish_info": []
+        "fish_info": [
+        ]
       }
     },
     {
@@ -1054,7 +1057,8 @@
         "forbid_interboss_time": 300,
         "forbid_freeze_time": 120,
         "priority": 2,
-        "fish_info": []
+        "fish_info": [
+        ]
       }
     },
     {
@@ -1091,7 +1095,66 @@
         "forbid_interboss_time": 300,
         "forbid_freeze_time": 120,
         "priority": 2,
-        "fish_info": []
+        "fish_info": [
+        ]
+      }
+    },
+    {
+      "ROOM_TYPE": 5001,
+      "interval_boss_info": {
+        "open": true,
+        "priority": 1,
+        "fish_info": [
+          {
+            "type": 1,
+            "desc": "特色鱼",
+            "count": 1,
+            "forward_notice_s": 0,
+            "interval_time_s": 5,
+            "duration_time": 0,
+            "formations_arr": [
+              {
+                "fish_src_id": 1601,
+                "weight": 100,
+                "formations_id": [
+                  4474,
+                  4475,
+                  4476,
+                  4477
+                ]
+              },
+              {
+                "fish_src_id": 1602,
+                "weight": 100,
+                "formations_id": [
+                  4478,
+                  4479,
+                  4480,
+                  4481
+                ]
+              },
+              {
+                "fish_src_id": 1603,
+                "weight": 100,
+                "formations_id": [
+                  4482,
+                  4483,
+                  4484,
+                  4485
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "timer_boss_info": {
+        "open": false,
+        "timer": [],
+        "forbid_interboss_time": 300,
+        "forbid_freeze_time": 120,
+        "priority": 2,
+        "fish_info": [
+        ]
       }
     }
   ]
