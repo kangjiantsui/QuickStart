@@ -453,5 +453,10 @@
     "loaddir": "zixuanfang.json",
     "ver": "627",
     "type": "1"
+  },
+  {
+    "loaddir": "caishen.json",
+    "ver": "627",
+    "type": "1"
   }
 ]
