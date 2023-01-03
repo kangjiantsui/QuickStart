@@ -29,8 +29,7 @@
             -1
           ],
           "weight": 10,
-          "per": 3,
-          "gold": 1500000
+          "per": 3
         }
       ]
     },
@@ -69,13 +68,12 @@
             -1
           ],
           "weight": 10,
-          "per": 3,
-          "gold": 1500000
+          "per": 3
         }
       ]
     }
   },
-  "SlotIcons": {
+  "slot_icons": {
     "1": 10,
     "2": 20,
     "3": 50,
@@ -148,13 +146,6 @@
   },
   "rank": {
     "name": "财神赐福福气日榜",
-    "rank_item": "",
-    "pool_init_value": 0,
-    "pool_reward_per": 0,
-    "pool_add_per_sec": 0,
-    "pool_tax_per": 0,
-    "pool_tax_limit": 0,
-    "rank_times": null,
     "rewards": [
       {
         "rewards": [
@@ -163,9 +154,7 @@
             "item_count": 20
           }
         ],
-        "reward_per": 0,
-        "begin": 1,
-        "end": 0
+        "begin": 1
       },
       {
         "rewards": [
@@ -174,9 +163,7 @@
             "item_count": 16
           }
         ],
-        "reward_per": 0,
-        "begin": 2,
-        "end": 0
+        "begin": 2
       },
       {
         "rewards": [
@@ -185,7 +172,6 @@
             "item_count": 12
           }
         ],
-        "reward_per": 0,
         "begin": 3,
         "end": 10
       }
