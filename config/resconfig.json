@@ -1,0 +1,457 @@
+[
+  {
+    "loaddir": "allfishScript.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "achievement.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "achievement_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "boss.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "daily_sign.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "buddha_bless.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "drops.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "drops_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "duanzao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "duanzao_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "exchange.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "exchange_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "fangshuazi.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "fanshui_qiangsha.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "fanshui_qiangsha_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "fish.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "fish_fork.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "fishlocker.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "FishTeam.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "five_bless.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "five_bless_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "five_dragon_treasure.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "fork_drop_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "Formations.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "global_define.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "haishen.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "haiwangzhengba.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "hit_empty_back.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "hlzb_variable.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "hyperspace_box.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "hyperspace_box_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "invitationCoinReawrd.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "Item.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "jinniu.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "jinniu_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "jackpot.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "jackpot_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "jubao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "jubao_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "luckyRoulette.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "lv_exp.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "lv_exp_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "lava_monster.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "magical_items.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "magical_items_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "monthly_sign_in.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "newplayerboss_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "pao_skill.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "platform.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "platform_gm.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "player_init.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "player_init_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "pmd_new.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "push.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "resconfig.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "room.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "room_setting.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "room_setting_fangshuazi.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "room_setting_shuashua.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "room_setting_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "room_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "scoreSetting.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "season_manual.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "season_manual_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "shop.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "shop_ali.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "sailing_fund.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "shop_package_growpack.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "shop_package_growpack_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "shop_package_lianchong.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "shop_package_lianchong_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "shop_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "shopReward.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "skill.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "share_gift.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "superplayer.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "task.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "tianpeng.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "tianpeng_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "taxes.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "taxes_fangshuazi.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "taxes_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "treasure_box.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "Vip.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "Vip_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "world_boss.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "xinxiangshicheng.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "xinxiangshicheng_toufangbao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "yaoyiyao.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "zixuanfang.json",
+    "ver": "627",
+    "type": "1"
+  },
+  {
+    "loaddir": "zixuanfang.json",
+    "ver": "627",
+    "type": "1"
+  }
+]
