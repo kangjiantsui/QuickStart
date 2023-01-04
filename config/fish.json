@@ -9129,7 +9129,7 @@
     },
     {
       "FishTypeID": 1601,
-      "resID": 806,
+      "resID": 807,
       "NAME_KEY": 150048,
       "Name": "金童",
       "desc": [
@@ -9160,7 +9160,7 @@
     },
     {
       "FishTypeID": 1602,
-      "resID": 806,
+      "resID": 808,
       "NAME_KEY": 150049,
       "Name": "玉女",
       "desc": [
@@ -9187,11 +9187,11 @@
       "RealScore_0": 400,
       "RealScore_1": 400,
       "fork": 0,
-      "caishen": 1
+      "caishen": 2
     },
     {
       "FishTypeID": 1603,
-      "resID": 806,
+      "resID": 809,
       "NAME_KEY": 150050,
       "Name": "财神爷",
       "desc": [
@@ -9218,7 +9218,7 @@
       "RealScore_0": 400,
       "RealScore_1": 400,
       "fork": 0,
-      "caishen": 2
+      "caishen": 3
     }
   ],
   "zixuanfang_boss_fishs": [

@@ -4920,6 +4920,7 @@
         "begin": 31,
         "end": 50
       }
-    ]
+    ],
+    "rank_max_count": 50
   }
 }

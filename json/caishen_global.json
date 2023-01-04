@@ -1,0 +1,42 @@
+{
+  "daily_max_scores": {
+    "1": 9212
+  },
+  "hitJackpotPlayer": [
+    {
+      "name": "游客用户",
+      "fishId": 1602,
+      "gold": 120000
+    },
+    {
+      "name": "游客用户",
+      "fishId": 1602,
+      "gold": 310000
+    },
+    {
+      "name": "游客用户",
+      "fishId": 1602,
+      "gold": 240000
+    },
+    {
+      "name": "游客用户",
+      "fishId": 1602,
+      "gold": 50000
+    },
+    {
+      "name": "游客用户",
+      "fishId": 1602,
+      "gold": 80000
+    },
+    {
+      "name": "游客用户",
+      "fishId": 1602,
+      "gold": 210000
+    },
+    {
+      "name": "游客用户",
+      "fishId": 1602,
+      "gold": 140000
+    }
+  ]
+}
