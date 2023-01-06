@@ -4814,7 +4814,7 @@
     }
   ],
   "jackpot_pool": {
-    "reset_val_rang": [
+    "reset_val_range": [
       450000000,
       460000000
     ],
