@@ -1,6 +1,7 @@
 package base_test
 
 import (
+	"flag"
 	"math/rand"
 	"testing"
 )
@@ -13,4 +14,10 @@ func TestShuffle(t *testing.T) {
 		})
 		t.Log(arr)
 	}
+}
+
+var cmdLocal = flag.Bool("local", false, "run local info: OnlineSvrInfo")
+
+func TestFlag(t *testing.T) {
+	t.Log(*cmdLocal)
 }
