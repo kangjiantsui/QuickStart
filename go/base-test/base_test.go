@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math/rand"
 	"testing"
+	"time"
 )
 
 func TestShuffle(t *testing.T) {
@@ -25,4 +26,20 @@ var paobei int
 
 func TestFlag(t *testing.T) {
 	fmt.Println(paobei)
+}
+
+func getRandomList() []int32 {
+	var result []int32
+	for i := 0; i < 10; i++ {
+		result = append(result, rand.Int31n(10))
+	}
+	return result
+}
+
+func TestRandSeed(t *testing.T) {
+	rand.Seed(time.Now().Unix())
+	t.Log(getRandomList())
+	t.Log(getRandomList())
+	t.Log(getRandomList())
+	t.Log(getRandomList())
 }

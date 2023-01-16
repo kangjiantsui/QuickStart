@@ -475,7 +475,7 @@
           {
             "type": 1,
             "desc": "特色鱼",
-            "count": 1,
+            "count": 3,
             "forward_notice_s": 0,
             "interval_time_s": 5,
             "duration_time": 0,
@@ -576,14 +576,14 @@
             "formations_arr": [
               {
                 "fish_src_id": 903,
-                "weight": 0,
+                "weight": 100,
                 "formations_id": [
                   4094
                 ]
               },
               {
                 "fish_src_id": 905,
-                "weight": 0,
+                "weight": 100,
                 "formations_id": [
                   4206,
                   4207,
@@ -595,7 +595,7 @@
               },
               {
                 "fish_src_id": 907,
-                "weight": 0,
+                "weight": 150,
                 "formations_id": [
                   4212,
                   4215
@@ -603,7 +603,7 @@
               },
               {
                 "fish_src_id": 910,
-                "weight": 0,
+                "weight": 100,
                 "formations_id": [
                   4194,
                   4195,
@@ -621,7 +621,7 @@
               },
               {
                 "fish_src_id": 911,
-                "weight": 0,
+                "weight": 100,
                 "formations_id": [
                   4216
                 ]
@@ -638,7 +638,7 @@
               },
               {
                 "fish_src_id": 913,
-                "weight": 0,
+                "weight": 100,
                 "formations_id": [
                   4228,
                   4229,
@@ -658,7 +658,7 @@
               },
               {
                 "fish_src_id": 918,
-                "weight": 0,
+                "weight": 100,
                 "formations_id": [
                   4252,
                   4253,
@@ -668,7 +668,7 @@
               },
               {
                 "fish_src_id": 921,
-                "weight": 0,
+                "weight": 100,
                 "formations_id": [
                   4260,
                   4261
@@ -716,7 +716,7 @@
               },
               {
                 "fish_src_id": 928,
-                "weight": 0,
+                "weight": 200,
                 "formations_id": [
                   4312,
                   4313
@@ -724,7 +724,7 @@
               },
               {
                 "fish_src_id": 931,
-                "weight": 0,
+                "weight": 200,
                 "formations_id": [
                   4318,
                   4319
@@ -732,7 +732,7 @@
               },
               {
                 "fish_src_id": 932,
-                "weight": 0,
+                "weight": 400,
                 "formations_id": [
                   4320
                 ]
@@ -759,7 +759,7 @@
               },
               {
                 "fish_src_id": 937,
-                "weight": 0,
+                "weight": 400,
                 "formations_id": [
                   4345,
                   4346,
@@ -769,7 +769,7 @@
               },
               {
                 "fish_src_id": 938,
-                "weight": 0,
+                "weight": 400,
                 "formations_id": [
                   4351,
                   4352,
@@ -779,7 +779,7 @@
               },
               {
                 "fish_src_id": 939,
-                "weight": 0,
+                "weight": 400,
                 "formations_id": [
                   4357
                 ]
@@ -806,7 +806,7 @@
               },
               {
                 "fish_src_id": 942,
-                "weight": 0,
+                "weight": 400,
                 "formations_id": [
                   4370,
                   4371,
@@ -917,7 +917,7 @@
               },
               {
                 "fish_src_id": 954,
-                "weight": 0,
+                "weight": 400,
                 "formations_id": [
                   4417
                 ]
@@ -944,7 +944,7 @@
               },
               {
                 "fish_src_id": 957,
-                "weight": 0,
+                "weight": 400,
                 "formations_id": [
                   4429
                 ]
@@ -961,7 +961,7 @@
               },
               {
                 "fish_src_id": 960,
-                "weight": 0,
+                "weight": 600,
                 "formations_id": [
                   4438,
                   4439,
@@ -971,7 +971,7 @@
               },
               {
                 "fish_src_id": 961,
-                "weight": 0,
+                "weight": 600,
                 "formations_id": [
                   4442,
                   4443,
@@ -981,7 +981,7 @@
               },
               {
                 "fish_src_id": 962,
-                "weight": 0,
+                "weight": 600,
                 "formations_id": [
                   4446,
                   4447,
@@ -991,7 +991,7 @@
               },
               {
                 "fish_src_id": 963,
-                "weight": 0,
+                "weight": 600,
                 "formations_id": [
                   4450,
                   4451,
@@ -1001,7 +1001,7 @@
               },
               {
                 "fish_src_id": 964,
-                "weight": 0,
+                "weight": 600,
                 "formations_id": [
                   4454,
                   4455,
@@ -1011,14 +1011,14 @@
               },
               {
                 "fish_src_id": 965,
-                "weight": 0,
+                "weight": 600,
                 "formations_id": [
                   4437
                 ]
               },
               {
                 "fish_src_id": 966,
-                "weight": 0,
+                "weight": 1000,
                 "formations_id": [
                   4458,
                   4459,
@@ -1028,7 +1028,7 @@
               },
               {
                 "fish_src_id": 967,
-                "weight": 0,
+                "weight": 1000,
                 "formations_id": [
                   4462,
                   4463
@@ -1036,7 +1036,7 @@
               },
               {
                 "fish_src_id": 968,
-                "weight": 0,
+                "weight": 1000,
                 "formations_id": [
                   4466,
                   4467,
@@ -1103,14 +1103,14 @@
           {
             "type": 1,
             "desc": "特色鱼",
-            "count": 1,
+            "count": 3,
             "forward_notice_s": 0,
-            "interval_time_s": 5,
-            "duration_time": 0,
+            "interval_time_s": 10,
+            "duration_time": 120,
             "formations_arr": [
               {
                 "fish_src_id": 1601,
-                "weight": 100,
+                "weight": 150,
                 "formations_id": [
                   4474,
                   4475,
@@ -1120,7 +1120,7 @@
               },
               {
                 "fish_src_id": 1602,
-                "weight": 100,
+                "weight": 150,
                 "formations_id": [
                   4478,
                   4479,
