@@ -1,0 +1,167 @@
+{
+  "uid": 233286,
+  "pao_skill_info": {
+    "pao_item_id": 4006,
+    "begin_unix": 1678900804,
+    "pao": 10000,
+    "hit_fishs": [
+      {
+        "fish_id": "3895_30_1",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 40000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "0_4478_1",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 1500000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "3895_30_2",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 40000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "3895_30_3",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 40000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "4021_54002_3",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 20000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "4021_54002_5",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 20000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "3896_3362_1",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 35000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "3896_4061_1",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 400000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "3897_9_2",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 10000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "3897_9_4",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 10000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "3897_3634_1",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 30000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "3897_9_3",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 10000
+            }
+          ]
+        },
+        "extern_drops": {}
+      },
+      {
+        "fish_id": "3894_12301103501_11",
+        "drop_data": {
+          "items": [
+            {
+              "item_id": 5,
+              "count": 400000
+            }
+          ]
+        },
+        "extern_drops": {}
+      }
+    ],
+    "rotation_angle": 47.75470733642578
+  }
+}

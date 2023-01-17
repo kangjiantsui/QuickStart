@@ -1,0 +1,29 @@
+{
+  "Pao_item_": 4006,
+  "Cur_pao_": 10000,
+  "Begin_unix_": 1678900804,
+  "Hit_fishs_": [
+    {
+      "fish_id": "3895_30_1",
+      "drop_data": {
+        "items": [
+          {
+            "item_id": 5,
+            "count": 40000
+          }
+        ]
+      },
+      "extern_drops": {}
+    },
+    {
+      "fish_id": "0_4478_1"
+    }
+  ],
+  "Rotation_angle_": 47.75470733642578,
+  "Fanshui_beishu_cfg_": {
+    "add_pro": 50,
+    "score_min": 150,
+    "score_max": 250,
+    "cannon_cal": 0.5
+  }
+}
