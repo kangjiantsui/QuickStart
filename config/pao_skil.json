@@ -1,0 +1,285 @@
+{
+  "cd": 30,
+  "Pao": [
+    {
+      "ID": 4000,
+      "name": "普通炮台",
+      "skillName": "炮台介绍",
+      "skillDes": "平平无奇的普通炮台。",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4001,
+      "name": "雷霆警戒",
+      "skillName": "闪电风暴",
+      "skillDes": "发射子弹概率触发闪电技能，攻击多个目标，击杀概率提升。",
+      "stype": 4001,
+      "waitSec": 15,
+      "pickRadius": 2000,
+      "pickNumber": 15,
+      "PickFish": 50,
+      "jackpot": true
+    },
+    {
+      "ID": 4006,
+      "name": "牛转乾坤",
+      "skillName": "牛气冲天",
+      "skillDes": "发射子弹概率触发激光技能，攻击多个目标，击杀概率提升。",
+      "stype": 4006,
+      "waitSec": 15,
+      "pickRadius": 2000,
+      "pickNumber": 15,
+      "PickFish": 50,
+      "jackpot": true
+    },
+    {
+      "ID": 4008,
+      "name": "魔龙之怒",
+      "skillName": "炮台介绍",
+      "skillDes": "仿佛能听到魔龙的阵阵嘶吼",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4009,
+      "name": "冰凌轻弩",
+      "skillName": "炮台介绍",
+      "skillDes": "玄冰打造而成，冰寒刺骨",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4010,
+      "name": "灵龙",
+      "skillName": "炮台介绍",
+      "skillDes": "仅仅注视，就能感觉到魔力的流动",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4011,
+      "name": "幻梦",
+      "skillName": "炮台介绍",
+      "skillDes": "似有似无,无法捉摸它是否存在",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4012,
+      "name": "苍白正义",
+      "skillName": "炮台介绍",
+      "skillDes": "正义永不缺席",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4018,
+      "name": "虎虎生威",
+      "skillName": "炮台介绍",
+      "skillDes": "虎虎生威，虎年大吉",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4019,
+      "name": "觅心猎手",
+      "skillName": "炮台介绍",
+      "skillDes": "对你的心脏射一箭",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4022,
+      "name": "盖世英雄",
+      "skillName": "炮台介绍",
+      "skillDes": "如果非要加上一个期限，我希望是一万年",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4023,
+      "name": "赤金龙王",
+      "skillName": "炮台介绍",
+      "skillDes": "沉睡的龙王在赤焰中苏醒",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4024,
+      "name": "小丑",
+      "skillName": "炮台介绍",
+      "skillDes": "好戏开场了，哈哈哈哈哈哈",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4025,
+      "name": "复生之花",
+      "skillName": "炮台介绍",
+      "skillDes": "彩蛋和兔子，哦，是复活节",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4026,
+      "name": "荆棘蔷薇",
+      "skillName": "炮台介绍",
+      "skillDes": "盛开在百花中的荆棘蔷薇",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4027,
+      "name": "蒸汽狂潮",
+      "skillName": "炮台介绍",
+      "skillDes": "掀起一场蒸汽的狂潮",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4028,
+      "name": "炼狱魔牛",
+      "skillName": "炮台介绍",
+      "skillDes": "来自炼狱的魔牛向你奔来",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4029,
+      "name": "涅槃重生",
+      "skillName": "炮台介绍",
+      "skillDes": "涅槃重生，再战轮回",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4030,
+      "name": "粽情一夏",
+      "skillName": "炮台介绍",
+      "skillDes": "龙舟竞渡，粽情一夏",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4031,
+      "name": "神之怒",
+      "skillName": "炮台介绍",
+      "skillDes": "于灭世的雷霆中诞生，开辟新的纪元",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4032,
+      "name": "狂战之怒",
+      "skillName": "炮台介绍",
+      "skillDes": "感受狂战士的怒火",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4033,
+      "name": "鹊桥相会",
+      "skillName": "炮台介绍",
+      "skillDes": "迢迢牵牛星，皎皎河汉女",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4034,
+      "name": "踏碎凌霄",
+      "skillName": "炮台介绍",
+      "skillDes": "踏碎凌霄，放肆桀骜",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4035,
+      "name": "缤纷盛夏",
+      "skillName": "炮台介绍",
+      "skillDes": "带来炎炎夏日的一丝清凉",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4036,
+      "name": "宝石骑士",
+      "skillName": "炮台介绍",
+      "skillDes": "无论从哪个角度，都能看到最纯净的光芒",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4037,
+      "name": "玉兔东升",
+      "skillName": "炮台介绍",
+      "skillDes": "但愿人长久，千里共婵娟",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4038,
+      "name": "圣金甲虫",
+      "skillName": "炮台介绍",
+      "skillDes": "谁才是真正的猎人",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4039,
+      "name": "普天同庆",
+      "skillName": "炮台介绍",
+      "skillDes": "普天同庆,共度佳节",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4040,
+      "name": "江山浮华",
+      "skillName": "炮台介绍",
+      "skillDes": "山无棱，江水为竭，冬雷震震，夏雨雪，天地合，乃敢与君绝",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4041,
+      "name": "绿茵未来",
+      "skillName": "炮台介绍",
+      "skillDes": "世界的未来，世界的荣耀",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4042,
+      "name": "足球狂欢",
+      "skillName": "炮台介绍",
+      "skillDes": "一起感受世界杯的魅力吧",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4043,
+      "name": "梅开五福",
+      "skillName": "炮台介绍",
+      "skillDes": "江南无所有,聊赠一枝春",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4044,
+      "name": "汪磁脉冲",
+      "skillName": "炮台介绍",
+      "skillDes": "汪磁脉冲，启动！",
+      "stype": 0,
+      "jackpot": false
+    },
+    {
+      "ID": 4045,
+      "name": "麋鹿派对",
+      "skillName": "炮台介绍",
+      "skillDes": "圣诞麋鹿正在带来礼物",
+      "stype": 0,
+      "jackpot": false
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "fanshui": {
+    "init": 0,
+    "fish_list": [
+      901,
+      902,
+      903,
+      904,
+      905,
+      907,
+      910,
+      911,
+      912,
+      913,
+      914,
+      915,
+      916,
+      917,
+      918,
+      919,
+      920,
+      921,
+      922,
+      923,
+      924,
+      925,
+      926,
+      927,
+      928,
+      929,
+      930,
+      931,
+      932,
+      933,
+      934,
+      935,
+      936,
+      937,
+      938,
+      939,
+      940,
+      941,
+      942,
+      943,
+      944,
+      945,
+      946,
+      947,
+      948,
+      949,
+      950,
+      951,
+      952,
+      953,
+      954,
+      955,
+      956,
+      957,
+      958,
+      960,
+      961,
+      962,
+      963,
+      964,
+      965
+    ],
+    "skill_cannon": {
+      "prob": 500000,
+      "init_beishu": 1,
+      "beishu": [
+        {
+          "add_pro": 50,
+          "score_min": 150,
+          "score_max": 250,
+          "cannon_cal": 0.5
+        },
+        {
+          "add_pro": 30,
+          "score_min": 250,
+          "score_max": 400,
+          "cannon_cal": 1
+        },
+        {
+          "add_pro": 15,
+          "score_min": 400,
+          "score_max": 600,
+          "cannon_cal": 1.5
+        },
+        {
+          "add_pro": 5,
+          "score_min": 600,
+          "score_max": 800,
+          "cannon_cal": 2
+        }
+      ]
+    }
+  },
+  "ROOMS": [
+    {
+      "roomid": 0,
+      "nhorizonRate": 5000,
+      "Open": 0,
+      "nRL": 2,
+      "nmaxCannon": 100000,
+      "dfactor": 0.7793942,
+      "fanlilv1": 8000000,
+      "fanlilv2": 14000000,
+      "fanlilv3": 50000000,
+      "fanlilv4": 80000000
+    },
+    {
+      "roomid": 1,
+      "nhorizonRate": 5000,
+      "Open": 1,
+      "nRL": 2,
+      "nmaxCannon": 100000,
+      "dfactor": 0.7793942,
+      "fanlilv1": 8000000,
+      "fanlilv2": 14000000,
+      "fanlilv3": 50000000,
+      "fanlilv4": 80000000
+    },
+    {
+      "roomid": 2,
+      "nhorizonRate": 5000,
+      "Open": 1,
+      "nRL": 2,
+      "nmaxCannon": 100000,
+      "dfactor": 0.7793942,
+      "fanlilv1": 8000000,
+      "fanlilv2": 14000000,
+      "fanlilv3": 50000000,
+      "fanlilv4": 80000000
+    }
+  ]
+}
