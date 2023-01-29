@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math/rand"
 	"os"
 )
 
@@ -21,4 +22,12 @@ func PrintJson(obj interface{}) {
 	}
 	fmt.Println()
 	fmt.Println(`-----------------------------------------------------------------------------------------------------`)
+}
+
+func GetRandomList() []int32 {
+	var result []int32
+	for i := 0; i < 10; i++ {
+		result = append(result, rand.Int31n(10))
+	}
+	return result
 }

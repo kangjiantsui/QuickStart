@@ -1,11 +1,11 @@
 package base_test
 
 import (
+	"QuickStart/go/utils"
 	"flag"
 	"fmt"
 	"math/rand"
 	"testing"
-	"time"
 )
 
 func TestShuffle(t *testing.T) {
@@ -28,18 +28,18 @@ func TestFlag(t *testing.T) {
 	fmt.Println(paobei)
 }
 
-func getRandomList() []int32 {
-	var result []int32
-	for i := 0; i < 10; i++ {
-		result = append(result, rand.Int31n(10))
-	}
-	return result
-}
-
 func TestRandSeed(t *testing.T) {
-	rand.Seed(time.Now().Unix())
-	t.Log(getRandomList())
-	t.Log(getRandomList())
-	t.Log(getRandomList())
-	t.Log(getRandomList())
+	//rand.Seed(time.Now().Unix())
+	go func() {
+		t.Log(utils.GetRandomList())
+		t.Log(utils.GetRandomList())
+		t.Log(utils.GetRandomList())
+		t.Log(utils.GetRandomList())
+		t.Log()
+		t.Log()
+	}()
+	t.Log(utils.GetRandomList())
+	t.Log(utils.GetRandomList())
+	t.Log(utils.GetRandomList())
+	t.Log(utils.GetRandomList())
 }
