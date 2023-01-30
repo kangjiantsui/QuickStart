@@ -1110,7 +1110,7 @@
             "formations_arr": [
               {
                 "fish_src_id": 1601,
-                "weight": 1500000,
+                "weight": 1,
                 "formations_id": [
                   4474,
                   4475,
@@ -1120,7 +1120,7 @@
               },
               {
                 "fish_src_id": 1602,
-                "weight": 150,
+                "weight": 1,
                 "formations_id": [
                   4478,
                   4479,
@@ -1130,7 +1130,7 @@
               },
               {
                 "fish_src_id": 1603,
-                "weight": 100,
+                "weight": 10000,
                 "formations_id": [
                   4482,
                   4483,
