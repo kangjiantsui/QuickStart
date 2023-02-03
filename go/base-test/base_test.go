@@ -2,6 +2,7 @@ package base_test
 
 import (
 	"QuickStart/go/utils"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"math/rand"
@@ -42,4 +43,16 @@ func TestRandSeed(t *testing.T) {
 	t.Log(utils.GetRandomList())
 	t.Log(utils.GetRandomList())
 	t.Log(utils.GetRandomList())
+}
+
+func TestJsonM(t *testing.T) {
+	s := struct {
+		name string
+	}{}
+	s.name = "aaa"
+	sJson, err := json.Marshal(s)
+	if err != nil {
+		return
+	}
+	t.Log(string(sJson))
 }
