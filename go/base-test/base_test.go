@@ -9,6 +9,11 @@ import (
 	"testing"
 )
 
+func TestDefer(t *testing.T) {
+	defer t.Log("defer")
+	panic("panic")
+}
+
 func TestShuffle(t *testing.T) {
 	arr := []int32{1, 2, 3, 4, 5}
 	for i := 0; i < 10; i++ {
