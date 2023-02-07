@@ -9,6 +9,21 @@ import (
 	"testing"
 )
 
+func TestPrivateFieldBeJson(t *testing.T) {
+	s := struct {
+		Name        string
+		privateName string `json:"private_name"`
+	}{
+		Name:        "Name",
+		privateName: "privateName",
+	}
+	sJson, err := json.Marshal(s)
+	if err != nil {
+		panic(err.Error())
+	}
+	t.Log(string(sJson))
+}
+
 func TestDefer(t *testing.T) {
 	defer t.Log("defer")
 	panic("panic")
