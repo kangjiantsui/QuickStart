@@ -9,7 +9,6 @@ import (
 	"encoding/binary"
 	"net"
 	"testing"
-	"time"
 )
 
 func TestTcpClientConn(t *testing.T) {
@@ -35,5 +34,4 @@ func TestTcpClient(t *testing.T) {
 	if err != nil {
 		t.Fatalf(`Send报错,err:%s`, err.Error())
 	}
-	time.Sleep(time.Second * 2)
 }

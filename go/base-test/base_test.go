@@ -9,6 +9,13 @@ import (
 	"testing"
 )
 
+func TestFloatCalc(t *testing.T) {
+	var a = 0.1
+	var b = 0.2
+	var c = a + b
+	t.Logf("%.1f + %.1f = %.17f\n", a, b, c)
+}
+
 func TestPrivateFieldBeJson(t *testing.T) {
 	s := struct {
 		Name        string
