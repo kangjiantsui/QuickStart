@@ -1,0 +1,115 @@
+{
+  "exit_leave_time": 20,
+  "zixuanfangVIP": 7,
+  "activity_items_recover_type": [
+    13
+  ],
+  "activity_settle_sec": 30,
+  "room_resource_duration_sec": 600,
+  "hall_exp_persecond": 0.1,
+  "teseyutime": [
+    {
+      "21": 15
+    },
+    {
+      "22": 90
+    },
+    {
+      "23": 15
+    },
+    {
+      "24": 90
+    },
+    {
+      "25": 90
+    },
+    {
+      "26": 90
+    }
+  ],
+  "zuantou_countdown_sec": 15,
+  "zuantou_fly_sec": 15,
+  "zuantou_bomb_sec": 3,
+  "zuantou_fly1_speed": 1200,
+  "zuantou_fly2_speed": 600,
+  "zuantou_bomb_radius": 500,
+  "common_teseyu_start": 15,
+  "common_teseyu_end": 90,
+  "boss_delay_offset": 550,
+  "boss_scene_reborn_stop": 800,
+  "mail_sys_name": "官方运营团队",
+  "lottery_dialog": [
+    "打爆我，就能拿到奖券哦！数量=炮倍*奖券面值",
+    "收集奖券可以兑换话费、京东卡哦！",
+    "高级房间还有奖券X50，一炮暴富就等你"
+  ],
+  "loading_dialog": [
+    "温馨提示：捕获每个房间的BOSS，有概率获得金银宝箱哦！",
+    "兑换券可在【兑换】中兑换金银宝箱哦！",
+    "测试测试测试"
+  ],
+  "newplayer_lottery_dialog": [
+    ""
+  ],
+  "galaxy_adventure_rule": "",
+  "mail_tips_switch": false,
+  "newplayer_guide_firecount": [
+    50,
+    100,
+    150
+  ],
+  "newplayer_guide_room2": -1,
+  "wechat_authorize_rewards": [
+    {
+      "item_id": 5,
+      "item_count": 2000
+    },
+    {
+      "item_id": 901,
+      "item_count": 2
+    },
+    {
+      "item_id": 902,
+      "item_count": 2
+    }
+  ],
+  "give_vip_switch": 0,
+  "give_fire_count": 0,
+  "gold_fish_drop_float": 0.05,
+  "room_overtime_sec": 3600,
+  "roomOutTip": 30,
+  "mail_expire_sec": 2592000,
+  "win_limit": 50000000000,
+  "lose_limit": 5000000000000,
+  "star_warhead_price": 10,
+  "private_bullet_limit": 24,
+  "room_bullet_limit": 60,
+  "fire_sample_step": 100,
+  "fire_stop_photo": 2000,
+  "boss_enter_dialog": 2000,
+  "boss_hit_dialog": 200,
+  "boss_dialog_desc": [
+    "用点力，不想要宝箱了吗？",
+    "这片海域被我承包了",
+    "打扰我睡觉，你猜会有什么下场"
+  ],
+  "hit_print_fishs": [
+    {
+      "fish": 109,
+      "log_level": 0
+    },
+    {
+      "fish": 903,
+      "log_level": 0
+    }
+  ],
+  "free_liquan_base": 1000000,
+  "wlxb_recharge_lmt": 10000,
+  "fishcore": 4,
+  "ios_check": [
+    {
+      "td": "iosqhfish",
+      "version": "3.6.0.1"
+    }
+  ]
+}
