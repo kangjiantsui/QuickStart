@@ -3771,6 +3771,18 @@
       "VipGoldItem": false,
       "StockGold": false,
       "prop_type": 2
+    },
+    {
+      "itemID": 18001,
+      "noShow": 1,
+      "name": "机甲轮盘齿轮",
+      "describe": "机甲轮盘齿轮",
+      "receiverVIP": 0,
+      "zengSong": 0,
+      "zengSongVip": -1,
+      "VipGoldItem": false,
+      "StockGold": false,
+      "prop_type": 2
     }
   ]
 }
