@@ -9,6 +9,16 @@ import (
 	"testing"
 )
 
+func TestSliceAppendNil(t *testing.T) {
+	type _struct = struct {
+	}
+	var s []*_struct
+	s = append(s, &_struct{})
+	s = append(s, nil)
+	s = append(s, &_struct{})
+	utils.PrintJson(s)
+}
+
 func TestFloatCalc(t *testing.T) {
 	var a = 0.1
 	var b = 0.2
