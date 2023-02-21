@@ -19,16 +19,16 @@
   "settings": {
     "recharge_day_max": 20000000000,
     "recharge_month_max": 150000000000,
-    "ts1": 1,
-    "ts2": 1,
-    "ts3": 1,
-    "ts4": 1,
-    "ts5": 1,
-    "ts6": 1,
-    "ts7": 1,
-    "ts8": 1,
-    "ts9": 1,
-    "ts10": 1
+    "ts1": 1.0,
+    "ts2": 1.0,
+    "ts3": 1.0,
+    "ts4": 1.0,
+    "ts5": 1.0,
+    "ts6": 1.0,
+    "ts7": 1.0,
+    "ts8": 1.0,
+    "ts9": 1.0,
+    "ts10": 1.0
   },
   "switch": {
     "yuanbao": true,
@@ -3245,11 +3245,11 @@
     {
       "id": 101010203,
       "name": "财神福袋",
-      "qiangsha_price": 128,
+      "qiangsha_price": 328,
       "need_items": [
         {
           "item_id": 2004,
-          "item_count": 1280
+          "item_count": 3280
         }
       ],
       "platform": 0,
@@ -3258,19 +3258,19 @@
       "tag": 0,
       "items": [
         {
-          "item_id": 5006,
+          "item_id": 7002,
           "type": 1,
-          "item_count": 10
+          "item_count": 5
         },
         {
           "item_id": 7003,
           "type": 1,
-          "item_count": 2
+          "item_count": 3
         },
         {
-          "item_id": 1002,
+          "item_id": 7004,
           "type": 1,
-          "item_count": 10
+          "item_count": 1
         }
       ],
       "type": 18,
@@ -3283,6 +3283,70 @@
       "label": 0,
       "rank_per": 200,
       "rank_type": 5
+    },
+    {
+      "id": 101010301,
+      "name": "机械齿轮礼包",
+      "qiangsha_price": 12,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 120
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 16002,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "shuliandu": 1,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
+    },
+    {
+      "id": 101010302,
+      "name": "特惠齿轮礼盒",
+      "qiangsha_price": 68,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 680
+        }
+      ],
+      "platform": 0,
+      "stype": 7,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 16002,
+          "type": 1,
+          "item_count": 6
+        }
+      ],
+      "shuliandu": 15,
+      "type": 17,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0
     }
   ]
 }
+
+
