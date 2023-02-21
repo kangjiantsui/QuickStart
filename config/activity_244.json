@@ -20,7 +20,7 @@
         "guaranteedTimes": 10,
         "availableTimes": 10,
         "reward": {
-          "item_id": 50018,
+          "item_id": 2004,
           "item_count": 2
         }
       },
@@ -31,7 +31,7 @@
         "guaranteedTimes": 10,
         "availableTimes": 10,
         "reward": {
-          "item_id": 50018,
+          "item_id": 2004,
           "item_count": 2
         }
       },
@@ -68,33 +68,11 @@
     ],
     "shopItems": [
       {
-        "id": 1,
-        "items": [
-          {
-            "item_id": 18001,
-            "item_count": 100
-          }
-        ],
-        "price": {
-          "item_id": 2004,
-          "item_count": 0
-        },
-        "limitTimes": 1,
-        "name": "特惠齿轮礼盒"
+        "id": 101010031,
+        "limitTimes": 1
       },
       {
-        "id": 2,
-        "items": [
-          {
-            "item_id": 18001,
-            "item_count": 200
-          }
-        ],
-        "price": {
-          "item_id": 2004,
-          "item_count": 0
-        },
-        "name": "机械齿轮礼包"
+        "id": 101010031
       }
     ]
   }
