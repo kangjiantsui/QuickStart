@@ -1,109 +1,159 @@
 {
-    "atype": 17,
-    "id": 244,
-    "begin_time": 1671188020,
-    "end_time": 1734659280,
-    "priority": 1000000,
-    "name": "机甲轮盘",
-    "description": "机甲轮盘",
-    "completeShow": true,
-    "jijialunpan": {
-        "price": {
-            "item_id": 2004,
-            "item_count": 0
-        },
-        "pool": [
-            {
-                "id": 1,
-                "weight": 1,
-                "requireTimes": 1,
-                "guaranteedTimes": 10,
-                "availableTimes": 10,
-                "reward": {
-                    "item_id": 50018,
-                    "item_count": 2
-                }
-            },
-            {
-                "id": 2,
-                "weight": 2,
-                "requireTimes": 1,
-                "guaranteedTimes": 10,
-                "availableTimes": 10,
-                "reward": {
-                    "item_id": 50018,
-                    "item_count": 2
-                }
-            },
-            {
-                "id": 3,
-                "weight": 2,
-                "requireTimes": 1,
-                "guaranteedTimes": 10,
-                "availableTimes": 10,
-                "optionalRewardId": 1
-            }
-        ],
-        "optionalRewards": [
-            {
-                "id": 1,
-                "itemIds": [
-                    1,
-                    2,
-                    3,
-                    4,
-                    5
-                ]
-            },
-            {
-                "id": 2,
-                "itemIds": [
-                    6,
-                    7,
-                    8,
-                    9,
-                    10
-                ]
-            }
-        ],
-        "shopItems": [
-            {
-                "id": 1,
-                "items": [
-                    {
-                        "item_id": 10004,
-                        "item_count": 15
-                    },
-                    {
-                        "item_id": 13001,
-                        "item_count": 15
-                    }
-                ],
-                "price": {
-                    "item_id": 50018,
-                    "item_count": 1
-                },
-                "limitTimes": 1,
-                "name": "特惠齿轮礼盒"
-            },
-            {
-                "id": 2,
-                "items": [
-                    {
-                        "item_id": 10004,
-                        "item_count": 1
-                    },
-                    {
-                        "item_id": 13001,
-                        "item_count": 1
-                    }
-                ],
-                "price": {
-                    "item_id": 50018,
-                    "item_count": 1
-                },
-                "name": "机械齿轮礼包"
-            }
+  "atype": 17,
+  "id": 244,
+  "begin_time": 1671188020,
+  "end_time": 1734659280,
+  "priority": 1000000,
+  "name": "机甲轮盘",
+  "description": "机甲轮盘",
+  "completeShow": true,
+  "jijialunpan": {
+    "price": {
+      "item_id": 16002,
+      "item_count": 1
+    },
+    "pool": [
+      {
+        "id": 1,
+        "weight": 1000,
+        "requireTimes": 1,
+        "guaranteedTimes": 30,
+        "availableTimes": 100,
+        "optionalRewardId": 1
+      },
+      {
+        "id": 2,
+        "weight": 300,
+        "requireTimes": 1,
+        "guaranteedTimes": 80,
+        "availableTimes": 110,
+        "optionalRewardId": 2
+      },
+      {
+        "id": 3,
+        "weight": 100,
+        "requireTimes": 1,
+        "guaranteedTimes": 110,
+        "availableTimes": 125,
+        "optionalRewardId": 3
+      },
+      {
+        "id": 4,
+        "weight": 1500,
+        "requireTimes": 2,
+        "guaranteedTimes": 50,
+        "availableTimes": 0,
+        "reward": {
+          "item_id": 50003,
+          "item_count": 1
+        }
+      },
+      {
+        "id": 5,
+        "weight": 500,
+        "requireTimes": 15,
+        "guaranteedTimes": 10,
+        "availableTimes": 0,
+        "reward": {
+          "item_id": 7003,
+          "item_count": 1
+        }
+      },
+      {
+        "id": 6,
+        "weight": 5000,
+        "requireTimes": 30,
+        "guaranteedTimes": 0,
+        "availableTimes": 0,
+        "reward": {
+          "item_id": 7001,
+          "item_count": 1
+        }
+      },
+      {
+        "id": 7,
+        "weight": 5000,
+        "requireTimes": 35,
+        "guaranteedTimes": 0,
+        "availableTimes": 0,
+        "reward": {
+          "item_id": 5,
+          "item_count": 20000
+        }
+      },
+      {
+        "id": 8,
+        "weight": 5000,
+        "requireTimes": 25,
+        "guaranteedTimes": 0,
+        "availableTimes": 0,
+        "reward": {
+          "item_id": 5,
+          "item_count": 80000
+        }
+      },
+      {
+        "id": 9,
+        "weight": 5000,
+        "requireTimes": 25,
+        "guaranteedTimes": 0,
+        "availableTimes": 0,
+        "reward": {
+          "item_id": 5,
+          "item_count": 200000
+        }
+      }
+    ],
+    "optionalRewards": [
+      {
+        "id": 1,
+        "itemIds": [
+          4008,
+          4009,
+          4010,
+          4011,
+          4012,
+          4018,
+          4019,
+          4020,
+          4021,
+          4022
         ]
-    }
+      },
+      {
+        "id": 2,
+        "itemIds": [
+          14001,
+          14002,
+          14003,
+          14004,
+          14005,
+          14006,
+          14007,
+          14008,
+          14009,
+          14010,
+          14011
+        ]
+      },
+      {
+        "id": 3,
+        "itemIds": [
+          9001,
+          9002,
+          9003
+        ]
+      }
+    ],
+    "shopItems": [
+      {
+        "id": 101010301,
+        "limitTimes": 0
+      },
+      {
+        "id": 101010302,
+        "limitTimes": 1
+      }
+    ]
+  }
 }
