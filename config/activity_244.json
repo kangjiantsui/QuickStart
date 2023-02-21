@@ -9,14 +9,14 @@
   "completeShow": true,
   "jijialunpan": {
     "price": {
-      "item_id": 2004,
-      "item_count": 120
+      "item_id": 18001,
+      "item_count": 5
     },
     "pool": [
       {
         "id": 1,
         "weight": 1,
-        "requireTimes": 1,
+        "requireTimes": 0,
         "guaranteedTimes": 10,
         "availableTimes": 10,
         "reward": {
@@ -71,16 +71,12 @@
         "id": 1,
         "items": [
           {
-            "item_id": 10004,
-            "item_count": 15
-          },
-          {
-            "item_id": 13001,
-            "item_count": 15
+            "item_id": 18001,
+            "item_count": 100
           }
         ],
         "price": {
-          "item_id": 50018,
+          "item_id": 2004,
           "item_count": 0
         },
         "limitTimes": 1,
@@ -90,17 +86,13 @@
         "id": 2,
         "items": [
           {
-            "item_id": 10004,
-            "item_count": 1
-          },
-          {
-            "item_id": 13001,
-            "item_count": 1
+            "item_id": 18001,
+            "item_count": 200
           }
         ],
         "price": {
-          "item_id": 50018,
-          "item_count": 1
+          "item_id": 2004,
+          "item_count": 0
         },
         "name": "机械齿轮礼包"
       }
