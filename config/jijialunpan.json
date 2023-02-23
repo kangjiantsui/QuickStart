@@ -7,33 +7,33 @@
     {
       "id": 1,
       "weight": 1000,
-      "requireTimes": 1,
-      "guaranteedTimes": 30,
-      "availableTimes": 100,
+      "requireTimes": 30,
+      "guaranteedTimes": 100,
+      "availableTimes": 1,
       "optionalRewardId": 1
     },
     {
       "id": 2,
       "weight": 300,
-      "requireTimes": 1,
-      "guaranteedTimes": 80,
-      "availableTimes": 110,
+      "requireTimes": 80,
+      "guaranteedTimes": 110,
+      "availableTimes": 1,
       "optionalRewardId": 2
     },
     {
       "id": 3,
       "weight": 100,
-      "requireTimes": 1,
-      "guaranteedTimes": 110,
-      "availableTimes": 125,
+      "requireTimes": 110,
+      "guaranteedTimes": 125,
+      "availableTimes": 1,
       "optionalRewardId": 3
     },
     {
       "id": 4,
       "weight": 1500,
-      "requireTimes": 2,
+      "requireTimes": 50,
       "guaranteedTimes": 50,
-      "availableTimes": 0,
+      "availableTimes": 2,
       "reward": {
         "item_id": 50003,
         "item_count": 1
@@ -42,9 +42,9 @@
     {
       "id": 5,
       "weight": 500,
-      "requireTimes": 15,
+      "requireTimes": 10,
       "guaranteedTimes": 10,
-      "availableTimes": 0,
+      "availableTimes": 15,
       "reward": {
         "item_id": 7003,
         "item_count": 1
@@ -53,9 +53,9 @@
     {
       "id": 6,
       "weight": 5000,
-      "requireTimes": 30,
+      "requireTimes": 0,
       "guaranteedTimes": 0,
-      "availableTimes": 0,
+      "availableTimes": 30,
       "reward": {
         "item_id": 7001,
         "item_count": 1
@@ -64,9 +64,9 @@
     {
       "id": 7,
       "weight": 5000,
-      "requireTimes": 35,
+      "requireTimes": 0,
       "guaranteedTimes": 0,
-      "availableTimes": 0,
+      "availableTimes": 35,
       "reward": {
         "item_id": 5,
         "item_count": 20000
@@ -75,9 +75,9 @@
     {
       "id": 8,
       "weight": 5000,
-      "requireTimes": 25,
+      "requireTimes": 0,
       "guaranteedTimes": 0,
-      "availableTimes": 0,
+      "availableTimes": 25,
       "reward": {
         "item_id": 5,
         "item_count": 80000
@@ -86,9 +86,9 @@
     {
       "id": 9,
       "weight": 5000,
-      "requireTimes": 25,
+      "requireTimes": 0,
       "guaranteedTimes": 0,
-      "availableTimes": 0,
+      "availableTimes": 25,
       "reward": {
         "item_id": 5,
         "item_count": 200000
