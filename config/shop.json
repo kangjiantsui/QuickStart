@@ -3306,7 +3306,7 @@
         }
       ],
       "shuliandu": 1,
-      "type": 17,
+      "type": 0,
       "client_type": 14,
       "limit_second": 0,
       "limit_count": 0,
@@ -3322,7 +3322,7 @@
       "need_items": [
         {
           "item_id": 2004,
-          "item_count": 680
+          "item_count": 0
         }
       ],
       "platform": 0,
@@ -3337,14 +3337,15 @@
         }
       ],
       "shuliandu": 15,
-      "type": 17,
+      "type": 0,
       "client_type": 14,
       "limit_second": 0,
       "limit_count": 0,
       "open": true,
       "baozhicishu": 0,
       "deltalevel": 0,
-      "label": 0
+      "label": 0,
+      "jijialunpan": 1
     }
   ]
 }
