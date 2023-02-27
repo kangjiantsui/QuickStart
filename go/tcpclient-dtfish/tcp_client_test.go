@@ -7,16 +7,29 @@ import (
 	ProtoMsg "QuickStart/go/tcpclient-dtfish/proto"
 	"QuickStart/go/utils"
 	"encoding/binary"
+	"fmt"
 	"net"
 	"testing"
 )
 
-func TestTcpClientConn(t *testing.T) {
+func tcpClientConn() error {
 	conn, err := net.Dial("tcp", "10.10.3.30:11000")
 	if err != nil {
-		t.Fatalf(`dial报错,err:%s`, err.Error())
+		return fmt.Errorf(`dial报错,err:%s`, err.Error())
 	}
-	utils.PrintJson(conn)
+	utils.PrintJson(conn.LocalAddr())
+	_, err = conn.Write([]byte{1, 2, 3, 4, 5})
+	if err != nil {
+		return fmt.Errorf(`dial报错,err:%s`, err.Error())
+	}
+	return nil
+}
+
+func TestTcpClientConn(t *testing.T) {
+	err := tcpClientConn()
+	if err != nil {
+		t.Fatal(err.Error())
+	}
 }
 
 func TestTcpClient(t *testing.T) {

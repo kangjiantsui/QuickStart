@@ -40,7 +40,7 @@ type Session struct {
 	closeFlag bool
 	lock      sync.RWMutex
 
-	once_close sync.Once
+	onceClose sync.Once
 
 	data interface{}
 }
@@ -80,7 +80,7 @@ func (session *Session) Receive() (interface{}, error) {
 }
 
 func (session *Session) Close() {
-	session.once_close.Do(func() {
+	session.onceClose.Do(func() {
 		//可能会阻塞到主逻辑协程，开个协程异步执行
 		go func() {
 			session.lock.Lock()
@@ -160,7 +160,6 @@ func NewSession(conn netConn, sessionType SessionType, msgParser IMsgParser, pro
 		codec:       protocol.NewCodec(),
 		sendChan:    make(chan interface{}, sendChanSize),
 		closeChan:   make(chan struct{}),
-		data:        conn,
 	}
 
 	//开启写协程
