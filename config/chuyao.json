@@ -130,7 +130,6 @@
     {
       "id": 16003,
       "name": "法宝1",
-      "desc": "法宝1的描述",
       "damageMin": 10,
       "damageMax": 20,
       "priority": 1,
@@ -139,7 +138,6 @@
     {
       "id": 16004,
       "name": "法宝2",
-      "desc": "法宝2的描述",
       "damageMin": 20,
       "damageMax": 40,
       "priority": 2,
@@ -262,7 +260,7 @@
       "score": 150
     }
   ],
-  "shopItems": [
+  "fabaoShopItems": [
     {
       "id": 1,
       "dailyLimit": 1
