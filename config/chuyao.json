@@ -6,26 +6,44 @@
         {
           "level": 1,
           "star": 2,
-          "reward": {
-            "item_id": 2004,
-            "item_count": 50
-          }
+          "reward": [
+            {
+              "item_id": 2004,
+              "item_count": 50
+            },
+            {
+              "item_id": 2004,
+              "item_count": 60
+            }
+          ]
         },
         {
           "level": 2,
           "star": 4,
-          "reward": {
-            "item_id": 2004,
-            "item_count": 50
-          }
+          "reward": [
+            {
+              "item_id": 2004,
+              "item_count": 50
+            },
+            {
+              "item_id": 2004,
+              "item_count": 60
+            }
+          ]
         },
         {
           "level": 3,
           "star": 6,
-          "reward": {
-            "item_id": 2004,
-            "item_count": 50
-          }
+          "reward": [
+            {
+              "item_id": 2004,
+              "item_count": 50
+            },
+            {
+              "item_id": 2004,
+              "item_count": 60
+            }
+          ]
         }
       ]
     }
@@ -34,25 +52,37 @@
     {
       "layer": 1,
       "hp": 10,
-      "firstKillReward": {
-        "item_id": 2004,
-        "item_count": 50
-      },
-      "repeatedKillReward": {
-        "item_id": 2004,
-        "item_count": 50
-      },
-      "start": [
+      "firstKillReward": [
         {
-          "start": 3,
+          "item_id": 2004,
+          "item_count": 50
+        },
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "repeatedKillReward": [
+        {
+          "item_id": 2004,
+          "item_count": 50
+        },
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "star": [
+        {
+          "star": 3,
           "round": 1
         },
         {
-          "start": 2,
+          "star": 2,
           "round": 2
         },
         {
-          "start": 1,
+          "star": 1,
           "round": 3
         }
       ]
@@ -60,25 +90,37 @@
     {
       "layer": 2,
       "hp": 15,
-      "firstKillReward": {
-        "item_id": 2004,
-        "item_count": 50
-      },
-      "repeatedKillReward": {
-        "item_id": 2004,
-        "item_count": 50
-      },
-      "start": [
+      "firstKillReward": [
         {
-          "start": 3,
+          "item_id": 2004,
+          "item_count": 50
+        },
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "repeatedKillReward": [
+        {
+          "item_id": 2004,
+          "item_count": 50
+        },
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
+      "star": [
+        {
+          "star": 3,
           "round": 1
         },
         {
-          "start": 2,
+          "star": 2,
           "round": 2
         },
         {
-          "start": 1,
+          "star": 1,
           "round": 3
         }
       ]
@@ -112,33 +154,51 @@
     "pool": [
       {
         "id": 1,
-        "item": {
-          "item_id": 2004,
-          "item_count": 50
-        },
+        "item": [
+          {
+            "item_id": 2004,
+            "item_count": 50
+          },
+          {
+            "item_id": 2004,
+            "item_count": 60
+          }
+        ],
         "weight": 1,
         "guaranteedTimes": 10
       },
       {
         "id": 2,
-        "item": {
-          "item_id": 2004,
-          "item_count": 50
-        },
+        "item": [
+          {
+            "item_id": 2004,
+            "item_count": 50
+          },
+          {
+            "item_id": 2004,
+            "item_count": 60
+          }
+        ],
         "weight": 1,
         "guaranteedTimes": 10
       },
       {
         "id": 3,
-        "item": {
-          "item_id": 2004,
-          "item_count": 50
-        },
+        "item": [
+          {
+            "item_id": 2004,
+            "item_count": 50
+          },
+          {
+            "item_id": 2004,
+            "item_count": 60
+          }
+        ],
         "weight": 1
       }
     ]
   },
-  "tasks": [
+  "chuyaoTasks": [
     {
       "id": 1,
       "atype": 9,
@@ -175,18 +235,30 @@
   "scoreRewards": [
     {
       "id": 1,
-      "reward": {
-        "item_id": 2004,
-        "item_count": 50
-      },
+      "reward": [
+        {
+          "item_id": 2004,
+          "item_count": 50
+        },
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
       "score": 50
     },
     {
       "id": 2,
-      "reward": {
-        "item_id": 2004,
-        "item_count": 10
-      },
+      "reward": [
+        {
+          "item_id": 2004,
+          "item_count": 50
+        },
+        {
+          "item_id": 2004,
+          "item_count": 60
+        }
+      ],
       "score": 150
     }
   ],
@@ -217,17 +289,29 @@
     },
     "pool": [
       {
-        "item": {
-          "item_id": 2004,
-          "item_count": 50
-        },
+        "item": [
+          {
+            "item_id": 2004,
+            "item_count": 50
+          },
+          {
+            "item_id": 2004,
+            "item_count": 60
+          }
+        ],
         "weight": 50
       },
       {
-        "item": {
-          "item_id": 2004,
-          "item_count": 60
-        },
+        "item": [
+          {
+            "item_id": 2004,
+            "item_count": 50
+          },
+          {
+            "item_id": 2004,
+            "item_count": 60
+          }
+        ],
         "weight": 30
       }
     ]
