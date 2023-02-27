@@ -1,0 +1,267 @@
+{
+  "battlePass": [
+    {
+      "id": 1,
+      "level": [
+        {
+          "level": 1,
+          "star": 2,
+          "reward": {
+            "item_id": 2004,
+            "item_count": 50
+          }
+        },
+        {
+          "level": 2,
+          "star": 4,
+          "reward": {
+            "item_id": 2004,
+            "item_count": 50
+          }
+        },
+        {
+          "level": 3,
+          "star": 6,
+          "reward": {
+            "item_id": 2004,
+            "item_count": 50
+          }
+        }
+      ]
+    }
+  ],
+  "towers": [
+    {
+      "layer": 1,
+      "hp": 10,
+      "firstKillReward": {
+        "item_id": 2004,
+        "item_count": 50
+      },
+      "repeatedKillReward": {
+        "item_id": 2004,
+        "item_count": 50
+      },
+      "start": [
+        {
+          "start": 3,
+          "round": 1
+        },
+        {
+          "start": 2,
+          "round": 2
+        },
+        {
+          "start": 1,
+          "round": 3
+        }
+      ]
+    },
+    {
+      "layer": 2,
+      "hp": 15,
+      "firstKillReward": {
+        "item_id": 2004,
+        "item_count": 50
+      },
+      "repeatedKillReward": {
+        "item_id": 2004,
+        "item_count": 50
+      },
+      "start": [
+        {
+          "start": 3,
+          "round": 1
+        },
+        {
+          "start": 2,
+          "round": 2
+        },
+        {
+          "start": 1,
+          "round": 3
+        }
+      ]
+    }
+  ],
+  "fabao": [
+    {
+      "id": 16003,
+      "name": "法宝1",
+      "desc": "法宝1的描述",
+      "damageMin": 10,
+      "damageMax": 20,
+      "priority": 1,
+      "quality": 1
+    },
+    {
+      "id": 16004,
+      "name": "法宝2",
+      "desc": "法宝2的描述",
+      "damageMin": 20,
+      "damageMax": 40,
+      "priority": 2,
+      "quality": 2
+    }
+  ],
+  "fabaoLottery": {
+    "price": {
+      "item_id": 2004,
+      "item_count": 50
+    },
+    "pool": [
+      {
+        "id": 1,
+        "item": {
+          "item_id": 2004,
+          "item_count": 50
+        },
+        "weight": 1,
+        "guaranteedTimes": 10
+      },
+      {
+        "id": 2,
+        "item": {
+          "item_id": 2004,
+          "item_count": 50
+        },
+        "weight": 1,
+        "guaranteedTimes": 10
+      },
+      {
+        "id": 3,
+        "item": {
+          "item_id": 2004,
+          "item_count": 50
+        },
+        "weight": 1
+      }
+    ]
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "atype": 9,
+      "name": "累计消费600元宝",
+      "group_id": 101,
+      "count": 600,
+      "item_id": [
+        2004
+      ],
+      "rewards": [
+        {
+          "item_id": 2004,
+          "item_count": 600
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "atype": 9,
+      "name": "累计消费800元宝",
+      "group_id": 101,
+      "count": 800,
+      "item_id": [
+        2004
+      ],
+      "rewards": [
+        {
+          "item_id": 2004,
+          "item_count": 800
+        }
+      ]
+    }
+  ],
+  "scoreRewards": [
+    {
+      "id": 1,
+      "reward": {
+        "item_id": 2004,
+        "item_count": 50
+      },
+      "score": 50
+    },
+    {
+      "id": 2,
+      "reward": {
+        "item_id": 2004,
+        "item_count": 10
+      },
+      "score": 150
+    }
+  ],
+  "shopItems": [
+    {
+      "id": 1,
+      "dailyLimit": 1
+    },
+    {
+      "id": 2,
+      "dailyLimit": 2
+    }
+  ],
+  "fabaoPackages": [
+    {
+      "id": 1,
+      "pool": {
+        "1": 1,
+        "2": 2
+      }
+    }
+  ],
+  "itemLottery": {
+    "unlockStar": 1,
+    "price": {
+      "item_id": 2004,
+      "item_count": 50
+    },
+    "pool": [
+      {
+        "item": {
+          "item_id": 2004,
+          "item_count": 50
+        },
+        "weight": 50
+      },
+      {
+        "item": {
+          "item_id": 2004,
+          "item_count": 60
+        },
+        "weight": 30
+      }
+    ]
+  },
+  "rank": {
+    "name": "秘境排行",
+    "rewards": [
+      {
+        "begin": 1,
+        "rewards": [
+          {
+            "item_id": 2004,
+            "item_count": 50
+          }
+        ]
+      },
+      {
+        "begin": 2,
+        "rewards": [
+          {
+            "item_id": 2004,
+            "item_count": 50
+          }
+        ]
+      },
+      {
+        "begin": 3,
+        "rewards": [
+          {
+            "item_id": 2004,
+            "item_count": 50
+          }
+        ]
+      }
+    ]
+  }
+}
