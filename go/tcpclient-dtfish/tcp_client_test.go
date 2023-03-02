@@ -42,7 +42,13 @@ func TestTcpClient(t *testing.T) {
 		t.Fatalf(`dial报错,err:%s`, err.Error())
 	}
 	utils.PrintJson(conn.LocalAddr())
-	session := tcp2.NewSession(conn, tcp2.Session_type_tcp, tcp2.NewMsgParser(), &codec.DTFishClientProtoProtocol{Endian_: binary.LittleEndian}, int(ProtoMsg.EmCSMsgId_CS_MSG_PLAYER_LOGIN))
+	session := tcp2.NewSession(
+		conn,
+		tcp2.Session_type_tcp,
+		tcp2.NewMsgParser(),
+		&codec.DTFishClientProtoProtocol{Endian_: binary.LittleEndian},
+		2000,
+	)
 	err = session.Send(&common.ProtocolClientHead{
 		Uid_:    111,
 		Seq_:    100,
