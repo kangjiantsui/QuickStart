@@ -18,15 +18,15 @@ func tcpClientConn() error {
 		return fmt.Errorf(`dial报错,err:%s`, err.Error())
 	}
 	utils.PrintJson(conn.LocalAddr())
-	_, err = conn.Write([]byte{1, 2, 3, 4, 5})
+	_, err = conn.Write([]byte{1, 2, 3, 4})
 	if err != nil {
 		return fmt.Errorf(`dial报错,err:%s`, err.Error())
 	}
-	_, err = conn.Write([]byte{1, 2, 3, 4, 5})
+	_, err = conn.Write([]byte{1, 2, 3, 4})
 	if err != nil {
 		return fmt.Errorf(`dial报错,err:%s`, err.Error())
 	}
-	return nil
+	select {}
 }
 
 func TestTcpClientConn(t *testing.T) {
@@ -42,7 +42,7 @@ func TestTcpClient(t *testing.T) {
 		t.Fatalf(`dial报错,err:%s`, err.Error())
 	}
 	utils.PrintJson(conn.LocalAddr())
-	session := tcp2.NewSession(conn, tcp2.Session_type_tcp, tcp2.NewMsgParser(), &codec.ProtoClientProtocol{Endian_: binary.LittleEndian}, int(ProtoMsg.EmCSMsgId_CS_MSG_PLAYER_LOGIN))
+	session := tcp2.NewSession(conn, tcp2.Session_type_tcp, tcp2.NewMsgParser(), &codec.DTFishClientProtoProtocol{Endian_: binary.LittleEndian}, int(ProtoMsg.EmCSMsgId_CS_MSG_PLAYER_LOGIN))
 	err = session.Send(&common.ProtocolClientHead{
 		Uid_:    111,
 		Seq_:    100,
@@ -51,4 +51,5 @@ func TestTcpClient(t *testing.T) {
 	if err != nil {
 		t.Fatalf(`Send报错,err:%s`, err.Error())
 	}
+	select {}
 }
