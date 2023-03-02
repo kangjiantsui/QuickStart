@@ -1,0 +1,86 @@
+{
+  "items": [
+    {
+      "item_id": 4019,
+      "item_count": 1
+    }
+  ],
+  "info": {
+    "gear": 19,
+    "pickItems": {
+      "2": 14010,
+      "3": 9002,
+      "1": 4019
+    },
+    "shopItems": [
+      {
+        "id": 101010301,
+        "baseInfo": {
+          "id": 101010301
+        },
+        "count": 7,
+        "availableCount": -1
+      },
+      {
+        "id": 101010302,
+        "baseInfo": {
+          "id": 101010302,
+          "limitTimes": 1
+        },
+        "availableCount": 1
+      }
+    ],
+    "playCount": 100,
+    "playRecord": {
+      "6": 22,
+      "7": 26,
+      "8": 20,
+      "9": 24,
+      "2": 1,
+      "1": 2,
+      "4": 2,
+      "5": 3
+    },
+    "slots": [
+      {
+        "itemId": 4019,
+        "availableCount": -1
+      },
+      {
+        "itemId": 14010
+      },
+      {
+        "itemId": 9002,
+        "availableCount": 1
+      },
+      {
+        "itemId": 50003
+      },
+      {
+        "itemId": 7003,
+        "availableCount": 12
+      },
+      {
+        "itemId": 7001,
+        "availableCount": 8
+      },
+      {
+        "itemId": 5,
+        "availableCount": 9
+      },
+      {
+        "itemId": 5,
+        "availableCount": 5
+      },
+      {
+        "itemId": 5,
+        "availableCount": 1
+      }
+    ],
+    "beginTime": 1677081600,
+    "endTime": 1713801600
+  },
+  "slotIndex": [
+    0
+  ]
+}
