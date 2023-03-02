@@ -22,6 +22,10 @@ func tcpClientConn() error {
 	if err != nil {
 		return fmt.Errorf(`dial报错,err:%s`, err.Error())
 	}
+	_, err = conn.Write([]byte{1, 2, 3, 4, 5})
+	if err != nil {
+		return fmt.Errorf(`dial报错,err:%s`, err.Error())
+	}
 	return nil
 }
 
