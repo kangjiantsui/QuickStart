@@ -1,105 +1,12 @@
 {
-  "buyuTasks": [
-    {
-      "taskType": 4,
-      "taskName": "神剑任务",
-      "tasks": [
-        {
-          "id": 1,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        }
-        }
-      ]
-    }
+  "buyuTasks": [{"taskType":4,
+    "taskName":"神剑任务",
+    "tasks":[{"id": 1,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 2,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 3,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 4,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 5,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 6,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004], "rewards": [{"item_id": 2004, "item_count": 600}]}]}
+
+  ]
+}

@@ -119,14 +119,14 @@
 
 
   "buyuTasks": [{"taskType":4,
-                  "taskName":"神剑任务",
-                  "tasks":[{"id": 1,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
-                          {"id": 2,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
-                          {"id": 3,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
-                          {"id": 4,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
-                          {"id": 5,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
-                          {"id": 6,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]}
-                    }],
+    "taskName":"神剑任务",
+    "tasks":[{"id": 1,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 2,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 3,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 4,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 5,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+      {"id": 6,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004], "rewards": [{"item_id": 2004, "item_count": 600}]}]}
+  ],
 
 
   "scoreRewards": [{"id": 1,"score": 200,"reward": [{"item_id": 18004,"item_count": 1}]},
@@ -145,7 +145,7 @@
                      {"id": 101010404,"show_type": 0,"dailyLimit": 1},
                      {"id": 101010405,"show_type": 0,"dailyLimit": 1},
                      {"id": 101010406,"show_type": 0,"dailyLimit": 1},
-                     {"id": 101010407,"show_type": 0,"dailyLimit": 1},
+                     {"id": 101010407,"show_type": 0,"dailyLimit": 1}
                    ],
 
   "starShopItems":  [{"id": 101010408,"limit": 1,"star":5},
@@ -163,8 +163,7 @@
   ],
 
   "cailiaoPackages": [
-    {"id": 18010,"item_id":2,"min":15,"max":25},
-
+    {"id": 18010,"item_id":2,"min":15,"max":25}
   ],
 
   "itemLottery": {
