@@ -4,7 +4,7 @@ import (
 	"QuickStart/go/tcpclient-dtfish/common"
 	"QuickStart/go/tcpclient-dtfish/net/codec"
 	tcp2 "QuickStart/go/tcpclient-dtfish/net/tcp"
-	ProtoMsg "QuickStart/go/tcpclient-dtfish/proto"
+	pb "QuickStart/go/tcpclient-dtfish/proto"
 	"QuickStart/go/utils"
 	"encoding/binary"
 	"fmt"
@@ -52,8 +52,8 @@ func TestTcpClient(t *testing.T) {
 	err = session.Send(&common.ProtocolClientHead{
 		Uid_:    111,
 		Seq_:    100,
-		Msg_id_: 100002,
-	}, &ProtoMsg.PbCsPlayerLoginReqMsg{LoginType: ProtoMsg.EmLoginType_Login_type_dt})
+		Msg_id_: uint32(pb.EmCSMsgId_CS_MSG_PLAYER_LOGIN),
+	}, &pb.PbCsPlayerLoginReqMsg{LoginType: pb.EmLoginType_Login_type_dt})
 	if err != nil {
 		t.Fatalf(`Send报错,err:%s`, err.Error())
 	}
