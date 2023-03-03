@@ -5,9 +5,19 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"github.com/pkg/errors"
 	"math/rand"
 	"testing"
 )
+
+func TestErrWrap(t *testing.T) {
+	t.Logf(`%+v`, foo())
+	t.Log(foo())
+}
+
+func foo() error {
+	return errors.WithStack(fmt.Errorf(`err`))
+}
 
 func TestSliceAppendNil(t *testing.T) {
 	type _struct = struct {

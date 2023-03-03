@@ -6,6 +6,7 @@ require (
 	github.com/davyxu/tabtoy v0.0.0-20220828125452-4247c6f924e5
 	github.com/gogf/gf v1.16.9
 	github.com/golang/protobuf v1.5.2
+	github.com/pkg/errors v0.8.1
 )
 
 require (
