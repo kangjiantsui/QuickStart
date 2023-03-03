@@ -3306,7 +3306,6 @@
         }
       ],
       "shuliandu": 1,
-      "type": 0,
       "client_type": 14,
       "limit_second": 0,
       "limit_count": 0,
@@ -3322,7 +3321,7 @@
       "need_items": [
         {
           "item_id": 2004,
-          "item_count": 0
+          "item_count": 680
         }
       ],
       "platform": 0,
@@ -3337,7 +3336,6 @@
         }
       ],
       "shuliandu": 15,
-      "type": 0,
       "client_type": 14,
       "limit_second": 0,
       "limit_count": 0,
@@ -3346,6 +3344,342 @@
       "deltalevel": 0,
       "label": 0,
       "jijialunpan": 1
+    },
+    {
+      "id": 101010401,
+      "name": "二阶法宝礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 600
+        }
+      ],
+      "items": [
+        {
+          "item_id": 18012,
+          "item_count": 3
+        }
+      ]
+    },
+    {
+      "id": 101010402,
+      "name": "三阶法宝礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1280
+        }
+      ],
+      "items": [
+        {
+          "item_id": 18013,
+          "item_count": 3
+        }
+      ]
+    },
+    {
+      "id": 101010403,
+      "name": "东皇钟礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "items": [
+        {
+          "item_id": 18009,
+          "item_count": 2
+        },
+        {
+          "item_id": 2,
+          "item_count": 1500000
+        },
+        {
+          "item_id": 1002,
+          "item_count": 20
+        }
+      ]
+    },
+    {
+      "id": 101010404,
+      "name": "初级材料礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 120
+        }
+      ],
+      "items": [
+        {
+          "item_id": 18010,
+          "item_count": 10
+        },
+        {
+          "item_id": 2,
+          "item_count": 10000
+        },
+        {
+          "item_id": 1002,
+          "item_count": 10
+        },
+        {
+          "item_id": 1002,
+          "item_count": 10
+        }
+      ]
+    },
+    {
+      "id": 101010405,
+      "name": "中级材料礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "items": [
+        {
+          "item_id": 18010,
+          "item_count": 50
+        },
+        {
+          "item_id": 2,
+          "item_count": 500000
+        },
+        {
+          "item_id": 7001,
+          "item_count": 1
+        },
+        {
+          "item_id": 1001,
+          "item_count": 10
+        }
+      ]
+    },
+    {
+      "id": 101010406,
+      "name": "高级材料礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1280
+        }
+      ],
+      "items": [
+        {
+          "item_id": 18010,
+          "item_count": 100
+        },
+        {
+          "item_id": 2,
+          "item_count": 880000
+        },
+        {
+          "item_id": 7002,
+          "item_count": 1
+        },
+        {
+          "item_id": 1003,
+          "item_count": 20
+        }
+      ]
+    },
+    {
+      "id": 101010407,
+      "name": "终级材料礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "items": [
+        {
+          "item_id": 18010,
+          "item_count": 250
+        },
+        {
+          "item_id": 2,
+          "item_count": 2000000
+        },
+        {
+          "item_id": 7003,
+          "item_count": 1
+        },
+        {
+          "item_id": 1002,
+          "item_count": 20
+        }
+      ]
+    },
+    {
+      "id": 101010408,
+      "name": "星级法宝礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 500
+        }
+      ],
+      "items": [
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        }
+      ]
+    },
+    {
+      "id": 101010409,
+      "name": "玄冰金币礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 500
+        }
+      ],
+      "items": [
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        }
+      ]
+    },
+    {
+      "id": 101010410,
+      "name": "星级三阶法宝礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1280
+        }
+      ],
+      "items": [
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        }
+      ]
+    },
+    {
+      "id": 101010411,
+      "name": "赤焰金币礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 1980
+        }
+      ],
+      "items": [
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        }
+      ]
+    },
+    {
+      "id": 101010412,
+      "name": "至尊三叉戟礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "items": [
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        }
+      ]
+    },
+    {
+      "id": 101010413,
+      "name": "至尊金币礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 6480
+        }
+      ],
+      "items": [
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        }
+      ]
     }
   ]
 }
