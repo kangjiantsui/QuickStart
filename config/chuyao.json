@@ -1,1779 +1,201 @@
-{
-  "battlePass": [
-    {
-      "id": 1,
-      "price": {
-        "item_id": 2004,
-        "item_count": 300
-      },
-      "level": [
-        {
-          "level": 1,
-          "star": 5,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 10000
-            },
-            {
-              "item_id": 1003,
-              "item_count": 5
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "star": 10,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 20000
-            },
-            {
-              "item_id": 1003,
-              "item_count": 10
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "star": 15,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 30000
-            },
-            {
-              "item_id": 1003,
-              "item_count": 10
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "star": 18,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 40000
-            },
-            {
-              "item_id": 1003,
-              "item_count": 20
-            }
-          ]
-        },
-        {
-          "level": 5,
-          "star": 20,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 50000
-            },
-            {
-              "item_id": 7001,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "level": 6,
-          "star": 22,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 60000
-            },
-            {
-              "item_id": 7001,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "level": 7,
-          "star": 25,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 100000
-            },
-            {
-              "item_id": 7001,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "level": 8,
-          "star": 28,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 120000
-            },
-            {
-              "item_id": 7001,
-              "item_count": 2
-            }
-          ]
-        },
-        {
-          "level": 9,
-          "star": 30,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 120000
-            },
-            {
-              "item_id": 7001,
-              "item_count": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "price": {
-        "item_id": 2004,
-        "item_count": 780
-      },
-      "level": [
-        {
-          "level": 1,
-          "star": 5,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 50000
-            },
-            {
-              "item_id": 18010,
-              "item_count": 6
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "star": 10,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 60000
-            },
-            {
-              "item_id": 18010,
-              "item_count": 6
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "star": 15,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 80000
-            },
-            {
-              "item_id": 18010,
-              "item_count": 12
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "star": 18,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 100000
-            },
-            {
-              "item_id": 18010,
-              "item_count": 12
-            }
-          ]
-        },
-        {
-          "level": 5,
-          "star": 20,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 120000
-            },
-            {
-              "item_id": 18010,
-              "item_count": 18
-            }
-          ]
-        },
-        {
-          "level": 6,
-          "star": 22,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 150000
-            },
-            {
-              "item_id": 18010,
-              "item_count": 18
-            }
-          ]
-        },
-        {
-          "level": 7,
-          "star": 25,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 180000
-            },
-            {
-              "item_id": 7001,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "level": 8,
-          "star": 28,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 250000
-            },
-            {
-              "item_id": 7001,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "level": 9,
-          "star": 30,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 500000
-            },
-            {
-              "item_id": 7002,
-              "item_count": 1
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "price": {
-        "item_id": 2004,
-        "item_count": 6480
-      },
-      "level": [
-        {
-          "level": 1,
-          "star": 5,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 500000
-            },
-            {
-              "item_id": 7002,
-              "item_count": 2
-            }
-          ]
-        },
-        {
-          "level": 2,
-          "star": 10,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 800000
-            },
-            {
-              "item_id": 7002,
-              "item_count": 3
-            }
-          ]
-        },
-        {
-          "level": 3,
-          "star": 15,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 1000000
-            },
-            {
-              "item_id": 7002,
-              "item_count": 4
-            }
-          ]
-        },
-        {
-          "level": 4,
-          "star": 18,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 1500000
-            },
-            {
-              "item_id": 7003,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "level": 5,
-          "star": 20,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 1500000
-            },
-            {
-              "item_id": 7003,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "level": 6,
-          "star": 22,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 2000000
-            },
-            {
-              "item_id": 7003,
-              "item_count": 2
-            }
-          ]
-        },
-        {
-          "level": 7,
-          "star": 25,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 2000000
-            },
-            {
-              "item_id": 7003,
-              "item_count": 2
-            }
-          ]
-        },
-        {
-          "level": 8,
-          "star": 28,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 3000000
-            },
-            {
-              "item_id": 7004,
-              "item_count": 2
-            }
-          ]
-        },
-        {
-          "level": 9,
-          "star": 30,
-          "reward": [
-            {
-              "item_id": 2,
-              "item_count": 5000000
-            },
-            {
-              "item_id": 7004,
-              "item_count": 3
-            }
-          ]
-        }
-      ]
-    }
-  ],
-  "towers": [
-    {
-      "layer": 1,
-      "hp": 200,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    },
-    {
-      "layer": 2,
-      "hp": 300,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    },
-    {
-      "layer": 3,
-      "hp": 400,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    },
-    {
-      "layer": 4,
-      "hp": 500,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    },
-    {
-      "layer": 5,
-      "hp": 700,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    },
-    {
-      "layer": 6,
-      "hp": 1000,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    },
-    {
-      "layer": 7,
-      "hp": 1400,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    },
-    {
-      "layer": 8,
-      "hp": 1700,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    },
-    {
-      "layer": 9,
-      "hp": 2000,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    },
-    {
-      "layer": 10,
-      "hp": 2300,
-      "firstKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 5000000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "repeatedKillReward": [
-        {
-          "item_id": 2,
-          "item_count": 500000
-        },
-        {
-          "item_id": 7004,
-          "item_count": 3
-        }
-      ],
-      "star": [
-        {
-          "star": 3,
-          "round": 3
-        },
-        {
-          "star": 2,
-          "round": 5
-        },
-        {
-          "star": 1,
-          "round": 9999
-        }
-      ]
-    }
-  ],
+{"battlePass": [
+    {"id": 1,"price":{"item_id": 2004,"item_count": 300},
+              "level": [{"level": 1,"star": 5,"reward":[{"item_id":2,"item_count":10000},{"item_id":1003,"item_count":5}]},
+                        {"level": 2,"star": 10,"reward": [{"item_id":2,"item_count":20000},{"item_id":1003,"item_count":10}]},
+                        {"level": 3,"star": 15,"reward": [{"item_id":2,"item_count":30000},{"item_id":1003,"item_count":10}]},
+                        {"level": 4,"star": 18,"reward": [{"item_id":2,"item_count":40000},{"item_id":1003,"item_count":20}]},
+                        {"level": 5,"star": 20,"reward": [{"item_id":2,"item_count":50000},{"item_id":7001,"item_count":1}]},
+                        {"level": 6,"star": 22,"reward": [{"item_id":2,"item_count":60000},{"item_id":7001,"item_count":1}]},
+                        {"level": 7,"star": 25,"reward": [{"item_id":2,"item_count":100000},{"item_id":7001,"item_count":1}]},
+                        {"level": 8,"star": 28,"reward": [{"item_id":2,"item_count":120000},{"item_id":7001,"item_count":2}]},
+                        {"level": 9,"star": 30,"reward": [{"item_id":2,"item_count":120000},{"item_id":7001,"item_count":3}]}
+
+                        ]},
+    {"id": 2,"price":{"item_id": 2004,"item_count": 780},
+              "level": [{"level": 1,"star": 5,"reward":[{"item_id":2,"item_count":50000},{"item_id":18010,"item_count":6}]},
+                        {"level": 2,"star": 10,"reward": [{"item_id":2,"item_count":60000},{"item_id":18010,"item_count":6}]},
+                        {"level": 3,"star": 15,"reward": [{"item_id":2,"item_count":80000},{"item_id":18010,"item_count":12}]},
+                        {"level": 4,"star": 18,"reward": [{"item_id":2,"item_count":100000},{"item_id":18010,"item_count":12}]},
+                        {"level": 5,"star": 20,"reward": [{"item_id":2,"item_count":120000},{"item_id":18010,"item_count":18}]},
+                        {"level": 6,"star": 22,"reward": [{"item_id":2,"item_count":150000},{"item_id":18010,"item_count":18}]},
+                        {"level": 7,"star": 25,"reward": [{"item_id":2,"item_count":180000},{"item_id":7001,"item_count":1}]},
+                        {"level": 8,"star": 28,"reward": [{"item_id":2,"item_count":250000},{"item_id":7001,"item_count":1}]},
+                        {"level": 9,"star": 30,"reward": [{"item_id":2,"item_count":500000},{"item_id":7002,"item_count":1}]}
+                        ]},
+    {"id": 3,"price":{"item_id": 2004,"item_count": 6480},
+              "level": [{"level": 1,"star": 5,"reward":[{"item_id":2,"item_count":500000},{"item_id":7002,"item_count":2}]},
+                        {"level": 2,"star": 10,"reward": [{"item_id":2,"item_count":800000},{"item_id":7002,"item_count":3}]},
+                        {"level": 3,"star": 15,"reward": [{"item_id":2,"item_count":1000000},{"item_id":7002,"item_count":4}]},
+                        {"level": 4,"star": 18,"reward": [{"item_id":2,"item_count":1500000},{"item_id":7003,"item_count":1}]},
+                        {"level": 5,"star": 20,"reward": [{"item_id":2,"item_count":1500000},{"item_id":7003,"item_count":1}]},
+                        {"level": 6,"star": 22,"reward": [{"item_id":2,"item_count":2000000},{"item_id":7003,"item_count":2}]},
+                        {"level": 7,"star": 25,"reward": [{"item_id":2,"item_count":2000000},{"item_id":7003,"item_count":2}]},
+                        {"level": 8,"star": 28,"reward": [{"item_id":2,"item_count":3000000},{"item_id":7004,"item_count":2}]},
+                        {"level": 9,"star": 30,"reward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}]}
+                        ]}
+              ],
+
+
+  "towers": [{"layer": 1,"hp": 200,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]},
+             {"layer": 2,"hp": 300,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]},
+             {"layer": 3,"hp": 400,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]},
+             {"layer": 4,"hp": 500,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]},
+             {"layer": 5,"hp": 700,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]},
+             {"layer": 6,"hp": 1000,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]},
+             {"layer": 7,"hp": 1400,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]},
+             {"layer": 8,"hp": 1700,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]},
+             {"layer": 9,"hp": 2000,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]},
+             {"layer": 10,"hp":2300,"firstKillReward": [{"item_id":2,"item_count":5000000},{"item_id":7004,"item_count":3}],"repeatedKillReward": [{"item_id":2,"item_count":500000},{"item_id":7004,"item_count":3}],
+                         "star": [{"star": 3,"round": 3},{"star": 2,"round": 5}, {"star": 1,"round": 9999}]}
+             ],
+
+
   "fabao": [
-    {
-      "id": 18001,
-      "name": "水灵珠",
-      "damageMin": 35,
-      "damageMax": 45,
-      "priority": 1,
-      "quality": 1
-    },
-    {
-      "id": 18002,
-      "name": "火灵珠",
-      "damageMin": 55,
-      "damageMax": 65,
-      "priority": 2,
-      "quality": 1
-    },
-    {
-      "id": 18003,
-      "name": "雷灵珠",
-      "damageMin": 75,
-      "damageMax": 85,
-      "priority": 3,
-      "quality": 1
-    },
-    {
-      "id": 18004,
-      "name": "天雷符",
-      "damageMin": 150,
-      "damageMax": 170,
-      "priority": 4,
-      "quality": 2
-    },
-    {
-      "id": 18005,
-      "name": "紫金钵",
-      "damageMin": 210,
-      "damageMax": 230,
-      "priority": 5,
-      "quality": 2
-    },
-    {
-      "id": 18006,
-      "name": "崆峒印",
-      "damageMin": 270,
-      "damageMax": 290,
-      "priority": 6,
-      "quality": 2
-    },
-    {
-      "id": 18007,
-      "name": "昊天塔",
-      "damageMin": 340,
-      "damageMax": 360,
-      "priority": 7,
-      "quality": 3
-    },
-    {
-      "id": 18008,
-      "name": "盘古斧",
-      "damageMin": 490,
-      "damageMax": 510,
-      "priority": 8,
-      "quality": 3
-    },
-    {
-      "id": 18009,
-      "name": "东皇钟",
-      "damageMin": 790,
-      "damageMax": 810,
-      "priority": 9,
-      "quality": 3
-    }
+    {"id": 18001,"name": "水灵珠","damageMin": 35,"damageMax": 45,"priority": 1,"quality": 1},
+    {"id": 18002,"name": "火灵珠","damageMin": 55,"damageMax": 65,"priority": 2,"quality": 1},
+    {"id": 18003,"name": "雷灵珠","damageMin": 75,"damageMax": 85,"priority": 3,"quality": 1},
+    {"id": 18004,"name": "天雷符","damageMin": 150,"damageMax": 170,"priority": 4,"quality": 2},
+    {"id": 18005,"name": "紫金钵","damageMin": 210,"damageMax": 230,"priority": 5,"quality": 2},
+    {"id": 18006,"name": "崆峒印","damageMin": 270,"damageMax": 290,"priority": 6,"quality": 2},
+    {"id": 18007,"name": "昊天塔","damageMin": 340,"damageMax": 360,"priority": 7,"quality": 3},
+    {"id": 18008,"name": "盘古斧","damageMin": 490,"damageMax": 510,"priority": 8,"quality": 3},
+    {"id": 18009,"name": "东皇钟","damageMin": 790,"damageMax": 810,"priority": 9,"quality": 3}
   ],
-  "fabaoLottery": {
-    "price": {
-      "item_id": 18010,
-      "item_count": 5
-    },
-    "pool": [
-      {
-        "id": 1,
-        "item": {
-          "item_id": 18001,
-          "item_count": 1
-        },
-        "weight": 35,
-        "guaranteedTimes": 0
-      },
-      {
-        "id": 2,
-        "item": {
-          "item_id": 18002,
-          "item_count": 1
-        },
-        "weight": 25,
-        "guaranteedTimes": 0
-      },
-      {
-        "id": 3,
-        "item": {
-          "item_id": 18003,
-          "item_count": 1
-        },
-        "weight": 15,
-        "guaranteedTimes": 0
-      },
-      {
-        "id": 4,
-        "item": {
-          "item_id": 18004,
-          "item_count": 1
-        },
-        "weight": 10,
-        "guaranteedTimes": 0
-      },
-      {
-        "id": 5,
-        "item": {
-          "item_id": 18005,
-          "item_count": 1
-        },
-        "weight": 6,
-        "guaranteedTimes": 0
-      },
-      {
-        "id": 6,
-        "item": {
-          "item_id": 18006,
-          "item_count": 1
-        },
-        "weight": 3,
-        "guaranteedTimes": 0
-      },
-      {
-        "id": 7,
-        "item": {
-          "item_id": 18007,
-          "item_count": 1
-        },
-        "weight": 3,
-        "guaranteedTimes": 0
-      },
-      {
-        "id": 8,
-        "item": {
-          "item_id": 18008,
-          "item_count": 1
-        },
-        "weight": 2,
-        "guaranteedTimes": 0
-      },
-      {
-        "id": 9,
-        "item": {
-          "item_id": 18009,
-          "item_count": 1
-        },
-        "weight": 1,
-        "guaranteedTimes": 120
-      }
+
+
+
+ "fabaoLottery":
+ {"price": {"item_id":18010,"item_count":5},
+  "pool": [{ "id": 1,"item": { "item_id": 18001,"item_count": 1},"weight": 35,"guaranteedTimes": 0},
+           { "id": 2,"item": { "item_id": 18002,"item_count": 1},"weight": 25,"guaranteedTimes": 0},
+           { "id": 3,"item": { "item_id": 18003,"item_count": 1},"weight": 15,"guaranteedTimes": 0},
+           { "id": 4,"item": { "item_id": 18004,"item_count": 1},"weight": 10,"guaranteedTimes": 0},
+           { "id": 5,"item": { "item_id": 18005,"item_count": 1},"weight": 6,"guaranteedTimes": 0},
+           { "id": 6,"item": { "item_id": 18006,"item_count": 1},"weight": 3,"guaranteedTimes": 0},
+           { "id": 7,"item": { "item_id": 18007,"item_count": 1},"weight": 3,"guaranteedTimes": 0},
+           { "id": 8,"item": { "item_id": 18008,"item_count": 1},"weight": 2,"guaranteedTimes": 0},
+           { "id": 9,"item": { "item_id": 18009,"item_count": 1},"weight": 1,"guaranteedTimes": 120}
     ]
   },
-  "chuyaoTasks": [
-    {
-      "taskType": 1,
-      "taskName": "任务页签1",
-      "tasks": [
-        {
-          "id": 1,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "taskType": 2,
-      "taskName": "任务页签2",
-      "tasks": [
-        {
-          "id": 1,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "taskType": 3,
-      "taskName": "任务页签3",
-      "tasks": [
-        {
-          "id": 1,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        }
-      ]
-    }
+
+
+ "chuyaoTasks":[{ "taskType":1,
+                  "taskName":"任务页签1",
+                  "tasks":[ {"id": 1,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 2,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 3,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 4,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 5,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 6,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]}]
+                },
+                { "taskType":2,
+                  "taskName":"任务页签2",
+                  "tasks":[ {"id": 1,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 2,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 3,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 4,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 5,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 6,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]}]
+                },
+                { "taskType":3,
+                  "taskName":"任务页签3",
+                  "tasks":[ {"id": 1,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 2,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 3,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 4,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 5,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                            {"id": 6,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]}]
+                }
+            ],
+
+
+  "buyuTasks": [{"taskType":4,
+                  "taskName":"神剑任务",
+                  "tasks":[{"id": 1,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                          {"id": 2,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                          {"id": 3,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                          {"id": 4,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                          {"id": 5,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]},
+                          {"id": 6,"atype": 9,"name": "累计消费600元宝","group_id": 101,"count": 600,"item_id": [2004],"rewards": [{"item_id": 2004,"item_count": 600}]}
+                    }],
+
+
+  "scoreRewards": [{"id": 1,"score": 200,"reward": [{"item_id": 18004,"item_count": 1}]},
+                   {"id": 2,"score": 300,"reward": [{"item_id": 18005,"item_count": 1}]},
+                   {"id": 3,"score": 400,"reward": [{"item_id": 18006,"item_count": 1}]},
+                   {"id": 4,"score": 600,"reward": [{"item_id": 2004,"item_count": 1}]},
+                   {"id": 5,"score": 800,"reward": [{"item_id": 2004,"item_count": 1}]},
+                   {"id": 6,"score": 1000,"reward": [{"item_id": 2004,"item_count": 1}]},
+                   {"id": 7,"score": 1200,"reward": [{"item_id": 2004,"item_count": 1}]},
+                   {"id": 8,"score": 1400,"reward": [{"item_id": 2004,"item_count": 1}]}
+
   ],
-  "buyuTasks": [
-    {
-      "taskType": 4,
-      "taskName": "神剑任务",
-      "tasks": [
-        {
-          "id": 1,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "atype": 9,
-          "name": "累计消费600元宝",
-          "group_id": 101,
-          "count": 600,
-          "item_id": [
-            2004
-          ],
-          "rewards": [
-            {
-              "item_id": 2004,
-              "item_count": 600
-            }
-          ]
-        }
-      ],
-      "scoreRewards": [
-        {
-          "id": 1,
-          "score": 200,
-          "reward": [
-            {
-              "item_id": 18004,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "score": 300,
-          "reward": [
-            {
-              "item_id": 18005,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "id": 3,
-          "score": 400,
-          "reward": [
-            {
-              "item_id": 18006,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "id": 4,
-          "score": 600,
-          "reward": [
-            {
-              "item_id": 2004,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "id": 5,
-          "score": 800,
-          "reward": [
-            {
-              "item_id": 2004,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "id": 6,
-          "score": 1000,
-          "reward": [
-            {
-              "item_id": 2004,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "id": 7,
-          "score": 1200,
-          "reward": [
-            {
-              "item_id": 2004,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "id": 8,
-          "score": 1400,
-          "reward": [
-            {
-              "item_id": 2004,
-              "item_count": 1
-            }
-          ]
-        }
-      ],
-      "fabaoShopItems": [
-        {
-          "id": 101010401,
-          "show_type": 1,
-          "desc": "购买后可随机获得3个二阶法宝",
-          "dailyLimit": 0
-        },
-        {
-          "id": 101010402,
-          "show_type": 1,
-          "desc": "购买后可随机获得3个三阶法宝",
-          "dailyLimit": 0
-        },
-        {
-          "id": 101010403,
-          "show_type": 0,
-          "dailyLimit": 1
-        },
-        {
-          "id": 101010404,
-          "show_type": 0,
-          "dailyLimit": 1
-        },
-        {
-          "id": 101010405,
-          "show_type": 0,
-          "dailyLimit": 1
-        },
-        {
-          "id": 101010406,
-          "show_type": 0,
-          "dailyLimit": 1
-        },
-        {
-          "id": 101010407,
-          "show_type": 0,
-          "dailyLimit": 1
-        }
-      ],
-      "starShopItems": [
-        {
-          "id": 101010408,
-          "limit": 1,
-          "star": 5
-        },
-        {
-          "id": 101010409,
-          "limit": 1,
-          "star": 5
-        },
-        {
-          "id": 101010410,
-          "limit": 1,
-          "star": 10
-        },
-        {
-          "id": 101010411,
-          "limit": 1,
-          "star": 10
-        },
-        {
-          "id": 101010412,
-          "limit": 1,
-          "star": 15
-        },
-        {
-          "id": 101010413,
-          "limit": 1,
-          "star": 15
-        }
-      ],
-      "fabaoPackages": [
-        {
-          "id": 18012,
-          "pool": {
-            "18004": 30,
-            "18005": 20,
-            "18006": 50
-          }
-        },
-        {
-          "id": 18013,
-          "pool": {
-            "18007": 30,
-            "18008": 20,
-            "18009": 50
-          }
-        }
-      ],
-      "cailiaoPackages": [
-        {
-          "id": 18010,
-          "item_id": 2,
-          "min": 15,
-          "max": 25
-        }
-      ],
-      "itemLottery": {
-        "unlockStar": 15,
-        "price": {
-          "item_id": 18010,
-          "item_count": 50
-        },
-        "pool": [
-          {
-            "item": {
-              "item_id": 7004,
-              "item_count": 5
-            },
-            "weight": 1
-          },
-          {
-            "item": {
-              "item_id": 2,
-              "item_count": 6000000
-            },
-            "weight": 8
-          },
-          {
-            "item": {
-              "item_id": 7003,
-              "item_count": 2
-            },
-            "weight": 15
-          },
-          {
-            "item": {
-              "item_id": 2,
-              "item_count": 1000000
-            },
-            "weight": 30
-          },
-          {
-            "item": {
-              "item_id": 7002,
-              "item_count": 2
-            },
-            "weight": 20
-          },
-          {
-            "item": {
-              "item_id": 50008,
-              "item_count": 5
-            },
-            "weight": 40
-          },
-          {
-            "item": {
-              "item_id": 7001,
-              "item_count": 5
-            },
-            "weight": 20
-          },
-          {
-            "item": {
-              "item_id": 2,
-              "item_count": 600000
-            },
-            "weight": 20
-          }
-        ]
-      },
-      "rank": {
-        "name": "除妖累计伤害排行榜",
-        "rewards": [
-          {
-            "begin": 1,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 100000000
-                },
-                {
-                  "item_id": 7004,
-                  "item_count": 10
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 2,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 80000000
-                },
-                {
-                  "item_id": 7004,
-                  "item_count": 8
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 3,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 60000000
-                },
-                {
-                  "item_id": 7004,
-                  "item_count": 6
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 4,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 50000000
-                },
-                {
-                  "item_id": 7004,
-                  "item_count": 3
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 5,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 30000000
-                },
-                {
-                  "item_id": 7004,
-                  "item_count": 2
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 6,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 20000000
-                },
-                {
-                  "item_id": 7003,
-                  "item_count": 2
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 7,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 10000000
-                },
-                {
-                  "item_id": 7003,
-                  "item_count": 1
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 8,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 8000000
-                },
-                {
-                  "item_id": 7002,
-                  "item_count": 4
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 9,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 6000000
-                },
-                {
-                  "item_id": 7002,
-                  "item_count": 3
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 10,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 5000000
-                },
-                {
-                  "item_id": 7002,
-                  "item_count": 2
-                }
-              ]
-            ]
-          },
-          {
-            "begin": 11,
-            "end": 20,
-            "rewards": [
-              [
-                {
-                  "item_id": 2,
-                  "item_count": 2000000
-                },
-                {
-                  "item_id": 7001,
-                  "item_count": 3
-                }
-              ]
-            ]
-          }
-        ]
-      }
-    }
+  "fabaoShopItems": [{"id": 101010401,"show_type": 1,"desc":"购买后可随机获得3个二阶法宝","dailyLimit": 0},
+                     {"id": 101010402,"show_type": 1,"desc":"购买后可随机获得3个三阶法宝","dailyLimit": 0},
+                     {"id": 101010403,"show_type": 0,"dailyLimit": 1},
+                     {"id": 101010404,"show_type": 0,"dailyLimit": 1},
+                     {"id": 101010405,"show_type": 0,"dailyLimit": 1},
+                     {"id": 101010406,"show_type": 0,"dailyLimit": 1},
+                     {"id": 101010407,"show_type": 0,"dailyLimit": 1},
+                   ],
+
+  "starShopItems":  [{"id": 101010408,"limit": 1,"star":5},
+                     {"id": 101010409,"limit": 1,"star":5},
+                     {"id": 101010410,"limit": 1,"star":10},
+                     {"id": 101010411,"limit": 1,"star":10},
+                     {"id": 101010412,"limit": 1,"star":15},
+                     {"id": 101010413,"limit": 1,"star":15}
+                   ],
+
+
+  "fabaoPackages": [
+    {"id": 18012,"pool": {"18004": 30,"18005": 20,"18006": 50}},
+    {"id": 18013,"pool": {"18007": 30,"18008": 20,"18009": 50}}
+  ],
+
+  "cailiaoPackages": [
+    {"id": 18010,"item_id":2,"min":15,"max":25},
+
+  ],
+
+  "itemLottery": {
+    "unlockStar": 15,
+    "price": {"item_id":18010,"item_count":50},
+    "pool": [
+      {"item": {"item_id": 7004,"item_count": 5},"weight": 1},
+      {"item": {"item_id": 2,"item_count": 6000000},"weight": 8},
+      {"item": {"item_id": 7003,"item_count":2},"weight": 15},
+      {"item": {"item_id": 2,"item_count": 1000000},"weight": 30},
+      {"item": {"item_id": 7002,"item_count": 2},"weight": 20},
+      {"item": {"item_id": 50008,"item_count": 5},"weight": 40},
+      {"item": {"item_id": 7001,"item_count": 5},"weight": 20},
+      {"item": {"item_id": 2,"item_count": 600000},"weight": 20}
+           ]},
+
+
+
+  "rank": {"name": "除妖累计伤害排行榜","rewards": [
+      {"begin": 1,"rewards": [[{"item_id":2,"item_count":100000000},{"item_id":7004,"item_count":10}]]},
+      {"begin": 2,"rewards": [[{"item_id":2,"item_count":80000000},{"item_id":7004,"item_count":8}]]},
+      {"begin": 3,"rewards": [[{"item_id":2,"item_count":60000000},{"item_id":7004,"item_count":6}]]},
+      {"begin": 4,"rewards": [[{"item_id":2,"item_count":50000000},{"item_id":7004,"item_count":3}]]},
+      {"begin": 5,"rewards": [[{"item_id":2,"item_count":30000000},{"item_id":7004,"item_count":2}]]},
+      {"begin": 6,"rewards": [[{"item_id":2,"item_count":20000000},{"item_id":7003,"item_count":2}]]},
+      {"begin": 7,"rewards": [[{"item_id":2,"item_count":10000000},{"item_id":7003,"item_count":1}]]},
+      {"begin": 8,"rewards": [[{"item_id":2,"item_count":8000000},{"item_id":7002,"item_count":4}]]},
+      {"begin": 9,"rewards": [[{"item_id":2,"item_count":6000000},{"item_id":7002,"item_count":3}]]},
+      {"begin": 10,"rewards": [[{"item_id":2,"item_count":5000000},{"item_id":7002,"item_count":2}]]},
+      {"begin": 11,"end": 20,"rewards": [[{"item_id":2,"item_count":2000000},{"item_id":7001,"item_count":3}]]}
+
+    ]
+  }
+}
