@@ -13,7 +13,7 @@ import (
 )
 
 func tcpClientConn() error {
-	conn, err := net.Dial("tcp", "10.10.3.30:11000")
+	conn, err := net.Dial("tcp", "127.0.0.1:11000")
 	if err != nil {
 		return fmt.Errorf(`dial报错,err:%s`, err.Error())
 	}
@@ -37,7 +37,7 @@ func TestTcpClientConn(t *testing.T) {
 }
 
 func TestTcpClient(t *testing.T) {
-	conn, err := net.Dial("tcp", "10.10.3.30:11000")
+	conn, err := net.Dial("tcp", "127.0.0.1:11000")
 	if err != nil {
 		t.Fatalf(`dial报错,err:%s`, err.Error())
 	}
