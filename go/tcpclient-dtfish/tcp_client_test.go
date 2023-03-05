@@ -57,5 +57,17 @@ func TestTcpClient(t *testing.T) {
 	if err != nil {
 		t.Fatalf(`Send报错,err:%s`, err.Error())
 	}
+	err = session.Send(&common.ProtocolClientHead{
+		Uid_:    111,
+		Seq_:    100,
+		Msg_id_: uint32(pb.EmCSMsgId_CS_MSG_GAME_ACTIVITY_PLAYER_INFO),
+	}, &pb.PBCsGameActivityPlayerInfoReqMsg{
+		ActivityId: []int32{
+			249,
+		},
+	})
+	if err != nil {
+		t.Fatalf(`Send报错,err:%s`, err.Error())
+	}
 	select {}
 }
