@@ -115,17 +115,14 @@ func (p *MsgParser) Read(r interface{}) ([]byte, error) {
 			msgLen = binary.BigEndian.Uint32(bufMsgLen)
 		}
 	}
-
 	//是否包含长度
 	if p.includeHead {
 		msgLen -= uint32(p.lenMsgLen)
 	}
-
 	// check len
 	if msgLen > p.maxRecvMsgLen {
 		return nil, errors.New("read message too long")
 	}
-
 	if msgLen > 0 {
 		// data
 		msgData := make([]byte, msgLen)

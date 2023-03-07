@@ -9,15 +9,14 @@ import (
 )
 
 var (
-	Error_Session_Closed         = errors.New("session closed")
-	Error_Session_Send_Chan_Full = errors.New("session send chan full")
+	ErrorSessionClosed       = errors.New("session closed")
+	ErrorSessionSendChanFull = errors.New("session send chan full")
 )
 
 type SessionType int
 
 const (
-	Session_type_tcp SessionType = 1 + iota //tcp基本链接
-	Session_type_ws
+	SessionTypeTcp SessionType = 1 + iota //tcp基本链接
 )
 
 type netConn interface {
@@ -26,7 +25,7 @@ type netConn interface {
 	RemoteAddr() net.Addr
 }
 
-var global_sessionId uint64
+var globalSessionId uint64
 
 type Session struct {
 	msgParser   IMsgParser
@@ -34,15 +33,12 @@ type Session struct {
 	sessionId   uint64
 	conn        netConn
 	sessionType SessionType
-
-	sendChan  chan interface{}
-	closeChan chan struct{}
-	closeFlag bool
-	lock      sync.RWMutex
-
-	onceClose sync.Once
-
-	data interface{}
+	sendChan    chan interface{}
+	closeChan   chan struct{}
+	closeFlag   bool
+	lock        sync.RWMutex
+	onceClose   sync.Once
+	data        interface{}
 }
 
 func (session *Session) Id() uint64 {
@@ -53,9 +49,8 @@ func (session *Session) Send(msg ...interface{}) error {
 	session.lock.RLock()
 	if session.closeFlag {
 		session.lock.RUnlock()
-		return Error_Session_Closed
+		return ErrorSessionClosed
 	}
-
 	select {
 	case session.sendChan <- msg:
 	default:
@@ -63,10 +58,9 @@ func (session *Session) Send(msg ...interface{}) error {
 		//客户端来不及读取tcp缓冲，导致应用层缓存队列满，网速卡顿会出现
 		log.Printf("session send chan full cap:%d", cap(session.sendChan))
 		session.Close()
-		return Error_Session_Send_Chan_Full
+		return ErrorSessionSendChanFull
 	}
 	session.lock.RUnlock()
-
 	return nil
 }
 
@@ -75,7 +69,6 @@ func (session *Session) Receive() (interface{}, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	return session.codec.Unmarshal(data)
 }
 
@@ -88,24 +81,20 @@ func (session *Session) Close() {
 				session.lock.Unlock()
 				return
 			}
-
 			session.closeFlag = true
 			close(session.closeChan)
 			close(session.sendChan)
 			//锁必须尽早释放
 			session.lock.Unlock()
 			log.Printf("Session::Close session id:%d closing...", session.sessionId)
-
 			err := session.conn.Close()
 			if err != nil {
 				return
 			}
-
 			//获取未读取到的数据
 			if csc, ok := session.codec.(CloseSendChan); ok {
 				csc.CloseEnd(session.sendChan)
 			}
-
 			log.Printf("Session::Close session id:%d close end", session.sessionId)
 		}()
 	})
@@ -125,7 +114,6 @@ func (session *Session) sendLoop() {
 				log.Printf("session sendLoop codec.Marshal err:%v", err)
 				goto __END
 			}
-
 			err = session.msgParser.Write(session.conn, data)
 			if err != nil {
 				log.Printf("session sendLoop msgParser.Write err:%v", err)
@@ -151,7 +139,7 @@ func (session *Session) SessionType() SessionType {
 }
 
 func NewSession(conn netConn, sessionType SessionType, msgParser IMsgParser, protocol Protocol, sendChanSize int) *Session {
-	sessionId := atomic.AddUint64(&global_sessionId, 1)
+	sessionId := atomic.AddUint64(&globalSessionId, 1)
 	session := &Session{
 		conn:        conn,
 		sessionId:   sessionId,
@@ -161,9 +149,7 @@ func NewSession(conn netConn, sessionType SessionType, msgParser IMsgParser, pro
 		sendChan:    make(chan interface{}, sendChanSize),
 		closeChan:   make(chan struct{}),
 	}
-
 	//开启写协程
 	go session.sendLoop()
-
 	return session
 }

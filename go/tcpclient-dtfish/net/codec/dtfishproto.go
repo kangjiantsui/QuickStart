@@ -90,29 +90,23 @@ func (this *DTFishClientProtoCodec) Unmarshal(data []byte) (interface{}, error) 
 	if err != nil {
 		return nil, err
 	}
-
-	msg := []interface{}{}
+	var msg []interface{}
 	if packet.UserID == nil {
 		return nil, errors.New("Packet logic need field nil")
 	}
-
 	head := &common.ProtocolClientHead{
 		Msg_id_: *packet.Command,
 		Uid_:    *packet.UserID,
 	}
-
 	if packet.SequenceNumber != nil {
 		head.Seq_ = uint32(*packet.SequenceNumber)
 	}
-
 	msg = append(msg, head)
 	msg = append(msg, packet.Serialized)
-
 	//todo 以后有了proto 消息handler，可以在此解析成proto结构体
 	if this.Parse_ {
 
 	}
-
 	return msg, nil
 }
 
