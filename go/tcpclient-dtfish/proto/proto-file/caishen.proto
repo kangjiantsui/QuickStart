@@ -1,0 +1,80 @@
+syntax = "proto3";
+package ProtoMsg;
+
+import "base.proto";
+import "user_data.proto";
+import "game.proto";
+
+// CS_MSG_GAME_CAISHEN_INFO 财神信息请求
+message CaishenInfoReq{
+
+}
+
+// 财神信息响应
+message CaishenInfoResp{
+    Ret  ret = 1;
+    PBCsGameCommonRankListResMsg rank = 2;          // 福气榜
+    repeated HitJackpotPlayer hitJackpotPlayer = 3; // 最近的十个中奖玩家信息
+    PBPlayerCaishen me_info = 4;                    // 自己的信息
+    int32 tongziMax = 5;                            // 当日最高童子积分
+    int32 caishenMax = 6;                           // 当日最高财神积分
+}
+
+// 中奖玩家信息
+message HitJackpotPlayer{
+    string name = 1;        // 玩家昵称
+    int32 fishId = 2;       // 打死的鱼的id,fish.json.FishTypeID
+    int32 per = 3;          // 瓜分奖池万分比
+    int64 gold = 4;         // 瓜分到的金币
+    PBGetItem getItem = 5;  // 奖励道具
+    uint64 uid = 6;         // 玩家uid
+}
+
+// 财神类型
+enum CaishenType{
+    CaishenTypeNone = 0;
+    CaishenTypeTongzi = 1;  // 童子
+    CaishenTypeCaishen = 2; // 财神
+}
+
+// 财神子类型
+enum CaishenSubType{
+    CaishenSubTypeNone = 0;
+    CaishenSubTypeJinTong = 1;  // 金童
+    CaishenSubTypeYunv = 2;     // 玉女
+    CaishenSubTypeCaishen = 3;  // 财神爷
+}
+
+// CS_MSG_ROOM_CAISHEN_SLOT_BROAD 财神拉霸机广播
+message CaishenSlotBroad{
+    uint64 uid = 1;
+    CaishenType type = 2;           // 拉霸机类型
+    PBGetItem item = 3;             // 得到的金币
+    repeated int32 resultList = 4;  // 牌型结果,如[1,1,2][2,2,1]这样,-1表示替换为随机1到5,6表示财神
+    int32 multiple = 5;             // 倍数
+    int32 crit = 6;                 // 暴击
+    int32 multipleReal = 7;         // 实际倍数
+    int32 per = 8;                  // 瓜分奖池万分比
+    int32 score = 9;                // 福气积分,计算提升后的最终值
+    string fishId = 10;             // 打死的鱼的id
+    int32 up = 11;                  // 提升的值
+    int32 srcScore = 12;            // 未提升的原始福气值
+}
+
+// 财神赐福全局信息
+message CaishenGlobal{
+    map<int32, int32> daily_max_scores = 1 [deprecated = true]; // 弃用
+    int64 time_flag = 2 [deprecated = true];                    // 弃用
+    repeated HitJackpotPlayer hitJackpotPlayer = 3 ;            // 最近的十个中奖玩家信息
+}
+
+// room服通知game命中了财神
+message CaishenHitReq{
+    CaishenType type = 1;           // 财神类型
+    int32 score = 2;                // 福气值分数,计算提升后的最终值
+    HitJackpotPlayer hitPlayer = 3; // 命中者信息
+    int32 roomId = 4;               // 房间id
+    int32 srcScore = 11;            // 福气积分,原始值
+    int32 up = 12;                  // 加成的具体值,非比例
+}
+

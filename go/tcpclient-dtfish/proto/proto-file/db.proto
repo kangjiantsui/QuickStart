@@ -3,6 +3,7 @@ import "base.proto";
 import "login.proto";
 import "user_data.proto";
 import "activity.proto";
+import "caishen.proto";
 
 package ProtoMsg;
 
@@ -602,11 +603,11 @@ message PBSvrDBKillFishRankGetResMsg {
 
 //彩金池
 message PBSvrDBJackpotOprReqMsg {
-    int64 jackpot_gold = 1; //变化量
-    repeated PBJackpotRoomItem display_jackpot_items = 2; //变化量
-    int64 bless_gold =3;          //祈福奖池 变化量
-    int64 world_boss_value = 4;      //世界boss 变化量
-    int64 zxf_pool     = 5;    //自选房排行池子变化
+    int64 jackpot_gold = 1;                                 // 变化量
+    repeated PBJackpotRoomItem display_jackpot_items = 2;   // 变化量
+    int64 bless_gold = 3;                                   // 祈福奖池 变化量
+    int64 world_boss_value = 4;                             // 世界boss 变化量
+    int64 zxf_pool = 5;                                     // 自选房排行池子变化
 }
 
 message PBSvrDBJackpotOprResMsg {
@@ -976,3 +977,7 @@ message PBSvrDBPlayerCommRankGetResMsg {
     int32 activity_id = 13; //如果是活动相关，取活动id
 }
 
+// 记录命中财神鱼的玩家的db请求
+message PBSvrDBCaishenHitReqMsg{
+    HitJackpotPlayer req = 1;
+}

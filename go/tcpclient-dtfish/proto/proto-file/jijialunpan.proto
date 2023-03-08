@@ -1,0 +1,104 @@
+syntax = "proto3";
+package ProtoMsg;
+
+import "base.proto";
+
+// 机甲轮盘配置
+message JiJiaLunPanCfg{
+    PBGetItem price = 1;                                        // 玩一次机甲轮盘所需消耗的道具
+    repeated JiJiaLunPanReward pool = 2;                        // 奖池
+    repeated JiJiaLunPanOptionalReward optionalRewards = 3;     // 自选奖励池子<JiJiaLunPanOptionalReward.id,JiJiaLunPanOptionalReward>
+    repeated JiJiaLunPanShopItemCfg shopItems = 4;              // 商店商品列表
+}
+
+// 机甲轮盘商店商品配置
+message JiJiaLunPanShopItemCfg{
+    int32 id = 1;                   // 主键,对应shop.json.id
+    int32 limitTimes = 2;           // 可购买次数限制,等于0表示无限制
+}
+
+// 机甲轮盘奖池
+message JiJiaLunPanReward{
+    int32 id = 1;                   // 主键
+    int32 weight = 2;               // 命中权重
+    int32 requireTimes = 3;         // 前置次数,抽奖次数低于该字段时抽不到,配置小于等于0时无效
+    int32 guaranteedTimes = 4;      // 保底要求次数,配置小于等于0时无效
+    int32 availableTimes = 5;       // 可抽取的次数,单个玩家抽奖命中该奖励的次数上限
+    PBGetItem reward = 6;           // 奖励道具
+    int32 optionalRewardId = 7;     // 自选奖励id,JiJiaLunPanOptionalReward.id,不应和上面的reward字段同时存在,优先以这里为准
+}
+
+// 机甲轮盘自选奖励组
+message JiJiaLunPanOptionalReward{
+    int32 id = 1;               // 主键,JiJiaLunPanRewardPool.optionalRewardId
+    repeated int32 itemIds = 2; // 该组内可选的道具id集合
+}
+
+// 机甲轮盘,玩家信息,字段中部分存数据库,部分发客户端
+message JiJiaLunPanInfo{
+    int64 gear = 1 ;                            // 当前持有齿轮数
+    map<int32, int32> pickItems = 2;            // 选择的自选奖励组和道具id,<jijialunpan.optionalRewards.id,jijialunpan.optionalRewards.itemIds>
+    repeated JiJiaLunPanShopItem shopItems = 3; // 商店商品信息
+    int32 playCount = 4;                        // 转盘玩了多少次
+    map<int32, int32> playRecord = 5;           // 玩转盘的记录,<jijialunpan.pool.id,抽到的次数>
+    repeated JiJiaLunPanSlot slots = 6;         // 转盘上的格子信息
+    int64 beginTime = 7;                        // 活动开始时间戳秒
+    int64 endTime = 8;                          // 活动结束时间戳秒
+}
+
+// 机甲轮盘格子信息
+message JiJiaLunPanSlot{
+    int32 itemId = 1;           // 道具id,0表示自选奖励还没选
+    int32 availableCount = 2;   // 还可抽到多少次,0表示已抽完
+    int64 itemCount = 3;        // 道具数量
+}
+
+// 机甲轮盘商店商品状态
+enum JiJiaLunPanShopItemState {
+    JiJiaLunPanShopItemStateNone = 0;
+    JiJiaLunPanShopItemStateNormal = 1; // 正常
+    JiJiaLunPanShopItemStateLimit = 2;  // 购买次数受限,不可购买
+}
+
+// 机甲轮盘商店玩家信息
+message JiJiaLunPanShopItem{
+    int32 id = 1;                                               // 商品id,JiJiaLunPanShopItemCfg.Id
+    JiJiaLunPanShopItemCfg baseInfo = 2;                        // 商品基本信息
+    int32 count = 3 ;                                           // 已购买次数
+    JiJiaLunPanShopItemState state = 4 [deprecated = true];     // 弃用
+    int32 availableCount = 5;                                   // 剩余可购买次数,-1表示不限次数
+}
+
+// 机甲轮盘玩转盘 CS_MSG_GAME_JIJIALUNPAN_PLAY
+message JiJiaLunPanPlayReq{
+    int32 times = 1;        // 玩几次
+}
+
+message JiJiaLunPanPlayResp{
+    repeated PBGetItem items = 1;   // 抽到的奖励道具列表
+    bool finish = 2;                // 该次抽奖是否触发获取全部大奖后的奖励
+    JiJiaLunPanInfo info = 3;       // 玩后的玩家信息
+    repeated int32 slotIndex = 4;   // 命中的格子索引,JiJiaLunPanCfg.pool.index
+}
+
+// 机甲轮盘选择自选奖励 CS_MSG_GAME_JIJIALUNPAN_PICK
+message JiJiaLunPanPickReq{
+    int32 id = 1 [deprecated = true];   // 弃用
+    int32 itemId = 2;                   // 道具id,jijialunpan.optionalRewards.itemIds
+}
+
+message JiJiaLunPanPickResp{
+    JiJiaLunPanInfo info = 1; // 选择后的玩家信息
+}
+
+// 机甲轮盘商品购买  CS_MSG_GAME_JIJIALUNPAN_BUY
+message JiJiaLunPanBuyReq{
+    int32 id = 1;           // 商品id,JiJiaLunPanShopItemCfg.id
+    int32 num = 2;          // 购买数量
+}
+
+message JiJiaLunPanBuyResp{
+    repeated PBGetItem items = 1;   // 道具变化
+    JiJiaLunPanInfo info = 2;       // 更新后的玩家信息
+    int64 shuliandu = 3;            // 海神熟练度
+}

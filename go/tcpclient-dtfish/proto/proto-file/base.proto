@@ -4,1092 +4,1101 @@ package ProtoMsg;
 import "response_code.proto";
 
 message Ret {
-  emResponseCode  err_code = 1;
-  string          err_msg = 2;
+    emResponseCode  err_code = 1;
+    string          err_msg = 2;
 };
 
 enum emLoginType {
-  Login_type_invalid = 0;
-  Login_type_visitor = 1;  //游客
-  Login_type_user = 2;  //账号密码登陆
-  Login_type_qq = 3;     //qq
-  Login_type_wechat = 4; //微信
-  Login_type_alipay = 5; //支付宝
-  Login_type_bfh5 = 6; //边锋H5登陆
-  Login_type_ymn = 7;  //有猫腻
-  Login_type_qtt = 8;  //趣头条
-  Login_type_hjyh5 = 9;  //欢聚游
-  Login_type_uc = 10;  //UC
-  Login_type_wechat_mobile = 11; // 移动微信
-  Login_type_tyy = 12; //天宇游
-  Login_type_sdw = 13; //闪电玩
-  Login_type_dq = 14; //大秦游戏
-  Login_type_qh = 15; //裙黑
-  Login_type_huawei = 16; //华为
-  Login_type_dt = 17; //大厅
+    Login_type_invalid = 0;
+    Login_type_visitor = 1;  //游客
+    Login_type_user = 2;  //账号密码登陆
+    Login_type_qq = 3;     //qq
+    Login_type_wechat = 4; //微信
+    Login_type_alipay = 5; //支付宝
+    Login_type_bfh5 = 6; //边锋H5登陆
+    Login_type_ymn = 7;  //有猫腻
+    Login_type_qtt = 8;  //趣头条
+    Login_type_hjyh5 = 9;  //欢聚游
+    Login_type_uc = 10;  //UC
+    Login_type_wechat_mobile = 11; // 移动微信
+    Login_type_tyy = 12; //天宇游
+    Login_type_sdw = 13; //闪电玩
+    Login_type_dq = 14; //大秦游戏
+    Login_type_qh = 15; //裙黑
+    Login_type_huawei = 16; //华为
+    Login_type_dt = 17; //大厅
 };
 
 enum emCheckName {
-  TypeNone = 0;
-  TypeRegister = 1;
-  TypeRealName = 2;
-  TypeChangeName = 3;
+    TypeNone = 0;
+    TypeRegister = 1;
+    TypeRealName = 2;
+    TypeChangeName = 3;
 };
 
 enum emSex {
-  Sex_none = 0;
-  Sex_male = 1;
-  Sex_female = 2;
+    Sex_none = 0;
+    Sex_male = 1;
+    Sex_female = 2;
 }
 
 enum emFishType {
-  fish_type_invalid = 0;
-  fish_type_normal_small = 1;     // 普通小鱼
-  fish_type_normal_mid = 2;       // 普通中鱼
-  fish_type_normal_big = 3;       // 普通大鱼
-  fish_type_gold = 10;            // 黄金鱼
-  fish_type_special = 20;         // 特色鱼
-  fish_type_special_zuantou = 21; // 特色鱼：钻头
-  fish_type_special_hongyun = 22; // 特色鱼：鸿运当头
-  fish_type_special_hwbz = 23;    // 特色鱼：海王宝藏
-  fish_type_special_xyzp = 24;    // 特色鱼：幸运转盘
-  fish_type_special_zshy = 25;    // 特色鱼：珠事好运
-  fish_type_special_wlxb = 26;    // 特色鱼：五龙寻宝
-  fish_type_special_jfsf = 27;    // 特色鱼：金佛送福
-  fish_type_special_ryjs = 28;    // 特色鱼：熔岩巨兽
-  fish_type_special_jbp = 29;     // 特色鱼:聚宝盆,没有特殊玩法
-  fish_type_boss_1 = 30;          // boss鱼
-  fish_type_liquan = 40;          // 礼券鱼
-  fish_type_box = 50;             // 宝箱鱼
-  fish_type_world_boss_fake_fish = 200;  // 世界boss 虚拟出来的假鱼
-  fish_type_world_boss_last_hit_fish = 201;  // 世界boss 最后一击的鱼
-  fish_type_world_boss_world_boss = 210;  // 世界boss 最后一击的鱼
-  fish_type_zxf_fake_fish = 300;  // 自选房boss 虚拟出来的小鱼
-  fish_type_zxf_fake_boss = 301;  // 自选房boss 虚拟出来的大鱼
-  fish_type_zxf_boss = 302;  // 自选房boss
+    fish_type_invalid = 0;
+    fish_type_normal_small = 1;                 // 普通小鱼
+    fish_type_normal_mid = 2;                   // 普通中鱼
+    fish_type_normal_big = 3;                   // 普通大鱼
+    fish_type_gold = 10;                        // 黄金鱼
+    fish_type_special = 20;                     // 特色鱼
+    fish_type_special_zuantou = 21;             // 特色鱼：钻头
+    fish_type_special_hongyun = 22;             // 特色鱼：鸿运当头
+    fish_type_special_hwbz = 23;                // 特色鱼：海王宝藏
+    fish_type_special_xyzp = 24;                // 特色鱼：幸运转盘
+    fish_type_special_zshy = 25;                // 特色鱼：珠事好运
+    fish_type_special_wlxb = 26;                // 特色鱼：五龙寻宝
+    fish_type_special_jfsf = 27;                // 特色鱼：金佛送福
+    fish_type_special_ryjs = 28;                // 特色鱼：熔岩巨兽
+    fish_type_special_jbp = 29;                 // 特色鱼:聚宝盆,没有特殊玩法
+    fish_type_boss_1 = 30;                      // boss鱼
+    fish_type_liquan = 40;                      // 礼券鱼
+    fish_type_box = 50;                         // 宝箱鱼
+    fish_type_world_boss_fake_fish = 200;       // 世界boss 虚拟出来的假鱼
+    fish_type_world_boss_last_hit_fish = 201;   // 世界boss 最后一击的鱼
+    fish_type_world_boss_world_boss = 210;      // 世界boss 最后一击的鱼
+    fish_type_zxf_fake_fish = 300;              // 自选房boss 虚拟出来的小鱼
+    fish_type_zxf_fake_boss = 301;              // 自选房boss 虚拟出来的大鱼
+    fish_type_zxf_boss = 302;                   // 自选房boss
 }
 
 enum emDeviceType {
-  Device_type_invalid = 0;
-  Device_type_android = 1;
-  Device_type_ios = 2;
-  Device_type_ipad = 3;
-  Device_type_mac = 4;
-  Device_type_windows = 5;
+    Device_type_invalid = 0;
+    Device_type_android = 1;
+    Device_type_ios = 2;
+    Device_type_ipad = 3;
+    Device_type_mac = 4;
+    Device_type_windows = 5;
 };
 
 enum emPayType {
-  midas = 0; //米大师支付
-  wechat = 1; //微信支付
-  bfh5 = 2; //边锋H5
-  ymn = 3;//有猫腻
-  qtt = 4;//趣头条
-  hjyh5 = 5;//欢聚游
-  uc = 6;//UC
-  tyy = 7;//天宇游
-  sdw = 8;//闪电玩
-  alipay = 9;//支付宝alipay
-  dq = 10;//大秦游戏
-  qh = 11;//裙黑
-  wechat_public = 12;//微信公众号
-  huawei = 13; //华为
-  dtfish = 14; //捕鱼大厅
+    midas = 0; //米大师支付
+    wechat = 1; //微信支付
+    bfh5 = 2; //边锋H5
+    ymn = 3;//有猫腻
+    qtt = 4;//趣头条
+    hjyh5 = 5;//欢聚游
+    uc = 6;//UC
+    tyy = 7;//天宇游
+    sdw = 8;//闪电玩
+    alipay = 9;//支付宝alipay
+    dq = 10;//大秦游戏
+    qh = 11;//裙黑
+    wechat_public = 12;//微信公众号
+    huawei = 13; //华为
+    dtfish = 14; //捕鱼大厅
 };
 
 enum emPayReason {
-  normal = 0; //正常支付
-  first_pay_liquan = 1; //奖券引导首冲
+    normal = 0; //正常支付
+    first_pay_liquan = 1; //奖券引导首冲
 };
 
 //通用的获取物品的结构
 message PBGetItem {
-  int32 item_id = 1;
-  int64 item_count = 2;
-  int32 expire_time = 3;
-  int32 virtual_id = 4;
+    int32 item_id = 1;
+    int64 item_count = 2;
+    int32 expire_time = 3;
+    int32 virtual_id = 4;
 }
 
 message PBGetItemInfo {
-  repeated PBGetItem items = 1;
+    repeated PBGetItem items = 1;
+}
+
+message Items{
+    repeated PBGetItem items = 1;
 }
 
 //fish信息
 message PBRoomFishInfo {
-  string fish_id = 1;
-  int32  fixed_left_offset = 2; //被固定还剩余的offset
-  int32  boss_score_count = 3; //如果非0，标识boss觉醒的倍数
-  int32  boss_multi = 4; //boss觉醒的multi   已经不用了
-  int32  boss_rand_show = 5; //boss显示次数         新版本已不用这个字段了
-  int32  boss_reborn_offset = 6; //boss重生了多久offset
-  int64  live_offset = 7;          //鱼总共走了多少帧
-  int64  boss_score = 8;           //boss 鱼分数
-  int64  boss_wake_time = 10;       //boss 每一轮觉醒的时间
-  double  pao_bei_cal = 11;         // 鱼分计算炮倍
+    string fish_id = 1;
+    int32  fixed_left_offset = 2;   // 被固定还剩余的offset
+    int32  boss_score_count = 3;    // 如果非0，标识boss觉醒的倍数
+    int32  boss_multi = 4;          // boss觉醒的multi   已经不用了
+    int32  boss_rand_show = 5;      // boss显示次数         新版本已不用这个字段了
+    int32  boss_reborn_offset = 6;  // boss重生了多久offset
+    int64  live_offset = 7;         // 鱼总共走了多少帧
+    int64  boss_score = 8;          // boss 鱼分数
+    int64  boss_wake_time = 10;     // boss 每一轮觉醒的时间
+    double  pao_bei_cal = 11;       // 鱼分计算炮倍
 
-  //自选房相关
-  bool    zixuan_crazy = 12;          //是否处于狂暴状态
-  int64   zixuan_call_unix = 13;      //召唤的时间点(毫秒)
+    //自选房相关
+    bool    zixuan_crazy = 12;      // 是否处于狂暴状态
+    int64   zixuan_call_unix = 13;  // 召唤的时间点(毫秒)
 
-  int64   die_unix = 14; //死亡时间（毫秒)
+    int64   die_unix = 14;          // 死亡时间（毫秒)
 };
 
 //掉落信息
 message PBDropItem {
-  int32 item_id = 1;
-  uint64 count = 2;
+    int32 item_id = 1;
+    uint64 count = 2;
 }
 
 message PBDropInfo {
-  repeated PBDropItem items = 1;
+    repeated PBDropItem items = 1;
 }
 
 //房间使用道具（技能）
 message PBRoomUseItemInfo {
-  uint64 uid = 1;
-  int32 item_id = 2;
-  string fish_id = 3;  //目标类的，如技能锁定，如果导弹会杀鱼也会有
-  int64  use_msec = 4; //使用的时间（毫秒时间戳）
-  PBDropInfo drops = 5; //如果是弹头类的会有掉落信息
-  int64 item_count = 6; //使用数量
+    uint64 uid = 1;
+    int32 item_id = 2;
+    string fish_id = 3;  //目标类的，如技能锁定，如果导弹会杀鱼也会有
+    int64  use_msec = 4; //使用的时间（毫秒时间戳）
+    PBDropInfo drops = 5; //如果是弹头类的会有掉落信息
+    int64 item_count = 6; //使用数量
 
-  //技能类型效果
-  repeated PBRoomFishInfo fixed_fishs = 100;  //固定的鱼（如电磁炮）
-  repeated PBRoomFishInfo call_fishs = 101;   //召唤的鱼
+    //技能类型效果
+    repeated PBRoomFishInfo fixed_fishs = 100;  //固定的鱼（如电磁炮）
+    repeated PBRoomFishInfo call_fishs = 101;   //召唤的鱼
 
-  //其他
-  int32       jfcard_end_time = 200; //积分卡失效时间戳
-  int32       jfcard_use_time = 201; //积分卡上次使用时间
-  int32       jfcard_use_cnt = 202; //积分卡使用次数
+    //其他
+    int32       jfcard_end_time = 200; //积分卡失效时间戳
+    int32       jfcard_use_time = 201; //积分卡上次使用时间
+    int32       jfcard_use_cnt = 202; //积分卡使用次数
 }
 
 //邮件状态
 enum emMailState {
-  mail_state_new = 0;         //收取
-  mail_state_read = 1;        //已读
-  mail_state_attached = 2;    //如果有附件，附件已经领取
+    mail_state_new = 0;         //收取
+    mail_state_read = 1;        //已读
+    mail_state_attached = 2;    //如果有附件，附件已经领取
 }
 
 enum emMailReason {
-  mail_reason_invalid = 0;                    //未归类
-  mail_reason_hwzb_day = 1;                   //海王争霸日榜
-  mail_reason_hwzb_week = 2;                  //海王争霸周榜
-  mail_reason_hwzb_month = 3;                 //海王争霸月榜
-  mail_reason_admin = 4;                      //后台
-  mail_reason_give = 5;                       //赠送
-  mail_reason_activity_universal = 6;         //牛角活动
-  mail_reason_activity_total_recharge = 7;    //累充活动
-  mail_reason_exchange = 8;    //兑换
-  mail_reason_new_player_task = 9;    //新手任务
-  mail_reason_global_mail = 10;    //全服邮件
-  mail_reason_growth_pakage = 11;   //成长礼包
-  mail_reason_exit_room = 12;   //退出房间
-  mail_reason_five_bless = 13;   //五福
-  mail_reason_activity_kill_fish_rank = 14;    //杀分排行
-  mail_reason_activity_fish_score = 15;    //鱼分活动 如1800五龙
-  mail_reason_world_boss_killer = 16;    //世界boss击杀奖励
-  mail_reason_world_boss_rank = 17;    //世界boss排行奖励
-  mail_reason_jackport_clear = 18;    //彩金池迁移房间返还
-  mail_reason_activity_tian_peng = 19;         //天蓬活动
-  mail_reason_activity_jin_niu = 20;         //金牛活动
-  mail_reason_xxsc_reclaim = 21;      //心想事橙道具当日未用返还金币
-  mail_reason_duanzao_shuliandu_return = 22;      //锻造熟练度回收
-  mail_reason_activity_jin_niu_items_return = 23;      //金牛活动，道具回收
-  mail_reason_pao_return = 24;      //重复获得炮台返还金币
-  mail_reason_wing_return = 25;      //重复获得翅膀返还金币
-  mail_reason_activity_jin_niu_miao_sha = 26;         //金牛秒杀榜
-  mail_reason_activity_jin_niu_fu_rui = 27;         //金牛福瑞榜
-  mail_reason_zixuanfang_reward = 28;         //自选房房间boss结算奖励
-  mail_reason_zixuanfang_rank = 29;         //自选房排行
-  mail_reason_haishen_altar_rank = 30;         //海神祭坛排行榜
-  mail_reason_haishen_happy_rank = 31;         //海神狂欢排行榜
-  mail_reason_activity_sjb_crazy_lucky = 32;         //世界杯狂欢日榜
-  mail_reason_activity_sjb_crazy_leiji = 33;         //世界杯狂欢累计榜
-  mail_reason_activity_sjb_crazy_week_hz = 34;         //世界杯狂欢徽章周补发
+    mail_reason_invalid = 0;                        // 未归类
+    mail_reason_hwzb_day = 1;                       // 海王争霸日榜
+    mail_reason_hwzb_week = 2;                      // 海王争霸周榜
+    mail_reason_hwzb_month = 3;                     // 海王争霸月榜
+    mail_reason_admin = 4;                          // 后台
+    mail_reason_give = 5;                           // 赠送
+    mail_reason_activity_universal = 6;             // 牛角活动
+    mail_reason_activity_total_recharge = 7;        // 累充活动
+    mail_reason_exchange = 8;                       // 兑换
+    mail_reason_new_player_task = 9;                // 新手任务
+    mail_reason_global_mail = 10;                   // 全服邮件
+    mail_reason_growth_pakage = 11;                 // 成长礼包
+    mail_reason_exit_room = 12;                     // 退出房间
+    mail_reason_five_bless = 13;                    // 五福
+    mail_reason_activity_kill_fish_rank = 14;       // 杀分排行
+    mail_reason_activity_fish_score = 15;           // 鱼分活动 如1800五龙
+    mail_reason_world_boss_killer = 16;             // 世界boss击杀奖励
+    mail_reason_world_boss_rank = 17;               // 世界boss排行奖励
+    mail_reason_jackport_clear = 18;                // 彩金池迁移房间返还
+    mail_reason_activity_tian_peng = 19;            // 天蓬活动
+    mail_reason_activity_jin_niu = 20;              // 金牛活动
+    mail_reason_xxsc_reclaim = 21;                  // 心想事橙道具当日未用返还金币
+    mail_reason_duanzao_shuliandu_return = 22;      // 锻造熟练度回收
+    mail_reason_activity_jin_niu_items_return = 23; // 金牛活动，道具回收
+    mail_reason_pao_return = 24;                    // 重复获得炮台返还金币
+    mail_reason_wing_return = 25;                   // 重复获得翅膀返还金币
+    mail_reason_activity_jin_niu_miao_sha = 26;     // 金牛秒杀榜
+    mail_reason_activity_jin_niu_fu_rui = 27;       // 金牛福瑞榜
+    mail_reason_zixuanfang_reward = 28;             // 自选房房间boss结算奖励
+    mail_reason_zixuanfang_rank = 29;               // 自选房排行
+    mail_reason_haishen_altar_rank = 30;            // 海神祭坛排行榜
+    mail_reason_haishen_happy_rank = 31;            // 海神狂欢排行榜
+    mail_reason_activity_sjb_crazy_lucky = 32;      // 世界杯狂欢日榜
+    mail_reason_activity_sjb_crazy_leiji = 33;      // 世界杯狂欢累计榜
+    mail_reason_activity_sjb_crazy_week_hz = 34;    // 世界杯狂欢徽章周补发
+    mail_reason_activity_new_year_crazy_lucky = 35; // 新年狂欢日榜
+    mail_reason_activity_new_year_crazy_leiji = 36; // 新年狂欢累计总榜
+    mail_reason_caishen_daily = 37;                 // 财神赐福福气日榜
 }
 
 //邮件的附件
 message PBMailAttachItem {
-  int32 item_id = 1;
-  uint64 count = 2;
+    int32 item_id = 1;
+    uint64 count = 2;
 }
 
 //邮件定义
 message PBMailItem {
-  uint64                  id = 1;
-  uint64                  sender_id = 2;
-  string                   sender_name = 3;
-  emMailState             state = 4;
-  string                   title = 5;
-  string                   content = 6;
-  int32                   send_time = 7;
-  int32                   expired_time = 8;
-  repeated PBMailAttachItem attachs = 9;
-  emMailReason      reason = 10;
+    uint64                  id = 1;
+    uint64                  sender_id = 2;
+    string                   sender_name = 3;
+    emMailState             state = 4;
+    string                   title = 5;
+    string                   content = 6;
+    int32                   send_time = 7;
+    int32                   expired_time = 8;
+    repeated PBMailAttachItem attachs = 9;
+    emMailReason      reason = 10;
 }
 
 //系统邮件
 message PBSysMailItem {
-  uint64 id = 1;
-  string  title = 2;
-  string  content = 3;
-  int32  expired_time = 4;                //过期时间
-  repeated PBMailAttachItem attachs = 5;  //附件
-  string sender_name = 6;
+    uint64 id = 1;
+    string  title = 2;
+    string  content = 3;
+    int32  expired_time = 4;                //过期时间
+    repeated PBMailAttachItem attachs = 5;  //附件
+    string sender_name = 6;
 }
 
 //所有的系统邮件
 message PBSysAllMail {
-  repeated PBSysMailItem mails = 1;
+    repeated PBSysMailItem mails = 1;
 }
 
 //充值订单
 message PBPlayerOrderInfo{
-  bytes info_id = 1;
-  int64 uid = 2;
-  int32 amount = 3;
-  int64 timestamp = 4;
-  int32 gsid = 5;
-  string reg_platform = 6;
-  string state = 7;
-  string openid = 8;
-  int32 product_id = 9;
-  int32 vip_lv = 10;
-  int32 vip_exp = 11;
-  string reg_channel = 12;
-  bool  from_admin = 13;
-  PBGetItemInfo buy_items = 14;
-  emPayType     pay_type = 15;
-  emPayReason   pay_reason = 16;
-  string        third_order_id = 17; //第三方订单id
-  int32         cluster_id = 20; //表示支付服务器集群id
-  int32 buy_count = 21;
-  bool  b_test = 22;
-  int32 index = 23;
+    bytes info_id = 1;
+    int64 uid = 2;
+    int32 amount = 3;
+    int64 timestamp = 4;
+    int32 gsid = 5;
+    string reg_platform = 6;
+    string state = 7;
+    string openid = 8;
+    int32 product_id = 9;
+    int32 vip_lv = 10;
+    int32 vip_exp = 11;
+    string reg_channel = 12;
+    bool  from_admin = 13;
+    PBGetItemInfo buy_items = 14;
+    emPayType     pay_type = 15;
+    emPayReason   pay_reason = 16;
+    string        third_order_id = 17; //第三方订单id
+    int32         cluster_id = 20; //表示支付服务器集群id
+    int32 buy_count = 21;
+    bool  b_test = 22;
+    int32 index = 23;
 }
 
 message PBPlayerThirdRechargeParam {
-  string prepay_id = 1;
-  string package = 2;
-  string noncestr = 3;
-  string timestamp = 4;
-  string sign = 5;
+    string prepay_id = 1;
+    string package = 2;
+    string noncestr = 3;
+    string timestamp = 4;
+    string sign = 5;
 }
 
 //支付限额信息
 message PBPlayerRechargeLimitInfo {
-  int64 pay_time = 1;
-  int64 pay_day_limit = 2;
-  int64 pay_month_limit = 3;
-  int64 pay_day = 4;
-  int64 pay_month = 5;
+    int64 pay_time = 1;
+    int64 pay_day_limit = 2;
+    int64 pay_month_limit = 3;
+    int64 pay_day = 4;
+    int64 pay_month = 5;
 };
 
 //公告
 message PBSysAnnouncementItem {
-  int32  id = 1;
-  string title = 2;
-  string label = 3;
-  string text = 4;
-  int32  level = 5;
-  int32  write_time = 6;
-  int32  end_time = 7;
-  int32  status = 8;
-  int32  atype = 9; // 0 外  1内
-  repeated string platform = 10; //平台
-  string  version = 11;  // 公告版本号
+    int32  id = 1;
+    string title = 2;
+    string label = 3;
+    string text = 4;
+    int32  level = 5;
+    int32  write_time = 6;
+    int32  end_time = 7;
+    int32  status = 8;
+    int32  atype = 9; // 0 外  1内
+    repeated string platform = 10; //平台
+    string  version = 11;  // 公告版本号
 }
 
 message PBSysAnnoucementInfo {
-  repeated PBSysAnnouncementItem items = 1;
+    repeated PBSysAnnouncementItem items = 1;
 }
 
 // 跑马灯消息
 message PBMarqueeMsg {
-  string content = 1;// 消息
-  int32  level = 2; // 级别 1级最高
-  int32  paobei = 3; // 炮倍
-  int32  count = 4; // 数量
+    string content = 1;// 消息
+    int32  level = 2; // 级别 1级最高
+    int32  paobei = 3; // 炮倍
+    int32  count = 4; // 数量
 }
 
 //碎片合成
 message DebrisComposeItem {
-  int32 time = 1;
-  int64 debris_count = 2;
-  int32 dst_item_id = 3;
-  int64 dst_item_count = 4;
+    int32 time = 1;
+    int64 debris_count = 2;
+    int32 dst_item_id = 3;
+    int64 dst_item_count = 4;
 }
 
 enum emGuideType {
-  room2guide = 0;
-  public_number_state = 1;
+    room2guide = 0;
+    public_number_state = 1;
 }
 
 //贵族认证信息
 message PBVipAuthenInfo {
-  string name = 1;
-  string phone = 2;
-  string qq = 3;
-  string weixin = 4;
-  bool  reward_state = 5;
+    string name = 1;
+    string phone = 2;
+    string qq = 3;
+    string weixin = 4;
+    bool  reward_state = 5;
 }
 
 enum emHaiWangZhengBaRankType {
-  day = 0;
-  week = 1;
-  month = 2;
+    day = 0;
+    week = 1;
+    month = 2;
 }
 
 enum emRoomKickType {
-  over_time = 0;
-  vip_room_time_out = 1;   //贵族场超时
-  score_room_time_out = 2; //积分场超时
-  xjdb_room_time_out = 3; //星际夺宝场次超时
-  room_svr_closed = 4; //服务器断开
-  redblue_closed = 5; //服务器断开
-  match_room_dismiss = 6; //比赛场解散
-  match_room_leaved = 7; //比赛场有人离开
-  match_room_end = 8; //比赛场正常结束
+    over_time = 0;
+    vip_room_time_out = 1;   //贵族场超时
+    score_room_time_out = 2; //积分场超时
+    xjdb_room_time_out = 3; //星际夺宝场次超时
+    room_svr_closed = 4; //服务器断开
+    redblue_closed = 5; //服务器断开
+    match_room_dismiss = 6; //比赛场解散
+    match_room_leaved = 7; //比赛场有人离开
+    match_room_end = 8; //比赛场正常结束
 }
 
 message PBHaiWangZhengBaRankItem {
-  int32 ranking = 1;//名次
-  uint64 uid = 2;  //uid
-  string name = 3;//姓名
-  string headurl = 4;//头像
-  int32  vip_level = 5; //vip等级
-  int64  score = 6;    //积分
+    int32 ranking = 1;//名次
+    uint64 uid = 2;  //uid
+    string name = 3;//姓名
+    string headurl = 4;//头像
+    int32  vip_level = 5; //vip等级
+    int64  score = 6;    //积分
 }
 
 message PBHaiWangZhengBaRewardItem {
-  uint32 begin_rank = 1;
-  uint32 end_rank = 2;
-  PBGetItemInfo reward = 3; //奖励数据
+    uint32 begin_rank = 1;
+    uint32 end_rank = 2;
+    PBGetItemInfo reward = 3; //奖励数据
 }
 
 message PBHaiWangZhengBaRankTypeRewardInfo {
-  emHaiWangZhengBaRankType rtype = 1;
-  repeated PBHaiWangZhengBaRewardItem reward_arr = 2;
+    emHaiWangZhengBaRankType rtype = 1;
+    repeated PBHaiWangZhengBaRewardItem reward_arr = 2;
 }
 
 message PBHaiWangZhengBaRankInfo {
-  emHaiWangZhengBaRankType rtype = 1;
-  repeated PBHaiWangZhengBaRankItem arr = 2;
-  bool last = 3;
-  PBHaiWangZhengBaRankItem self_rank_item = 4;
-  repeated PBHaiWangZhengBaRankItem other_rank_arr = 5;
+    emHaiWangZhengBaRankType rtype = 1;
+    repeated PBHaiWangZhengBaRankItem arr = 2;
+    bool last = 3;
+    PBHaiWangZhengBaRankItem self_rank_item = 4;
+    repeated PBHaiWangZhengBaRankItem other_rank_arr = 5;
 }
 
 message PBExchangeConfigItem {
-  int32 exchange_id = 1; //兑换id
-  int32 left_count = 2; //剩余次数,每日总库存
-  int32  personal_left_count = 3; //个人剩余次数（按天重置）
-  int32  personal_total_count = 4;  // 个人已经兑换次数(只对有终身限制的有效)
+    int32 exchange_id = 1; //兑换id
+    int32 left_count = 2; //剩余次数,每日总库存
+    int32  personal_left_count = 3; //个人剩余次数（按天重置）
+    int32  personal_total_count = 4;  // 个人已经兑换次数(只对有终身限制的有效)
 }
 
 enum emEquipType {
-  equip_type_normal = 0; //经典场
-  equip_type_boat = 1; //深海捕鱼场切换
+    equip_type_normal = 0; //经典场
+    equip_type_boat = 1; //深海捕鱼场切换
 };
 
 message PBWechatAdvertItem {
-  string open_id = 1;
-  string action_type = 2;
-  int64  action_time = 3;
-  string url = 4;
-  int32  claim_type = 5;
-  int32  length_of_stay = 6;
-  int32 purchase_value = 7;
+    string open_id = 1;
+    string action_type = 2;
+    int64  action_time = 3;
+    string url = 4;
+    int32  claim_type = 5;
+    int32  length_of_stay = 6;
+    int32 purchase_value = 7;
 }
 
 message PBModePlayerDataItem {
-  string      prop = 1;
-  string      value = 2;
-  bool        add = 3;
+    string      prop = 1;
+    string      value = 2;
+    bool        add = 3;
 }
 
 message PBWechatAccessToken {
-  string access_token = 1;
-  string open_id = 2;
+    string access_token = 1;
+    string open_id = 2;
 }
 
 enum emStarPlayerType {
-  sp_rich = 0;  //富可敌国
-  sp_active = 1; //活跃之星
-  sp_fisher = 2; //捕鱼达人
+    sp_rich = 0;  //富可敌国
+    sp_active = 1; //活跃之星
+    sp_fisher = 2; //捕鱼达人
 }
 
 enum emPayRankType {
-  pay_rank_day = 0;
+    pay_rank_day = 0;
 }
 
 //数据保存类型
 enum emUserInfoSaveType {
-  common_offline = 0;    //下线保存
-  common_timeout = 1;    //定时保存
-  common_flush = 2;     //强制刷新
+    common_offline = 0;    //下线保存
+    common_timeout = 1;    //定时保存
+    common_flush = 2;     //强制刷新
 
-  //规定一下3-100范围都属于快照类型
-  snapshot_second_day = 3; //次留快照
-  snapshot_first_pay = 4; //首次充值快照
-  snapshot_first_exchange_shiwu = 5; //首次兑换实物
-  snapshot_shoot_cnt = 6; //开炮数快照
-  snapshot_shoot_vip_levelup = 7; //vip升级快照
-  snapshot_dole = 8;        //破产打点
-  snapshot_pay = 9;        //充值打点
-  snapshot_type_max = 100; //快照最大值
+    //规定一下3-100范围都属于快照类型
+    snapshot_second_day = 3; //次留快照
+    snapshot_first_pay = 4; //首次充值快照
+    snapshot_first_exchange_shiwu = 5; //首次兑换实物
+    snapshot_shoot_cnt = 6; //开炮数快照
+    snapshot_shoot_vip_levelup = 7; //vip升级快照
+    snapshot_dole = 8;        //破产打点
+    snapshot_pay = 9;        //充值打点
+    snapshot_type_max = 100; //快照最大值
 }
 
 enum emBroadType {
-  default_type = 0;   // 默认类型
-  vip_exp_lv_upgrade = 1;     // vip等级提升，人物等级提升奖励
+    default_type = 0;   // 默认类型
+    vip_exp_lv_upgrade = 1;     // vip等级提升，人物等级提升奖励
 }
 
 //vip等级详细信息
 message PBVipInfoItem {
-  int32 vip_lv = 1;
-  int32 reach_time = 2;
+    int32 vip_lv = 1;
+    int32 reach_time = 2;
 }
 
 //分享信息
 message PBNewShareData {
-  int32 reward_vip_level = 1;
-  int32 begin_vip_level = 2; //初始邀请的vip等级
+    int32 reward_vip_level = 1;
+    int32 begin_vip_level = 2; //初始邀请的vip等级
 }
 
 message PBShareInfoItem {
-  uint64 uid = 1;
-  bool state = 2;
-  PBNewShareData  share_data = 3;
-  string nick_name = 4;
-  emSex  sex = 5;
-  string head_image = 6;
-  int32  vip_level = 7;
-  int32  create_time = 8;    //注册时间
-  repeated PBVipInfoItem vip_lv_info = 9;//vip等级详情
+    uint64 uid = 1;
+    bool state = 2;
+    PBNewShareData  share_data = 3;
+    string nick_name = 4;
+    emSex  sex = 5;
+    string head_image = 6;
+    int32  vip_level = 7;
+    int32  create_time = 8;    //注册时间
+    repeated PBVipInfoItem vip_lv_info = 9;//vip等级详情
 }
 
 //跑马灯类型
 enum emPaoMaDengType {
-  pmd_invalid = 0;
-  pmd_exchange = 1;   //兑换
-  pmd_hit = 2;        //普通击落
-  pmd_hit_boss = 3;   //击败BOSS
-  pmd_hit_debris = 4; //击落碎片
-  pmd_com_debris = 5; //合成碎片
-  pmd_give = 6;       //赠送
-  pmd_hit_special_fish = 7;   //击杀特色鱼
-  pmd_jubao = 8;           //积分场 聚宝
-  pmd_jackpot = 9;        //彩金池
-  pmd_activity = 10;      //活动
-  pmd_world_boss = 11;   //世界boss
+    pmd_invalid = 0;
+    pmd_exchange = 1;   //兑换
+    pmd_hit = 2;        //普通击落
+    pmd_hit_boss = 3;   //击败BOSS
+    pmd_hit_debris = 4; //击落碎片
+    pmd_com_debris = 5; //合成碎片
+    pmd_give = 6;       //赠送
+    pmd_hit_special_fish = 7;   //击杀特色鱼
+    pmd_jubao = 8;           //积分场 聚宝
+    pmd_jackpot = 9;        //彩金池
+    pmd_activity = 10;      //活动
+    pmd_world_boss = 11;   //世界boss
 
 }
 
 //商品类型
 enum emShopType {
-  st_normal = 0;
-  st_time_lmt = 1; // 时间类限制 首冲，每日特惠，摇一摇等
-  st_time = 2;  // 时效道具 月卡等
-  st_first = 3; // 首单特殊逻辑  首次双倍礼包等
-  st_merge = 4; // 组合  组合礼包
-  st_yaoyiyao = 5; // 6元摇一摇
-  st_day_reward = 6; // 购买以后可以领取固定天数的奖励（新首冲）
-  st_discount_pack = 7; //特惠礼包
-  st_growth_pack = 8 ;  //成长礼包
-  st_lianchong = 9;  //连冲礼包
-  st_zhichong = 10; //直冲礼包
-  st_energy = 11; //能量礼包
-  st_week_pack = 12;   //每周礼包
-  st_season_manual_active = 13;   //赛季手册活跃礼包
-  st_season_manual_level = 14;   //赛季手册等级礼包
-  st_season_manual_vip = 15;      //赛季手册礼包(普通，精英，至尊)
-  st_activity_yanhua = 16;      //活动烟花，可以按次数购买
-  st_duan_zao_crystal = 17;      //锻造水晶
-  st_rank_per = 18;      //排行加成(自选房, 海神排行榜等。。。）
+    st_normal = 0;
+    st_time_lmt = 1;                // 时间类限制 首冲，每日特惠，摇一摇等
+    st_time = 2;                    // 时效道具 月卡等
+    st_first = 3;                   // 首单特殊逻辑  首次双倍礼包等
+    st_merge = 4;                   // 组合  组合礼包
+    st_yaoyiyao = 5;                // 6元摇一摇
+    st_day_reward = 6;              // 购买以后可以领取固定天数的奖励（新首冲）
+    st_discount_pack = 7;           //特惠礼包
+    st_growth_pack = 8 ;            //成长礼包
+    st_lianchong = 9;               //连冲礼包
+    st_zhichong = 10;               //直冲礼包
+    st_energy = 11;                 //能量礼包
+    st_week_pack = 12;              //每周礼包
+    st_season_manual_active = 13;   //赛季手册活跃礼包
+    st_season_manual_level = 14;    //赛季手册等级礼包
+    st_season_manual_vip = 15;      //赛季手册礼包(普通，精英，至尊)
+    st_activity_yanhua = 16;        //活动烟花，可以按次数购买
+    st_duan_zao_crystal = 17;       //锻造水晶
+    st_rank_per = 18;               //排行加成(自选房, 海神排行榜等。。。）
 }
 
 message PBShopConfigItem {
-  int32 product_id = 1;
-  bool  open = 2;
+    int32 product_id = 1;
+    bool  open = 2;
 }
 
 //起航礼包 配置 xlh 增加
 message PBPlayerInitConfigItem {
-  int32 item_id = 1;
-  int64  item_count = 2;
+    int32 item_id = 1;
+    int64  item_count = 2;
 }
 
 //客户端设备和其他相关信息 每次登录必传，用来做log日志分析
 message PBLoginHead {
-  string pkg = 1; //com.gg.nova
-  string idfa = 2; //ios设备的广告id
-  string idfv = 3; //和idfa类似，另一种设备id
-  string android_id = 4; //安卓设备指纹id
-  string google_aid = 5; //安卓设备的google广告id
-  string carrier = 6;     //     网络服务商类型    eg:4G/wifi
-  string os_type = 7;     // ios/android
-  string os_version = 8;
-  string orign_app_version = 9;   //初始客户端版本号
-  string app_version = 10;
-  string device_type = 11; // 客户端的设备类型 eg:phone/tablet
-  string device_brand = 12;   // 客户端的设备品牌  eg:xiaomi/iphone/samsung
-  string device_model = 13;   // 客户端的设备型号 eg:iPhone12,5/iPad6,3/xiaomi10
-  string app_id = 14;
+    string pkg = 1; //com.gg.nova
+    string idfa = 2; //ios设备的广告id
+    string idfv = 3; //和idfa类似，另一种设备id
+    string android_id = 4; //安卓设备指纹id
+    string google_aid = 5; //安卓设备的google广告id
+    string carrier = 6;     //     网络服务商类型    eg:4G/wifi
+    string os_type = 7;     // ios/android
+    string os_version = 8;
+    string orign_app_version = 9;   //初始客户端版本号
+    string app_version = 10;
+    string device_type = 11; // 客户端的设备类型 eg:phone/tablet
+    string device_brand = 12;   // 客户端的设备品牌  eg:xiaomi/iphone/samsung
+    string device_model = 13;   // 客户端的设备型号 eg:iPhone12,5/iPad6,3/xiaomi10
+    string app_id = 14;
 }
 
 message PBDrawConfigRandItem {
-  int32 item_id = 1;
-  int32 item_count = 2;
+    int32 item_id = 1;
+    int32 item_count = 2;
 }
 
 message PBDrawConfigInfo {
-  int32    room_type = 1;
-  repeated uint64 draw_cost_arr = 2;
-  repeated PBDrawConfigRandItem rand_item_arr = 3;
+    int32    room_type = 1;
+    repeated uint64 draw_cost_arr = 2;
+    repeated PBDrawConfigRandItem rand_item_arr = 3;
 }
 
 message PBPlayerExchangeConfigItem {
-  int32 exchange_id = 1; //兑换id
-  int32 count = 2;
-  int32 exchange_time = 3;
+    int32 exchange_id = 1; //兑换id
+    int32 count = 2;
+    int32 exchange_time = 3;
 }
 
 //房间通知事件，主要用来记录快照
 enum emRoomNotice {
-  pay = 0; //支付事件
-  first_pay = 1; //首次充值
-  dole = 2; //救济金事件
+    pay = 0; //支付事件
+    first_pay = 1; //首次充值
+    dole = 2; //救济金事件
 }
 
 //技能类型
 enum emSkillType {
-  skill_type_invalid = 0; //无效或者非技能类型
-  skill_type_crazy = 1; //狂暴
-  skill_type_fixed = 2; //固定（如 电磁炮）
-  skill_type_call = 3; //召唤
-  skill_type_target = 4; //锁定
-  skill_type_frozen = 5; //冰冻
+    skill_type_invalid = 0; //无效或者非技能类型
+    skill_type_crazy = 1; //狂暴
+    skill_type_fixed = 2; //固定（如 电磁炮）
+    skill_type_call = 3; //召唤
+    skill_type_target = 4; //锁定
+    skill_type_frozen = 5; //冰冻
 }
 
 //解锁炮倍信息
 message PBUnlockPaoBeiItem {
-  int32 paobei = 1;
-  int32 unlock_vip = 2;
-  int64 unlock_cost = 3;
+    int32 paobei = 1;
+    int32 unlock_vip = 2;
+    int64 unlock_cost = 3;
 }
 
 enum emTaskType {
-  task_type_invalid = 0;
-  task_type_fire_gold = 1;      //发射金币数量
-  task_type_hit_gold = 2;       //击落金币数量
-  task_type_hit_fish = 3;       //击落鱼数量 可通过target指定
-  task_type_online_second = 4;  //累计在线时长
-  task_type_exchange = 5;       //兑换道具次数 可通过target指定
-  task_type_recharge_count = 6; //充值次数
-  task_type_recharge_value = 7; //充值累计金额
-  task_type_zengsong = 8;       //赠送道具次数 可通过target指定
-  task_type_use_item = 9;       //使用道具 可通过target指定
-  task_type_daily_sign = 10;    //签到行为触发的签到
+    task_type_invalid = 0;
+    task_type_fire_gold = 1;      //发射金币数量
+    task_type_hit_gold = 2;       //击落金币数量
+    task_type_hit_fish = 3;       //击落鱼数量 可通过target指定
+    task_type_online_second = 4;  //累计在线时长
+    task_type_exchange = 5;       //兑换道具次数 可通过target指定
+    task_type_recharge_count = 6; //充值次数
+    task_type_recharge_value = 7; //充值累计金额
+    task_type_zengsong = 8;       //赠送道具次数 可通过target指定
+    task_type_use_item = 9;       //使用道具 可通过target指定
+    task_type_daily_sign = 10;    //签到行为触发的签到
 }
 enum emTaskDurationType {
-  task_d_type_invalid = 0;
-  task_d_type_day = 1;       //每日任务
-  task_d_type_week = 2;     //每周任务
+    task_d_type_invalid = 0;
+    task_d_type_day = 1;       //每日任务
+    task_d_type_week = 2;     //每周任务
 }
 
 //属性道具同步
 enum emPlayerSynItemType {
-  psit_invalid = 0;
-  psit_prop = 1;
-  psit_item = 2;
-  psit_income = 3;
+    psit_invalid = 0;
+    psit_prop = 1;
+    psit_item = 2;
+    psit_income = 3;
 }
 
 message PBSvrPlayerPropItem {
-  bool increment = 1; //是变化量还是直接覆盖
-  int32 item_id = 2; //道具id
-  int64 value = 3; //变化值
-  string reason = 4; //变化原因
-  emPlayerSynItemType  type = 5; //prop:1 item:2 income:3
+    bool increment = 1; //是变化量还是直接覆盖
+    int32 item_id = 2; //道具id
+    int64 value = 3; //变化值
+    string reason = 4; //变化原因
+    emPlayerSynItemType  type = 5; //prop:1 item:2 income:3
 }
 
 //task item
 message PBPlayerTaskItem {
-  int32 id = 1;
-  int64 count = 2; //标识进度
-  bool  reward = 3; //是否领取
+    int32 id = 1;
+    int64 count = 2; //标识进度
+    bool  reward = 3; //是否领取
 }
 
 message PBPlayerTypeTask {
-  emTaskDurationType dtype = 1;
-  repeated int32 reward_points = 2;
-  int32 update_time = 3;
-  repeated PBPlayerTaskItem task_arr = 4;
+    emTaskDurationType dtype = 1;
+    repeated int32 reward_points = 2;
+    int32 update_time = 3;
+    repeated PBPlayerTaskItem task_arr = 4;
 }
 
 message PBPlayerIncomeItem {
-  int32  i_type = 1;
-  int64 i_value = 2;
+    int32  i_type = 1;
+    int64 i_value = 2;
 }
 
 enum emRedBlueState {
-  redblue_state_closed = 0; //活动关闭
-  redblue_state_add_gold = 1; //下注
-  redblue_state_result = 2; //结算
+    redblue_state_closed = 0; //活动关闭
+    redblue_state_add_gold = 1; //下注
+    redblue_state_result = 2; //结算
 }
 
 enum emRedBlueType {
-  redblue_type_red = 0; //红
-  redblue_type_blue = 1; //蓝
-  redblue_type_draw = 2; //平
+    redblue_type_red = 0; //红
+    redblue_type_blue = 1; //蓝
+    redblue_type_draw = 2; //平
 }
 
 message PBRedBlueAddGoldItem {
-  emRedBlueType type = 1;
-  int64  gold = 2;
+    emRedBlueType type = 1;
+    int64  gold = 2;
 }
 
 message PBRedBluePlayerInfo {
-  uint64 uid = 1;
-  string nick_name = 2;
-  string head_image = 3;
-  int32 vip_level = 4;
-  int64 gold = 5;
-  int64 total_win_gold = 6;//总赢取金币
-  int32 ten_win_cnt = 7;
-  int32 rank = 8;
-  repeated PBRedBlueAddGoldItem ag_items = 9;
-  int64 win_gold = 10; //最近一局赢取的金币
+    uint64 uid = 1;
+    string nick_name = 2;
+    string head_image = 3;
+    int32 vip_level = 4;
+    int64 gold = 5;
+    int64 total_win_gold = 6;//总赢取金币
+    int32 ten_win_cnt = 7;
+    int32 rank = 8;
+    repeated PBRedBlueAddGoldItem ag_items = 9;
+    int64 win_gold = 10; //最近一局赢取的金币
 }
 
 message PBRedBlueRoomInfo {
-  emRedBlueState state = 1;
-  int64 state_change_unix = 2;
-  repeated emRedBlueType last_ten_wins = 3;
-  repeated PBRedBlueAddGoldItem ag_items = 4; //下注的金币
-  PBRedBlueAddGoldItem win_item = 5; //下注的金币
-  repeated PBRedBluePlayerInfo six_players = 6; //前6排行玩家
-  repeated PBRedBluePlayerInfo last_six_players = 7; //上一轮前6玩家
+    emRedBlueState state = 1;
+    int64 state_change_unix = 2;
+    repeated emRedBlueType last_ten_wins = 3;
+    repeated PBRedBlueAddGoldItem ag_items = 4; //下注的金币
+    PBRedBlueAddGoldItem win_item = 5; //下注的金币
+    repeated PBRedBluePlayerInfo six_players = 6; //前6排行玩家
+    repeated PBRedBluePlayerInfo last_six_players = 7; //上一轮前6玩家
 }
 
 message PBJackpotRoomItem {
-  int32 room_type = 1;
-  int64 gold = 2;
+    int32 room_type = 1;
+    int64 gold = 2;
 }
 
 message PBSinglePlayerInfo {
-  uint64 uid = 2;  //uid
-  string name = 3;//姓名
-  string headurl = 4;//头像
-  int32  vip_level = 5; //vip等级
+    uint64 uid = 2;  //uid
+    string name = 3;//姓名
+    string headurl = 4;//头像
+    int32  vip_level = 5; //vip等级
 }
 
 enum emJackpotWinType {
-  small = 0;
-  mid = 1;
-  big = 2;
-  huge = 3;
+    small = 0;
+    mid = 1;
+    big = 2;
+    huge = 3;
 }
 
 message PBJackpotRecordPlayerInfo {
-  PBSinglePlayerInfo base_info = 1;
-  int64  win_gold = 2;
-  int64  update_unix = 3;
-  emJackpotWinType win_type = 4;
+    PBSinglePlayerInfo base_info = 1;
+    int64  win_gold = 2;
+    int64  update_unix = 3;
+    emJackpotWinType win_type = 4;
 }
 
 enum emPaoSkillType {
-  pst_normal = 0;
-  leitingjingjie = 4001;
-  niuzhuanqiankun = 4006;
+    pst_normal = 0;
+    leitingjingjie = 4001;
+    niuzhuanqiankun = 4006;
 }
 
 message PBBaseRankItem {
-  int32 ranking = 1;//名次
-  uint64 uid = 2;  //uid
-  string name = 3;//姓名
-  emSex  sex = 4; //性别
-  string headurl = 5;//头像
-  int32  vip_level = 6; //vip等级
-  int32 begin_ranking = 7; //如果是区间，表示begin
+    int32 ranking = 1;          // 名次
+    uint64 uid = 2;             // uid
+    string name = 3;            // 姓名
+    emSex  sex = 4;             // 性别
+    string headurl = 5;         // 头像
+    int32  vip_level = 6;       // vip等级
+    int32 begin_ranking = 7;    // 如果是区间，表示begin
 }
 
 message PBJuBaoRankItem {
-  PBBaseRankItem base_info = 1;
-  int64  update_time = 2;
-  repeated PBGetItem reward_items = 3;
+    PBBaseRankItem base_info = 1;
+    int64  update_time = 2;
+    repeated PBGetItem reward_items = 3;
 }
 
 message PBUniversalCoinRankItem {
-  PBBaseRankItem base_info = 1;
-  int64  update_time = 2;
-  repeated PBGetItem reward_items = 3;
-  float   beishu = 4;
-  int64     reward_count = 5;
+    PBBaseRankItem base_info = 1;
+    int64  update_time = 2;
+    repeated PBGetItem reward_items = 3;
+    float   beishu = 4;
+    int64     reward_count = 5;
 }
 
 //通用的玩家充值数据 统计到年月日 每天的充值  xlh 新增
 message PBRechargeItem {
-  string date = 1;
-  int64 value = 2;
+    string date = 1;
+    int64 value = 2;
 }
 
 message PBMatchRoomRankItem {
-  uint64 uid = 1;
-  int64 score = 2;
+    uint64 uid = 1;
+    int64 score = 2;
 }
 
 //世界服比赛场信息结构
 message PBWorldMatchRoomInfo {
-  uint64 creator = 1;
-  int32 room_type = 2;
-  int32  room_svr_id = 3;
-  uint64 room_id = 4;
-  int64   create_time = 5; //精确到纳秒
-  bool    b_sys = 6; //是否是系统房
-  bool    sys_close = 7; //系统房是否在关闭中
+    uint64 creator = 1;
+    int32 room_type = 2;
+    int32  room_svr_id = 3;
+    uint64 room_id = 4;
+    int64   create_time = 5;    //精确到纳秒
+    bool    b_sys = 6;          //是否是系统房
+    bool    sys_close = 7;      //系统房是否在关闭中
 
-  //自选房信息
-  bool    private = 100; //公开还是私人
-  int32   cur_boss = 101;   //当前boss
-  repeated int32 has_player_pos = 102;     //当前有玩家的位置 [0, MAX_PLAYERS)
-  int32   sys_boss = 103;
+    //自选房信息
+    bool    private = 100;                  //公开还是私人
+    int32   cur_boss = 101;                 //当前boss
+    repeated int32 has_player_pos = 102;    //当前有玩家的位置 [0, MAX_PLAYERS)
+    int32   sys_boss = 103;
 }
 
 
 //五福的排行信息
 message PBBlessRankItem {
-  PBBaseRankItem base_info = 1;
-  int32  bless_words_cnt = 2; // 福气值
-  int64  reward_gold_num = 3; //奖励金币
+    PBBaseRankItem base_info = 1;
+    int32  bless_words_cnt = 2; // 福气值
+    int64  reward_gold_num = 3; //奖励金币
 }
 
 //天蓬的排行信息
 message PBTianPengRankItem {
-  PBBaseRankItem base_info = 1;
-  int32  rise_cnt = 2; //                   上升层数
-  repeated PBGetItem   reward = 3;                  //奖励
+    PBBaseRankItem base_info = 1;
+    int32  rise_cnt = 2; //                   上升层数
+    repeated PBGetItem   reward = 3;                  //奖励
 }
 
 //天蓬的排行信息
 message PBJinNiuRankItem {
-  PBBaseRankItem base_info = 1;
-  int64  damage = 2; //           伤害
-  repeated PBGetItem   reward = 3;      //奖励
+    PBBaseRankItem base_info = 1;
+    int64  damage = 2; //           伤害
+    repeated PBGetItem   reward = 3;      //奖励
 }
 
 //room服务器消息广播
 enum emRoomPlayerBroadMsgId {
-  fork_use = 0; //使用鱼叉
+    fork_use = 0; //使用鱼叉
 }
 
 message PBRoomPlayerBroadForkMsg {
-  int32 fork_id = 1;
+    int32 fork_id = 1;
 }
 
 //desk 桌子状态信息  xlh
 message PBRoomDeskInfo {
-  PBRoomBossAwakeInfo  boss_wake_info = 1;
+    PBRoomBossAwakeInfo  boss_wake_info = 1;
 };
 
 message PBRoomBossAwakeInfo {
-  int32  boss_src_id = 1;          //boss 类型
-  int32  cur_awake_count = 2;       //当前觉醒次数
-  int64  boss_die_time = 3;         // boss 死忙时间
-  PBRoomFishInfo boss_fish = 4;         //boss 对象消息
-  uint64 uid = 5;                    //哪个玩家打死的boss
-  int64  cur_pao = 6;               //打死boss时使用的炮倍
-  PBDropInfo drops = 7;             //道具掉落
-  int64  die_fish_score = 8;        //死鱼的总鱼分
+    int32  boss_src_id = 1;          //boss 类型
+    int32  cur_awake_count = 2;       //当前觉醒次数
+    int64  boss_die_time = 3;         // boss 死忙时间
+    PBRoomFishInfo boss_fish = 4;         //boss 对象消息
+    uint64 uid = 5;                    //哪个玩家打死的boss
+    int64  cur_pao = 6;               //打死boss时使用的炮倍
+    PBDropInfo drops = 7;             //道具掉落
+    int64  die_fish_score = 8;        //死鱼的总鱼分
 }
 
 enum emPlayerLoginActionType {
-  ELPAT_invalid = 0;
-  ELPAT_enter_room = 1; //进入房间
-  ELPAT_leave_room = 2;     //退出房间
-  ELPAT_kill_fish = 3;  //捕鱼击杀
-  ELPAT_broken = 4;  //破产
-  ELPAT_exchange_by_yuanbao = 5;  //元宝兑换
-  ELPAT_exchange_by_liquan = 6;    //奖券兑换
-  ELPAT_recharge = 7;       //充值
-  ELPAT_activity_reward = 8;   //活动领奖
-  ELPAT_mail_attach = 9;       //邮件领取
+    ELPAT_invalid = 0;
+    ELPAT_enter_room = 1; //进入房间
+    ELPAT_leave_room = 2;     //退出房间
+    ELPAT_kill_fish = 3;  //捕鱼击杀
+    ELPAT_broken = 4;  //破产
+    ELPAT_exchange_by_yuanbao = 5;  //元宝兑换
+    ELPAT_exchange_by_liquan = 6;    //奖券兑换
+    ELPAT_recharge = 7;       //充值
+    ELPAT_activity_reward = 8;   //活动领奖
+    ELPAT_mail_attach = 9;       //邮件领取
 }
 
 enum emWorldBossNoticeType {
-  worldboss_type_notice = 0; //世界boss 通知
-  worldboss_type_start = 1; // 世界boss 来了
-  worldboss_type_end = 2;   //世界boss 结束
-  worldboss_type_reward_end = 3;   //世界boss 发奖结束
+    worldboss_type_notice = 0; //世界boss 通知
+    worldboss_type_start = 1; // 世界boss 来了
+    worldboss_type_end = 2;   //世界boss 结束
+    worldboss_type_reward_end = 3;   //世界boss 发奖结束
 }
 
 enum emWorldBossPMDType {
-  worldboss_pmd_type_notice = 0; //世界boss 通知
-  worldboss_pmd_type_leave = 1; // 世界boss 离开
-  worldboss_pmd_type_hit = 2;   //世界boss 被击杀
+    worldboss_pmd_type_notice = 0; //世界boss 通知
+    worldboss_pmd_type_leave = 1; // 世界boss 离开
+    worldboss_pmd_type_hit = 2;   //世界boss 被击杀
 }
 
 message PBWorldBossRankItem {
-  PBBaseRankItem base_info = 1;
-  int64      total_gold = 2;
-  repeated PBGetItem reward_items = 3;
+    PBBaseRankItem base_info = 1;
+    int64      total_gold = 2;
+    repeated PBGetItem reward_items = 3;
 }
 
 message PBWorldBossCfg {
-  int32 room_type = 1; //保留，没用了
-  int32   boss_id = 2;
-  int64  boss_time = 3; //绝对时间戳 163313131212
-  int64 boss_cfg_gold = 4;
-  int32 rank_record_num = 5;
-  repeated int32 open_room_types = 6; //哪些房间开启
-  int64   last_hit_pool = 7;  //最后一击池子的满足的值
+    int32 room_type = 1; //保留，没用了
+    int32   boss_id = 2;
+    int64  boss_time = 3; //绝对时间戳 163313131212
+    int64 boss_cfg_gold = 4;
+    int32 rank_record_num = 5;
+    repeated int32 open_room_types = 6; //哪些房间开启
+    int64   last_hit_pool = 7;  //最后一击池子的满足的值
 }
 
 //排行缓存信息
 message PBWorldBossRankCacheData {
-  PBWorldBossCfg boss_cfg = 1;
-  PBWorldBossRankItem killed_player = 2;//击杀者信息
-  repeated PBWorldBossRankItem rank_players = 3; //前十玩家
+    PBWorldBossCfg boss_cfg = 1;
+    PBWorldBossRankItem killed_player = 2;//击杀者信息
+    repeated PBWorldBossRankItem rank_players = 3; //前十玩家
 }
 
 message PBWorldBossTmpKillerInfo {
-  uint64  uid = 1;
-  int32   pao = 2;
-  int32   svr_group = 3;//玩家在哪套服务上
-  int64  total_gold = 4;
+    uint64  uid = 1;
+    int32   pao = 2;
+    int32   svr_group = 3;//玩家在哪套服务上
+    int64  total_gold = 4;
 }
 
 //client 配置 xlh 增加
 message PBWorldBossStateInfo {
-  int32 state = 1;
-  int64 blood = 2;
+    int32 state = 1;
+    int64 blood = 2;
 }
 
 message PBWorldBossInfo {
-  int32 fish_src_id = 1;
-  repeated PBWorldBossStateInfo state_info = 2;
+    int32 fish_src_id = 1;
+    repeated PBWorldBossStateInfo state_info = 2;
 }
 
 message PBWorldBossConfigItem {
-  repeated string appear_time = 1;
-  repeated int64  activity_time = 2;
-  repeated PBWorldBossInfo BossInfo = 3;
-  int64    sustain_time = 4;    //持续时间
+    repeated string appear_time = 1;
+    repeated int64  activity_time = 2;
+    repeated PBWorldBossInfo BossInfo = 3;
+    int64    sustain_time = 4;    //持续时间
 }
 
 enum emRedeemCodeType {
-  Redeem_code_type_invalid = 0;
-  Redeem_code_type_personal = 1;   //个人兑换码
-  Redeem_code_type_universal = 2;       //通用兑换码
+    Redeem_code_type_invalid = 0;
+    Redeem_code_type_personal = 1;   //个人兑换码
+    Redeem_code_type_universal = 2;       //通用兑换码
 };
 
 message PBRedeemCodeInfo {
-  string code = 1;
-  emRedeemCodeType  type = 2;
-  int64    expire_time = 3;    //过期时间
-  int64    id = 4;              //批号，批号相同，不同再使用
+    string code = 1;
+    emRedeemCodeType  type = 2;
+    int64    expire_time = 3;    //过期时间
+    int64    id = 4;              //批号，批号相同，不同再使用
 }
 
 enum emBaseTaskType {
-  emBaseTaskType_invalid = 0;                     //保留的
-  emBaseTaskType_total_sign = 1;                  //累计签到
-  emBaseTaskType_total_online_time = 2;           //累计游戏时长
-  emBaseTaskType_pao_lv = 3;                      //炮倍成长
-  emBaseTaskType_shop_yuanbao_day_buy = 4;        //单日商城元宝购买次数
-  emBaseTaskType_yuanbao_buy_day_cnt = 5;         //连续消耗元宝天数
-  emBaseTaskType_vip_lv = 6;                      //vip等级
-  emBaseTaskType_pao_count = 7;                   //任意炮倍开炮
-  emBaseTaskType_kill_gold = 8;                   //捕鱼获得金币总数
-  emBaseTaskType_use_item = 9;                    //道具累计使用 (三叉戟, 技能)
-  emBaseTaskType_skill_item_boss = 10;            //技能道具捕获boss
-  emBaseTaskType_item_get = 11;                   //获得道具
-  emBaseTaskType_item_drop = 12;                  //获得道具(通过掉落）
-  emBaseTaskType_fish_total_kill = 13;            //捕获类，支持炮倍
-  emBaseTaskType_pao_item_cnt = 14;               //炮台
-  emBaseTaskType_shop_buy_item_cnt = 15;          //超级连充购买次数, 摇一摇购买次数 成长礼包购买（4挡单独） 黄金月卡购买次数 超时空魔盒购买次数
-  emBaseTaskType_shenqi = 16;                     //神器
-  emBaseTaskType_hyperspace_box_buy_cnt = 17;     //
-  emBaseTaskType_world_boss_kill_cnt = 18;        //参与击败幽灵船
-  emBaseTaskType_world_boss_last_hit = 19;        //最后一击
-  emBaseTaskType_world_boss_kill_cnt_no = 20;     //未击败幽灵船
-  emBaseTaskType_season_manual_level = 21;        //深海宝藏升级
-  emBaseTaskType_activity_five_bless_do_cnt = 22; //五福活动祈福次数
-  emBaseTaskType_activity_five_bless_fu_cnt = 23; //五福活动得到福字数量
-  emBaseTaskType_activity_five_bless_rank = 24;   //五福活动排名
-  emBaseTaskType_activity_jinniu_ms_rank = 25;    //金牛献瑞秒伤排名
-  emBaseTaskType_activity_jinniu_sh_rank = 26;    //金牛献瑞伤害排名
-  emBaseTaskType_activity_tianpeng_do_cnt = 27;   //天蓬活动行为次数
-  emBaseTaskType_activity_tianpeng_jcdp_cnt = 28; //天蓬活动之怒次数
-  emBaseTaskType_activity_tianpeng_rank = 29;     //天蓬活动排名
-  emBaseTaskType_achievement_point_cnt = 30;      //成就点数累计
-  emBaseTaskType_B_activity_join_cnt = 31;        //B级活动参与
-  emBaseTaskType_activity_new_year_duo_bao = 32;  //新春狂欢当日夺宝次数
+    emBaseTaskType_invalid = 0;                     //保留的
+    emBaseTaskType_total_sign = 1;                  //累计签到
+    emBaseTaskType_total_online_time = 2;           //累计游戏时长
+    emBaseTaskType_pao_lv = 3;                      //炮倍成长
+    emBaseTaskType_shop_yuanbao_day_buy = 4;        //单日商城元宝购买次数
+    emBaseTaskType_yuanbao_buy_day_cnt = 5;         //连续消耗元宝天数
+    emBaseTaskType_vip_lv = 6;                      //vip等级
+    emBaseTaskType_pao_count = 7;                   //任意炮倍开炮
+    emBaseTaskType_kill_gold = 8;                   //捕鱼获得金币总数
+    emBaseTaskType_use_item = 9;                    //道具累计使用 (三叉戟, 技能)
+    emBaseTaskType_skill_item_boss = 10;            //技能道具捕获boss
+    emBaseTaskType_item_get = 11;                   //获得道具
+    emBaseTaskType_item_drop = 12;                  //获得道具(通过掉落）
+    emBaseTaskType_fish_total_kill = 13;            //捕获类，支持炮倍
+    emBaseTaskType_pao_item_cnt = 14;               //炮台
+    emBaseTaskType_shop_buy_item_cnt = 15;          //超级连充购买次数, 摇一摇购买次数 成长礼包购买（4挡单独） 黄金月卡购买次数 超时空魔盒购买次数
+    emBaseTaskType_shenqi = 16;                     //神器
+    emBaseTaskType_hyperspace_box_buy_cnt = 17;     //
+    emBaseTaskType_world_boss_kill_cnt = 18;        //参与击败幽灵船
+    emBaseTaskType_world_boss_last_hit = 19;        //最后一击
+    emBaseTaskType_world_boss_kill_cnt_no = 20;     //未击败幽灵船
+    emBaseTaskType_season_manual_level = 21;        //深海宝藏升级
+    emBaseTaskType_activity_five_bless_do_cnt = 22; //五福活动祈福次数
+    emBaseTaskType_activity_five_bless_fu_cnt = 23; //五福活动得到福字数量
+    emBaseTaskType_activity_five_bless_rank = 24;   //五福活动排名
+    emBaseTaskType_activity_jinniu_ms_rank = 25;    //金牛献瑞秒伤排名
+    emBaseTaskType_activity_jinniu_sh_rank = 26;    //金牛献瑞伤害排名
+    emBaseTaskType_activity_tianpeng_do_cnt = 27;   //天蓬活动行为次数
+    emBaseTaskType_activity_tianpeng_jcdp_cnt = 28; //天蓬活动之怒次数
+    emBaseTaskType_activity_tianpeng_rank = 29;     //天蓬活动排名
+    emBaseTaskType_achievement_point_cnt = 30;      //成就点数累计
+    emBaseTaskType_B_activity_join_cnt = 31;        //B级活动参与
+    emBaseTaskType_activity_new_year_duo_bao = 32;  //新春狂欢当日夺宝次数
 }
 
 message PBPlayerBaseTaskItem {
-  int32  group_id = 1;
-  int64  count = 2;                       //如果有进度，则代表进度值
-  repeated int32 reward_ids = 3;          //已经领取奖励的id
-  repeated int32 cycle_complete_ids = 4;  //周期性任务，如每日商城购买，count会跨天清0
-  int32   group_reward_count = 5;         //领奖次数(整个group)
-  int32   group_complete_count = 6;       //完成次数(整个group)
-  int64  count2 = 7;                      //可能存在重新计数成就（比如连续商城购买）
-  int64  update_time = 8;                 //有些成就需要记录时间(如单日购买次数)
+    int32  group_id = 1;
+    int64  count = 2;                       //如果有进度，则代表进度值
+    repeated int32 reward_ids = 3;          //已经领取奖励的id
+    repeated int32 cycle_complete_ids = 4;  //周期性任务，如每日商城购买，count会跨天清0
+    int32   group_reward_count = 5;         //领奖次数(整个group)
+    int32   group_complete_count = 6;       //完成次数(整个group)
+    int64  count2 = 7;                      //可能存在重新计数成就（比如连续商城购买）
+    int64  update_time = 8;                 //有些成就需要记录时间(如单日购买次数)
 }
 
 //任务（一般都存储在客户端，也有些需要服务器下发，如活动）
 message PBPlayerBaseTaskConfigItem {
-  int32                id = 1;
-  emBaseTaskType       atype = 2;
-  string               name = 3;
-  string               desc = 4;
-  int32                group_id = 5;
-  int64                count = 6;
-  repeated int32       item_id = 7;
-  repeated int32       pao_lmt = 8;
-  int32                pao_cnt_lmt = 9;
-  repeated int64       target = 10;
-  repeated PBGetItem   rewards = 11;
-  int32                points = 12;
-  int32                clienttype = 13;
-  int32                complete_count = 14;
+    int32                id = 1;
+    emBaseTaskType       atype = 2;
+    string               name = 3;
+    string               desc = 4;
+    int32                group_id = 5;
+    int64                count = 6;
+    repeated int32       item_id = 7;
+    repeated int32       pao_lmt = 8;
+    int32                pao_cnt_lmt = 9;
+    repeated int64       target = 10;
+    repeated PBGetItem   rewards = 11;
+    int32                points = 12;
+    int32                clienttype = 13;
+    int32                complete_count = 14;
 }
 
 message PBPlayerBaseExchangeConfigItem {
-  int32 exchange_id = 1;
-  string name = 2;
-  string desc = 3;
-  repeated PBGetItem   need_items = 10;
-  repeated PBGetItem   reward_items = 11;
-  int32    personal_daily_lmt = 12;
-  int32    personal_total_lmt = 13;
-  int32    daily_lmt = 14;
-  int32    total_lmt = 15;
-  int32    order = 16;
-  int32    clienttype = 17;
+    int32 exchange_id = 1;
+    string name = 2;
+    string desc = 3;
+    repeated PBGetItem   need_items = 10;
+    repeated PBGetItem   reward_items = 11;
+    int32    personal_daily_lmt = 12;
+    int32    personal_total_lmt = 13;
+    int32    daily_lmt = 14;
+    int32    total_lmt = 15;
+    int32    order = 16;
+    int32    clienttype = 17;
 }
 
 message PBPlayerBaseExchangeItem {
-  int32  exchange_id = 1;
-  int64  update_time = 2;
-  int32  personal_daily_count = 3;
-  int32  personal_total_count = 4;
-  int32  daily_count = 5;
-  int32  total_count = 6;
+    int32  exchange_id = 1;
+    int64  update_time = 2;
+    int32  personal_daily_count = 3;
+    int32  personal_total_count = 4;
+    int32  daily_count = 5;
+    int32  total_count = 6;
 }
 
 //玩家成就项(配置group)
 message PBPlayerAchievementItem {
-  PBPlayerBaseTaskItem base_info = 1;
+    PBPlayerBaseTaskItem base_info = 1;
 }
 
 //服务间交互的成就触发
 message PBPlayerAchievementNofityItem {
-  string              key = 1; //主要是用来回复删除key
-  emBaseTaskType      atype = 2;
+    string              key = 1; //主要是用来回复删除key
+    emBaseTaskType      atype = 2;
 
-  //具体的数据
-  int64  do_count = 100;
-  int32  item_id = 101;
-  int64  update_time = 102;
+    //具体的数据
+    int64  do_count = 100;
+    int32  item_id = 101;
+    int64  update_time = 102;
 }
 
 //赛季玩家任务项
 message PBPlayerSeasonManualTaskItem {
-  PBPlayerBaseTaskItem base_info = 1;
+    PBPlayerBaseTaskItem base_info = 1;
 }
 
 //gamesvr活动同步数据
 message PBGamePlayerActivitySyncItem {
-  int32 activity_id = 1;
+    int32 activity_id = 1;
 
-  repeated PBPlayerBaseTaskItem tasks = 10;//任务相关，比如蟠桃就会用到
+    repeated PBPlayerBaseTaskItem tasks = 10;//任务相关，比如蟠桃就会用到
 }
 
 //玩家room里的一些状态
 enum emPlayerRoomState {
-  prs_none = 0;
-  prs_crazy = 1;
+    prs_none = 0;
+    prs_crazy = 1;
 }
 
 message PBPlayerRoomStateItem {
-  emPlayerRoomState state = 1;
-  bool close = 2;
+    emPlayerRoomState state = 1;
+    bool close = 2;
 }
 
 enum emRoomEvent {
-  re_none = 0;
-  re_fish_crazy = 1;
-  re_zxf_fish_crit_end = 2;
-  re_zxf_reward_end = 3;
+    re_none = 0;
+    re_fish_crazy = 1;
+    re_zxf_fish_crit_end = 2;
+    re_zxf_reward_end = 3;
 }
 
 message PBPlayerBuffParam {
-  int32 index = 1;
-  int32 pao = 2;
-  int32 buff = 3;
+    int32 index = 1;
+    int32 pao = 2;
+    int32 buff = 3;
 }
 
 enum emRankType {
-  rank_type_zxf = 0;
-  rank_type_haishen_altar = 1;
-  rank_type_haishen_happy = 2;
-  rank_type_sjb_crazy_lucky = 3;
-  rank_type_sjb_crazy_leiji = 4;
+    rank_type_zxf = 0;
+    rank_type_haishen_altar = 1;
+    rank_type_haishen_happy = 2;
+    rank_type_sjb_crazy_lucky = 3;
+    rank_type_sjb_crazy_leiji = 4;
+    rank_type_caishen_daily = 5;    // 财神赐福,福气每日榜
 }
 
 enum emRankSortType {
-  rank_type_sort_none = 0;
-  rank_type_sort_timeup = 1; //按时间早到早排
-  rank_type_sort_timedown = 2; //按时间早到晚排
+    rank_type_sort_none = 0;
+    rank_type_sort_timeup = 1; //按时间早到早排
+    rank_type_sort_timedown = 2; //按时间早到晚排
 }
 
 
 message PBPlayerRankValue {
-  emRankType rank_type = 1;
-  int64      value = 2;
-  int64      update_time = 3;
-  string      param = 4;
+    emRankType rank_type = 1;
+    int64      value = 2;
+    int64      update_time = 3;
+    string      param = 4;
 }
 
 //通用排行榜 （以后榜单尽量在此扩展）
 message PBCommonRankItem {
-  PBBaseRankItem base_info = 1;
-  uint64         score = 2;
-  repeated PBGetItem reward_items = 3;
+    PBBaseRankItem base_info = 1;           // 玩家基础信息
+    uint64 score = 2;                       // 分数
+    repeated PBGetItem reward_items = 3;    // 名次奖励
 }
 
 //通用排行榜配置
 message PBCommonRankConfigItem {
-  int32                   begin = 1;
-  int32                   end = 2;
-  int32                   reward_per = 3;
-  repeated PBGetItem      rewards = 4;
+    int32                   begin = 1;
+    int32                   end = 2;
+    int32                   reward_per = 3;
+    repeated PBGetItem      rewards = 4;
 }
 
 message PBCommonRankConfig {
-  string                      name = 1;
-  string                      rank_item = 2;
-  int64                       pool_init_value = 3;
-  int32                       pool_reward_per = 4;
-  int64                       pool_add_per_sec = 5;
-  int32                       pool_tax_per = 6;
-  int64                       pool_tax_limit = 7;
-  repeated int32              rank_times = 8;
-  repeated PBCommonRankConfigItem   rewards = 9;
-  int32                       max_show_cnt = 10;
-  emRankSortType              sort_type = 11;
+    string                      name = 1;
+    string                      rank_item = 2;
+    int64                       pool_init_value = 3;
+    int32                       pool_reward_per = 4;
+    int64                       pool_add_per_sec = 5;
+    int32                       pool_tax_per = 6;
+    int64                       pool_tax_limit = 7;
+    repeated int32              rank_times = 8;
+    repeated PBCommonRankConfigItem   rewards = 9;
+    int32                       max_show_cnt = 10;
+    emRankSortType              sort_type = 11;
 }
 
 message PBWeightItem {
-  int32               weight = 1;
-  repeated PBGetItem items = 2;
-  repeated int32      per = 3;
+    int32               weight = 1;
+    repeated PBGetItem items = 2;
+    repeated int32      per = 3;
+    int32 guaranteed = 4;           // 保底循环步长,进入保底规则后,每guaranteed次必出该item,为0无效
 }
 
 //奖励中带积分或者带开宝箱的结构
 message PBBoxRewards {
-  repeated PBGetItem reward_items = 1;
-  repeated int32 lucky_scores = 2;
-  repeated PBGetItem reward_box_items = 3;
+    repeated PBGetItem reward_items = 1;
+    repeated int32 lucky_scores = 2;
+    repeated PBGetItem reward_box_items = 3;
 }

@@ -25,7 +25,7 @@ enum emSSMsgId {
     SVR_MSG_GAME_NEW_MAIL           = 210002;   //新邮件
     SVR_MSG_GAME_NEW_SYS_MAIL       = 210003;   //新的系统邮件
     SVR_MSG_GAME_PLAYER_PROP_SYNC   = 210005;   //同步属性信息。主要是针对gamesvr和roomsvr之间的交互
-    SVR_MSG_GAME_BAG_ZENGSONG       = 210006;   //赠送到room同步   
+    SVR_MSG_GAME_BAG_ZENGSONG       = 210006;   //赠送到room同步
     SVR_MSG_GAME_PLAYER_RECHARGE    = 210007;   //玩家充值
     SVR_MSG_GAME_NEW_MARQUEE        = 210008;   //新的跑马灯消息
     SVR_MSG_GAME_UPLOAD_ROOM_INFO   = 210009;   //上传roomsvr用户分布情况
@@ -73,22 +73,23 @@ enum emSSMsgId {
     SVR_MSG_DB_END       = 249999;
 
     //room
-    SVR_MSG_ROOM_BEGIN                 = 280000;
-    SVR_MSG_ROOM_ENTER                 = 280001; // 进入房间
-    SVR_MSG_ROOM_SYNC_PLAYER_INFO      = 280002; // 同步房间数据
-    SVR_MSG_ROOM_NOTICE                = 280003; // 通知room服事件
-    SVR_MSG_ROOM_REDBLUE_BET_LEAVE_SYNC  = 280005;   //红蓝争霸下注期间离开房间的结算
-    SVR_MSG_ROOM_SHOP_DELIVERY         = 280006;   //商城兑换商品协议
-    SVR_MSG_ROOM_BUY_INFO_ADD             = 280007;   //新的购买信息同步
-    SVR_MSG_ROOM_FIVE_BLESS_DO             = 280008;   //五福房间协议
-    SVR_MSG_ROOM_FIVE_BLESS_RESET          = 280009;   //五福房间协议
-    SVR_MSG_ROOM_POCHAN_BUFF_ADD           = 280010;   // 救济金 破产buff 新增
-    SVR_MSG_ROOM_PAO_UNLOCK          = 280011;      // 解锁炮倍
-    SVR_MSG_ROOM_FORGE_SHOP_FRESH         = 280012;    //锻造商城刷新
-    SVR_MSG_ROOM_QS_ATTRIBUTE             = 280013;    //强杀属性新增 必须到room 涉及到delta  xlh
-    SVR_MSG_ROOM_ZIXUANFANG_SYS_ROOM_CREATE             = 280014;    //创建系统房
-    SVR_MSG_ROOM_ZIXUANFANG_SYS_ROOM_OPR             = 280015;    //系统房操作
-    SVR_MSG_ROOM_END                      = 289999;
+    SVR_MSG_ROOM_BEGIN = 280000;
+    SVR_MSG_ROOM_ENTER = 280001;                        // 进入房间
+    SVR_MSG_ROOM_SYNC_PLAYER_INFO = 280002;             // 同步房间数据
+    SVR_MSG_ROOM_NOTICE = 280003;                       // 通知room服事件
+    SVR_MSG_ROOM_REDBLUE_BET_LEAVE_SYNC = 280005;       // 红蓝争霸下注期间离开房间的结算
+    SVR_MSG_ROOM_SHOP_DELIVERY = 280006;                // 商城兑换商品协议
+    SVR_MSG_ROOM_BUY_INFO_ADD = 280007;                 // 新的购买信息同步
+    SVR_MSG_ROOM_FIVE_BLESS_DO = 280008;                // 五福房间协议
+    SVR_MSG_ROOM_FIVE_BLESS_RESET = 280009;             // 五福房间协议
+    SVR_MSG_ROOM_POCHAN_BUFF_ADD = 280010;              // 救济金 破产buff 新增
+    SVR_MSG_ROOM_PAO_UNLOCK = 280011;                   // 解锁炮倍
+    SVR_MSG_ROOM_FORGE_SHOP_FRESH = 280012;             // 锻造商城刷新
+    SVR_MSG_ROOM_QS_ATTRIBUTE = 280013;                 // 强杀属性新增 必须到room 涉及到delta  xlh
+    SVR_MSG_ROOM_ZIXUANFANG_SYS_ROOM_CREATE = 280014;   // 创建系统房
+    SVR_MSG_ROOM_ZIXUANFANG_SYS_ROOM_OPR = 280015;      // 系统房操作
+    SVR_MSG_GAME_PLAYER_CAISHEN_HIT = 280016;           // 玩家财神赐福捕获财神
+    SVR_MSG_ROOM_END = 289999;
 
     SVR_MSG_END                 = 299999;
 };

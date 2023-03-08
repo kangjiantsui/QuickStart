@@ -6,19 +6,19 @@ import "activity.proto";
 
 //账号信息
 message PBUserAccountInfo {
-    string      account 			= 1;
-	emLoginType account_type		= 2;
-    string pwd       			= 3;
-    uint64 uid  				= 4;
-    string nick_name    		= 5;
-    string channel				= 6;
-    emSex  sex 				    = 7;
-    string head_image			= 8;
-    string phone				= 9;
-    int32 create_time  		= 10;
-    int32 forbid_time    		= 11;
-    int32 last_login_time 	= 12;
-    string last_login_ip   	= 13;
+    string      account = 1;
+    emLoginType account_type = 2;
+    string pwd = 3;
+    uint64 uid = 4;
+    string nick_name = 5;
+    string channel = 6;
+    emSex  sex = 7;
+    string head_image = 8;
+    string phone = 9;
+    int32 create_time = 10;
+    int32 forbid_time = 11;
+    int32 last_login_time = 12;
+    string last_login_ip = 13;
     bool   is_robot = 15;
     string reg_channel = 16;
     string platform = 18;
@@ -41,8 +41,8 @@ message PBAccountCloseInfo {
 
 //绑定信息
 message PBUserBindInfo {
-    string      account 			= 1;
-	emLoginType account_type		= 2;
+    string      account = 1;
+    emLoginType account_type = 2;
     int32       bind_time = 4;
 }
 
@@ -53,46 +53,46 @@ message PBUserGuideInfo {
 }
 
 message PBPBNewUserDailySignRecord{
-   int32   sign_day=1;
-   int32   sign_time=2;
-   repeated PBGetItem  items = 3;
+    int32   sign_day = 1;
+    int32   sign_time = 2;
+    repeated PBGetItem  items = 3;
 
 }
 //新手玩家签到信息
 message PBNewUserDailySignInfo {
-    int32  next_day_beishu= 1;        //  下一天的倍数
-    repeated PBPBNewUserDailySignRecord new_user_record=2;   //新手玩家记录
-    bool   is_double=3;                     //是否已经点击翻倍
+    int32  next_day_beishu = 1;        //  下一天的倍数
+    repeated PBPBNewUserDailySignRecord new_user_record = 2;   //新手玩家记录
+    bool   is_double = 3;                     //是否已经点击翻倍
 }
 
 //用户信息
 message PBUserInfo {
-    string      account 	   = 1;
-	  emLoginType account_type   = 2;
-    uint64 uid  		   = 3;
-    string nick_name       = 4;
-    emSex  sex 			   = 5;
-    string head_image	   = 6;
-    int32 create_time  	   = 7;
-    int32 last_login_time  = 8;
-    int64 gold             = 9; //免费金币
-    int64 charge_gold      = 10; //付费金币
-   	int64 diamond		       = 11;
-   	int32 vip_level        = 12;
-   	string last_ip         = 13;
-    int32  guide_step      = 14; //新手引导步数，为0则已经结束
-    int32  cur_pao_item    = 15; //当前炮台
-    int32  vip_exp         = 16;  //vip经验（总的）
-    int32  shouchong_flag  = 17;//首冲标识
+    string      account = 1;
+    emLoginType account_type = 2;
+    uint64 uid = 3;
+    string nick_name = 4;
+    emSex  sex = 5;
+    string head_image = 6;
+    int32 create_time = 7;
+    int32 last_login_time = 8;
+    int64 gold = 9; //免费金币
+    int64 charge_gold = 10; //付费金币
+    int64 diamond = 11;
+    int32 vip_level = 12;
+    string last_ip = 13;
+    int32  guide_step = 14; //新手引导步数，为0则已经结束
+    int32  cur_pao_item = 15; //当前炮台
+    int32  vip_exp = 16;  //vip经验（总的）
+    int32  shouchong_flag = 17;//首冲标识
 
-    int32 first_pay_time   = 19;
-    bool   is_robot        = 22;
-    string channel			   = 23;
-    string reg_channel     = 24;
-    string version         = 25;
-    emDeviceType device    = 26;
-    uint64 invite_uid      = 27;
-    int32 last_offline_time  = 28; //最近下线时间
+    int32 first_pay_time = 19;
+    bool   is_robot = 22;
+    string channel = 23;
+    string reg_channel = 24;
+    string version = 25;
+    emDeviceType device = 26;
+    uint64 invite_uid = 27;
+    int32 last_offline_time = 28; //最近下线时间
     PBVipAuthenInfo vip_authen_info = 30; //vip认证信息
     int32 cur_boat_item = 31; //飞机场当前炮台
     string platform = 33;
@@ -119,9 +119,9 @@ message PBUserInfo {
     int32 vip_expire_date = 60;
     string hall_version = 61; //大厅版本
     int32  group_id = 62; //集群，多套集群时候供回调使用
-    PBNewUserDailySignInfo  new_user_sign_info=63;
+    PBNewUserDailySignInfo  new_user_sign_info = 63;
 
-    int32  cur_wing_item   = 70; //当前装备翅膀
+    int32  cur_wing_item = 70; //当前装备翅膀
 };
 
 message PBPlayerTaskInfo {
@@ -131,19 +131,19 @@ message PBPlayerTaskInfo {
 
 //客户端使用
 message PBUserClientInfo {
-    string      account 			= 1;
-	emLoginType account_type		= 2;
-    uint64 uid  				= 3;
-    string nick_name    		= 4;
-    emSex  sex 				= 5;
-    string head_image			= 6;
-    int32 create_time  		= 7;
-    int32 last_login_time 	= 8;
-    int64 gold            = 9;
-   	int64 diamond			= 10;
-   	int32 vip_level         = 11;
-   	int32 guide_step        = 12;
-    int32 cur_pao_item   = 13; //当前炮台
+    string      account = 1;
+    emLoginType account_type = 2;
+    uint64 uid = 3;
+    string nick_name = 4;
+    emSex  sex = 5;
+    string head_image = 6;
+    int32 create_time = 7;
+    int32 last_login_time = 8;
+    int64 gold = 9;
+    int64 diamond = 10;
+    int32 vip_level = 11;
+    int32 guide_step = 12;
+    int32 cur_pao_item = 13; //当前炮台
     bool  b_first_login = 14;  //首次登陆
     int32 vip_exp = 15;        //vip经验（总的）
     int32 shouchong_flag = 16;//首冲
@@ -165,7 +165,7 @@ message PBUserClientInfo {
     repeated PBPlayerXjdbRoomItem xjdb_rooms = 40; //星际夺宝的房间信息
     int32 daily_sign_time = 41; //每日签到的时间
     int32 daily_sign_day = 42; //每日签到的天数
-    int32 pay_pao2 =  43; //新积分房炮倍
+    int32 pay_pao2 = 43; //新积分房炮倍
 
     PBPlayerTaskInfo task_info = 44; //任务信息
     bool  micro_wechat_auth = 45; // 微信小游戏是否授权
@@ -185,7 +185,7 @@ message PBUserClientInfo {
     int32       jfcard_end_time = 56; //积分卡失效时间戳
     int32       jfcard_use_time = 57; //积分卡上次使用时间
     int32       jfcard_use_cnt = 58; //积分卡使用次数
-    int32  cur_wing_item   = 59; //当前装备翅膀
+    int32  cur_wing_item = 59; //当前装备翅膀
     int64  shuliandu = 60;
     int32  unlock_max_pao = 61;    //玩家解锁的最大炮倍
     uint64  cache_match_room_id = 62; //如果不为0则为有缓存的房间
@@ -227,7 +227,7 @@ message PBPlayerXjdbRoomItem {
 }
 
 message PBPlayerCollectNTaxItem {
-    int32  room_type  = 1;
+    int32  room_type = 1;
     int64  ntax_sys = 2;
     int64  ntax_boss = 3;
     int64  ntax_boss_consume = 4;
@@ -237,9 +237,9 @@ message PBPlayerCollectNTaxItem {
 }
 
 message PBPlayerWorldBossClientInfo {
-    PBWorldBossCfg                  boss_cfg        = 1;
-    emWorldBossNoticeType           state           = 2;
-    int64                           cur_blood       = 3;
+    PBWorldBossCfg                  boss_cfg = 1;
+    emWorldBossNoticeType           state = 2;
+    int64                           cur_blood = 3;
     int64                           total_hit_golds = 4;
     PBWorldBossConfigItem           other_cfg = 5;
 }
@@ -268,7 +268,7 @@ message PBPlayerNewPlayerKillBossInfo {
 }
 
 message PBPlayerCollectNewPlayerBossInfo {
-    int32  room_type  = 1;
+    int32  room_type = 1;
     repeated PBPlayerNewPlayerKillBossInfo kill_boss_info = 2;
 }
 
@@ -319,69 +319,70 @@ message PBPlayerCollectDurationItem {
     int64  value2 = 3;
 }
 
+// 玩家落地数据
 message PBPlayerCollectInfo {
-    int32 detail_lv = 1; //非0值, ndeltalevel >0,命中增加最大99,每次调用自减1 ndeltalevel <0,命中减小,没有最小值,每次调用自增1
-    int64 total_hit_liquan = 2; //累计击落礼券总量
-    int64 total_hit_dantou = 3; //累计总击落弹头	个人属性
-    int64 total_charge = 4; //总充值
-    int64 exchange_gold_liquan = 6;//使用礼券兑换金币所消耗的总价值
-    int64 total_free_gold = 7; //总免费金币
-    int64 total_charge_gold = 8; //总付费金币
-    int64 total_shoot_count = 9;  //总开炮数
-    int32 total_online_time = 10;  //总在线时长(秒)
-    int32 total_room_time = 11;  //房间内总时长
-    int64  total_charge_price = 12; //总充值价值
-    int32  total_charge_count = 13; //总充值次数
-    int64  gold_max = 14; //金币最大值
-    int32  gold_zero_count = 15;//当前金币<100,记录一次归零次数
-    int32 total_login_count = 16; //总登录次数
-    int64  last_login_gold = 17;     //上次登录携带金币
-    float dantou_trans = 18;        //弹头转化率 默认0.1
-    repeated PBPlayerCollectItem fire_items = 19; //开炮统计类
-    repeated PBPlayerCollectItem kill_items = 20;   //击杀统计类 如果是弹头 12500,10w,50w,500w(四种弹头的转换价值)
-    repeated PBPlayerCollectSpecialFishItem special_info = 21; //特色鱼统计
-    int64 total_rechare_price = 22; //总充值价值
-    int64 self_dantou = 23;         //后台控制参数
-    int64 self_liquan = 24;         //后台控制参数
-    int64 self_liquan_diaoluo = 25; //后台控制参数
-    int64 recharge_max = 26;        //后台控制参数（最大充值（分））
-    int64 today_win_time = 27;      //今日总赢取金币时间
-    int64 today_win_gold = 28;      //今日总赢取金币 （用来做限制）
-    int32 n_baochicishu = 29;       //保持次数，传入捕鱼算法
-    repeated PBPlayerCollectScoreItem left_scores = 30; //各个炮倍积分剩余
-    int64 self_score = 31; //积分 后台控制参数
-    int64 new_mail_dantou_price = 32; //邮件弹头的使用价值
-    int64 total_jifen_dantou = 33;        //总兑换积分弹头
-    int64 self_jifen_dantou = 34;         //后台控制参数
-    int32 today_score_room_time = 35;  //今日积分场时长（秒）
-    int32 last_enter_room_time = 36;  //上次进入房间的时间
-    repeated PBPlayerCollectItem  item_prices = 37; // 各类价值
-    int32 exchange_shiwu = 38;//实物兑换标志
-    int32 dole_cnt = 39;//救济金次数
-    repeated PBPlayerCollectRoomDrawItem draw_info = 40; //炮数抽奖信息
+    int32 detail_lv = 1;                                        // 非0值, ndeltalevel >0,命中增加最大99,每次调用自减1 ndeltalevel <0,命中减小,没有最小值,每次调用自增1
+    int64 total_hit_liquan = 2;                                 // 累计击落礼券总量
+    int64 total_hit_dantou = 3;                                 // 累计总击落弹头	个人属性
+    int64 total_charge = 4;                                     // 总充值
+    int64 exchange_gold_liquan = 6;                             // 使用礼券兑换金币所消耗的总价值
+    int64 total_free_gold = 7;                                  // 总免费金币
+    int64 total_charge_gold = 8;                                // 总付费金币
+    int64 total_shoot_count = 9;                                // 总开炮数
+    int32 total_online_time = 10;                               // 总在线时长(秒)
+    int32 total_room_time = 11;                                 // 房间内总时长
+    int64  total_charge_price = 12;                             // 总充值价值
+    int32  total_charge_count = 13;                             // 总充值次数
+    int64  gold_max = 14;                                       // 金币最大值
+    int32  gold_zero_count = 15;                                // 当前金币<100,记录一次归零次数
+    int32 total_login_count = 16;                               // 总登录次数
+    int64  last_login_gold = 17;                                // 上次登录携带金币
+    float dantou_trans = 18;                                    // 弹头转化率 默认0.1
+    repeated PBPlayerCollectItem fire_items = 19;               // 开炮统计类
+    repeated PBPlayerCollectItem kill_items = 20;               // 击杀统计类 如果是弹头 12500,10w,50w,500w(四种弹头的转换价值)
+    repeated PBPlayerCollectSpecialFishItem special_info = 21;  // 特色鱼统计
+    int64 total_rechare_price = 22;                             // 总充值价值
+    int64 self_dantou = 23;                                     // 后台控制参数
+    int64 self_liquan = 24;                                     // 后台控制参数
+    int64 self_liquan_diaoluo = 25;                             // 后台控制参数
+    int64 recharge_max = 26;                                    // 后台控制参数（最大充值（分））
+    int64 today_win_time = 27;                                  // 今日总赢取金币时间
+    int64 today_win_gold = 28;                                  // 今日总赢取金币 （用来做限制）
+    int32 n_baochicishu = 29;                                   // 保持次数，传入捕鱼算法
+    repeated PBPlayerCollectScoreItem left_scores = 30;         // 各个炮倍积分剩余
+    int64 self_score = 31;                                      // 积分 后台控制参数
+    int64 new_mail_dantou_price = 32;                           // 邮件弹头的使用价值
+    int64 total_jifen_dantou = 33;                              // 总兑换积分弹头
+    int64 self_jifen_dantou = 34;                               // 后台控制参数
+    int32 today_score_room_time = 35;                           // 今日积分场时长（秒）
+    int32 last_enter_room_time = 36;                            // 上次进入房间的时间
+    repeated PBPlayerCollectItem  item_prices = 37;             // 各类价值
+    int32 exchange_shiwu = 38;                                  // 实物兑换标志
+    int32 dole_cnt = 39;                                        // 救济金次数
+    repeated PBPlayerCollectRoomDrawItem draw_info = 40;        // 炮数抽奖信息
     int64  draw_choujiang_value = 41;
     int64  draw_choushui_value = 42;
     bool  draw_exchanged = 43;
-    repeated PBPlayerXjdbRoomItem xjdb_rooms = 44; //星际夺宝类房间信息
-    int64 ncangbaotu = 45; //藏宝图价值
-    PBPlayerTaskInfo task_info = 46; //任务信息
-    repeated PBPlayerIncomeItem income_arr = 47; //income充值价值信息
+    repeated PBPlayerXjdbRoomItem xjdb_rooms = 44;              // 星际夺宝类房间信息
+    int64 ncangbaotu = 45;                                      // 藏宝图价值
+    PBPlayerTaskInfo task_info = 46;                            // 任务信息
+    repeated PBPlayerIncomeItem income_arr = 47;                // income充值价值信息
     repeated PBPlayerCollectNTaxItem room_ntax = 50;
-    int64 dtfish_total_charge = 51; //大厅总充值
+    int64 dtfish_total_charge = 51;                             //  大厅总充值
     int32  ntax_sys_per = 52;
     int64  ntax_sys_value = 53;
-    int32       jfcard_end_time = 54; //积分卡失效时间戳
-    int32       jfcard_use_time = 55; //积分卡上次使用时间
-    int32       jfcard_use_cnt = 56; //积分卡使用次数
-    int32       redblue_update_time = 57; //红蓝场跟他更新时间
-    int64       redblue_win_gold = 58;   //红蓝场今日赢得的金币
-    int64       redblue_total_win_gold = 59;   //红蓝场总赢得的金币
-    int64       redblue_join_cnt = 60;   //红蓝场参与次数（有下注）
+    int32       jfcard_end_time = 54;                           // 积分卡失效时间戳
+    int32       jfcard_use_time = 55;                           // 积分卡上次使用时间
+    int32       jfcard_use_cnt = 56;                            // 积分卡使用次数
+    int32       redblue_update_time = 57;                       // 红蓝场跟他更新时间
+    int64       redblue_win_gold = 58;                          // 红蓝场今日赢得的金币
+    int64       redblue_total_win_gold = 59;                    // 红蓝场总赢得的金币
+    int64       redblue_join_cnt = 60;                          // 红蓝场参与次数（有下注）
 
     //超级玩家相关
-    repeated PBPlayerCollectItem superplayer_fire_items = 61; //开炮统计类
-    repeated PBPlayerCollectItem superplayer_kill_items = 62;   //击杀统计类 如果是弹头 12500,10w,50w,500w(四种弹头的转换价值)
-    int64    superplayer_redblue_total_win_gold = 63;   //红蓝场总赢得的金币
+    repeated PBPlayerCollectItem superplayer_fire_items = 61;   // 开炮统计类
+    repeated PBPlayerCollectItem superplayer_kill_items = 62;   // 击杀统计类 如果是弹头 12500,10w,50w,500w(四种弹头的转换价值)
+    int64    superplayer_redblue_total_win_gold = 63;           // 红蓝场总赢得的金币
 
     //彩金池
     int64  jackpot_today_win_gold = 64;
@@ -394,13 +395,13 @@ message PBPlayerCollectInfo {
 
     PBNewPlayerTaskInfo new_player_task = 71; //新手任务
 
-    int64 dtfish_seven_day_charge = 72;//大厅七日充值
-    int32 taxes_relive_cnt = 73; //返水补助次数
-    int64 new_fanshui = 74; //新的返水
+    int64 dtfish_seven_day_charge = 72; // 大厅七日充值
+    int32 taxes_relive_cnt = 73;        // 返水补助次数
+    int64 new_fanshui = 74;             // 新的返水
 
-    PBPlayerCollectBlessInfo bless_info = 75; //祈福信息
+    PBPlayerCollectBlessInfo bless_info = 75;               // 祈福信息
     repeated PBPlayerCollectItem fish_fork_libary = 76;     // 鱼叉库值
-    repeated PBPlayerCollectItem total_exchange_info = 77 ;   //  玩家总兑换次数
+    repeated PBPlayerCollectItem total_exchange_info = 77 ; // 玩家总兑换次数
 
     // 超时空魔盒每日抽奖
     PBPlayerHyperspaceBoxInfo hyperspace_box_info = 78;
@@ -413,43 +414,43 @@ message PBPlayerCollectInfo {
     //新手玩家boss 击杀信息
     repeated PBPlayerCollectNewPlayerBossInfo all_boss_kill_info = 82;
 
-    double experience = 83;  //玩家经验值
-    int32 level = 84;  //玩家等级
-    int64 gold_experience = 85;  //玩家消耗的金币
-    int32 maxpao = 86;  //玩家最大炮倍
+    double experience = 83;         // 玩家经验值
+    int32 level = 84;               // 玩家等级
+    int64 gold_experience = 85;     // 玩家消耗的金币
+    int32 maxpao = 86;              // 玩家最大炮倍
 
     //伪破产算法
     PBPlayerCollectPoChanBuff  pochan_buff = 87;
     // 启航基金数据
     PBPlayerSailingFundData sailing_fund_data = 88;
-    int64 shop_taxes = 89; //新的返水
-    int64    last_buy_time = 90; //上次购买时间(使用RMB)
-    int64    last_yuanbao_time = 91; //上次购买时间(使用元宝)
+    int64 shop_taxes = 89;              // 新的返水
+    int64    last_buy_time = 90;        // 上次购买时间(使用RMB)
+    int64    last_yuanbao_time = 91;    // 上次购买时间(使用元宝)
 
     // 心想事橙
     PBPlayerXxscData xxsc_data = 92;
-    int64       xxsc_choushui = 93; //心想事橙抽水
-    int64       paxl_choushui = 94; //苹安喜乐抽水
-    int64       zgbq_choushui = 95; //珠光宝气抽水
+    int64       xxsc_choushui = 93;                         // 心想事橙抽水
+    int64       paxl_choushui = 94;                         // 苹安喜乐抽水
+    int64       zgbq_choushui = 95;                         // 珠光宝气抽水
     PBPlayerCollectYanHuaDailVipDrop  yanhua_drop_info = 96;
-    int64       shuliandu = 97;    //熟练度
-    PBPlayerCollectForgePaoInfo  forge_info = 98;  //锻造
-    PBPlayerCollectForgeShopInfo forge_shop = 99;  //实时更新商品ids
-    int64     steady_pao = 100;              //平稳期开炮数
-    int64     choushui_pao = 101;            //抽水期开炮数
-    int64     qiangsha_rate = 102;           //强杀概率
-    int64     delta_clear_rate = 103;         //清空比例
-    PBPlayerCollectAchieveExtData achieve_ext_data = 104; //成就辅助数据
-    int64     pao_liang = 105;         //炮量 充值,新增 开炮减少 判断是否系统抽水
+    int64       shuliandu = 97;                             // 熟练度
+    PBPlayerCollectForgePaoInfo  forge_info = 98;           // 锻造
+    PBPlayerCollectForgeShopInfo forge_shop = 99;           // 实时更新商品ids
+    int64     steady_pao = 100;                             // 平稳期开炮数
+    int64     choushui_pao = 101;                           // 抽水期开炮数
+    int64     qiangsha_rate = 102;                          // 强杀概率
+    int64     delta_clear_rate = 103;                       // 清空比例
+    PBPlayerCollectAchieveExtData achieve_ext_data = 104;   // 成就辅助数据
+    int64     pao_liang = 105;                              // 炮量 充值,新增 开炮减少 判断是否系统抽水
 
-    repeated PBPlayerCollectDurationItem seven_day_fire = 106;      //七日射击
-    repeated PBPlayerCollectDurationItem treasure_box_open_count = 107; //宝箱开启数量
+    repeated PBPlayerCollectDurationItem seven_day_fire = 106;          // 七日射击
+    repeated PBPlayerCollectDurationItem treasure_box_open_count = 107; // 宝箱开启数量
 
     //自选房
-    int64   zxf_total_call = 108; //开房总计投入金币
-    int64   zxf_total_call_reward = 109; //开房总计获得金币
-    int64   zxf_total_hit = 110;     //击落总计金币
-    int64   zxf_total_fire = 111;   //开炮总计金币
+    int64   zxf_total_call = 108;           // 开房总计投入金币
+    int64   zxf_total_call_reward = 109;    // 开房总计获得金币
+    int64   zxf_total_hit = 110;            // 击落总计金币
+    int64   zxf_total_fire = 111;           // 开炮总计金币
 
     //缓存房间信息
     uint64  cache_match_room_id = 112;
@@ -460,14 +461,15 @@ message PBPlayerCollectInfo {
 
     repeated PBPlayerRankValue  max_rank_values = 116; //当日排行的最大值
 
-    PBPlayerHaiShenInfo haishen_info = 117; //海神相关信息
+    PBPlayerHaiShenInfo haishen_info = 117; // 海神相关信息
+    PBPlayerCaishen caishen_info = 118;     // 财神相关信息
 }
 
 // 心想事橙
 
 message PBPlayerXxsctodaydrop{
     int64  time = 1;
-    int64  count =2;
+    int64  count = 2;
 }
 
 message PBPlayerXxscData{
@@ -503,7 +505,7 @@ message PBPlayerHyperspaceBoxInfo {
 
 //用户道具信息
 message PBPlayerItem {
-    int32 item_id  = 1;
+    int32 item_id = 1;
     int64 count = 2;
     int32 expire_time = 3;
     int32  batch_id = 4;    //批次
@@ -532,7 +534,7 @@ message PBRoomPlayerSpecialFishData {
     int64 hwbz_total_gold = 12;      //海王宝藏统计积分
 
     int32 xyzp_inner_id = 13;        //幸运转盘内圈id
-    int32 xyzp_outter_id =  14;      //幸运转盘外圈id
+    int32 xyzp_outter_id = 14;      //幸运转盘外圈id
     int64 xyzp_total_gold = 15;      //幸运转盘奖励的金币数
 
     int64   zuantou_fly_gold = 17;            //钻头总飞行碰撞金币
@@ -560,13 +562,13 @@ message PBRoomPlayerSpecialFishData {
 
 message PBRoomPlayerSpecialFishInfo {
     emFishType                          fish_type = 1;
-    PBRoomPlayerSpecialFishData          data     = 2;
+    PBRoomPlayerSpecialFishData          data = 2;
 }
 
 message PBRoomPlayerPaoSkillInfo {
-    int32 pao_item_id  = 1;
+    int32 pao_item_id = 1;
     int64 begin_unix = 2;
-    int32 pao  = 3;
+    int32 pao = 3;
 
     repeated PBRoomPlayerSpecialFishBombItem hit_fishs = 10; //杀鱼组合
     double    rotation_angle = 11;           //子弹发射时候的角度
@@ -581,14 +583,14 @@ message PBRoomPlayerJackpotInfo {
 }
 
 message PBRoomPlayerBaseInfo {
-    uint64 uid  				= 1;
-    string nick_name    		= 2;
-    emSex  sex 				= 3;
-    string head_image			= 4;
+    uint64 uid = 1;
+    string nick_name = 2;
+    emSex  sex = 3;
+    string head_image = 4;
     int32       room_pos = 5; //房间里的位置
     int32      cur_pao = 6; //炮倍
     int32      cur_pao_item = 7; //炮管
-    int32      vip_level        = 8; //vip等级
+    int32      vip_level = 8; //vip等级
     int64       gold = 9;
     int64       diamond = 10;
     PBRoomPlayerSpecialFishInfo special_fish_info = 11; //特色鱼数据
@@ -602,7 +604,7 @@ message PBRoomPlayerBaseInfo {
     PBRoomPlayerPaoSkillInfo pao_skill_info = 19; //炮技能使用状态
     PBRoomPlayerJackpotInfo jackpot_info = 20; //彩金池状态
     int32   jackpot_percent = 21; //彩金池进度
-    int32  cur_wing_item   = 22; //当前装备翅膀
+    int32  cur_wing_item = 22; //当前装备翅膀
     repeated PBPlayerRoomStateItem states = 23; //当前各种特殊状态,如自选房的狂暴炮台
 };
 
@@ -644,10 +646,10 @@ message PBPlayerMailInfo {
 //玩家展示信息
 message PBPlayerShowInfo {
     uint64 uid = 1;
-    string nick_name    		= 2;
-    emSex  sex 				= 3;
-    string head_image			= 4;
-    int32 vip_level        = 5;
+    string nick_name = 2;
+    emSex  sex = 3;
+    string head_image = 4;
+    int32 vip_level = 5;
 }
 
 //玩家转盘信息
@@ -662,10 +664,10 @@ message PBPlayerRoundPlateInfo {
 //整点奖励信息
 message PBRewardZhengDianInfo {
     int32 id = 1;
-//    string start_time    		= 2;
-//    string end_time    		= 3;
-//    int32 item_id    		= 4;
-//    int32 item_count        = 5;
+    //    string start_time    		= 2;
+    //    string end_time    		= 3;
+    //    int32 item_id    		= 4;
+    //    int32 item_count        = 5;
     int32 status = 2;//1:未领取 2:已领取 3:已过期
 }
 
@@ -677,14 +679,14 @@ message PBPlayerRoomDurationFishItem {
 
 //玩家单词房间期间统计
 message PBPlayerRoomDurationInfo {
-    repeated PBPlayerItem mod_items = 1;     //本次获得（失去）的道具（包括金币，钻石之类的特殊道具）
-    repeated PBPlayerCollectItem kill_items = 2;    //本次击落获取
-    repeated PBPlayerCollectItem fire_items = 3;    //本次使用
-    int32    room_duration_sec = 4;                 //本次在房间内时间
-    int64    chongzhi_change_charge_gold = 5;       //充值变化的付费金币
+    repeated PBPlayerItem mod_items = 1;            // 本次获得（失去）的道具（包括金币，钻石之类的特殊道具）
+    repeated PBPlayerCollectItem kill_items = 2;    // 本次击落获取
+    repeated PBPlayerCollectItem fire_items = 3;    // 本次使用
+    int32    room_duration_sec = 4;                 // 本次在房间内时间
+    int64    chongzhi_change_charge_gold = 5;       // 充值变化的付费金币
     int64    use_dantou_kill_gold = 6;              // 使用弹头获得的金币
-    int32    room_type  = 7; //房间类型
-    int32    dole_cnt = 8; //补助次数
+    int32    room_type = 7;                         // 房间类型
+    int32    dole_cnt = 8;                          // 补助次数
     int64    draw_choujiang_value = 9;
     int64    draw_choushui_value = 10;
     int32    broke_count = 11;
@@ -780,12 +782,12 @@ message PBPlayerOnlineTimeInfo {
 
 // 明星玩家
 message PBStarPlayerInfo {
-    uint64 uid  		   = 1;
-    string nick_name       = 2;
-    emSex  sex 			   = 3;
-    string head_image	   = 4;
-    int32 vip_level        = 5;
-    int64 rank_value        = 6;
+    uint64 uid = 1;
+    string nick_name = 2;
+    emSex  sex = 3;
+    string head_image = 4;
+    int32 vip_level = 5;
+    int64 rank_value = 6;
 }
 
 message PBStarPlayerRankInfo {
@@ -808,42 +810,42 @@ message PBPlayerGrowthPackage {
     repeated PBPlayerGrowthPackageItem tasks_by_type = 1;
 }
 
-message PBPlayerBuyInfoLianChongPackage { //没啥,暂时作为规范吧
+message PBPlayerBuyInfoLianChongPackage {//没啥,暂时作为规范吧
     repeated int32 extern_buy_count_arr = 1;
 }
 
 message PBPlayerBuyItem {
-    int32 product_id  =  1;
+    int32 product_id = 1;
     int32 buy_time = 2;
     int32 buy_count = 3;
-    int32 effect_end_time = 4; // 时效性道具结束时间
-    int32 reward_time = 5;    // 如果有奖励，领奖时间
-    int32 yaoyiyao_boxid = 6; // 摇一摇奖励
-    int32 yaoyiyap_cnt = 7; // 摇一摇次数
-    int32 yaoyiyap_fresh_time = 8; // 摇一摇刷新时间
-    int32 yaoyiyao_status = 9; // 0:未支付 1:已支付
-    int32 product_type = 10;            //产品类型
+    int32 effect_end_time = 4;                              // 时效性道具结束时间
+    int32 reward_time = 5;                                  // 如果有奖励，领奖时间
+    int32 yaoyiyao_boxid = 6;                               // 摇一摇奖励
+    int32 yaoyiyap_cnt = 7;                                 // 摇一摇次数
+    int32 yaoyiyap_fresh_time = 8;                          // 摇一摇刷新时间
+    int32 yaoyiyao_status = 9;                              // 0:未支付 1:已支付
+    int32 product_type = 10;                                //产品类型
     repeated PBPlayerYaoYiYaoItem items = 11;
-    PBPlayerGrowthPackage  grow_pack_info =12; //成长礼包
-    PBPlayerBuyInfoLianChongPackage lianchong_info = 13; //连冲礼包
+    PBPlayerGrowthPackage  grow_pack_info = 12;             //成长礼包
+    PBPlayerBuyInfoLianChongPackage lianchong_info = 13;    //连冲礼包
 }
 
-message PBMonthCardInfo {                 //每日月卡信息
-   repeated PBMonthCardItems card_items = 1;
+message PBMonthCardInfo {//每日月卡信息
+    repeated PBMonthCardItems card_items = 1;
 }
 
-message PBMonthCardItems {                 //每日月卡信息
-    int32 product_id  =  1;
+message PBMonthCardItems {//每日月卡信息
+    int32 product_id = 1;
     repeated  PBPlayerItem items = 2;
 }
 
-message PBPlayerMonthlySignIn {                 //每日月累计签到信息
+message PBPlayerMonthlySignIn {//每日月累计签到信息
     int32 sign_in_count = 1;    // 签到次数
     int64 sign_in_time = 2;     // 签到时间
 }
 
 message PBPlayerYaoYiYaoItem {
-    int32 item_id  =  1;
+    int32 item_id = 1;
     int32 item_count = 2;
 }
 
@@ -866,7 +868,7 @@ message PBNewPlayerTaskInfo {
 //boss 觉醒 炸鱼
 message PBRoomPlayerBossAwakeFishItem {
     string fish_id = 1;
-    int64  fish_score= 2;
+    int64  fish_score = 2;
 }
 
 //鱼叉 PBDropInfo
@@ -876,9 +878,9 @@ message PBRoomPlayerFishForkFishItem {
 }
 
 message PBRoomPlayerForkInfo {
-   bool   end_up = 1;
-   int64  accum_gold = 2;
-   int32  fork_id = 3;
+    bool   end_up = 1;
+    int64  accum_gold = 2;
+    int32  fork_id = 3;
 }
 
 //boss 觉醒时check 参数
@@ -895,9 +897,9 @@ message PBBossAwakeInfo {
 
 //玩家成就总数据
 message PBPlayerAchievementInfo {
-  repeated PBPlayerAchievementItem all_items = 1; //所有成就数据
-  int32 total_points = 2;                    //总领取点数
-  repeated int32 reward_point_arr = 3;          //已经领取的点数奖励
+    repeated PBPlayerAchievementItem all_items = 1; //所有成就数据
+    int32 total_points = 2;                    //总领取点数
+    repeated int32 reward_point_arr = 3;          //已经领取的点数奖励
 }
 
 //玩家赛季手册数据
@@ -933,5 +935,19 @@ message PBPlayerHaiShenInfo {
 message PBRoomPlayerDropDetailInfo {
     emFishType                          fish_type = 1;
     float                               fish_score = 2; //鱼分
-    float                               crit       = 3; //暴击倍数
+    float                               crit = 3; //暴击倍数
+}
+
+// 玩家财神信息
+message PBPlayerCaishen{
+    map<int32, int32> daily_max_scores = 1 [deprecated = true]; // 弃用
+    int64 time_flag = 2;                                        // 时间标记时间戳,用于过天判断
+    int64 rank_per = 3;                                         // 福袋积分加成万分比,没激活时为0
+    map<int32, PBPlayerCaishenScore> max_scores = 4;            // 当日最高童子/财神积分与加成,<CaishenType,PBPlayerCaishenScore>
+}
+
+// 玩家财神分数
+message PBPlayerCaishenScore{
+    int32 score = 1;    // 当日最高积分,未加成
+    int32 up = 2;       // 加成的具体值,非比例;
 }

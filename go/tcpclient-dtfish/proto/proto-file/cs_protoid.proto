@@ -2,286 +2,295 @@ syntax = "proto3";
 package ProtoMsg;
 
 enum emCSMsgId {
-  CS_MSG_INVALID = 0;
-  CS_MSG_HEART_BEAT = 1;
+    CS_MSG_INVALID = 0;
+    CS_MSG_HEART_BEAT = 1;
 
-  CS_MSG_BEGIN = 100000;
+    CS_MSG_BEGIN = 100000;
 
-  //登陆相关
-  CS_MSG_PLAYER_TEST = 100001;
-  CS_MSG_PLAYER_LOGIN = 100002;
-  CS_MSG_PLAYER_BIND = 100003;
-  CS_MSG_PLAYER_KICK = 100004;
-  CS_MSG_LOGIN_END = 109999;
-
-
-  //===============================gamesvr=====================================
-  //game服协议
-  CS_MSG_GAME_BEGIN = 110000;
-  CS_MSG_GAME_ENTER_ROOM = 110001;
-  CS_MSG_GAME_BAG_BUY_ITEM = 110002;                  //购买道具
-  CS_MSG_GAME_BAG_ZENGSONG = 110003;                  //赠送道具
-  CS_MSG_GAME_BROAD_ITEM = 110004;                    //玩家道具信息变化的广播(包括金币 钻石之类)
-  CS_MSG_GAME_UPDATE_GUIDE_STEP = 110005;             //新手引导玩家步骤
-  CS_MSG_GAME_EQUIP_PAO_ITEM = 110006;                //装备炮台
-  CS_MSG_GAME_PLAYER_RECV_MAIL = 110007;              //下发邮件
-  CS_MSG_GAME_PLAYER_READ_MAIL = 110008;              //读邮件
-  CS_MSG_GAME_PLAYER_ATTACH_MAIL = 110009;            //领取邮件
-  CS_MSG_GAME_PLAYER_DEL_MAIL = 110010;               //删除邮件
-  CS_MSG_GAME_GET_PLAYER_INFO = 110011;               //拉取个人信息
-  CS_MSG_GAME_SEND_PLAYER_ROUND_PLATE_INFO = 110012;  //发送转盘信息
-  CS_MSG_GAME_ROUND_PLATE = 110013;                   //发送转盘信息
-  CS_MSG_GAME_GET_ZHENG_DIAN_REWARD_LIST = 110020;    //获取整点奖励
-  CS_MSG_GAME_TAKE_ZHENG_DIAN_REWARD = 110021;        //领取整点奖励
-  CS_MSG_GAME_DOLE_LEFT_COUNT = 110022;               //当日救济金剩余次数
-  CS_MSG_GAME_TAKE_DOLE = 110023;                     //领取救济金
-  CS_MSG_GAME_YESTERDAY_KILLED_GOLD = 110024;         //昨日击杀的金币
-  CS_MSG_GAME_YESTERDAY_KILLED_LOTTERY = 110025;      //领取昨日击杀的免费奖券
-
-  CS_MSG_GAME_EXCHANGE_BY_LOTTERY = 110050; //奖券兑换
-  CS_MSG_GAME_EXCHANGE_RECORD = 110051;     //奖券兑换记录
-  CS_MSG_GAME_EXCHANGE_ADD_INFO = 110052;   //新增、修改奖券兑换地址信息
-  CS_MSG_GAME_EXCHANGE_GET_INFO = 110053;   //获取奖券兑换地址信息
-
-  CS_MSG_GAME_ON_RECHARGE = 110060;           //发送充值信息
-  CS_MSG_GAME_SHOP_PURCHASE = 110061;         //商品购买协议
-  CS_MSG_GAME_FIRST_RECHARGE_PACKET = 110062; //首冲礼包
-  CS_MSG_GAME_SHOP_DAILY_PACKET = 110063;     //每日领取奖励
-  CS_MSG_GAME_ONCE_YAOYIYAO = 110064;         //摇一摇 摇一次
-  CS_MSG_GAME_ADD_YAOYIYAO = 110065;          //摇一摇 加一次
-  CS_MSG_GAME_SET_MINGRI = 110066;            //明日礼包set记录
-  CS_MSG_GAME_TAKE_MINGRI = 110067;           //明日礼包拿奖励
-  CS_MSG_GAME_SEND_SHARE_INFO = 110068;       //下发分享数据
-  CS_MSG_GAME_GET_SHARE_AWARDS = 110069;      //领取分享奖励
-  CS_MSG_GAME_SEND_SHARE_NOTIFY = 110070;     //如果玩家在线通知
-  CS_MSG_GAME_DANTOU_RANKING_LIST = 110080;   //弹头榜
-  CS_MSG_GAME_UPDATE_CONFIG_BROAD = 110081;   //配置更新广播
-  CS_MSG_GAME_NEW_ANNOUNCEMENT = 110082;      //新公告
-  CS_MSG_GAME_BROAD_MARQUEE = 110090;         //跑马灯
-  CS_MSG_GAME_DEBRIS_COMPOSE_LIST = 110091;   //碎片合成列表
-  CS_MSG_GAME_DEBRIS_COMPOSE = 110092;        //碎片合成
-  CS_MSG_GAME_GUIDE_UPLOAD = 110093;          //引导数据上传(包括公众号)
-
-  CS_MSG_GAME_ACTIVITY_START_BROAD = 110094;            //活动开始广播 (归属worldsvr了)
-  CS_MSG_GAME_ACTIVITY_END_BROAD = 110095;              //活动结束广播(归属worldsvr了)
-  CS_MSG_GAME_ACTIVITY_PHONE_BILL_GET = 110096;         //话费券领取(归属worldsvr了)
-  CS_MSG_GAME_ACTIVITY_PUBLIC_NUMBER_GET = 110097;      //公众号关注(归属worldsvr了)
-  CS_MSG_GAME_ACTIVITY_PUBLIC_NUMBER_REWARD = 110098;   //公众号领奖(归属worldsvr了)
-  CS_MSG_GAME_ITEM_BAG_FULL_BROAD = 110099;             //道具满了推送
-  CS_MSG_GAME_ACTIVITY_VIP_AUTHEN = 110100;             //贵族认证(归属worldsvr了)
-  CS_MSG_GAME_ACTIVITY_VIP_AUTHEN_REWARD = 110101;      //贵族认证领奖(归属worldsvr了)
-  CS_MSG_GAME_ACTIVITY_UPDATE_BROAD = 110102;           //活动配置数据发生变化(归属worldsvr了)
-  CS_MSG_GAME_HAIWANGZHENGBA_GET_RANK = 110103;         //海王争霸排行榜
-  CS_MSG_GAME_PAY_GET_ORDER = 110104;                   //支付下单,可以和游戏逻辑耦合，支付成功的回调走paysvr的web api
-  CS_MSG_GAME_NOTICE_ENTER_MAIN_SCENE = 110106;         //进入大厅主界面的通知
-  CS_MSG_GAME_PUSH_SHOP_GIFT_INFO = 110107;             //礼包推送
-  CS_MSG_GAME_ACTIVITY_ADD_QQGROUP_COPY = 110108;       //qq群加领奖  (归属worldsvr了)
-  CS_MSG_GAME_EXCHANGE_CONFIG = 110109;                 //兑换配置请求协议
-  CS_MSG_GAME_GIVE_CHECK = 110110;                      //请求是否可以赠送功能
-  CS_MSG_GAME_NOTIFY_UPDATE_TOKEN = 110111;             //更新TOKEN
-  CS_MSG_GAME_CHANGE_NAME_INFO = 110112;                //更改玩家昵称
-  CS_MSG_GAME_CHANGE_PASSWD = 110113;                   //设置玩家手机和密码
-  CS_MSG_GAME_CHANGE_NAME_RET = 110114;                 //返回玩家更改名字情况
-  CS_MSG_GAME_REAL_NAME_AUTH = 110115;                  //实名认证
-  CS_MSG_GAME_REAL_NAME_AUTH_RET = 110116;              //返回实名认证信息
-  CS_MSG_GAME_SET_TELEPHONE = 110117;                   //设置手机号
-  CS_MSG_GAME_SET_TELEPHONE_RET = 110118;               //返回设置手机号信息
-  CS_MSG_GAME_ONLINE_TIME = 110119;                     //通知玩家在线时间
-  CS_MSG_GAME_REQUEST_PHONE_CODE = 110120;              //获得验证码
-  CS_MSG_GAME_REQUEST_PHONE_CODE_RET = 110121;          //发送短信返回
-  CS_MSG_GAME_CHANGE_PASSWORD = 110122;                 //请求更改密码
-  CS_MSG_GAME_CHANGE_PASSWORD_RET = 110123;             //回应更改密码
-  CS_MSG_GAME_REQUEST_CHANGE_NAME = 110124;             //请求改名消耗信息
-  CS_MSG_GAME_REQUEST_CHANGE_NAME_RET = 110125;         //请求改名消耗信息返回
-  CS_MSG_GAME_REQUEST_SET_PHONE_AWARD = 110126;         //设置手机的奖励
-  CS_MSG_GAME_REQUEST_SET_PHONE_AWARD_RET = 110127;     //返回设置手机奖励
-  CS_MSG_GAME_CANCEL_SET_TELEPHONE = 110128;            // 取消设置手机号，原来的客户端始终收到有问题
-  CS_MSG_GAME_STAR_PLAYER_RANK_INFO = 110129;           // 拉取明星玩家数据
-  CS_MSG_GAME_CROSS_DAY_EVENT = 110130;                 // 跨天事件
-  CS_MSG_GAME_NAME_AUTH_REWARD = 110131;                // 实名认证奖励
-  CS_MSG_GAME_UPLOAD_GUIDE_DATA = 110132;               // 引导数据
-  CS_MSG_GAME_PMD_MSG = 110133;                         // 推送跑马灯信息
-  CS_MSG_GAME_SHOP_EXCHANGE_DELIVERY = 110134;          // 商城兑换类购买发货
-  CS_MSG_GAME_ADD_INVITE_CODE = 110135;                 // 提交邀请码
-  CS_MSG_GAME_DAILY_SIGN = 110136;                      // 签到
-  CS_MSG_GAME_TASK_POINTS = 110137;                     // 任务点数
-  CS_MSG_GAME_TASK_REWARD = 110138;                     // 任务领奖
-  CS_MSG_GAME_TASK_COMPLETE = 110139;                   // 任务完成推送
-  CS_MSG_GAME_MICRO_WECHAT_AUTH = 110140;               // 微信小游戏授权
-  CS_MSG_GAME_USE_DTFISH_BOX = 110141;                  // 大厅捕鱼宝箱使用
-  CS_MSG_GAME_DTFISH_MSG_TRANSFER = 110142;             //大厅消息透传
-  CS_MSG_GAME_JACKPOT_RECORD = 110143;                  // 彩金池记录
-  CS_MSG_GAME_NEW_PLAYER_TASK_INFO = 110144;            // 新手任务信息
-  CS_MSG_GAME_NEW_PLAYER_TASK_REWARD = 110145;          // 新手任务领奖
-  CS_MSG_GAME_JUBAO_SETTLEMENT = 110146;                //聚宝结算
-  CS_MSG_GAME_JUBAO_RANK_LIST = 110147;                 //聚宝招财榜
-  CS_MSG_GAME_PMD_BROAD_MSG = 110148;                   //跑马灯广播（归属woldsvr了） xlh  增加
-  CS_MSG_GAME_NEW_USER_DOUBLE_DAILY_SIGN = 110149;      //新手签到 翻倍请求   xlh 新增
-  CS_MSG_GAME_CLIENT_TEST = 110150;                     //gamesvr 方便测试用   xlh 增加
-  CS_MSG_GAME_SHOP_PRODUCT_REWARD = 110151;             //商品带领奖类的奖励领取协议
-  CS_MSG_GAME_TASK_INFO = 110152;                       // 拉取任务信息
-  CS_MSG_GAME_SHOP_BUY_INFO = 110153;                   // 拉取购买信息
-  CS_MSG_GAME_BLESS_DO = 110154;                        // 祈福
-  CS_MSG_GAME_BLESS_REST = 110155;                      // 祈福重置
-  CS_MSG_GAME_BLESS_RANK = 110156;                      // 祈福排行榜
-  CS_MSG_GAME_DAILY_LUCKY_DRAW_ACTIVITY = 110157;       // 每日抽奖活动页面信息请求
-  CS_MSG_GAME_DAILY_LUCKY_DRAW = 110158;                // 每日抽奖抽奖请求
-  CS_MSG_GAME_GET_BAG_ITEMS = 110159;                   // 获取背包物品
-  CS_MSG_GAME_UPGRADE_MAGICAL = 110160;                 // 升级神器
-  CS_MSG_GAME_SELL_MAGICAL = 110161;                    // 出售神器
-  CS_MSG_GAME_WORLD_BOSS_RANK_INFO = 110162;            // 世界BOSS排行信息
-  CS_MSG_GAME_MONTHLY_SIGN_IN = 110163;                 // 月累计签到活动签到
-  CS_MSG_GAME_REDEEM_CODE = 110164;                     // 玩家兑换码   xlh
-  CS_MSG_GAME_LV_UPDATE = 110165;                       //人物等级升级
-  CS_MSG_GAME_RECYCLE_PROPS = 110166;                   //回收道具
-  CS_MSG_GAME_SAILING_FUND_CONF = 110167;               //启航基金配置
-  CS_MSG_GAME_SAILING_FUND_REWARD = 110168;             //启航基金领取奖励
-  CS_MSG_GAME_SAILING_FUND_PLAYER_DATA = 110169;        //启航基金用户数据推送
-  CS_MSG_GAME_USE_ITEM = 110170;                        //使用道具(技能道具)
-  CS_MSG_GAME_XXSC_CONF = 110171;                       //心想事橙配置
-
-  //成就相关
-  CS_MSG_GAME_ACHIEVEMENT_LOGIN_INFO = 110172;      //登录下发成就数据
-  CS_MSG_GAME_ACHIEVEMENT_UPDATE = 110173;          //成就数据更新
-  CS_MSG_GAME_ACHIEVEMENT_REWARD = 110174;          //成就奖励领取
-  CS_MSG_GAME_ACHIEVEMENT_POINT_REWARD = 110175;    //成就点数奖励领取
-  CS_MSG_GAME_ACHIEVEMENT_GET_INFO = 110176;        //拉取成就数据
-
-  //赛季手册
-  CS_MSG_GAME_SEASON_MANUAL_LOGIN_INFO = 110177;      //登录下发赛季数据
-  CS_MSG_GAME_SEASON_MANUAL_TASK_GET_INFO = 110178;   //拉取成就任务数据
-  CS_MSG_GAME_SEASON_MANUAL_TASK_UPDATE = 110179;     //赛季任务触发
-  CS_MSG_GAME_SEASON_MANUAL_LEVEL_REWARD = 110180;    //赛季等级奖励
-  CS_MSG_GAME_SEASON_MANUAL_ACTIVE_REWARD = 110181;   //赛季活跃度奖励
-  CS_MSG_GAME_SEASON_MANUAL_EXCHANGE = 110182;        //赛季兑换
-  CS_MSG_GAME_SEASON_MANUAL_TASK_REWARD = 110183;     //赛季任务领奖
-
-  //锻造相关
-  CS_MSG_GAME_FORGE_PAO = 110184;         //锻造炮倍
-  CS_MSG_GAME_FORGE_FRESH_SHOP = 110185;  //锻造商城 信息
-
-  //gamesvr活动相关
-  CS_MSG_GAME_ACTIVITY_PLAYER_INFO = 110200;     //活动信息，支持拉取
-
-  //蟠桃活动
-  CS_MSG_GAME_ACTIVITY_PANTAO_TASK_REWARD = 110250;     //蟠桃活动任务领奖
-  CS_MSG_GAME_ACTIVITY_PANTAO_EXCHANGE = 110251;        //蟠桃活动兑换
-  CS_MSG_GAME_ACTIVITY_PANTAO_TASK_UPDATE = 110252;     //蟠桃活动任务完成
-
-  CS_MSG_GAME_COMMON_RANK_LIST = 110260;  //通用排行榜（自选房英雄榜，海神祭坛，海神狂欢。。。）
-
-  //海神祭坛和狂欢
-  CS_MSG_GAME_HAISHEN_INFO = 110270;              //海神信息拉去
-  CS_MSG_GAME_HAISHEN_EXCHANGE = 110271;          //海神兑换
-  CS_MSG_GAME_HAISHEN_EXCHANGE_FRESH = 110272;    //海神兑换刷新
-  CS_MSG_GAME_HAISHEN_FORGE = 110273;             //海神铸造
-
-  //世界杯狂欢协议
-  CS_MSG_GAME_ACTIVITY_SJB_CRAZY_DUOBAO = 110300;           //夺宝
-  CS_MSG_GAME_ACTIVITY_SJB_CRAZY_DUOBAO_REWARD = 110301;    //夺宝 徽章积分领奖
-  CS_MSG_GAME_ACTIVITY_SJB_CRAZY_TASK_REWARD = 110302;      //任务 领奖
-  CS_MSG_GAME_ACTIVITY_SJB_CRAZY_HZ_TEAM_REWARD = 110303;   //徽章 领奖
-  CS_MSG_GAME_ACTIVITY_SJB_CRAZY_HZ_GROUP_REWARD = 110304;  //徽章 组领奖
-  CS_MSG_GAME_ACTIVITY_SJB_CRAZY_HZ_WEEK_REWARD = 110305;   //徽章 周领奖
-  CS_MSG_GAME_ACTIVITY_SJB_CRAZY_SHOP_BUY = 110306;         //补给站 购买
-
-  //测试相关的协议
-  CS_MSG_GAME_BASE_TASK_TEST = 115000; //base_task测试
-
-  CS_MSG_GAME_END = 119999;
-
-  //===============================roomsvr=====================================
-  //room服务器协议
-  CS_MSG_ROOM_BEGIN = 120000;
-  CS_MSG_ROOM_BROAD_PLAYER_ENTER_DESK = 120001;   //广播：玩家进入桌子
-  CS_MSG_ROOM_BROAD_SCENE = 120002;               //广播：当前桌子的scen信息
-  CS_MSG_ROOM_CHANGE_PAO = 120003;                //切换炮倍
-  CS_MSG_ROOM_BULLET = 120004;                    //发射子弹
-  CS_MSG_ROOM_BROAD_BULLET = 120005;              //广播发射子弹
-  CS_MSG_ROOM_HIT = 120006;                       //命中
-  CS_MSG_ROOM_BROAD_HIT = 120007;                 //广播命中
-  CS_MSG_ROOM_BROAD_REBORN_FISH = 120008;         //广播重生鱼
-  CS_MSG_ROOM_USE_ITEM = 120009;                  //使用道具(技能道具或者弹头之类的)
-  CS_MSG_ROOM_BROAD_USE_ITEM = 120010;            //广播使用道具
-  CS_MSG_ROOM_OVERTIME_KICK_PLAYER = 120011;      //超时踢出玩家
-  CS_MSG_ROOM_BROAD_EQUIP_PAO_ITEM = 120012;      //广播装备炮台
-  CS_MSG_ROOM_BROAD_SPECIAL_FISH_END = 120013;    //玩家特色鱼状态结束
-  CS_MSG_ROOM_HWBZ_CLICK = 120014;                //海王宝藏点击
-  CS_MSG_ROOM_XYZP_GET_REWARD = 120015;           //幸运转盘领奖
-  CS_MSG_ROOM_ZSHY_COLLECT = 120016;              //珠事好运领奖
-  CS_MSG_ROOM_WLDB_COLLECT = 120017;              //五龙夺宝领奖
-  CS_MSG_ROOM_HWBZ_START = 120018;                //海王宝藏通知开始
-  CS_MSG_ROOM_ZUANTOU_BOMB = 120019;              //钻头蟹爆炸
-  CS_MSG_ROOM_HIT_TEST = 120020;                  //测试击中鱼
-  CS_MSG_ROOM_DESTORY_BULLET = 120021;            //销毁子弹（特殊情况 客户端子弹碰撞不了）
-  CS_MSG_ROOM_CHANGE_LONGPAO = 120022;            //更换龙炮协议
-  CS_MSG_ROOM_CHANGE_LONGPAO_BROAD = 120023;      //更换龙炮协议广播
-  CS_MSG_ROOM_GET_TODAY_TOTAL_KILL_GOLD = 120024; //获取今天总击落金币
-  CS_MSG_ROOM_PAY_PAO_LEVEL_UP = 120025;          //升级炮倍
-  CS_MSG_ROOM_SCORE_HEALTH_EVENT = 120026;        //积分场健康通知事件
-  CS_MSG_ROOM_DRAW_REWARD = 120027;               //炮倍红包
-  CS_MSG_ROOM_SYNC_ROOM_INFO = 120028;            //同步房间消息
-  CS_MSG_ROOM_CLEAR_SPECIAL_FISH = 120029;        //同步房间消息
-  CS_MSG_ROOM_PAO_SKILL_USE = 120030;             //炮台技能释放
-  CS_MSG_ROOM_PAO_SKILL_END = 120031;             //炮台技能结束广播
-  CS_MSG_ROOM_JACKPOT_REWARD = 120032;            //彩金池领奖
-  CS_MSG_ROOM_JACKPOT_END = 120033;               //彩金池结束广播
-  CS_MSG_ROOM_BROAD_BOSS_FISH = 120034;           //广播boss鱼
-  CS_MSG_ROOM_BROAD_BOSS_FISH_COME = 120035;      //广播boss鱼来临提前通知
-  CS_MSG_ROOM_MATCH_ROOM_START = 120036;          //比赛场开始
-  CS_MSG_ROOM_BOSS_AWAKE_FRID_FISH = 120037;      //boss 觉醒炸鱼    xlh 新增
-  CS_MSG_ROOM_BOSS_AWAKE_BORN_FISH = 120038;      //boss 觉醒出鱼请求
-  CS_MSG_ROOM_PLAYER_MEASSAGE_BROAD = 120039;     //玩家room 消息广播
-  CS_MSG_ROOM_BROAD_BOSS_FISH_END = 120040;       //广播boss鱼,自然游走结束
-  CS_MSG_ROOM_JFSF_COLLECT = 120041;              //金佛送福领奖
-  CS_MSG_ROOM_BOSS_AWAKE_Hit_FISH = 120042;       //boss 觉醒打鱼
-  CS_MSG_ROOM_WORLD_BOSS_BROAD_STATE = 120043;    //广播世界boss鱼状态
-  CS_MSG_ROOM_WORLD_BOSS_BROAD_BLOOD = 120044;    //广播世界boss鱼血量
-  CS_MSG_ROOM_RYJS_COLLECT = 120045;              //熔岩巨兽领奖
-  CS_MSG_ROOM_LV_UPDATE = 120046;                 //人物等级升级
-  CS_MSG_ROOM_BOSS_INFO = 120047;                 //
-  CS_MSG_ROOM_XXSC_REWARD = 120048;               //心想事橙领奖
-  CS_MSG_ROOM_PLAYE_SYNC_PAO_ANGLE = 120049;      //玩家广播同步炮台角度
-  CS_MSG_ROOM_ZIXUAN_SETTING = 120050;            //自选房间设置（如设置公开私人）
-  CS_MSG_ROOM_ZIXUAN_CALL_BOSS = 120051;          //自选房间召唤boss
-  CS_MSG_ROOM_ZIXUAN_BOSS_END = 120052;           //自选房间boss结束
-  CS_MSG_ROOM_PLAYER_STATE = 120053;              //玩家roomsvr的状态 以后可扩展使用
-  CS_MSG_ROOM_EVENT_BROAD = 120054;               //渔场事件,如召唤boss进入狂暴
-
-  //红蓝百人场相关
-  CS_MSG_ROOM_REDBLUE_ADD_GOLD = 121001;    //下注
-  CS_MSG_ROOM_REDBLUE_BROAD_INFO = 121002;  //场景广播（状态，下注额度，结算信息，前6排行玩家）
-  CS_MSG_ROOM_REDBLUE_GET_RANK = 121003;    //拉取排行榜
-
-  //room 服测试用  xlh  增加 仅仅用来测试
-  CS_MSG_ROOM_TEST_INFO = 129990;   //
-  CS_MSG_ROOM_END = 129999;
+    //登陆相关
+    CS_MSG_PLAYER_TEST = 100001;
+    CS_MSG_PLAYER_LOGIN = 100002;
+    CS_MSG_PLAYER_BIND = 100003;
+    CS_MSG_PLAYER_KICK = 100004;
+    CS_MSG_LOGIN_END = 109999;
 
 
-  //===============================worldsvr=====================================
-  //world服务器协议
-  CS_MSG_WORLD_BEGIN = 130000;
-  CS_MSG_WORLD_ACTIVITY_PLAYER_INFO_CHANGED = 130001;       //玩家活动数据下发
-  CS_MSG_WORLD_ACTIVITY_TOTAL_RECHARGE_REWARD = 130002;     //累计充值活动领奖
-  CS_MSG_WORLD_ACTIVITY_KILL_FISH_RANK_GET = 130003;        //杀鱼活动排行请求
-  CS_MSG_WORLD_ACTIVITY_CONSUME_REBATE_REWARD = 130004;     //消费返利领奖
-  CS_MSG_WORLD_JACKPOT_INFO_BROAD = 130005;                 //彩金池信息广播,每分钟全服广播或者有人触发时改变
-  CS_MSG_WORLD_ACTIVITY_FISH_SCORE_REWARD = 130006;         //鱼分活动领奖
-  CS_MSG_WORLD_ACTIVITY_FISH_SCORE_REWARD_RECORD = 130007;  //鱼分活动记录排行
-  CS_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN_UNLOCK = 130008;     //   通用活动币 玩家解锁、重摇 请求  xlh 新增
-  CS_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN_REWARD = 130009;     //通用活动币 领奖
-  CS_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN_RECORD = 130010;     // 领奖纪录
-  CS_MSG_WORLD_ACTIVITY_SAILING_FUND_REWARD = 130011;       // 启航基金领奖
-  CS_MSG_WORLD_ACTIVITY_TIAN_PENG_THROW = 130012;           // 天蓬探险投掷
-  CS_MSG_WORLD_ACTIVITY_TIAN_PENG_BOX = 130013;             // 天蓬领取当天宝箱
-  CS_MSG_WORLD_ACTIVITY_TIAN_PENG_JIUCHI = 130014;          // 天蓬触发九尺钉耙
-  CS_MSG_WORLD_ACTIVITY_TIAN_PENG_RANK = 130015;            // 天蓬榜单
-  CS_MSG_WORLD_ACTIVITY_JIN_NIU_THROW = 130016;             // 金牛投掷
-  CS_MSG_WORLD_ACTIVITY_JIN_NIU_RANK = 130017;              // 金牛 排行榜
-  CS_MSG_WORLD_ACTIVITY_GET_CONFIG = 130018;                // 拉取活动配置
-  CS_MSG_WORLD_ZIXUAN_ROOM_FRESH_LIST = 130019;             // 刷新自选房列表
+    //===============================gamesvr=====================================
+    //game服协议
+    CS_MSG_GAME_BEGIN = 110000;
+    CS_MSG_GAME_ENTER_ROOM = 110001;
+    CS_MSG_GAME_BAG_BUY_ITEM = 110002;                  //购买道具
+    CS_MSG_GAME_BAG_ZENGSONG = 110003;                  //赠送道具
+    CS_MSG_GAME_BROAD_ITEM = 110004;                    //玩家道具信息变化的广播(包括金币 钻石之类)
+    CS_MSG_GAME_UPDATE_GUIDE_STEP = 110005;             //新手引导玩家步骤
+    CS_MSG_GAME_EQUIP_PAO_ITEM = 110006;                //装备炮台
+    CS_MSG_GAME_PLAYER_RECV_MAIL = 110007;              //下发邮件
+    CS_MSG_GAME_PLAYER_READ_MAIL = 110008;              //读邮件
+    CS_MSG_GAME_PLAYER_ATTACH_MAIL = 110009;            //领取邮件
+    CS_MSG_GAME_PLAYER_DEL_MAIL = 110010;               //删除邮件
+    CS_MSG_GAME_GET_PLAYER_INFO = 110011;               //拉取个人信息
+    CS_MSG_GAME_SEND_PLAYER_ROUND_PLATE_INFO = 110012;  //发送转盘信息
+    CS_MSG_GAME_ROUND_PLATE = 110013;                   //发送转盘信息
+    CS_MSG_GAME_GET_ZHENG_DIAN_REWARD_LIST = 110020;    //获取整点奖励
+    CS_MSG_GAME_TAKE_ZHENG_DIAN_REWARD = 110021;        //领取整点奖励
+    CS_MSG_GAME_DOLE_LEFT_COUNT = 110022;               //当日救济金剩余次数
+    CS_MSG_GAME_TAKE_DOLE = 110023;                     //领取救济金
+    CS_MSG_GAME_YESTERDAY_KILLED_GOLD = 110024;         //昨日击杀的金币
+    CS_MSG_GAME_YESTERDAY_KILLED_LOTTERY = 110025;      //领取昨日击杀的免费奖券
 
-  CS_MSG_WORLD_END = 139999;
+    CS_MSG_GAME_EXCHANGE_BY_LOTTERY = 110050; //奖券兑换
+    CS_MSG_GAME_EXCHANGE_RECORD = 110051;     //奖券兑换记录
+    CS_MSG_GAME_EXCHANGE_ADD_INFO = 110052;   //新增、修改奖券兑换地址信息
+    CS_MSG_GAME_EXCHANGE_GET_INFO = 110053;   //获取奖券兑换地址信息
 
-  CS_MSG_END = 199999;
+    CS_MSG_GAME_ON_RECHARGE = 110060;           //发送充值信息
+    CS_MSG_GAME_SHOP_PURCHASE = 110061;         //商品购买协议
+    CS_MSG_GAME_FIRST_RECHARGE_PACKET = 110062; //首冲礼包
+    CS_MSG_GAME_SHOP_DAILY_PACKET = 110063;     //每日领取奖励
+    CS_MSG_GAME_ONCE_YAOYIYAO = 110064;         //摇一摇 摇一次
+    CS_MSG_GAME_ADD_YAOYIYAO = 110065;          //摇一摇 加一次
+    CS_MSG_GAME_SET_MINGRI = 110066;            //明日礼包set记录
+    CS_MSG_GAME_TAKE_MINGRI = 110067;           //明日礼包拿奖励
+    CS_MSG_GAME_SEND_SHARE_INFO = 110068;       //下发分享数据
+    CS_MSG_GAME_GET_SHARE_AWARDS = 110069;      //领取分享奖励
+    CS_MSG_GAME_SEND_SHARE_NOTIFY = 110070;     //如果玩家在线通知
+    CS_MSG_GAME_DANTOU_RANKING_LIST = 110080;   //弹头榜
+    CS_MSG_GAME_UPDATE_CONFIG_BROAD = 110081;   //配置更新广播
+    CS_MSG_GAME_NEW_ANNOUNCEMENT = 110082;      //新公告
+    CS_MSG_GAME_BROAD_MARQUEE = 110090;         //跑马灯
+    CS_MSG_GAME_DEBRIS_COMPOSE_LIST = 110091;   //碎片合成列表
+    CS_MSG_GAME_DEBRIS_COMPOSE = 110092;        //碎片合成
+    CS_MSG_GAME_GUIDE_UPLOAD = 110093;          //引导数据上传(包括公众号)
+
+    CS_MSG_GAME_ACTIVITY_START_BROAD = 110094;            //活动开始广播 (归属worldsvr了)
+    CS_MSG_GAME_ACTIVITY_END_BROAD = 110095;              //活动结束广播(归属worldsvr了)
+    CS_MSG_GAME_ACTIVITY_PHONE_BILL_GET = 110096;         //话费券领取(归属worldsvr了)
+    CS_MSG_GAME_ACTIVITY_PUBLIC_NUMBER_GET = 110097;      //公众号关注(归属worldsvr了)
+    CS_MSG_GAME_ACTIVITY_PUBLIC_NUMBER_REWARD = 110098;   //公众号领奖(归属worldsvr了)
+    CS_MSG_GAME_ITEM_BAG_FULL_BROAD = 110099;             //道具满了推送
+    CS_MSG_GAME_ACTIVITY_VIP_AUTHEN = 110100;             //贵族认证(归属worldsvr了)
+    CS_MSG_GAME_ACTIVITY_VIP_AUTHEN_REWARD = 110101;      //贵族认证领奖(归属worldsvr了)
+    CS_MSG_GAME_ACTIVITY_UPDATE_BROAD = 110102;           //活动配置数据发生变化(归属worldsvr了)
+    CS_MSG_GAME_HAIWANGZHENGBA_GET_RANK = 110103;         //海王争霸排行榜
+    CS_MSG_GAME_PAY_GET_ORDER = 110104;                   //支付下单,可以和游戏逻辑耦合，支付成功的回调走paysvr的web api
+    CS_MSG_GAME_NOTICE_ENTER_MAIN_SCENE = 110106;         //进入大厅主界面的通知
+    CS_MSG_GAME_PUSH_SHOP_GIFT_INFO = 110107;             //礼包推送
+    CS_MSG_GAME_ACTIVITY_ADD_QQGROUP_COPY = 110108;       //qq群加领奖  (归属worldsvr了)
+    CS_MSG_GAME_EXCHANGE_CONFIG = 110109;                 //兑换配置请求协议
+    CS_MSG_GAME_GIVE_CHECK = 110110;                      //请求是否可以赠送功能
+    CS_MSG_GAME_NOTIFY_UPDATE_TOKEN = 110111;             //更新TOKEN
+    CS_MSG_GAME_CHANGE_NAME_INFO = 110112;                //更改玩家昵称
+    CS_MSG_GAME_CHANGE_PASSWD = 110113;                   //设置玩家手机和密码
+    CS_MSG_GAME_CHANGE_NAME_RET = 110114;                 //返回玩家更改名字情况
+    CS_MSG_GAME_REAL_NAME_AUTH = 110115;                  //实名认证
+    CS_MSG_GAME_REAL_NAME_AUTH_RET = 110116;              //返回实名认证信息
+    CS_MSG_GAME_SET_TELEPHONE = 110117;                   //设置手机号
+    CS_MSG_GAME_SET_TELEPHONE_RET = 110118;               //返回设置手机号信息
+    CS_MSG_GAME_ONLINE_TIME = 110119;                     //通知玩家在线时间
+    CS_MSG_GAME_REQUEST_PHONE_CODE = 110120;              //获得验证码
+    CS_MSG_GAME_REQUEST_PHONE_CODE_RET = 110121;          //发送短信返回
+    CS_MSG_GAME_CHANGE_PASSWORD = 110122;                 //请求更改密码
+    CS_MSG_GAME_CHANGE_PASSWORD_RET = 110123;             //回应更改密码
+    CS_MSG_GAME_REQUEST_CHANGE_NAME = 110124;             //请求改名消耗信息
+    CS_MSG_GAME_REQUEST_CHANGE_NAME_RET = 110125;         //请求改名消耗信息返回
+    CS_MSG_GAME_REQUEST_SET_PHONE_AWARD = 110126;         //设置手机的奖励
+    CS_MSG_GAME_REQUEST_SET_PHONE_AWARD_RET = 110127;     //返回设置手机奖励
+    CS_MSG_GAME_CANCEL_SET_TELEPHONE = 110128;            // 取消设置手机号，原来的客户端始终收到有问题
+    CS_MSG_GAME_STAR_PLAYER_RANK_INFO = 110129;           // 拉取明星玩家数据
+    CS_MSG_GAME_CROSS_DAY_EVENT = 110130;                 // 跨天事件
+    CS_MSG_GAME_NAME_AUTH_REWARD = 110131;                // 实名认证奖励
+    CS_MSG_GAME_UPLOAD_GUIDE_DATA = 110132;               // 引导数据
+    CS_MSG_GAME_PMD_MSG = 110133;                         // 推送跑马灯信息
+    CS_MSG_GAME_SHOP_EXCHANGE_DELIVERY = 110134;          // 商城兑换类购买发货
+    CS_MSG_GAME_ADD_INVITE_CODE = 110135;                 // 提交邀请码
+    CS_MSG_GAME_DAILY_SIGN = 110136;                      // 签到
+    CS_MSG_GAME_TASK_POINTS = 110137;                     // 任务点数
+    CS_MSG_GAME_TASK_REWARD = 110138;                     // 任务领奖
+    CS_MSG_GAME_TASK_COMPLETE = 110139;                   // 任务完成推送
+    CS_MSG_GAME_MICRO_WECHAT_AUTH = 110140;               // 微信小游戏授权
+    CS_MSG_GAME_USE_DTFISH_BOX = 110141;                  // 大厅捕鱼宝箱使用
+    CS_MSG_GAME_DTFISH_MSG_TRANSFER = 110142;             //大厅消息透传
+    CS_MSG_GAME_JACKPOT_RECORD = 110143;                  // 彩金池记录
+    CS_MSG_GAME_NEW_PLAYER_TASK_INFO = 110144;            // 新手任务信息
+    CS_MSG_GAME_NEW_PLAYER_TASK_REWARD = 110145;          // 新手任务领奖
+    CS_MSG_GAME_JUBAO_SETTLEMENT = 110146;                //聚宝结算
+    CS_MSG_GAME_JUBAO_RANK_LIST = 110147;                 //聚宝招财榜
+    CS_MSG_GAME_PMD_BROAD_MSG = 110148;                   //跑马灯广播（归属woldsvr了） xlh  增加
+    CS_MSG_GAME_NEW_USER_DOUBLE_DAILY_SIGN = 110149;      //新手签到 翻倍请求   xlh 新增
+    CS_MSG_GAME_CLIENT_TEST = 110150;                     //gamesvr 方便测试用   xlh 增加
+    CS_MSG_GAME_SHOP_PRODUCT_REWARD = 110151;             //商品带领奖类的奖励领取协议
+    CS_MSG_GAME_TASK_INFO = 110152;                       // 拉取任务信息
+    CS_MSG_GAME_SHOP_BUY_INFO = 110153;                   // 拉取购买信息
+    CS_MSG_GAME_BLESS_DO = 110154;                        // 祈福
+    CS_MSG_GAME_BLESS_REST = 110155;                      // 祈福重置
+    CS_MSG_GAME_BLESS_RANK = 110156;                      // 祈福排行榜
+    CS_MSG_GAME_DAILY_LUCKY_DRAW_ACTIVITY = 110157;       // 每日抽奖活动页面信息请求
+    CS_MSG_GAME_DAILY_LUCKY_DRAW = 110158;                // 每日抽奖抽奖请求
+    CS_MSG_GAME_GET_BAG_ITEMS = 110159;                   // 获取背包物品
+    CS_MSG_GAME_UPGRADE_MAGICAL = 110160;                 // 升级神器
+    CS_MSG_GAME_SELL_MAGICAL = 110161;                    // 出售神器
+    CS_MSG_GAME_WORLD_BOSS_RANK_INFO = 110162;            // 世界BOSS排行信息
+    CS_MSG_GAME_MONTHLY_SIGN_IN = 110163;                 // 月累计签到活动签到
+    CS_MSG_GAME_REDEEM_CODE = 110164;                     // 玩家兑换码   xlh
+    CS_MSG_GAME_LV_UPDATE = 110165;                       //人物等级升级
+    CS_MSG_GAME_RECYCLE_PROPS = 110166;                   //回收道具
+    CS_MSG_GAME_SAILING_FUND_CONF = 110167;               //启航基金配置
+    CS_MSG_GAME_SAILING_FUND_REWARD = 110168;             //启航基金领取奖励
+    CS_MSG_GAME_SAILING_FUND_PLAYER_DATA = 110169;        //启航基金用户数据推送
+    CS_MSG_GAME_USE_ITEM = 110170;                        //使用道具(技能道具)
+    CS_MSG_GAME_XXSC_CONF = 110171;                       //心想事橙配置
+
+    //成就相关
+    CS_MSG_GAME_ACHIEVEMENT_LOGIN_INFO = 110172;      //登录下发成就数据
+    CS_MSG_GAME_ACHIEVEMENT_UPDATE = 110173;          //成就数据更新
+    CS_MSG_GAME_ACHIEVEMENT_REWARD = 110174;          //成就奖励领取
+    CS_MSG_GAME_ACHIEVEMENT_POINT_REWARD = 110175;    //成就点数奖励领取
+    CS_MSG_GAME_ACHIEVEMENT_GET_INFO = 110176;        //拉取成就数据
+
+    //赛季手册
+    CS_MSG_GAME_SEASON_MANUAL_LOGIN_INFO = 110177;      //登录下发赛季数据
+    CS_MSG_GAME_SEASON_MANUAL_TASK_GET_INFO = 110178;   //拉取成就任务数据
+    CS_MSG_GAME_SEASON_MANUAL_TASK_UPDATE = 110179;     //赛季任务触发
+    CS_MSG_GAME_SEASON_MANUAL_LEVEL_REWARD = 110180;    //赛季等级奖励
+    CS_MSG_GAME_SEASON_MANUAL_ACTIVE_REWARD = 110181;   //赛季活跃度奖励
+    CS_MSG_GAME_SEASON_MANUAL_EXCHANGE = 110182;        //赛季兑换
+    CS_MSG_GAME_SEASON_MANUAL_TASK_REWARD = 110183;     //赛季任务领奖
+
+    //锻造相关
+    CS_MSG_GAME_FORGE_PAO = 110184;         //锻造炮倍
+    CS_MSG_GAME_FORGE_FRESH_SHOP = 110185;  //锻造商城 信息
+
+    //gamesvr活动相关
+    CS_MSG_GAME_ACTIVITY_PLAYER_INFO = 110200;     //活动信息，支持拉取
+
+    //蟠桃活动
+    CS_MSG_GAME_ACTIVITY_PANTAO_TASK_REWARD = 110250;     //蟠桃活动任务领奖
+    CS_MSG_GAME_ACTIVITY_PANTAO_EXCHANGE = 110251;        //蟠桃活动兑换
+    CS_MSG_GAME_ACTIVITY_PANTAO_TASK_UPDATE = 110252;     //蟠桃活动任务完成
+
+    CS_MSG_GAME_COMMON_RANK_LIST = 110260;  //通用排行榜（自选房英雄榜，海神祭坛，海神狂欢。。。）
+
+    //海神祭坛和狂欢
+    CS_MSG_GAME_HAISHEN_INFO = 110270;              //海神信息拉去
+    CS_MSG_GAME_HAISHEN_EXCHANGE = 110271;          //海神兑换
+    CS_MSG_GAME_HAISHEN_EXCHANGE_FRESH = 110272;    //海神兑换刷新
+    CS_MSG_GAME_HAISHEN_FORGE = 110273;             //海神铸造
+
+    //世界杯狂欢协议
+    CS_MSG_GAME_ACTIVITY_SJB_CRAZY_DUOBAO = 110300;           //夺宝
+    CS_MSG_GAME_ACTIVITY_SJB_CRAZY_DUOBAO_REWARD = 110301;    //夺宝 徽章积分领奖
+    CS_MSG_GAME_ACTIVITY_SJB_CRAZY_TASK_REWARD = 110302;      //任务 领奖
+    CS_MSG_GAME_ACTIVITY_SJB_CRAZY_HZ_TEAM_REWARD = 110303;   //徽章 领奖
+    CS_MSG_GAME_ACTIVITY_SJB_CRAZY_HZ_GROUP_REWARD = 110304;  //徽章 组领奖
+    CS_MSG_GAME_ACTIVITY_SJB_CRAZY_HZ_WEEK_REWARD = 110305;   //徽章 周领奖
+    CS_MSG_GAME_ACTIVITY_SJB_CRAZY_SHOP_BUY = 110306;         //补给站 购买
+
+    CS_MSG_GAME_CAISHEN_INFO = 110307;  // 财神赐福信息
+
+    CS_MSG_GAME_JIJIALUNPAN_PICK = 110308;  // 机甲轮盘选择自选奖励
+    CS_MSG_GAME_JIJIALUNPAN_PLAY = 110309;  // 机甲轮盘玩转盘
+    CS_MSG_GAME_JIJIALUNPAN_BUY = 110310;   // 机甲轮盘商店购买
+
+    //测试相关的协议
+    CS_MSG_GAME_BASE_TASK_TEST = 115000;    // base_task测试
+    // 添加道具的接口,为方便测试
+    CS_MSG_GAME_ADD_ITEM = 115101;
+
+    CS_MSG_GAME_END = 119999;
+
+    //===============================roomsvr=====================================
+    //room服务器协议
+    CS_MSG_ROOM_BEGIN = 120000;
+    CS_MSG_ROOM_BROAD_PLAYER_ENTER_DESK = 120001;   //广播：玩家进入桌子
+    CS_MSG_ROOM_BROAD_SCENE = 120002;               //广播：当前桌子的scen信息
+    CS_MSG_ROOM_CHANGE_PAO = 120003;                //切换炮倍
+    CS_MSG_ROOM_BULLET = 120004;                    //发射子弹
+    CS_MSG_ROOM_BROAD_BULLET = 120005;              //广播发射子弹
+    CS_MSG_ROOM_HIT = 120006;                       //命中
+    CS_MSG_ROOM_BROAD_HIT = 120007;                 //广播命中
+    CS_MSG_ROOM_BROAD_REBORN_FISH = 120008;         //广播重生鱼
+    CS_MSG_ROOM_USE_ITEM = 120009;                  //使用道具(技能道具或者弹头之类的)
+    CS_MSG_ROOM_BROAD_USE_ITEM = 120010;            //广播使用道具
+    CS_MSG_ROOM_OVERTIME_KICK_PLAYER = 120011;      //超时踢出玩家
+    CS_MSG_ROOM_BROAD_EQUIP_PAO_ITEM = 120012;      //广播装备炮台
+    CS_MSG_ROOM_BROAD_SPECIAL_FISH_END = 120013;    //玩家特色鱼状态结束
+    CS_MSG_ROOM_HWBZ_CLICK = 120014;                //海王宝藏点击
+    CS_MSG_ROOM_XYZP_GET_REWARD = 120015;           //幸运转盘领奖
+    CS_MSG_ROOM_ZSHY_COLLECT = 120016;              //珠事好运领奖
+    CS_MSG_ROOM_WLDB_COLLECT = 120017;              //五龙夺宝领奖
+    CS_MSG_ROOM_HWBZ_START = 120018;                //海王宝藏通知开始
+    CS_MSG_ROOM_ZUANTOU_BOMB = 120019;              //钻头蟹爆炸
+    CS_MSG_ROOM_HIT_TEST = 120020;                  //测试击中鱼
+    CS_MSG_ROOM_DESTORY_BULLET = 120021;            //销毁子弹（特殊情况 客户端子弹碰撞不了）
+    CS_MSG_ROOM_CHANGE_LONGPAO = 120022;            //更换龙炮协议
+    CS_MSG_ROOM_CHANGE_LONGPAO_BROAD = 120023;      //更换龙炮协议广播
+    CS_MSG_ROOM_GET_TODAY_TOTAL_KILL_GOLD = 120024; //获取今天总击落金币
+    CS_MSG_ROOM_PAY_PAO_LEVEL_UP = 120025;          //升级炮倍
+    CS_MSG_ROOM_SCORE_HEALTH_EVENT = 120026;        //积分场健康通知事件
+    CS_MSG_ROOM_DRAW_REWARD = 120027;               //炮倍红包
+    CS_MSG_ROOM_SYNC_ROOM_INFO = 120028;            //同步房间消息
+    CS_MSG_ROOM_CLEAR_SPECIAL_FISH = 120029;        //同步房间消息
+    CS_MSG_ROOM_PAO_SKILL_USE = 120030;             //炮台技能释放
+    CS_MSG_ROOM_PAO_SKILL_END = 120031;             //炮台技能结束广播
+    CS_MSG_ROOM_JACKPOT_REWARD = 120032;            //彩金池领奖
+    CS_MSG_ROOM_JACKPOT_END = 120033;               //彩金池结束广播
+    CS_MSG_ROOM_BROAD_BOSS_FISH = 120034;           //广播boss鱼
+    CS_MSG_ROOM_BROAD_BOSS_FISH_COME = 120035;      //广播boss鱼来临提前通知
+    CS_MSG_ROOM_MATCH_ROOM_START = 120036;          //比赛场开始
+    CS_MSG_ROOM_BOSS_AWAKE_FRID_FISH = 120037;      //boss 觉醒炸鱼    xlh 新增
+    CS_MSG_ROOM_BOSS_AWAKE_BORN_FISH = 120038;      //boss 觉醒出鱼请求
+    CS_MSG_ROOM_PLAYER_MEASSAGE_BROAD = 120039;     //玩家room 消息广播
+    CS_MSG_ROOM_BROAD_BOSS_FISH_END = 120040;       //广播boss鱼,自然游走结束
+    CS_MSG_ROOM_JFSF_COLLECT = 120041;              //金佛送福领奖
+    CS_MSG_ROOM_BOSS_AWAKE_Hit_FISH = 120042;       //boss 觉醒打鱼
+    CS_MSG_ROOM_WORLD_BOSS_BROAD_STATE = 120043;    //广播世界boss鱼状态
+    CS_MSG_ROOM_WORLD_BOSS_BROAD_BLOOD = 120044;    //广播世界boss鱼血量
+    CS_MSG_ROOM_RYJS_COLLECT = 120045;              //熔岩巨兽领奖
+    CS_MSG_ROOM_LV_UPDATE = 120046;                 //人物等级升级
+    CS_MSG_ROOM_BOSS_INFO = 120047;                 //
+    CS_MSG_ROOM_XXSC_REWARD = 120048;               //心想事橙领奖
+    CS_MSG_ROOM_PLAYE_SYNC_PAO_ANGLE = 120049;      //玩家广播同步炮台角度
+    CS_MSG_ROOM_ZIXUAN_SETTING = 120050;            //自选房间设置（如设置公开私人）
+    CS_MSG_ROOM_ZIXUAN_CALL_BOSS = 120051;          //自选房间召唤boss
+    CS_MSG_ROOM_ZIXUAN_BOSS_END = 120052;           //自选房间boss结束
+    CS_MSG_ROOM_PLAYER_STATE = 120053;              //玩家roomsvr的状态 以后可扩展使用
+    CS_MSG_ROOM_EVENT_BROAD = 120054;               //渔场事件,如召唤boss进入狂暴
+    CS_MSG_ROOM_CAISHEN_SLOT_BROAD = 120055;        // 财神拉霸机广播
+
+    //红蓝百人场相关
+    CS_MSG_ROOM_REDBLUE_ADD_GOLD = 121001;    //下注
+    CS_MSG_ROOM_REDBLUE_BROAD_INFO = 121002;  //场景广播（状态，下注额度，结算信息，前6排行玩家）
+    CS_MSG_ROOM_REDBLUE_GET_RANK = 121003;    //拉取排行榜
+
+    //room 服测试用  xlh  增加 仅仅用来测试
+    CS_MSG_ROOM_TEST_INFO = 129990;   //
+    CS_MSG_ROOM_END = 129999;
+
+
+    //===============================worldsvr=====================================
+    //world服务器协议
+    CS_MSG_WORLD_BEGIN = 130000;
+    CS_MSG_WORLD_ACTIVITY_PLAYER_INFO_CHANGED = 130001;       //玩家活动数据下发
+    CS_MSG_WORLD_ACTIVITY_TOTAL_RECHARGE_REWARD = 130002;     //累计充值活动领奖
+    CS_MSG_WORLD_ACTIVITY_KILL_FISH_RANK_GET = 130003;        //杀鱼活动排行请求
+    CS_MSG_WORLD_ACTIVITY_CONSUME_REBATE_REWARD = 130004;     //消费返利领奖
+    CS_MSG_WORLD_JACKPOT_INFO_BROAD = 130005;                 //彩金池信息广播,每分钟全服广播或者有人触发时改变
+    CS_MSG_WORLD_ACTIVITY_FISH_SCORE_REWARD = 130006;         //鱼分活动领奖
+    CS_MSG_WORLD_ACTIVITY_FISH_SCORE_REWARD_RECORD = 130007;  //鱼分活动记录排行
+    CS_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN_UNLOCK = 130008;     //   通用活动币 玩家解锁、重摇 请求  xlh 新增
+    CS_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN_REWARD = 130009;     //通用活动币 领奖
+    CS_MSG_WORLD_ACTIVITY_UNIVERSAL_COIN_RECORD = 130010;     // 领奖纪录
+    CS_MSG_WORLD_ACTIVITY_SAILING_FUND_REWARD = 130011;       // 启航基金领奖
+    CS_MSG_WORLD_ACTIVITY_TIAN_PENG_THROW = 130012;           // 天蓬探险投掷
+    CS_MSG_WORLD_ACTIVITY_TIAN_PENG_BOX = 130013;             // 天蓬领取当天宝箱
+    CS_MSG_WORLD_ACTIVITY_TIAN_PENG_JIUCHI = 130014;          // 天蓬触发九尺钉耙
+    CS_MSG_WORLD_ACTIVITY_TIAN_PENG_RANK = 130015;            // 天蓬榜单
+    CS_MSG_WORLD_ACTIVITY_JIN_NIU_THROW = 130016;             // 金牛投掷
+    CS_MSG_WORLD_ACTIVITY_JIN_NIU_RANK = 130017;              // 金牛 排行榜
+    CS_MSG_WORLD_ACTIVITY_GET_CONFIG = 130018;                // 拉取活动配置
+    CS_MSG_WORLD_ZIXUAN_ROOM_FRESH_LIST = 130019;             // 刷新自选房列表
+
+    CS_MSG_WORLD_END = 139999;
+
+    CS_MSG_END = 199999;
 };
