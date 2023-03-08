@@ -4,7 +4,7 @@
   "begin_time": 1677081600,
   "end_time": 1713801600,
   "priority": 1,
-  "name": "111",
+  "name": "机甲轮盘",
   "description": "222",
   "completeShow": true,
   "jijialunpan": {
@@ -15,23 +15,23 @@
     "pool": [
       {
         "id": 1,
-        "weight": 1000,
-        "requireTimes": 30,
-        "guaranteedTimes": 100,
+        "weight": 10,
+        "requireTimes": 50,
+        "guaranteedTimes": 85,
         "availableTimes": 1,
         "optionalRewardId": 1
       },
       {
         "id": 2,
-        "weight": 300,
+        "weight": 5,
         "requireTimes": 80,
-        "guaranteedTimes": 110,
+        "guaranteedTimes": 109,
         "availableTimes": 1,
         "optionalRewardId": 2
       },
       {
         "id": 3,
-        "weight": 100,
+        "weight": 3,
         "requireTimes": 110,
         "guaranteedTimes": 125,
         "availableTimes": 1,
@@ -39,9 +39,8 @@
       },
       {
         "id": 4,
-        "weight": 1500,
-        "requireTimes": 50,
-        "guaranteedTimes": 50,
+        "weight": 10,
+        "requireTimes": 40,
         "availableTimes": 2,
         "reward": {
           "item_id": 50003,
@@ -50,18 +49,16 @@
       },
       {
         "id": 5,
-        "weight": 500,
-        "requireTimes": 10,
-        "guaranteedTimes": 10,
-        "availableTimes": 15,
+        "weight": 20,
+        "availableTimes": 35,
         "reward": {
-          "item_id": 7003,
-          "item_count": 1
+          "item_id": 5,
+          "item_count": 20000
         }
       },
       {
         "id": 6,
-        "weight": 5000,
+        "weight": 17,
         "availableTimes": 30,
         "reward": {
           "item_id": 7001,
@@ -70,16 +67,7 @@
       },
       {
         "id": 7,
-        "weight": 5000,
-        "availableTimes": 35,
-        "reward": {
-          "item_id": 5,
-          "item_count": 20000
-        }
-      },
-      {
-        "id": 8,
-        "weight": 5000,
+        "weight": 15,
         "availableTimes": 25,
         "reward": {
           "item_id": 5,
@@ -87,8 +75,18 @@
         }
       },
       {
+        "id": 8,
+        "weight": 10,
+        "requireTimes": 10,
+        "availableTimes": 15,
+        "reward": {
+          "item_id": 7003,
+          "item_count": 1
+        }
+      },
+      {
         "id": 9,
-        "weight": 5000,
+        "weight": 10,
         "availableTimes": 25,
         "reward": {
           "item_id": 5,
@@ -109,7 +107,31 @@
           4019,
           4020,
           4021,
-          4022
+          4022,
+          4022,
+          4023,
+          4024,
+          4025,
+          4026,
+          4027,
+          4028,
+          4029,
+          4030,
+          4031,
+          4032,
+          4033,
+          4034,
+          4035,
+          4036,
+          4037,
+          4038,
+          4039,
+          4040,
+          4041,
+          4042,
+          4043,
+          4044,
+          4045
         ]
       },
       {
@@ -125,7 +147,30 @@
           14008,
           14009,
           14010,
-          14011
+          14011,
+          14011,
+          14012,
+          14013,
+          14014,
+          14015,
+          14016,
+          14017,
+          14018,
+          14019,
+          14020,
+          14021,
+          14022,
+          14023,
+          14024,
+          14025,
+          14026,
+          14027,
+          14028,
+          14029,
+          14030,
+          14031,
+          14032,
+          14033
         ]
       },
       {
