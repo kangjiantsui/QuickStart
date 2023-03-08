@@ -12,7 +12,7 @@
           "star": 5,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 10000
             },
             {
@@ -26,7 +26,7 @@
           "star": 10,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 20000
             },
             {
@@ -40,7 +40,7 @@
           "star": 15,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 30000
             },
             {
@@ -54,7 +54,7 @@
           "star": 18,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 40000
             },
             {
@@ -68,7 +68,7 @@
           "star": 20,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 50000
             },
             {
@@ -82,7 +82,7 @@
           "star": 22,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 60000
             },
             {
@@ -96,7 +96,7 @@
           "star": 25,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 100000
             },
             {
@@ -110,7 +110,7 @@
           "star": 28,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 120000
             },
             {
@@ -124,7 +124,7 @@
           "star": 30,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 120000
             },
             {
@@ -147,7 +147,7 @@
           "star": 5,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 50000
             },
             {
@@ -161,7 +161,7 @@
           "star": 10,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 60000
             },
             {
@@ -175,7 +175,7 @@
           "star": 15,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 80000
             },
             {
@@ -189,7 +189,7 @@
           "star": 18,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 100000
             },
             {
@@ -203,7 +203,7 @@
           "star": 20,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 120000
             },
             {
@@ -217,7 +217,7 @@
           "star": 22,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 150000
             },
             {
@@ -231,7 +231,7 @@
           "star": 25,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 180000
             },
             {
@@ -245,7 +245,7 @@
           "star": 28,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 250000
             },
             {
@@ -259,7 +259,7 @@
           "star": 30,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 500000
             },
             {
@@ -282,7 +282,7 @@
           "star": 5,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 500000
             },
             {
@@ -296,7 +296,7 @@
           "star": 10,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 800000
             },
             {
@@ -310,7 +310,7 @@
           "star": 15,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 1000000
             },
             {
@@ -324,7 +324,7 @@
           "star": 18,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 1500000
             },
             {
@@ -338,7 +338,7 @@
           "star": 20,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 1500000
             },
             {
@@ -352,7 +352,7 @@
           "star": 22,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 2000000
             },
             {
@@ -366,7 +366,7 @@
           "star": 25,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 2000000
             },
             {
@@ -380,7 +380,7 @@
           "star": 28,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 3000000
             },
             {
@@ -394,7 +394,7 @@
           "star": 30,
           "reward": [
             {
-              "item_id": 2,
+              "item_id": 5,
               "item_count": 5000000
             },
             {
@@ -412,7 +412,7 @@
       "hp": 200,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -422,7 +422,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -450,7 +450,7 @@
       "hp": 300,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -460,7 +460,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -488,7 +488,7 @@
       "hp": 400,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -498,7 +498,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -526,7 +526,7 @@
       "hp": 500,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -536,7 +536,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -564,7 +564,7 @@
       "hp": 700,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -574,7 +574,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -602,7 +602,7 @@
       "hp": 1000,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -612,7 +612,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -640,7 +640,7 @@
       "hp": 1400,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -650,7 +650,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -678,7 +678,7 @@
       "hp": 1700,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -688,7 +688,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -716,7 +716,7 @@
       "hp": 2000,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -726,7 +726,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -754,7 +754,7 @@
       "hp": 2300,
       "firstKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 5000000
         },
         {
@@ -764,7 +764,7 @@
       ],
       "repeatedKillReward": [
         {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 500000
         },
         {
@@ -1537,7 +1537,7 @@
   "cailiaoPackages": [
     {
       "id": 18010,
-      "item_id": 2,
+      "item_id": 5,
       "min": 15,
       "max": 25
     }
@@ -1614,7 +1614,7 @@
         "begin": 1,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 100000000
           },
           {
@@ -1627,7 +1627,7 @@
         "begin": 2,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 80000000
           },
           {
@@ -1640,7 +1640,7 @@
         "begin": 3,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 60000000
           },
           {
@@ -1653,7 +1653,7 @@
         "begin": 4,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 50000000
           },
           {
@@ -1666,7 +1666,7 @@
         "begin": 5,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 30000000
           },
           {
@@ -1679,7 +1679,7 @@
         "begin": 6,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 20000000
           },
           {
@@ -1692,7 +1692,7 @@
         "begin": 7,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 10000000
           },
           {
@@ -1705,7 +1705,7 @@
         "begin": 8,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 8000000
           },
           {
@@ -1718,7 +1718,7 @@
         "begin": 9,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 6000000
           },
           {
@@ -1731,7 +1731,7 @@
         "begin": 10,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 5000000
           },
           {
@@ -1745,7 +1745,7 @@
         "end": 20,
         "rewards": [
           {
-            "item_id": 2,
+            "item_id": 5,
             "item_count": 2000000
           },
           {

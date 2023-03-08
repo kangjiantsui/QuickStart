@@ -1,24 +1,48 @@
 {
   "items": [
     {
-      "item_id": 4019,
+      "item_id": 5,
+      "item_count": 80000
+    },
+    {
+      "item_id": 9003,
       "item_count": 1
+    },
+    {
+      "item_id": 50003,
+      "item_count": 1
+    },
+    {
+      "item_id": 5,
+      "item_count": 31
+    },
+    {
+      "item_id": 7001,
+      "item_count": 29
+    },
+    {
+      "item_id": 5,
+      "item_count": 22
+    },
+    {
+      "item_id": 7003,
+      "item_count": 12
+    },
+    {
+      "item_id": 5,
+      "item_count": 25
     }
   ],
+  "finish": true,
   "info": {
-    "gear": 19,
-    "pickItems": {
-      "2": 14010,
-      "3": 9002,
-      "1": 4019
-    },
+    "gear": 12,
     "shopItems": [
       {
         "id": 101010301,
         "baseInfo": {
           "id": 101010301
         },
-        "count": 7,
+        "count": 4,
         "availableCount": -1
       },
       {
@@ -30,57 +54,55 @@
         "availableCount": 1
       }
     ],
-    "playCount": 100,
-    "playRecord": {
-      "6": 22,
-      "7": 26,
-      "8": 20,
-      "9": 24,
-      "2": 1,
-      "1": 2,
-      "4": 2,
-      "5": 3
-    },
     "slots": [
       {
-        "itemId": 4019,
-        "availableCount": -1
+        "availableCount": 1,
+        "itemCount": 1
       },
       {
-        "itemId": 14010
+        "availableCount": 1,
+        "itemCount": 1
       },
       {
-        "itemId": 9002,
-        "availableCount": 1
+        "availableCount": 1,
+        "itemCount": 1
       },
       {
-        "itemId": 50003
+        "itemId": 50003,
+        "availableCount": 2,
+        "itemCount": 1
       },
       {
-        "itemId": 7003,
-        "availableCount": 12
+        "itemId": 5,
+        "availableCount": 35,
+        "itemCount": 20000
       },
       {
         "itemId": 7001,
-        "availableCount": 8
+        "availableCount": 30,
+        "itemCount": 1
       },
       {
         "itemId": 5,
-        "availableCount": 9
+        "availableCount": 25,
+        "itemCount": 80000
+      },
+      {
+        "itemId": 7003,
+        "availableCount": 15,
+        "itemCount": 1
       },
       {
         "itemId": 5,
-        "availableCount": 5
-      },
-      {
-        "itemId": 5,
-        "availableCount": 1
+        "availableCount": 25,
+        "itemCount": 200000
       }
     ],
     "beginTime": 1677081600,
     "endTime": 1713801600
   },
   "slotIndex": [
-    0
+    6,
+    2
   ]
 }

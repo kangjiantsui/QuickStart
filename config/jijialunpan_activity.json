@@ -1,11 +1,11 @@
 {
   "atype": 17,
-  "id": 500,
-  "begin_time": 1671188020,
-  "end_time": 1734659280,
-  "priority": 1000000,
-  "name": "机甲轮盘",
-  "description": "机甲轮盘",
+  "id": 252,
+  "begin_time": 1677081600,
+  "end_time": 1713801600,
+  "priority": 1,
+  "name": "111",
+  "description": "222",
   "completeShow": true,
   "jijialunpan": {
     "price": {
@@ -15,34 +15,33 @@
     "pool": [
       {
         "id": 1,
-        "weight": 1000,
-        "requireTimes": 1,
-        "guaranteedTimes": 30,
-        "availableTimes": 100,
+        "weight": 10,
+        "requireTimes": 5,
+        "guaranteedTimes": 8,
+        "availableTimes": 1,
         "optionalRewardId": 1
       },
       {
         "id": 2,
-        "weight": 300,
-        "requireTimes": 1,
-        "guaranteedTimes": 80,
-        "availableTimes": 110,
+        "weight": 5,
+        "requireTimes": 8,
+        "guaranteedTimes": 10,
+        "availableTimes": 1,
         "optionalRewardId": 2
       },
       {
         "id": 3,
-        "weight": 100,
-        "requireTimes": 1,
-        "guaranteedTimes": 110,
-        "availableTimes": 125,
+        "weight": 3,
+        "requireTimes": 10,
+        "guaranteedTimes": 15,
+        "availableTimes": 1,
         "optionalRewardId": 3
       },
       {
         "id": 4,
-        "weight": 1500,
-        "requireTimes": 2,
-        "guaranteedTimes": 50,
-        "availableTimes": 0,
+        "weight": 10,
+        "requireTimes": 4,
+        "availableTimes": 2,
         "reward": {
           "item_id": 50003,
           "item_count": 1
@@ -50,21 +49,17 @@
       },
       {
         "id": 5,
-        "weight": 500,
-        "requireTimes": 15,
-        "guaranteedTimes": 10,
-        "availableTimes": 0,
+        "weight": 20,
+        "availableTimes": 35,
         "reward": {
-          "item_id": 7003,
-          "item_count": 1
+          "item_id": 5,
+          "item_count": 20000
         }
       },
       {
         "id": 6,
-        "weight": 5000,
-        "requireTimes": 30,
-        "guaranteedTimes": 0,
-        "availableTimes": 0,
+        "weight": 17,
+        "availableTimes": 30,
         "reward": {
           "item_id": 7001,
           "item_count": 1
@@ -72,32 +67,27 @@
       },
       {
         "id": 7,
-        "weight": 5000,
-        "requireTimes": 35,
-        "guaranteedTimes": 0,
-        "availableTimes": 0,
-        "reward": {
-          "item_id": 5,
-          "item_count": 20000
-        }
-      },
-      {
-        "id": 8,
-        "weight": 5000,
-        "requireTimes": 25,
-        "guaranteedTimes": 0,
-        "availableTimes": 0,
+        "weight": 15,
+        "availableTimes": 25,
         "reward": {
           "item_id": 5,
           "item_count": 80000
         }
       },
       {
+        "id": 8,
+        "weight": 10,
+        "requireTimes": 1,
+        "availableTimes": 15,
+        "reward": {
+          "item_id": 7003,
+          "item_count": 1
+        }
+      },
+      {
         "id": 9,
-        "weight": 5000,
-        "requireTimes": 25,
-        "guaranteedTimes": 0,
-        "availableTimes": 0,
+        "weight": 10,
+        "availableTimes": 25,
         "reward": {
           "item_id": 5,
           "item_count": 200000
@@ -117,7 +107,31 @@
           4019,
           4020,
           4021,
-          4022
+          4022,
+          4022,
+          4023,
+          4024,
+          4025,
+          4026,
+          4027,
+          4028,
+          4029,
+          4030,
+          4031,
+          4032,
+          4033,
+          4034,
+          4035,
+          4036,
+          4037,
+          4038,
+          4039,
+          4040,
+          4041,
+          4042,
+          4043,
+          4044,
+          4045
         ]
       },
       {
@@ -133,7 +147,30 @@
           14008,
           14009,
           14010,
-          14011
+          14011,
+          14011,
+          14012,
+          14013,
+          14014,
+          14015,
+          14016,
+          14017,
+          14018,
+          14019,
+          14020,
+          14021,
+          14022,
+          14023,
+          14024,
+          14025,
+          14026,
+          14027,
+          14028,
+          14029,
+          14030,
+          14031,
+          14032,
+          14033
         ]
       },
       {
@@ -147,8 +184,7 @@
     ],
     "shopItems": [
       {
-        "id": 101010301,
-        "limitTimes": 0
+        "id": 101010301
       },
       {
         "id": 101010302,
