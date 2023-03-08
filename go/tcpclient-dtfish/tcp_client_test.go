@@ -132,7 +132,8 @@ func newSession() (*tcp.Session, uint64, error) {
 	return session, uid, err
 }
 
-func getMessageByCmd(cmd pb.EmCSMsgId) (proto.Message, error) {
+// 通过cmd创建message resp
+func newRespByCmd(cmd pb.EmCSMsgId) (proto.Message, error) {
 	switch cmd {
 	case pb.EmCSMsgId_CS_MSG_GAME_SHOP_PURCHASE:
 		return &pb.PbCsGamePlayerShopPurchaseMsg{}, nil
@@ -140,12 +141,14 @@ func getMessageByCmd(cmd pb.EmCSMsgId) (proto.Message, error) {
 		return &pb.JiJiaLunPanBuyResp{}, nil
 	case pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PLAY:
 		return &pb.JiJiaLunPanPlayResp{}, nil
+	case pb.EmCSMsgId_CS_MSG_GAME_ADD_ITEM:
+		return &pb.PBPlayerItemInfo{}, nil
 	}
 	return nil, fmt.Errorf("cmd 不支持,cmd:%d", cmd)
 }
 
 // send消息并返回pb对象
-func sendAndReturnResp(session *tcp.Session, uid uint64, cmd pb.EmCSMsgId, msg proto.Message) proto.Message {
+func sendReqAndReturnResp(session *tcp.Session, uid uint64, cmd pb.EmCSMsgId, msg proto.Message) proto.Message {
 	err := send(session, uid, cmd, msg)
 	if err != nil {
 		panic(err)
@@ -158,12 +161,13 @@ func send(session *tcp.Session, uid uint64, cmd pb.EmCSMsgId, msg proto.Message)
 	return session.Send(&common.ProtocolClientHead{Uid_: uid, Msg_id_: uint32(cmd)}, msg)
 }
 
+// 一直read,直到读到指定cmd的resp,如果没有与targetCmd对应的resp则返回nil
 func receive(session *tcp.Session, targetCmd pb.EmCSMsgId) proto.Message {
 	var wg sync.WaitGroup
 	wg.Add(1)
-	result, err := getMessageByCmd(targetCmd)
+	result, err := newRespByCmd(targetCmd)
 	if err != nil {
-		panic(err)
+		return nil
 	}
 	go func() {
 		for {
