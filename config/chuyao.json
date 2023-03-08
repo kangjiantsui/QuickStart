@@ -1558,7 +1558,7 @@
       },
       {
         "item": {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 6000000
         },
         "weight": 8
@@ -1572,7 +1572,7 @@
       },
       {
         "item": {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 1000000
         },
         "weight": 30
@@ -1600,7 +1600,7 @@
       },
       {
         "item": {
-          "item_id": 2,
+          "item_id": 5,
           "item_count": 600000
         },
         "weight": 20
