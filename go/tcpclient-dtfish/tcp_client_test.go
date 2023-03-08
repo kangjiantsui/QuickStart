@@ -3,7 +3,7 @@ package tcpclient
 import (
 	"QuickStart/go/tcpclient-dtfish/common"
 	"QuickStart/go/tcpclient-dtfish/net/codec"
-	tcp2 "QuickStart/go/tcpclient-dtfish/net/tcp"
+	"QuickStart/go/tcpclient-dtfish/net/tcp"
 	pb "QuickStart/go/tcpclient-dtfish/proto"
 	dtpb "QuickStart/go/tcpclient-dtfish/proto/dtfish"
 	"QuickStart/go/utils"
@@ -63,36 +63,22 @@ func randomAccount() string {
 	return randomString
 }
 
-func TestTcpClient(t *testing.T) {
-	conn, err := net.Dial("tcp", "127.0.0.1:11000")
-	if err != nil {
-		t.Fatalf(`dial报错,err:%s`, err.Error())
-	}
-	utils.PrintJson(conn.LocalAddr())
-	session := tcp2.NewSession(
-		conn,
-		tcp2.SessionTypeTcp,
-		tcp2.NewMsgParser(),
-		&codec.DTFishClientProtoProtocol{Endian_: binary.LittleEndian},
-		2000,
-	)
+// 创建一个session
+func newSession() (*tcp.Session, uint64, error) {
 	wg := sync.WaitGroup{}
 	wg.Add(1)
 	var uid uint64
-	go func() {
-		for {
-			msg, _ := session.Receive()
-			if msg == nil {
-				continue
-			}
-			resp := msg.([]interface{})
-			head := resp[0].(*common.ProtocolClientHead)
-			uid = head.Uid_
-			t.Logf(`uid:%d,msg:%s`, head.Uid_, pb.EmCSMsgId(head.Msg_id_))
-			wg.Done()
-			break
-		}
-	}()
+	conn, err := net.Dial("tcp", "127.0.0.1:11000")
+	if err != nil {
+		return nil, 0, fmt.Errorf(`dial报错,err:%s`, err.Error())
+	}
+	session := tcp.NewSession(
+		conn,
+		tcp.SessionTypeTcp,
+		tcp.NewMsgParser(),
+		&codec.DTFishClientProtoProtocol{Endian_: binary.LittleEndian},
+		2000,
+	)
 	loginType := dtpb.EnumLoginType_enumLoginTypeToRegisterNewUser
 	gameType := dtpb.EnumGameType_enumGameTypeDouDiZhu
 	account := randomAccount()
@@ -121,7 +107,7 @@ func TestTcpClient(t *testing.T) {
 	}
 	loginData, err := proto.Marshal(dtlq)
 	if err != nil {
-		t.Fatal(err.Error())
+		return nil, 0, err
 	}
 	err = session.Send(&common.ProtocolClientHead{
 		Msg_id_: uint32(pb.EmCSMsgId_CS_MSG_PLAYER_LOGIN),
@@ -129,10 +115,77 @@ func TestTcpClient(t *testing.T) {
 		LoginType:       pb.EmLoginType_Login_type_dt,
 		DtfishLoginData: loginData,
 	})
-	if err != nil {
-		t.Fatalf(`Send报错,err:%s`, err.Error())
-	}
+	go func() {
+		for {
+			msg, _ := session.Receive()
+			if msg == nil {
+				continue
+			}
+			resp := msg.([]interface{})
+			head := resp[0].(*common.ProtocolClientHead)
+			uid = head.Uid_
+			wg.Done()
+			break
+		}
+	}()
 	wg.Wait()
+	return session, uid, err
+}
+
+func getMessageByCmd(cmd pb.EmCSMsgId) (proto.Message, error) {
+	switch cmd {
+	case pb.EmCSMsgId_CS_MSG_GAME_SHOP_PURCHASE:
+		return &pb.PbCsGamePlayerShopPurchaseMsg{}, nil
+	case pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_BUY:
+		return &pb.JiJiaLunPanBuyResp{}, nil
+	case pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PLAY:
+		return &pb.JiJiaLunPanPlayResp{}, nil
+	}
+	return nil, fmt.Errorf("cmd 不支持,cmd:%d", cmd)
+}
+
+// 封装session.Send方法,方便调用,提升可读性
+func send(session *tcp.Session, uid uint64, cmd pb.EmCSMsgId, msg proto.Message) error {
+	return session.Send(&common.ProtocolClientHead{Uid_: uid, Msg_id_: uint32(cmd)}, msg)
+}
+
+func receive(session *tcp.Session, targetCmd pb.EmCSMsgId) proto.Message {
+	var wg sync.WaitGroup
+	wg.Add(1)
+	result, err := getMessageByCmd(targetCmd)
+	if err != nil {
+		panic(err)
+	}
+	go func() {
+		for {
+			msg, _ := session.Receive()
+			if msg == nil {
+				continue
+			}
+			resp := msg.([]interface{})
+			head := resp[0].(*common.ProtocolClientHead)
+			cmd := pb.EmCSMsgId(head.Msg_id_)
+			if cmd != targetCmd {
+				continue
+			}
+			err = proto.Unmarshal(resp[1].([]uint8), result)
+			if err != nil {
+				panic(err)
+			}
+			wg.Done()
+			break
+		}
+	}()
+	wg.Wait()
+	return result
+}
+
+func TestTcpClient(t *testing.T) {
+	session, uid, err := newSession()
+	if err != nil {
+		t.Error(err)
+		return
+	}
 	go func() {
 		for {
 			msg, _ := session.Receive()
@@ -175,63 +228,12 @@ func TestTcpClient(t *testing.T) {
 			}
 		}
 	}()
-	err = session.Send(&common.ProtocolClientHead{
-		Uid_:    uid,
-		Msg_id_: uint32(pb.EmCSMsgId_CS_MSG_GAME_SHOP_EXCHANGE_DELIVERY),
-	}, &pb.PBCsGameShopExchangeDeliveryReqMsg{
-		ProductId: 101010301,
-		Count:     500,
-	})
-	if err != nil {
-		t.Fatalf(`Send报错,err:%s`, err.Error())
-	}
-	err = session.Send(&common.ProtocolClientHead{
-		Uid_:    uid,
-		Msg_id_: uint32(pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PICK),
-	}, &pb.JiJiaLunPanPickReq{
-		ItemId: 4008,
-	})
-	if err != nil {
-		t.Fatalf(`Send报错,err:%s`, err.Error())
-	}
-	err = session.Send(&common.ProtocolClientHead{
-		Uid_:    uid,
-		Msg_id_: uint32(pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PICK),
-	}, &pb.JiJiaLunPanPickReq{
-		ItemId: 14001,
-	})
-	if err != nil {
-		t.Fatalf(`Send报错,err:%s`, err.Error())
-	}
-	err = session.Send(&common.ProtocolClientHead{
-		Uid_:    uid,
-		Msg_id_: uint32(pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PICK),
-	}, &pb.JiJiaLunPanPickReq{
-		ItemId: 4008,
-	})
-	if err != nil {
-		t.Fatalf(`Send报错,err:%s`, err.Error())
-	}
-	err = session.Send(&common.ProtocolClientHead{
-		Uid_:    uid,
-		Msg_id_: uint32(pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PICK),
-	}, &pb.JiJiaLunPanPickReq{
-		ItemId: 9001,
-	})
-	if err != nil {
-		t.Fatalf(`Send报错,err:%s`, err.Error())
-	}
-
+	_ = send(session, uid, pb.EmCSMsgId_CS_MSG_GAME_SHOP_EXCHANGE_DELIVERY, &pb.PBCsGameShopExchangeDeliveryReqMsg{ProductId: 101010301, Count: 500})
+	_ = send(session, uid, pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PICK, &pb.JiJiaLunPanPickReq{ItemId: 9001})
+	_ = send(session, uid, pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PICK, &pb.JiJiaLunPanPickReq{ItemId: 4008})
+	_ = send(session, uid, pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PICK, &pb.JiJiaLunPanPickReq{ItemId: 14001})
 	for i := 0; i < 200; i++ {
-		err = session.Send(&common.ProtocolClientHead{
-			Uid_:    uid,
-			Msg_id_: uint32(pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PLAY),
-		}, &pb.JiJiaLunPanPlayReq{
-			Times: 1,
-		})
-		if err != nil {
-			t.Fatalf(`Send报错,err:%s`, err.Error())
-		}
+		_ = send(session, uid, pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PLAY, &pb.JiJiaLunPanPlayReq{Times: 1})
 	}
 	select {}
 }
