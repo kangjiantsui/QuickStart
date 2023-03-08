@@ -144,6 +144,7 @@ func getMessageByCmd(cmd pb.EmCSMsgId) (proto.Message, error) {
 	return nil, fmt.Errorf("cmd 不支持,cmd:%d", cmd)
 }
 
+// todo 封装一个同步send方法,返回结果resp
 // 封装session.Send方法,方便调用,提升可读性
 func send(session *tcp.Session, uid uint64, cmd pb.EmCSMsgId, msg proto.Message) error {
 	return session.Send(&common.ProtocolClientHead{Uid_: uid, Msg_id_: uint32(cmd)}, msg)
