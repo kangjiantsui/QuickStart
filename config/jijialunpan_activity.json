@@ -15,32 +15,33 @@
     "pool": [
       {
         "id": 1,
-        "weight": 10,
-        "requireTimes": 5,
-        "guaranteedTimes": 8,
+        "weight": 1000,
+        "requireTimes": 30,
+        "guaranteedTimes": 100,
         "availableTimes": 1,
         "optionalRewardId": 1
       },
       {
         "id": 2,
-        "weight": 5,
-        "requireTimes": 8,
-        "guaranteedTimes": 10,
+        "weight": 300,
+        "requireTimes": 80,
+        "guaranteedTimes": 110,
         "availableTimes": 1,
         "optionalRewardId": 2
       },
       {
         "id": 3,
-        "weight": 3,
-        "requireTimes": 10,
-        "guaranteedTimes": 15,
+        "weight": 100,
+        "requireTimes": 110,
+        "guaranteedTimes": 125,
         "availableTimes": 1,
         "optionalRewardId": 3
       },
       {
         "id": 4,
-        "weight": 10,
-        "requireTimes": 4,
+        "weight": 1500,
+        "requireTimes": 50,
+        "guaranteedTimes": 50,
         "availableTimes": 2,
         "reward": {
           "item_id": 50003,
@@ -49,16 +50,18 @@
       },
       {
         "id": 5,
-        "weight": 20,
-        "availableTimes": 35,
+        "weight": 500,
+        "requireTimes": 10,
+        "guaranteedTimes": 10,
+        "availableTimes": 15,
         "reward": {
-          "item_id": 5,
-          "item_count": 20000
+          "item_id": 7003,
+          "item_count": 1
         }
       },
       {
         "id": 6,
-        "weight": 17,
+        "weight": 5000,
         "availableTimes": 30,
         "reward": {
           "item_id": 7001,
@@ -67,7 +70,16 @@
       },
       {
         "id": 7,
-        "weight": 15,
+        "weight": 5000,
+        "availableTimes": 35,
+        "reward": {
+          "item_id": 5,
+          "item_count": 20000
+        }
+      },
+      {
+        "id": 8,
+        "weight": 5000,
         "availableTimes": 25,
         "reward": {
           "item_id": 5,
@@ -75,18 +87,8 @@
         }
       },
       {
-        "id": 8,
-        "weight": 10,
-        "requireTimes": 1,
-        "availableTimes": 15,
-        "reward": {
-          "item_id": 7003,
-          "item_count": 1
-        }
-      },
-      {
         "id": 9,
-        "weight": 10,
+        "weight": 5000,
         "availableTimes": 25,
         "reward": {
           "item_id": 5,
@@ -107,31 +109,7 @@
           4019,
           4020,
           4021,
-          4022,
-          4022,
-          4023,
-          4024,
-          4025,
-          4026,
-          4027,
-          4028,
-          4029,
-          4030,
-          4031,
-          4032,
-          4033,
-          4034,
-          4035,
-          4036,
-          4037,
-          4038,
-          4039,
-          4040,
-          4041,
-          4042,
-          4043,
-          4044,
-          4045
+          4022
         ]
       },
       {
@@ -147,30 +125,7 @@
           14008,
           14009,
           14010,
-          14011,
-          14011,
-          14012,
-          14013,
-          14014,
-          14015,
-          14016,
-          14017,
-          14018,
-          14019,
-          14020,
-          14021,
-          14022,
-          14023,
-          14024,
-          14025,
-          14026,
-          14027,
-          14028,
-          14029,
-          14030,
-          14031,
-          14032,
-          14033
+          14011
         ]
       },
       {
