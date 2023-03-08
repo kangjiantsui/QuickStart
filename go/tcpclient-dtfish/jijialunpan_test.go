@@ -15,14 +15,12 @@ func jijialunpanPlayPreconditions(session *tcp.Session, uid uint64) {
 	_ = send(session, uid, pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PICK, &pb.JiJiaLunPanPickReq{ItemId: 14001})
 }
 
-func TestJiJiaLunPlay(t *testing.T) {
+// 机甲轮盘玩到抽到所有自选奖励
+func TestJijialunpanPlay(t *testing.T) {
 	session, uid, _ := newSession()
 	jijialunpanPlayPreconditions(session, uid)
-	for i := 0; i < 200; i++ {
-		_ = send(session, uid, pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PLAY, &pb.JiJiaLunPanPlayReq{Times: 1})
-	}
 	for {
-		resp := receive(session, pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PLAY).(*pb.JiJiaLunPanPlayResp)
+		resp := sendAndReturnResp(session, uid, pb.EmCSMsgId_CS_MSG_GAME_JIJIALUNPAN_PLAY, &pb.JiJiaLunPanPlayReq{Times: 1}).(*pb.JiJiaLunPanPlayResp)
 		if !resp.Finish {
 			continue
 		}
