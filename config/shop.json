@@ -3285,6 +3285,48 @@
       "rank_type": 5
     },
     {
+      "id": 101010204,
+      "name": "财神福袋1",
+      "qiangsha_price": 328,
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 3280
+        }
+      ],
+      "platform": 0,
+      "stype": 11,
+      "index": 1,
+      "tag": 0,
+      "items": [
+        {
+          "item_id": 7002,
+          "type": 1,
+          "item_count": 5
+        },
+        {
+          "item_id": 7003,
+          "type": 1,
+          "item_count": 3
+        },
+        {
+          "item_id": 7004,
+          "type": 1,
+          "item_count": 1
+        }
+      ],
+      "type": 18,
+      "client_type": 14,
+      "limit_second": 0,
+      "limit_count": 0,
+      "open": true,
+      "baozhicishu": 0,
+      "deltalevel": 0,
+      "label": 0,
+      "rank_per": 100,
+      "rank_type": 5
+    },
+    {
       "id": 101010301,
       "name": "机械齿轮礼包",
       "qiangsha_price": 12,
