@@ -3285,48 +3285,6 @@
       "rank_type": 5
     },
     {
-      "id": 101010204,
-      "name": "财神福袋1",
-      "qiangsha_price": 328,
-      "need_items": [
-        {
-          "item_id": 2004,
-          "item_count": 3280
-        }
-      ],
-      "platform": 0,
-      "stype": 11,
-      "index": 1,
-      "tag": 0,
-      "items": [
-        {
-          "item_id": 7002,
-          "type": 1,
-          "item_count": 5
-        },
-        {
-          "item_id": 7003,
-          "type": 1,
-          "item_count": 3
-        },
-        {
-          "item_id": 7004,
-          "type": 1,
-          "item_count": 1
-        }
-      ],
-      "type": 18,
-      "client_type": 14,
-      "limit_second": 0,
-      "limit_count": 0,
-      "open": true,
-      "baozhicishu": 0,
-      "deltalevel": 0,
-      "label": 0,
-      "rank_per": 100,
-      "rank_type": 5
-    },
-    {
       "id": 101010301,
       "name": "机械齿轮礼包",
       "qiangsha_price": 12,
@@ -3434,7 +3392,7 @@
           "item_count": 2
         },
         {
-          "item_id": 5,
+          "item_id": 2,
           "item_count": 1500000
         },
         {
@@ -3458,7 +3416,7 @@
           "item_count": 10
         },
         {
-          "item_id": 5,
+          "item_id": 2,
           "item_count": 10000
         },
         {
@@ -3486,7 +3444,7 @@
           "item_count": 50
         },
         {
-          "item_id": 5,
+          "item_id": 2,
           "item_count": 500000
         },
         {
@@ -3514,7 +3472,7 @@
           "item_count": 100
         },
         {
-          "item_id": 5,
+          "item_id": 2,
           "item_count": 880000
         },
         {
@@ -3542,7 +3500,7 @@
           "item_count": 250
         },
         {
-          "item_id": 5,
+          "item_id": 2,
           "item_count": 2000000
         },
         {
@@ -3566,12 +3524,20 @@
       ],
       "items": [
         {
-          "item_id": 18011,
+          "item_id": 11001,
           "item_count": 1
         },
         {
-          "item_id": 18010,
-          "item_count": 20
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
         }
       ]
     },
@@ -3586,18 +3552,26 @@
       ],
       "items": [
         {
-          "item_id": 7002,
-          "item_count": 2
+          "item_id": 11001,
+          "item_count": 1
         },
         {
-          "item_id": 5,
-          "item_count": 400000
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
         }
       ]
     },
     {
       "id": 101010410,
-      "name": "三阶法宝礼包",
+      "name": "星级三阶法宝礼包",
       "need_items": [
         {
           "item_id": 2004,
@@ -3606,12 +3580,20 @@
       ],
       "items": [
         {
-          "item_id": 18013,
-          "item_count": 2
+          "item_id": 11001,
+          "item_count": 1
         },
         {
-          "item_id": 18010,
-          "item_count": 70
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
         }
       ]
     },
@@ -3626,12 +3608,20 @@
       ],
       "items": [
         {
-          "item_id": 7003,
-          "item_count": 3
+          "item_id": 11001,
+          "item_count": 1
         },
         {
-          "item_id": 5,
-          "item_count": 1500000
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
         }
       ]
     },
@@ -3646,12 +3636,20 @@
       ],
       "items": [
         {
-          "item_id": 7003,
-          "item_count": 8
+          "item_id": 11001,
+          "item_count": 1
         },
         {
-          "item_id": 7004,
-          "item_count": 5
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
         }
       ]
     },
@@ -3666,12 +3664,20 @@
       ],
       "items": [
         {
-          "item_id": 5,
-          "item_count": 18000000
+          "item_id": 11001,
+          "item_count": 1
         },
         {
-          "item_id": 1002,
-          "item_count": 50
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
+        },
+        {
+          "item_id": 11001,
+          "item_count": 1
         }
       ]
     }
