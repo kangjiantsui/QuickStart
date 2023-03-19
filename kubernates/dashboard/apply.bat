@@ -1,0 +1,1 @@
+kubectl apply -f C:\project\QuickStart\kubernates\dashboard\adminuser.yaml
