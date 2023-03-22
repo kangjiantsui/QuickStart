@@ -1755,5 +1755,26 @@
         ]
       }
     ]
-  }
+  },
+  "fishDrops": [
+    {
+      "paoMin": 3000,
+      "paoMax": 10000,
+      "divisor": 1000,
+      "floatingRange": 100
+    },
+    {
+      "paoMin": 10001,
+      "paoMax": 50000,
+      "divisor": 1000,
+      "floatingRange": 100
+    },
+    {
+      "paoMin": 50001,
+      "paoMax": 100000,
+      "divisor": 1000,
+      "floatingRange": 200
+    }
+  ],
+  "fishDropDailyLimit": 999999
 }
