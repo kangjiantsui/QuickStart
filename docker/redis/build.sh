@@ -1,1 +1,1 @@
-docker build -t kangjiantsui/redis:dtfish .
+docker build -t kangjiantsui/redis:chuyao .
