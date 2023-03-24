@@ -1,0 +1,2090 @@
+{
+  "config": [
+    {
+      "open": true,
+      "fmt": "恭喜%s在招财聚宝中获得%d*%s",
+      "type": 8
+    },
+    {
+      "open": true,
+      "fmt": "玩家 %s在%s击杀 %s获得了%d*%s宝箱",
+      "type": 3
+    },
+    {
+      "open": true,
+      "fmt": "玩家 %s在%s击杀 %s获得了%d*金币",
+      "type": 7
+    },
+    {
+      "open": true,
+      "fmt": "玩家 %s获得洪福奖励 获得了%d*%s",
+      "type": 9
+    },
+    {
+      "open": true,
+      "fmt": "玩家 %s参与牛年狂欢 获得了%d*%s",
+      "type": 10
+    },
+    {
+      "open": true,
+      "fmt": "幽灵船即将在“10”秒后出现，击败可获得丰厚奖励！",
+      "type": 11
+    },
+    {
+      "open": true,
+      "fmt": "太棒了，经过大家不懈努力，成功击败幽灵船！",
+      "type": 11
+    },
+    {
+      "open": true,
+      "fmt": "很遗憾，幽灵船大肆劫掠一番，已经开走了！",
+      "type": 11
+    }
+  ],
+  "broad_priority": [
+    {
+      "desc": "凤凰峡谷击杀螃蟹得金币",
+      "room_id": 2,
+      "fish_id": 904,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 700,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀凤凰获得金币",
+      "room_id": 2,
+      "fish_id": 902,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 701,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀金牛获得金币",
+      "room_id": 2,
+      "fish_id": 916,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 702,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀机械鲨得金币",
+      "room_id": 2,
+      "fish_id": 919,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 703,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀白金战象获得金币",
+      "room_id": 2,
+      "fish_id": 929,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 704,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀翡翠巨鳄获得金币",
+      "room_id": 2,
+      "fish_id": 926,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 705,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀转盘得金币",
+      "room_id": 2,
+      "fish_id": 1203,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 706,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀螃蟹得金币",
+      "room_id": 3,
+      "fish_id": 907,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 800,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀凤凰得金币",
+      "room_id": 3,
+      "fish_id": 905,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 801,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀冰龙获得金币",
+      "room_id": 3,
+      "fish_id": 903,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 802,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀龙龟得金币",
+      "room_id": 3,
+      "fish_id": 910,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 803,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀金牛获得金币",
+      "room_id": 3,
+      "fish_id": 917,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 804,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀机械鲨得金币",
+      "room_id": 3,
+      "fish_id": 920,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 805,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀五龙夺宝得金币",
+      "room_id": 3,
+      "fish_id": 1302,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 806,
+      "broad_type": 3
+    },
+    {
+      "desc": "神龙海域击杀金佛得金币",
+      "room_id": 3,
+      "fish_id": 1304,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 807,
+      "broad_type": 3
+    },
+    {
+      "desc": "神龙海域击杀白金战象得金币",
+      "room_id": 3,
+      "fish_id": 930,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 808,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀翡翠巨鳄得金币",
+      "room_id": 3,
+      "fish_id": 927,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 809,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀转盘得金币",
+      "room_id": 3,
+      "fish_id": 1303,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 810,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀赤焰龙王金币",
+      "room_id": 3,
+      "fish_id": 934,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 811,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀财神金币",
+      "room_id": 3,
+      "fish_id": 936,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 812,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀螃蟹得金币",
+      "room_id": 4,
+      "fish_id": 907,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 900,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀凤凰获得金币",
+      "room_id": 4,
+      "fish_id": 905,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 901,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀冰龙获得金币",
+      "room_id": 4,
+      "fish_id": 903,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 902,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀龙龟得金币",
+      "room_id": 4,
+      "fish_id": 910,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 903,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀机械鲨得金币",
+      "room_id": 4,
+      "fish_id": 921,
+      "item_id": 5,
+      "min_limit": 20000000,
+      "priority": 904,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀唐僧获得金币",
+      "room_id": 4,
+      "fish_id": 911,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 905,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀孙悟空获得金币",
+      "room_id": 4,
+      "fish_id": 912,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 906,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀猪八戒获得金币",
+      "room_id": 4,
+      "fish_id": 913,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 907,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀沙僧获得金币",
+      "room_id": 4,
+      "fish_id": 914,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 908,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀白金战象获得金币",
+      "room_id": 4,
+      "fish_id": 931,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 909,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀翡翠巨鳄获得金币",
+      "room_id": 4,
+      "fish_id": 928,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 910,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀燕赤霞获得金币",
+      "room_id": 4,
+      "fish_id": 924,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 911,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀宁采臣获得金币",
+      "room_id": 4,
+      "fish_id": 923,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 912,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀黑山姥姥获得金币",
+      "room_id": 4,
+      "fish_id": 925,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 913,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀聂小倩获得金币",
+      "room_id": 4,
+      "fish_id": 922,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 914,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀赤焰龙王获得金币",
+      "room_id": 4,
+      "fish_id": 935,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 915,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀财神获得金币",
+      "room_id": 4,
+      "fish_id": 937,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 916,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀平天大圣获得金币",
+      "room_id": 4,
+      "fish_id": 932,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 917,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀哪吒三太子获得金币",
+      "room_id": 4,
+      "fish_id": 933,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 918,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀灯神获得金币",
+      "room_id": 4,
+      "fish_id": 938,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 919,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀白骨精获得金币",
+      "room_id": 4,
+      "fish_id": 939,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 920,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀铁扇公主获得金币",
+      "room_id": 4,
+      "fish_id": 940,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 921,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀雅典娜获得金币",
+      "room_id": 4,
+      "fish_id": 941,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 922,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀波塞冬获得金币",
+      "room_id": 4,
+      "fish_id": 942,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 923,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀宙斯获得金币",
+      "room_id": 4,
+      "fish_id": 943,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 924,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀阿尔忒弥斯获得金币",
+      "room_id": 4,
+      "fish_id": 944,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 925,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀山岭巨人获得金币",
+      "room_id": 4,
+      "fish_id": 945,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 926,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀冰霜巨鹿斯获得金币",
+      "room_id": 4,
+      "fish_id": 946,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 927,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀索尔获得金币",
+      "room_id": 4,
+      "fish_id": 947,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 928,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀寒冰兽人获得金币",
+      "room_id": 4,
+      "fish_id": 948,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 929,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀奥丁获得金币",
+      "room_id": 4,
+      "fish_id": 949,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 930,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀洛基获得金币",
+      "room_id": 4,
+      "fish_id": 950,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 931,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀芬里尔获得金币",
+      "room_id": 4,
+      "fish_id": 951,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 932,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀烈焰骑手获得金币",
+      "room_id": 4,
+      "fish_id": 952,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 933,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀阿努比斯获得金币",
+      "room_id": 4,
+      "fish_id": 953,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 934,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀努特获得金币",
+      "room_id": 4,
+      "fish_id": 954,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 935,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀荷鲁斯获得金币",
+      "room_id": 4,
+      "fish_id": 955,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 936,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀芭斯苔特获得金币",
+      "room_id": 4,
+      "fish_id": 956,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 937,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀斯芬克斯获得金币",
+      "room_id": 4,
+      "fish_id": 957,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 938,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀钢铁犀牛获得金币",
+      "room_id": 4,
+      "fish_id": 958,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 939,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀创世女娲获得金币",
+      "room_id": 4,
+      "fish_id": 965,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 940,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀创世盘古获得金币",
+      "room_id": 4,
+      "fish_id": 960,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 941,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀青帝伏羲获得金币",
+      "room_id": 4,
+      "fish_id": 961,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 942,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀九天玄女获得金币",
+      "room_id": 4,
+      "fish_id": 962,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 943,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀火焰之灵获得金币",
+      "room_id": 4,
+      "fish_id": 963,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 944,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀大地之灵获得金币",
+      "room_id": 4,
+      "fish_id": 964,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 945,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀创世女娲获得金币",
+      "room_id": 4,
+      "fish_id": 965,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 946,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀新春年兽获得金币",
+      "room_id": 4,
+      "fish_id": 966,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 947,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀鸿福舞狮获得金币",
+      "room_id": 4,
+      "fish_id": 967,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 948,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀金玉财猫获得金币",
+      "room_id": 4,
+      "fish_id": 968,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 949,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀希望之光获得金币",
+      "room_id": 4,
+      "fish_id": 969,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 950,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀湮灭破坏者获得金币",
+      "room_id": 4,
+      "fish_id": 970,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 951,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀红色警戒获得金币",
+      "room_id": 4,
+      "fish_id": 971,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 952,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀希望之光获得金币",
+      "room_id": 4,
+      "fish_id": 972,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 953,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀湮灭破坏者获得金币",
+      "room_id": 4,
+      "fish_id": 973,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 954,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀红色警戒获得金币",
+      "room_id": 4,
+      "fish_id": 974,
+      "item_id": 5,
+      "min_limit": 30000000,
+      "priority": 955,
+      "broad_type": 1
+    },
+    {
+      "desc": "牛年狂欢得金币",
+      "room_id": -3,
+      "fish_id": -3,
+      "item_id": 5,
+      "min_limit": 9999999,
+      "priority": 1000,
+      "broad_type": 3
+    },
+    {
+      "desc": "倩女幽魂击杀金童获得金币",
+      "room_id": 5001,
+      "fish_id": 1601,
+      "item_id": 5,
+      "min_limit": 3000000,
+      "priority": 1007,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀玉女获得金币",
+      "room_id": 5001,
+      "fish_id": 1602,
+      "item_id": 5,
+      "min_limit": 3000000,
+      "priority": 1008,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀福运财神获得金币",
+      "room_id": 5001,
+      "fish_id": 1603,
+      "item_id": 5,
+      "min_limit": 3000000,
+      "priority": 1009,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀螃蟹得3级鱼叉",
+      "room_id": 2,
+      "fish_id": 904,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1001,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀凤凰得3级鱼叉",
+      "room_id": 2,
+      "fish_id": 902,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1002,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀机械鲨得3级鱼叉",
+      "room_id": 2,
+      "fish_id": 919,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1003,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀金牛得3级鱼叉",
+      "room_id": 2,
+      "fish_id": 916,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1004,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀白金战象得3级鱼叉",
+      "room_id": 2,
+      "fish_id": 929,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1005,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀翡翠巨鳄得3级鱼叉",
+      "room_id": 2,
+      "fish_id": 926,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1006,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀螃蟹得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 907,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1100,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀凤凰得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 905,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1101,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀冰龙得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 903,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1102,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀龙龟得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 910,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1103,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀金牛得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 917,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1104,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀机械鲨得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 920,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1105,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀五龙夺宝达到倍数",
+      "room_id": 3,
+      "fish_id": 1302,
+      "item_id": -1,
+      "min_limit": 1800,
+      "priority": 1106,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀白金战象得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 930,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1107,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀翡翠巨鳄得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 927,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1108,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀赤焰龙王得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 934,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1109,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀赤财神得3级鱼叉",
+      "room_id": 3,
+      "fish_id": 936,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1110,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀螃蟹得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 907,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1200,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀凤凰获得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 905,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1201,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀冰龙获得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 903,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1202,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀龙龟得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 910,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1203,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀白金战象得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 931,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1204,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀翡翠巨鳄得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 928,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1205,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀唐僧得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 911,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1206,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀孙悟空得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 912,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1207,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀猪八戒得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 913,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1208,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀沙僧得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 914,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1209,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀宁采臣得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 923,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1210,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀燕赤霞得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 924,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1211,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀黑山姥姥得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 925,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1212,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀聂小倩得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 922,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1213,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀赤焰龙王得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 935,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1214,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀财神得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 937,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1215,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀平天大圣得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 932,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1216,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀哪吒三太子得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 933,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1217,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀灯神得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 938,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1218,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀白骨夫人得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 939,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1219,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀铁扇公主得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 940,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1220,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀雅典娜得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 941,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1221,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀波塞冬得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 942,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1222,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀宙斯得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 943,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1223,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀阿尔忒弥斯得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 944,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1224,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀山岭巨人得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 945,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1225,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀冰霜巨鹿得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 946,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1226,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀索尔得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 947,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1227,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀寒冰兽人得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 948,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1228,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀奥丁得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 949,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1229,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀洛基得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 950,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1230,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀芬里尔得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 951,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1231,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀烈焰骑手得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 952,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1232,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀阿努比斯得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 953,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1233,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀努特得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 954,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1234,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀荷鲁斯得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 955,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1235,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀芭斯苔特得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 956,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1236,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀斯芬克斯得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 957,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1237,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀钢铁犀牛得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 958,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1238,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀创世女娲得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 965,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1239,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀创世盘古得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 960,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1240,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀青帝伏羲得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 961,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1241,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀九天玄女得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 962,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1242,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀火焰之灵得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 963,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1243,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀大地之灵得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 964,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1244,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀创世女娲得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 965,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1245,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀新春年兽得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 966,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1246,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀鸿福舞狮得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 967,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1247,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀金玉财猫得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 968,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1248,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀希望之光得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 969,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1249,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀湮灭破坏者得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 970,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1250,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀红色警戒得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 971,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1251,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀希望之光得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 972,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1252,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀湮灭破坏者得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 973,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1253,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀红色警戒得3级鱼叉",
+      "room_id": 4,
+      "fish_id": 974,
+      "item_id": 7003,
+      "min_limit": 5,
+      "priority": 1254,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀螃蟹得4级鱼叉",
+      "room_id": 2,
+      "fish_id": 904,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1300,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀凤凰得4级鱼叉",
+      "room_id": 2,
+      "fish_id": 902,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1301,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀金牛得4级鱼叉",
+      "room_id": 2,
+      "fish_id": 916,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1302,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀机械鲨得4级鱼叉",
+      "room_id": 2,
+      "fish_id": 919,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1303,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀白金战象得4级鱼叉",
+      "room_id": 2,
+      "fish_id": 929,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1304,
+      "broad_type": 1
+    },
+    {
+      "desc": "凤凰峡谷击杀翡翠巨鳄得4级鱼叉",
+      "room_id": 2,
+      "fish_id": 926,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1305,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀螃蟹得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 907,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1400,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀凤凰得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 905,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1401,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀冰龙得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 903,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1402,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀龙龟得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 910,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1403,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀金牛得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 917,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1404,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀机械鲨得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 920,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1405,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀白金战象得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 930,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1406,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀翡翠巨鳄得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 927,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1407,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀赤焰龙王得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 934,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1408,
+      "broad_type": 1
+    },
+    {
+      "desc": "神龙海域击杀财神得4级鱼叉",
+      "room_id": 3,
+      "fish_id": 936,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1409,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀螃蟹得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 907,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1500,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀凤凰获得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 905,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1501,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀冰龙获得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 903,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1502,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀龙龟得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 910,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1503,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀唐僧得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 911,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1504,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀孙悟空得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 912,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1505,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀猪八戒得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 913,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1506,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀沙僧得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 914,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1507,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀白金战象得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 931,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1508,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀翡翠巨鳄得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 928,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1509,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀宁采臣得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 923,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1510,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀燕赤霞得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 924,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1511,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀黑山姥姥得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 925,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1512,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀聂小倩得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 922,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1513,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀赤焰龙王得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 935,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1514,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀财神得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 937,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1515,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀平天大圣得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 932,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1516,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀哪吒三太子得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 933,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1517,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀灯神得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 938,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1518,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀白骨夫人得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 939,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1519,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀铁扇公主得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 940,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1520,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀雅典娜得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 941,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1521,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀波塞冬得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 942,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1522,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀宙斯得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 943,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1523,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀阿尔忒弥斯得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 944,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1524,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀山岭巨人得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 945,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1525,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀冰霜巨鹿得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 946,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1526,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀索尔得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 947,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1527,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀寒冰兽人得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 948,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1528,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀奥丁得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 949,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1529,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀洛基得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 950,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1530,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀芬里尔得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 951,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1531,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀烈焰骑手得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 952,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1532,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀阿努比斯得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 953,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1533,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀努特得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 954,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1534,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀荷鲁斯得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 955,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1535,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀芭斯苔特得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 956,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1536,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀斯芬克斯得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 957,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1537,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀钢铁犀牛得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 958,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1538,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀创世女娲得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 965,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1539,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀创世盘古得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 960,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1540,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀青帝伏羲得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 961,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1541,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀九天玄女得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 962,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1542,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀火焰之灵得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 963,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1543,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀大地之灵得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 964,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1544,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀创世女娲得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 965,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1545,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀新春年兽得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 966,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1546,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀鸿福舞狮得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 967,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1547,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀金玉财猫得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 968,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1548,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀希望之光得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 969,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1549,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀湮灭破坏者得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 970,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1550,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀红色警戒得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 971,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1551,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀希望之光得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 972,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1552,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀湮灭破坏者得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 973,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1553,
+      "broad_type": 1
+    },
+    {
+      "desc": "倩女幽魂击杀红色警戒得4级鱼叉",
+      "room_id": 4,
+      "fish_id": 974,
+      "item_id": 7004,
+      "min_limit": 3,
+      "priority": 1554,
+      "broad_type": 1
+    },
+    {
+      "content": [
+        "幽灵船将在",
+        "10秒",
+        "后出现，击败可获得丰厚奖励！"
+      ],
+      "desc": "幽灵船即将在“10”秒后出现，击败可获得丰厚奖励！",
+      "room_id": 0,
+      "fish_id": 9010,
+      "item_id": 1,
+      "min_limit": 0,
+      "priority": 1600,
+      "broad_type": 1
+    },
+    {
+      "content": [
+        "太棒了，经过大家不懈努力，成功击败幽灵船！"
+      ],
+      "room_id": 0,
+      "fish_id": 9010,
+      "item_id": 2,
+      "min_limit": 0,
+      "priority": 1600,
+      "broad_type": 1
+    },
+    {
+      "content": [
+        "很遗憾，幽灵船大肆劫掠一番，已经开走了！"
+      ],
+      "room_id": 0,
+      "fish_id": 9010,
+      "item_id": 3,
+      "min_limit": 0,
+      "priority": 1600,
+      "broad_type": 1
+    }
+  ],
+  "queue_size": 100
+}

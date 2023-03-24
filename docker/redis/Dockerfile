@@ -1,6 +1,6 @@
-FROM kangjiantsui/redis:chuyao
+FROM redis:latest
 
-#COPY dump.rdb /data
+COPY dump.rdb /data
 
 COPY redis.conf /usr/local/etc/redis/redis.conf
 

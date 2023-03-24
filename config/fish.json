@@ -6223,6 +6223,291 @@
           "last_1": 0
         }
       ]
+    },
+    {
+      "id": 972,
+      "multiple": 0,
+      "buyu": [
+        6001,
+        6002,
+        6003,
+        6004,
+        6005,
+        6006,
+        6007,
+        6008,
+        6009,
+        6010,
+        6011,
+        6012,
+        6013,
+        6014,
+        6015,
+        6016,
+        6017,
+        6018,
+        6019,
+        6020
+      ],
+      "time": 20,
+      "BaseScore": [
+        {
+          "rate": 2000,
+          "count": 2,
+          "paobei_cal": 0.5,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 200,
+          "RealScore_1": 400,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 3,
+          "paobei_cal": 0.5,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 400,
+          "RealScore_1": 700,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 4,
+          "paobei_cal": 1,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 700,
+          "RealScore_1": 1000,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 5,
+          "paobei_cal": 1,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 1000,
+          "RealScore_1": 1200,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 6,
+          "paobei_cal": 1.25,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 1000,
+          "RealScore_1": 1400,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 7,
+          "paobei_cal": 1.5,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 1200,
+          "RealScore_1": 1800,
+          "last_0": 0,
+          "last_1": 0
+        }
+      ]
+    },
+    {
+      "id": 973,
+      "multiple": 0,
+      "buyu": [
+        6001,
+        6002,
+        6003,
+        6004,
+        6005,
+        6006,
+        6007,
+        6008,
+        6009,
+        6010,
+        6011,
+        6012,
+        6013,
+        6014,
+        6015,
+        6016,
+        6017,
+        6018,
+        6019,
+        6020
+      ],
+      "time": 20,
+      "BaseScore": [
+        {
+          "rate": 2000,
+          "count": 2,
+          "paobei_cal": 0.5,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 200,
+          "RealScore_1": 400,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 3,
+          "paobei_cal": 0.5,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 400,
+          "RealScore_1": 700,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 4,
+          "paobei_cal": 1,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 700,
+          "RealScore_1": 1000,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 5,
+          "paobei_cal": 1,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 1000,
+          "RealScore_1": 1200,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 6,
+          "paobei_cal": 1.25,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 1000,
+          "RealScore_1": 1400,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 7,
+          "paobei_cal": 1.5,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 1200,
+          "RealScore_1": 1800,
+          "last_0": 0,
+          "last_1": 0
+        }
+      ]
+    },
+    {
+      "id": 974,
+      "multiple": 0,
+      "buyu": [
+        6001,
+        6002,
+        6003,
+        6004,
+        6005,
+        6006,
+        6007,
+        6008,
+        6009,
+        6010,
+        6011,
+        6012,
+        6013,
+        6014,
+        6015,
+        6016,
+        6017,
+        6018,
+        6019,
+        6020
+      ],
+      "time": 15,
+      "BaseScore": [
+        {
+          "rate": 2000,
+          "count": 2,
+          "paobei_cal": 0.5,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 200,
+          "RealScore_1": 400,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 3,
+          "paobei_cal": 0.5,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 400,
+          "RealScore_1": 700,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 4,
+          "paobei_cal": 1,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 700,
+          "RealScore_1": 1000,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 5,
+          "paobei_cal": 1,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 1000,
+          "RealScore_1": 1200,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 6,
+          "paobei_cal": 1.25,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 1000,
+          "RealScore_1": 1400,
+          "last_0": 0,
+          "last_1": 0
+        },
+        {
+          "rate": 1000,
+          "count": 7,
+          "paobei_cal": 1.5,
+          "BaseScore_0": 1,
+          "BaseScore_1": 1,
+          "RealScore_0": 1200,
+          "RealScore_1": 1800,
+          "last_0": 0,
+          "last_1": 0
+        }
+      ]
     }
   ],
   "fish": [
@@ -8815,7 +9100,88 @@
         "x": -23,
         "y": 11
       },
+      "scale": 1.1,
+      "fishver": 1,
+      "framespeed": 80,
+      "bossBook": 7,
+      "Special_hit_count": 0,
+      "BaseScore_0": 1,
+      "BaseScore_1": 1,
+      "top": 110,
+      "type": 30,
+      "shadow_type": 3,
+      "tray": 3,
+      "RealScore_0": 200,
+      "RealScore_1": 1800
+    },
+    {
+      "FishTypeID": 972,
+      "resID": 972,
+      "NAME_KEY": 150035,
+      "Name": "圣火天麒",
+      "desc": [
+        "构筑未来的希望之光，捕获后将进行觉醒，能够获取巨量金币，幸运儿还能获取三叉戟"
+      ],
+      "FrameCount": 0,
+      "lock_position": {
+        "x": 73,
+        "y": -93
+      },
       "scale": 1,
+      "fishver": 1,
+      "framespeed": 80,
+      "bossBook": 7,
+      "Special_hit_count": 0,
+      "BaseScore_0": 1,
+      "BaseScore_1": 1,
+      "top": 110,
+      "type": 30,
+      "shadow_type": 3,
+      "tray": 3,
+      "RealScore_0": 200,
+      "RealScore_1": 1800
+    },
+    {
+      "FishTypeID": 973,
+      "resID": 973,
+      "NAME_KEY": 150035,
+      "Name": "九尾狐妖",
+      "desc": [
+        "向破坏者发起挑战是毫无希望的，捕获后将进行觉醒，能够获取巨量金币，幸运儿还能获取三叉戟"
+      ],
+      "FrameCount": 0,
+      "lock_position": {
+        "x": -6,
+        "y": 3
+      },
+      "scale": 0.9,
+      "fishver": 1,
+      "framespeed": 80,
+      "bossBook": 7,
+      "Special_hit_count": 0,
+      "BaseScore_0": 1,
+      "BaseScore_1": 1,
+      "top": 110,
+      "type": 30,
+      "shadow_type": 3,
+      "tray": 3,
+      "RealScore_0": 200,
+      "RealScore_1": 1800
+    },
+    {
+      "FishTypeID": 974,
+      "resID": 974,
+      "NAME_KEY": 150035,
+      "Name": "血魔玄奘",
+      "desc": [
+        "红色警戒不但有着灵活的机动力，还能给予致命攻击，捕获后将进行觉醒，能够获取巨量金币，幸运儿还能获取三叉戟"
+      ],
+      "FrameCount": 0,
+      "lock_position": {
+        "x": 32,
+        "y": 2
+      },
+      "scale": 1.1,
       "fishver": 1,
       "framespeed": 80,
       "bossBook": 7,
