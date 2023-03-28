@@ -1332,46 +1332,7 @@
           "rewards": [
             {
               "item_id": 5,
-              "item_count": 100000000
-            },
-            {
-              "item_id": 7004,
-              "item_count": 10
-            }
-          ]
-        },
-        {
-          "begin": 2,
-          "rewards": [
-            {
-              "item_id": 5,
-              "item_count": 80000000
-            },
-            {
-              "item_id": 7004,
-              "item_count": 8
-            }
-          ]
-        },
-        {
-          "begin": 3,
-          "rewards": [
-            {
-              "item_id": 5,
               "item_count": 60000000
-            },
-            {
-              "item_id": 7004,
-              "item_count": 6
-            }
-          ]
-        },
-        {
-          "begin": 4,
-          "rewards": [
-            {
-              "item_id": 5,
-              "item_count": 50000000
             },
             {
               "item_id": 7004,
@@ -1380,7 +1341,33 @@
           ]
         },
         {
-          "begin": 5,
+          "begin": 2,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 45000000
+            },
+            {
+              "item_id": 7004,
+              "item_count": 3
+            }
+          ]
+        },
+        {
+          "begin": 3,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 35000000
+            },
+            {
+              "item_id": 7004,
+              "item_count": 2
+            }
+          ]
+        },
+        {
+          "begin": 4,
           "rewards": [
             {
               "item_id": 5,
@@ -1388,6 +1375,19 @@
             },
             {
               "item_id": 7004,
+              "item_count": 1
+            }
+          ]
+        },
+        {
+          "begin": 5,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 15000000
+            },
+            {
+              "item_id": 7003,
               "item_count": 2
             }
           ]
@@ -1397,7 +1397,7 @@
           "rewards": [
             {
               "item_id": 5,
-              "item_count": 20000000
+              "item_count": 10000000
             },
             {
               "item_id": 7003,
@@ -1410,45 +1410,6 @@
           "rewards": [
             {
               "item_id": 5,
-              "item_count": 10000000
-            },
-            {
-              "item_id": 7003,
-              "item_count": 1
-            }
-          ]
-        },
-        {
-          "begin": 8,
-          "rewards": [
-            {
-              "item_id": 5,
-              "item_count": 8000000
-            },
-            {
-              "item_id": 7002,
-              "item_count": 4
-            }
-          ]
-        },
-        {
-          "begin": 9,
-          "rewards": [
-            {
-              "item_id": 5,
-              "item_count": 6000000
-            },
-            {
-              "item_id": 7002,
-              "item_count": 3
-            }
-          ]
-        },
-        {
-          "begin": 10,
-          "rewards": [
-            {
-              "item_id": 5,
               "item_count": 5000000
             },
             {
@@ -1458,16 +1419,55 @@
           ]
         },
         {
+          "begin": 8,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 4000000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 2
+            }
+          ]
+        },
+        {
+          "begin": 9,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 3000000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 2
+            }
+          ]
+        },
+        {
+          "begin": 10,
+          "rewards": [
+            {
+              "item_id": 5,
+              "item_count": 2500000
+            },
+            {
+              "item_id": 7002,
+              "item_count": 1
+            }
+          ]
+        },
+        {
           "begin": 11,
           "end": 20,
           "rewards": [
             {
               "item_id": 5,
-              "item_count": 2000000
+              "item_count": 100000
             },
             {
               "item_id": 7001,
-              "item_count": 3
+              "item_count": 2
             }
           ]
         }
@@ -1512,12 +1512,15 @@
         "tasks": [
           {
             "id": 1,
-            "atype": 14,
-            "name": "今日累计获得神剑碎片2000个",
+            "atype": 12,
+            "name": "今日累计获得神剑碎片",
             "group_id": 1,
             "count": 2000,
             "item_id": [
               18015
+            ],
+            "target": [
+              1502
             ],
             "rewards": [
               {
@@ -1532,12 +1535,15 @@
           },
           {
             "id": 2,
-            "atype": 14,
-            "name": "今日累计获得神剑碎片5000个",
+            "atype": 12,
+            "name": "今日累计获得神剑碎片",
             "group_id": 2,
             "count": 5000,
             "item_id": [
               18015
+            ],
+            "target": [
+              1502
             ],
             "rewards": [
               {
@@ -1552,12 +1558,15 @@
           },
           {
             "id": 3,
-            "atype": 14,
-            "name": "今日累计获得神剑碎片10000个",
+            "atype": 12,
+            "name": "今日累计获得神剑碎片",
             "group_id": 3,
             "count": 10000,
             "item_id": [
               18015
+            ],
+            "target": [
+              1502
             ],
             "rewards": [
               {
@@ -1572,12 +1581,15 @@
           },
           {
             "id": 4,
-            "atype": 14,
-            "name": "今日累计获得神剑碎片18000个",
+            "atype": 12,
+            "name": "今日累计获得神剑碎片",
             "group_id": 4,
             "count": 18000,
             "item_id": [
               18015
+            ],
+            "target": [
+              1502
             ],
             "rewards": [
               {
@@ -1592,12 +1604,15 @@
           },
           {
             "id": 5,
-            "atype": 14,
-            "name": "今日累计获得神剑碎片30000个",
+            "atype": 12,
+            "name": "今日累计获得神剑碎片",
             "group_id": 5,
             "count": 30000,
             "item_id": [
               18015
+            ],
+            "target": [
+              1502
             ],
             "rewards": [
               {
@@ -1612,12 +1627,15 @@
           },
           {
             "id": 6,
-            "atype": 14,
-            "name": "今日累计获得神剑碎片50000个",
+            "atype": 12,
+            "name": "今日累计获得神剑碎片",
             "group_id": 6,
             "count": 50000,
             "item_id": [
               18015
+            ],
+            "target": [
+              1502
             ],
             "rewards": [
               {
@@ -1632,12 +1650,15 @@
           },
           {
             "id": 7,
-            "atype": 14,
-            "name": "今日累计获得神剑碎片80000个",
+            "atype": 12,
+            "name": "今日累计获得神剑碎片",
             "group_id": 7,
             "count": 80000,
             "item_id": [
               18015
+            ],
+            "target": [
+              1502
             ],
             "rewards": [
               {
@@ -1652,12 +1673,15 @@
           },
           {
             "id": 8,
-            "atype": 14,
-            "name": "今日累计获得神剑碎片120000个",
+            "atype": 12,
+            "name": "今日累计获得神剑碎片",
             "group_id": 8,
             "count": 120000,
             "item_id": [
               18015
+            ],
+            "target": [
+              1502
             ],
             "rewards": [
               {
