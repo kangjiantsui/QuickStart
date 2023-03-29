@@ -1,0 +1,1 @@
+nohup ./disk_monitor.sh > /dev/null 2>&1 &
