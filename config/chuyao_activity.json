@@ -880,7 +880,7 @@
           {
             "id": 1,
             "atype": 8,
-            "name": "3000以上炮倍，捕鱼累计获得5千万金币",
+            "name": "3000以上炮倍，累计获得5千万金币",
             "group_id": 1,
             "count": 5000000,
             "pao_lmt": [
@@ -905,7 +905,7 @@
           {
             "id": 2,
             "atype": 8,
-            "name": "3000以上炮倍，捕鱼累计获得1亿金币",
+            "name": "3000以上炮倍，累计获得1亿金币",
             "group_id": 2,
             "count": 10000000,
             "pao_lmt": [
@@ -930,7 +930,7 @@
           {
             "id": 3,
             "atype": 8,
-            "name": "3000以上炮倍，捕鱼累计获得2亿金币",
+            "name": "3000以上炮倍，累计获得2亿金币",
             "group_id": 3,
             "count": 20000000,
             "pao_lmt": [
@@ -955,7 +955,7 @@
           {
             "id": 4,
             "atype": 8,
-            "name": "3000以上炮倍，捕鱼累计获得5亿金币",
+            "name": "3000以上炮倍，累计获得5亿金币",
             "group_id": 4,
             "count": 50000000,
             "pao_lmt": [
@@ -980,7 +980,7 @@
           {
             "id": 5,
             "atype": 8,
-            "name": "3000以上炮倍，捕鱼累计获得10亿金币",
+            "name": "3000以上炮倍，累计获得10亿金币",
             "group_id": 5,
             "count": 100000000,
             "pao_lmt": [
@@ -1140,7 +1140,7 @@
             "item_count": 1
           }
         ],
-        "score": 200
+        "score": 320
       },
       {
         "id": 2,
@@ -1150,75 +1150,79 @@
             "item_count": 1
           }
         ],
-        "score": 300
+        "score": 420
       },
       {
         "id": 3,
+        "reward": [
+          {
+            "item_id": 18012,
+            "item_count": 1
+          }
+        ],
+        "score": 450
+      },
+      {
+        "id": 4,
         "reward": [
           {
             "item_id": 18006,
             "item_count": 1
           }
         ],
-        "score": 400
-      },
-      {
-        "id": 4,
-        "reward": [
-          {
-            "item_id": 2004,
-            "item_count": 1
-          }
-        ],
-        "score": 600
+        "score": 540
       },
       {
         "id": 5,
         "reward": [
           {
-            "item_id": 2004,
+            "item_id": 18007,
             "item_count": 1
           }
         ],
-        "score": 800
+        "score": 700
       },
       {
         "id": 6,
         "reward": [
           {
-            "item_id": 2004,
+            "item_id": 18008,
             "item_count": 1
           }
         ],
-        "score": 1000
+        "score": 950
       },
       {
         "id": 7,
         "reward": [
           {
-            "item_id": 2004,
+            "item_id": 18013,
             "item_count": 1
           }
         ],
-        "score": 1200
+        "score": 1100
       },
       {
         "id": 8,
         "reward": [
           {
-            "item_id": 2004,
+            "item_id": 18009,
             "item_count": 1
           }
         ],
-        "score": 1400
+        "score": 1500
       }
     ],
     "fabaoShopItems": [
       {
-        "id": 101010401
+        "id": 101010401,
+        "show_type": 1,
+        "desc": "购买后可随机获得3个二阶法宝"
       },
       {
-        "id": 101010402
+        "id": 101010402,
+        "show_type": 1,
+        "desc": "购买后可随机获得3个三阶法宝"
       },
       {
         "id": 101010403,
