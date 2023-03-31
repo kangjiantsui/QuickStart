@@ -3388,13 +3388,13 @@
       "need_items": [
         {
           "item_id": 2004,
-          "item_count": 600
+          "item_count": 780
         }
       ],
       "items": [
         {
           "item_id": 18012,
-          "item_count": 3
+          "item_count": 2
         }
       ]
     },
@@ -3404,37 +3404,53 @@
       "need_items": [
         {
           "item_id": 2004,
-          "item_count": 1280
+          "item_count": 1980
         }
       ],
       "items": [
         {
           "item_id": 18013,
+          "item_count": 2
+        }
+      ]
+    },
+    {
+      "id": 101010414,
+      "name": "熔炼材料礼包",
+      "need_items": [
+        {
+          "item_id": 2004,
+          "item_count": 780
+        }
+      ],
+      "items": [
+        {
+          "item_id": 18011,
           "item_count": 3
         }
       ]
     },
     {
       "id": 101010403,
-      "name": "东皇钟礼包",
+      "name": "辟邪钟礼包",
       "need_items": [
         {
           "item_id": 2004,
-          "item_count": 1980
+          "item_count": 6480
         }
       ],
       "items": [
         {
           "item_id": 18009,
-          "item_count": 2
+          "item_count": 1
         },
         {
           "item_id": 5,
-          "item_count": 1500000
+          "item_count": 15000000
         },
         {
           "item_id": 1001,
-          "item_count": 20
+          "item_count": 5
         },
         {
           "item_id": 1002,
@@ -3454,19 +3470,19 @@
       "items": [
         {
           "item_id": 18010,
-          "item_count": 10
+          "item_count": 6
         },
         {
           "item_id": 5,
-          "item_count": 10000
+          "item_count": 50000
         },
         {
           "item_id": 1002,
-          "item_count": 10
+          "item_count": 3
         },
         {
           "item_id": 1002,
-          "item_count": 10
+          "item_count": 5
         }
       ]
     },
@@ -3482,11 +3498,11 @@
       "items": [
         {
           "item_id": 18010,
-          "item_count": 50
+          "item_count": 30
         },
         {
           "item_id": 5,
-          "item_count": 500000
+          "item_count": 600000
         },
         {
           "item_id": 7001,
@@ -3510,11 +3526,11 @@
       "items": [
         {
           "item_id": 18010,
-          "item_count": 100
+          "item_count": 60
         },
         {
           "item_id": 5,
-          "item_count": 880000
+          "item_count": 1000000
         },
         {
           "item_id": 7002,
@@ -3538,11 +3554,11 @@
       "items": [
         {
           "item_id": 18010,
-          "item_count": 250
+          "item_count": 150
         },
         {
           "item_id": 5,
-          "item_count": 2000000
+          "item_count": 3000000
         },
         {
           "item_id": 7003,
@@ -3556,7 +3572,7 @@
     },
     {
       "id": 101010408,
-      "name": "星级法宝礼包",
+      "name": "星级材料礼包",
       "need_items": [
         {
           "item_id": 2004,

@@ -1,108 +1,236 @@
 {
-  "items": [
+  "layerDetails": {
+    "layer": 10,
+    "star": 3,
+    "curHp": 2300
+  },
+  "record": [
     {
-      "item_id": 5,
-      "item_count": 80000
+      "round": 1,
+      "damage": 35,
+      "fabao": 18001
     },
     {
-      "item_id": 9003,
-      "item_count": 1
+      "round": 2,
+      "damage": 45,
+      "fabao": 18001
     },
     {
-      "item_id": 50003,
-      "item_count": 1
+      "round": 3,
+      "damage": 37,
+      "fabao": 18001
     },
     {
-      "item_id": 5,
-      "item_count": 31
+      "round": 4,
+      "damage": 37,
+      "fabao": 18001
     },
     {
-      "item_id": 7001,
-      "item_count": 29
+      "round": 5,
+      "damage": 45,
+      "fabao": 18001
     },
     {
-      "item_id": 5,
-      "item_count": 22
+      "round": 6,
+      "damage": 45,
+      "fabao": 18001
     },
     {
-      "item_id": 7003,
-      "item_count": 12
+      "round": 7,
+      "damage": 44,
+      "fabao": 18001
     },
     {
-      "item_id": 5,
-      "item_count": 25
+      "round": 8,
+      "damage": 43,
+      "fabao": 18001
+    },
+    {
+      "round": 9,
+      "damage": 44,
+      "fabao": 18001
+    },
+    {
+      "round": 10,
+      "damage": 38,
+      "fabao": 18001
+    },
+    {
+      "round": 11,
+      "damage": 40,
+      "fabao": 18001
+    },
+    {
+      "round": 12,
+      "damage": 44,
+      "fabao": 18001
+    },
+    {
+      "round": 13,
+      "damage": 41,
+      "fabao": 18001
+    },
+    {
+      "round": 14,
+      "damage": 37,
+      "fabao": 18001
+    },
+    {
+      "round": 15,
+      "damage": 40,
+      "fabao": 18001
+    },
+    {
+      "round": 16,
+      "damage": 39,
+      "fabao": 18001
+    },
+    {
+      "round": 17,
+      "damage": 37,
+      "fabao": 18001
+    },
+    {
+      "round": 18,
+      "damage": 44,
+      "fabao": 18001
+    },
+    {
+      "round": 19,
+      "damage": 39,
+      "fabao": 18001
+    },
+    {
+      "round": 20,
+      "damage": 41,
+      "fabao": 18001
+    },
+    {
+      "round": 21,
+      "damage": 40,
+      "fabao": 18001
+    },
+    {
+      "round": 22,
+      "damage": 44,
+      "fabao": 18001
+    },
+    {
+      "round": 23,
+      "damage": 41,
+      "fabao": 18001
+    },
+    {
+      "round": 24,
+      "damage": 35,
+      "fabao": 18001
+    },
+    {
+      "round": 25,
+      "damage": 41,
+      "fabao": 18001
+    },
+    {
+      "round": 26,
+      "damage": 55,
+      "fabao": 18002
+    },
+    {
+      "round": 27,
+      "damage": 62,
+      "fabao": 18002
+    },
+    {
+      "round": 28,
+      "damage": 59,
+      "fabao": 18002
+    },
+    {
+      "round": 29,
+      "damage": 59,
+      "fabao": 18002
+    },
+    {
+      "round": 30,
+      "damage": 58,
+      "fabao": 18002
+    },
+    {
+      "round": 31,
+      "damage": 64,
+      "fabao": 18002
+    },
+    {
+      "round": 32,
+      "damage": 61,
+      "fabao": 18002
+    },
+    {
+      "round": 33,
+      "damage": 55,
+      "fabao": 18002
+    },
+    {
+      "round": 34,
+      "damage": 58,
+      "fabao": 18002
+    },
+    {
+      "round": 35,
+      "damage": 62,
+      "fabao": 18002
+    },
+    {
+      "round": 36,
+      "damage": 76,
+      "fabao": 18003
+    },
+    {
+      "round": 37,
+      "damage": 77,
+      "fabao": 18003
+    },
+    {
+      "round": 38,
+      "damage": 81,
+      "fabao": 18003
+    },
+    {
+      "round": 39,
+      "damage": 166,
+      "fabao": 18004
+    },
+    {
+      "round": 40,
+      "damage": 158,
+      "fabao": 18004
+    },
+    {
+      "damage": 167,
+      "fabao": 18004
     }
   ],
-  "finish": true,
-  "info": {
-    "gear": 12,
-    "shopItems": [
-      {
-        "id": 101010301,
-        "baseInfo": {
-          "id": 101010301
-        },
-        "count": 4,
-        "availableCount": -1
-      },
-      {
-        "id": 101010302,
-        "baseInfo": {
-          "id": 101010302,
-          "limitTimes": 1
-        },
-        "availableCount": 1
-      }
-    ],
-    "slots": [
-      {
-        "availableCount": 1,
-        "itemCount": 1
-      },
-      {
-        "availableCount": 1,
-        "itemCount": 1
-      },
-      {
-        "availableCount": 1,
-        "itemCount": 1
-      },
-      {
-        "itemId": 50003,
-        "availableCount": 2,
-        "itemCount": 1
-      },
-      {
-        "itemId": 5,
-        "availableCount": 35,
-        "itemCount": 20000
-      },
-      {
-        "itemId": 7001,
-        "availableCount": 30,
-        "itemCount": 1
-      },
-      {
-        "itemId": 5,
-        "availableCount": 25,
-        "itemCount": 80000
-      },
-      {
-        "itemId": 7003,
-        "availableCount": 15,
-        "itemCount": 1
-      },
-      {
-        "itemId": 5,
-        "availableCount": 25,
-        "itemCount": 200000
-      }
-    ],
-    "beginTime": 1677081600,
-    "endTime": 1713801600
-  },
-  "slotIndex": [
-    6,
-    2
+  "totalStar": 30,
+  "itemUpdate": [
+    {
+      "item_id": 18001,
+      "item_count": -25
+    },
+    {
+      "item_id": 18002,
+      "item_count": -10
+    },
+    {
+      "item_id": 18003,
+      "item_count": -3
+    },
+    {
+      "item_id": 18004,
+      "item_count": -3
+    },
+    {
+      "item_id": 5,
+      "item_count": 6000000
+    }
   ]
 }
