@@ -10,6 +10,10 @@ import (
 	"testing"
 )
 
+func TestInterfaceFunc(t *testing.T) {
+
+}
+
 func TestErrWrap(t *testing.T) {
 	t.Logf(`%+v`, foo())
 	t.Log(foo())

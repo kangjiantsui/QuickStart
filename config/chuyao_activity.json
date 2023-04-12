@@ -1,11 +1,11 @@
 {
   "atype": 18,
-  "id": 256,
-  "begin_time": 1677600000,
-  "end_time": 1709222400,
-  "priority": 1,
+  "id": 259,
+  "begin_time": 1680493540,
+  "end_time": 1688745600,
+  "priority": 100000,
   "name": "除妖试炼",
-  "description": "除妖试炼",
+  "description": "111",
   "completeShow": true,
   "chuyao": {
     "battlePass": [
@@ -794,7 +794,7 @@
     "fabaoLottery": {
       "price": {
         "item_id": 18010,
-        "item_count": 5
+        "item_count": 15
       },
       "pool": [
         {
@@ -1215,6 +1215,11 @@
     ],
     "fabaoShopItems": [
       {
+        "id": 101010414,
+        "show_type": 1,
+        "desc": "购买后可随机获得3个二阶法宝"
+      },
+      {
         "id": 101010401,
         "show_type": 1,
         "desc": "购买后可随机获得2个二阶法宝"
@@ -1223,11 +1228,6 @@
         "id": 101010402,
         "show_type": 1,
         "desc": "购买后可随机获得2个三阶法宝"
-      },
-      {
-        "id": 101010414,
-        "show_type": 1,
-        "desc": "购买后可随机获得3个二阶法宝"
       },
       {
         "id": 101010403,

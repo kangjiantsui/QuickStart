@@ -1,0 +1,1 @@
+docker run -d --name etcdkeeper -p 18080:8080 evildecay/etcdkeeper:latest
