@@ -2,3 +2,4 @@
 *.class
 /.idea/
 /QuickStart.iml
+/java/netty/target/
