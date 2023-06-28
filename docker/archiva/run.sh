@@ -1,0 +1,1 @@
+docker run -d --name archiva -p 8080:8080 -v /data/docker-Volumes/archiva/archiva-data/:/archiva-data/ xetusoss/archiva
