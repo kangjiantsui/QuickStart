@@ -1,0 +1,1 @@
+docker run -d -p 9101:9101 --name my-nginx -v C:\\project\\QuickStart\\docker\\nginx\\nginx:/etc/nginx nginx
