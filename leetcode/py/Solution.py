@@ -72,6 +72,12 @@ def add_two_numbers(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[
     return head  # 返回结果链表的头节点
 
 
+def palindrome_number(x: int) -> bool:
+    x_str = str(x)
+    x_str_reversed = x_str[::-1]
+    return x_str == x_str_reversed
+
+
 class Test(unittest.TestCase):
     def test_two_sum(self):
         self.assertEqual(two_sum([2, 7, 11, 15], 9), [0, 1])
@@ -95,3 +101,12 @@ class Test(unittest.TestCase):
         self.assertEqual(l2.get_list(), [5, 6, 4])
         l3 = ListNode.from_values(7, 0, 8)
         self.assertEqual(l3.get_list(), [7, 0, 8])
+
+    def test_palindrome_number(self):
+        self.assertEqual(palindrome_number(121), True)
+        self.assertEqual(palindrome_number(-121), False)
+        self.assertEqual(palindrome_number(10), False)
+        self.assertEqual(palindrome_number(-101), False)
+
+    def test_math(self):
+        print(10 ** 3)
