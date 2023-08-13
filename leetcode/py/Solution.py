@@ -78,6 +78,10 @@ def palindrome_number(x: int) -> bool:
     return x_str == x_str_reversed
 
 
+def length_of_longest_substring(s: str) -> int:
+    return 0
+
+
 class Test(unittest.TestCase):
     def test_two_sum(self):
         self.assertEqual(two_sum([2, 7, 11, 15], 9), [0, 1])
@@ -108,5 +112,13 @@ class Test(unittest.TestCase):
         self.assertEqual(palindrome_number(10), False)
         self.assertEqual(palindrome_number(-101), False)
 
-    def test_math(self):
-        print(10 ** 3)
+    def test_length_of_longest_substring(self):
+        self.assertEqual(length_of_longest_substring("abcabcbb"), 3)
+        self.assertEqual(length_of_longest_substring("bbbbb"), 1)
+        self.assertEqual(length_of_longest_substring("pwwkew"), 3)
+        self.assertEqual(length_of_longest_substring(""), 0)
+
+    def test_traverse_str(self):
+        s = 'test_traverse_str'
+        for char in s:
+            print(char)
