@@ -49,11 +49,11 @@ def add_two_numbers(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[
     while l1 is not None or l2 is not None:
         n1 = l1.val if l1 is not None else 0  # 获取 l1 的当前值，如果 l1 为 None，则使用 0
         n2 = l2.val if l2 is not None else 0  # 获取 l2 的当前值，如果 l2 为 None，则使用 0
-        sum = n1 + n2 + carry  # 计算当前位的总和，包括进位
-        carry = sum // 10  # 计算新的进位
-        sum = sum % 10  # 计算当前位的值
+        sum_val = n1 + n2 + carry  # 计算当前位的总和，包括进位
+        carry = sum_val // 10  # 计算新的进位
+        sum_val = sum_val % 10  # 计算当前位的值
 
-        new_node = ListNode(val=sum)  # 创建新节点存储当前位的值
+        new_node = ListNode(val=sum_val)  # 创建新节点存储当前位的值
         if head is None:  # 如果头节点为 None，初始化链表
             head = new_node
             tail = new_node
