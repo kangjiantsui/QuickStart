@@ -1,1 +1,3 @@
-docker run -d -p 10080:10080 --name my-nginx -v C:\\workspace\\QuickStart\\docker\\nginx\\nginx:/etc/nginx nginx
+docker run -d -p 80:80 --name my-nginx \
+  -v /data/docker-Volumes/nginx/conf.d:/etc/nginx/conf.d \
+  nginx
