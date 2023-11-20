@@ -1,4 +1,5 @@
 import wmi
+from screeninfo import get_monitors
 
 c = wmi.WMI()
 
@@ -26,3 +27,8 @@ for disk_drive in c.Win32_DiskDrive():
     print(f"硬盘容量: {int(disk_drive.Size) / (1024 ** 3)} GB")
     print(f"硬盘分区数量: {disk_drive.Partitions}")
     print()
+
+
+for monitor in get_monitors():
+    print(f"Name: {monitor.name}")
+    print(f"Width: {monitor.width}, Height: {monitor.height}")
