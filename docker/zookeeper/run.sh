@@ -1,0 +1,1 @@
+docker run --name zookeeper-2181 -p 2181:2181 --restart always -d zookeeper
