@@ -27,7 +27,7 @@ def get_node_data(zk, path):
 logging.basicConfig()
 
 # ZooKeeper 服务器地址
-zk_server = "127.0.0.1:2181"
+zk_server = "127.0.0.1:12181"
 
 # 创建 KazooClient 实例
 zk = KazooClient(hosts=zk_server)
