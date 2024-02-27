@@ -1,0 +1,1 @@
+docker build -t php-fpm5.4-xdebug .
