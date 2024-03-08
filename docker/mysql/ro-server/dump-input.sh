@@ -1,0 +1,2 @@
+MSYS_NO_PATHCONV=1 docker exec -i mysql13306 mysql -u root -p'^2mV5yZ@3gT!pB&8#dC' -e "CREATE DATABASE IF NOT EXISTS gm;"
+MSYS_NO_PATHCONV=1 docker exec -i mysql13306 mysql -u root -p'^2mV5yZ@3gT!pB&8#dC' gm < C:/workspace/QuickStart/docker/mysql/ro-server/data/dumpsql/gm.sql
